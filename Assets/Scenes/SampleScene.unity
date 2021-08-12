@@ -836,9 +836,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a57a6525439d6094592c9f6a85510339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useRotation: 0
   isCursorLock: 0
   MouseXSensitivity: 6
   MouseYSensitivity: 6
+  isInvertedY: 0
   target: {fileID: 1983522953}
   smoothSpeed: 0.125
   offset: {x: 1, y: 3.3, z: -5.45}
