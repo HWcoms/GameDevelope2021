@@ -6,6 +6,7 @@ public class TpsFollowCam : MonoBehaviour
 
     public float MouseXSensitivity = 6f;
     public float MouseYSensitivity = 6f;
+    public bool isInvertedY = false;
 
     public Transform target;
     private float lookAtOffset = -.75f;  //offset for LookAt height
@@ -52,8 +53,14 @@ public class TpsFollowCam : MonoBehaviour
         TempTarget = target.position;
         TempTarget -= Vector3.up * lookAtOffset;
 
+        //mouse rotation
+        int invMouseY;
+
+        if (isInvertedY) invMouseY = -1;
+        else invMouseY = 1;
+
         float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        float mouseY = Input.GetAxis("Mouse Y") * invMouseY;
 
 
         offset = Quaternion.AngleAxis(mouseX * MouseXSensitivity, Vector3.up) * offset;
