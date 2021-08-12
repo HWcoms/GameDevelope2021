@@ -50,7 +50,7 @@ public class TpsFollowCam : MonoBehaviour
         transform.position = smoothedPosition;
 
         TempTarget = target.position;
-        TempTarget -= transform.up * lookAtOffset;
+        TempTarget -= Vector3.up * lookAtOffset;
 
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
@@ -59,5 +59,14 @@ public class TpsFollowCam : MonoBehaviour
         offset = Quaternion.AngleAxis(mouseX * MouseXSensitivity, Vector3.up) * offset;
         offset = Quaternion.AngleAxis(mouseY * MouseYSensitivity, Vector3.left) * offset;
         transform.LookAt(TempTarget);
+
+        //raycast
+        
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(this.transform.position, TempTarget);
     }
 }
