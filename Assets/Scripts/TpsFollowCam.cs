@@ -59,14 +59,27 @@ public class TpsFollowCam : MonoBehaviour
         offset = Quaternion.AngleAxis(mouseX * MouseXSensitivity, Vector3.up) * offset;
         offset = Quaternion.AngleAxis(mouseY * MouseYSensitivity, Vector3.left) * offset;
         transform.LookAt(TempTarget);
-
-        //raycast
-        
     }
 
+    void Update()
+    {
+        //racast
+        Debug.DrawLine(this.transform.position, TempTarget, Color.cyan);
+
+        RaycastHit hit = new RaycastHit();
+        if(Physics.Linecast(TempTarget, this.transform.position, out hit) && hit.transform.tag != "Player")
+        {
+            Debug.DrawRay(hit.point, Vector3.left, Color.red);
+
+            transform.position = Vector3.Lerp(transform.position, 
+                new Vector3(hit.point.x, hit.point.y, hit.point.z),
+                1f);
+        }
+    }
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(this.transform.position, TempTarget);
-    }
+    }*/
 }
