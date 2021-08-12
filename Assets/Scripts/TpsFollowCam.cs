@@ -2,6 +2,7 @@
 
 public class TpsFollowCam : MonoBehaviour
 {
+    public bool useRotation = true;
     public bool isCursorLock = false;
 
     public float MouseXSensitivity = 6f;
@@ -59,12 +60,16 @@ public class TpsFollowCam : MonoBehaviour
         if (isInvertedY) invMouseY = -1;
         else invMouseY = 1;
 
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y") * invMouseY;
+        if(useRotation)
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y") * invMouseY;
 
 
-        offset = Quaternion.AngleAxis(mouseX * MouseXSensitivity, Vector3.up) * offset;
-        offset = Quaternion.AngleAxis(mouseY * MouseYSensitivity, Vector3.left) * offset;
+            offset = Quaternion.AngleAxis(mouseX * MouseXSensitivity, Vector3.up) * offset;
+            offset = Quaternion.AngleAxis(mouseY * MouseYSensitivity, Vector3.left) * offset;
+        }
+        
         transform.LookAt(TempTarget);
     }
 
