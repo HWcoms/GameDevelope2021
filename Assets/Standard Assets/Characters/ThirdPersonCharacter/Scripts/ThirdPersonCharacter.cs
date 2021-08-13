@@ -29,6 +29,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
 
+		public bool isColl;
+
 
 		void Start()
 		{
@@ -208,7 +210,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 #endif
 			// 0.1f is a small offset to start the ray from inside the character
 			// it is also good to note that the transform position in the sample assets is at the base of the character
-			if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
+			if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance) || isColl)
 			{
 				m_GroundNormal = hitInfo.normal;
 				m_IsGrounded = true;
@@ -221,5 +223,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Animator.applyRootMotion = false;
 			}
 		}
+		
+        private void OnCollisionExit(Collision other)
+        {
+			isColl = false;
+        }
+
+		private void OnCollisionEnter(Collision other)
+		{
+			isColl = true;
+		}
+
+
 	}
 }
