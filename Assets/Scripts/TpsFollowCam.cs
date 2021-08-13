@@ -9,6 +9,10 @@ public class TpsFollowCam : MonoBehaviour
     public float MouseYSensitivity = 6f;
     public bool isInvertedY = false;
 
+    public float CameraDistance = 10f;
+    public float ScrollSensitivity = 2f;
+    public float ScrollDampening = 6f;
+
     protected Transform _pivot;
     protected Vector3 _LocalRotation;
 
@@ -17,8 +21,6 @@ public class TpsFollowCam : MonoBehaviour
     private Vector3 TempTarget;
 
     public float smoothSpeed = 0.125f;
-    public Vector3 offset;
-
 
     private Vector3 startedPos;     //position of camera at start game
 
@@ -40,7 +42,7 @@ public class TpsFollowCam : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
-    
+   
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -83,14 +85,32 @@ public class TpsFollowCam : MonoBehaviour
             _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, -95f, 62f);
 
 
-            Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);
-            _pivot.rotation = Quaternion.Lerp(_pivot.rotation, QT, /*Time.deltaTime **/ smoothSpeed);
-            
            
         }
 
+        //zoom
+        float ScrollAmount = Input.GetAxis("Mouse ScrollWheel") * ScrollSensitivity;
+        
+        if(ScrollAmount != 0f)
+        {   
+            //make camera zoom faster the further away it is from the target
+            ScrollAmount *= (CameraDistance * 0.3f);
+
+            CameraDistance += ScrollAmount * -1f;
+
+            //zoom clamp 1.5 meters ~ 100 meters from target
+            CameraDistance = Mathf.Clamp(CameraDistance, 1.5f, 7.0f);
+        }
+
+        Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);
+        _pivot.rotation = Quaternion.Lerp(_pivot.rotation, QT, /*Time.deltaTime **/ smoothSpeed);
+
+        if (transform.localPosition.z != CameraDistance * -1f)
+        {
+            transform.localPosition = new Vector3(0f, 0f, Mathf.Lerp(transform.localPosition.z, CameraDistance * -1f, Time.deltaTime * ScrollDampening));
+        }
     }
-    
+    /*
     void Update()
     {
         //racast
@@ -106,18 +126,7 @@ public class TpsFollowCam : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position,
                 new Vector3(hit.point.x, hit.point.y, hit.point.z),
                 1f);
-            //transform.position = hit.point;
         }
-        else
-        {
-            //transform.localPosition = Vector3.Lerp(transform.localPosition, startedPos, 1f);
-            
-        }
-    }
-    /*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(this.transform.position, TempTarget);
     }*/
+
 }
