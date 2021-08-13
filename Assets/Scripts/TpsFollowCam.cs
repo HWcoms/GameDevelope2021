@@ -10,6 +10,8 @@ public class TpsFollowCam : MonoBehaviour
     public bool isInvertedY = false;
 
     public float CameraDistance = 10f;
+    [SerializeField]
+    private float userSetDistance;
     public float ScrollSensitivity = 2f;
     public float ScrollDampening = 6f;
 
@@ -29,6 +31,7 @@ public class TpsFollowCam : MonoBehaviour
     void Start()
     {
         startedPos = transform.localPosition;
+        userSetDistance = CameraDistance;
         this._pivot = this.transform.parent;
 
         if (isCursorLock)
@@ -100,6 +103,8 @@ public class TpsFollowCam : MonoBehaviour
 
             //zoom clamp 1.5 meters ~ 100 meters from target
             CameraDistance = Mathf.Clamp(CameraDistance, 1.5f, 7.0f);
+
+            userSetDistance = CameraDistance;
         }
 
         Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);
@@ -110,23 +115,25 @@ public class TpsFollowCam : MonoBehaviour
             transform.localPosition = new Vector3(0f, 0f, Mathf.Lerp(transform.localPosition.z, CameraDistance * -1f, Time.deltaTime * ScrollDampening));
         }
     }
-    /*
+    
     void Update()
     {
         //racast
         Debug.DrawLine(this.transform.position, TempTarget, Color.cyan);
 
-        transform.localPosition = Vector3.Lerp(transform.localPosition, startedPos, smoothSpeed);
-
         RaycastHit hit = new RaycastHit();
         if (Physics.Linecast(TempTarget, this.transform.position, out hit) && hit.transform.tag != "Player")
         {
             Debug.DrawRay(hit.point, Vector3.left, Color.red);
-            
-            transform.position = Vector3.Lerp(transform.position,
-                new Vector3(hit.point.x, hit.point.y, hit.point.z),
-                1f);
+
+            float distance = hit.distance;
+
+            CameraDistance = Mathf.Lerp(CameraDistance, distance, ScrollDampening * 10f);
         }
-    }*/
+        else
+        {
+            CameraDistance = Mathf.Lerp(CameraDistance, userSetDistance, Time.deltaTime * ScrollDampening);
+        }
+    }
 
 }
