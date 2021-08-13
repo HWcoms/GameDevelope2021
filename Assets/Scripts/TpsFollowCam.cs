@@ -10,7 +10,7 @@ public class TpsFollowCam : MonoBehaviour
     public bool isInvertedY = false;
 
     public float CameraDistance = 10f;
-    [SerializeField]
+    public float maxDistance = 8f;
     private float userSetDistance;
     public float ScrollSensitivity = 2f;
     public float ScrollDampening = 6f;
@@ -102,7 +102,7 @@ public class TpsFollowCam : MonoBehaviour
             CameraDistance += ScrollAmount * -1f;
 
             //zoom clamp 1.5 meters ~ 100 meters from target
-            CameraDistance = Mathf.Clamp(CameraDistance, 1.5f, 7.0f);
+            CameraDistance = Mathf.Clamp(CameraDistance, 1.5f, maxDistance);
 
             userSetDistance = CameraDistance;
         }

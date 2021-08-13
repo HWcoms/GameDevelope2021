@@ -872,8 +872,8 @@ MonoBehaviour:
   MouseXSensitivity: 6
   MouseYSensitivity: 6
   isInvertedY: 0
-  CameraDistance: 10
-  userSetDistance: 0
+  CameraDistance: 8
+  maxDistance: 8
   ScrollSensitivity: 2
   ScrollDampening: 6
   target: {fileID: 1983522953}
