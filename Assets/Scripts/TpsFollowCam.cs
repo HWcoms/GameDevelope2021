@@ -53,6 +53,12 @@ public class TpsFollowCam : MonoBehaviour
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+
+            if (Input.GetKey(KeyCode.X))
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
         else
         {
@@ -86,10 +92,13 @@ public class TpsFollowCam : MonoBehaviour
 
             //Clamp the Y rotation
             _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, -95f, 62f);
-
-
-           
         }
+
+        if (Input.GetKey(KeyCode.X))
+            useRotation = false;
+        else
+            useRotation = true;
+
 
         //zoom
         float ScrollAmount = Input.GetAxis("Mouse ScrollWheel") * ScrollSensitivity;
