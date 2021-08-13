@@ -9,17 +9,26 @@ public class TpsFollowCam : MonoBehaviour
     public float MouseYSensitivity = 6f;
     public bool isInvertedY = false;
 
+    protected Transform _pivot;
+    protected Vector3 _LocalRotation;
+
     public Transform target;
-    private float lookAtOffset = -.75f;  //offset for LookAt height
+    private float lookAtOffset = -1.25f;  //offset for LookAt height
     private Vector3 TempTarget;
 
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
 
 
+    private Vector3 startedPos;     //position of camera at start game
+
+
     // Start is called before the first frame update
     void Start()
     {
+        startedPos = transform.localPosition;
+        this._pivot = this.transform.parent;
+
         if (isCursorLock)
         {
             Cursor.visible = false;
@@ -31,7 +40,7 @@ public class TpsFollowCam : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
     }
-
+    
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -46,46 +55,63 @@ public class TpsFollowCam : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-        Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-
-        transform.position = smoothedPosition;
-
         TempTarget = target.position;
         TempTarget -= Vector3.up * lookAtOffset;
 
+        Vector3 smoothedPosition = Vector3.Lerp(_pivot.transform.position, TempTarget, smoothSpeed);
+
+        _pivot.transform.position = smoothedPosition;
+    }
+    
+    void LateUpdate()
+    {
         //mouse rotation
         int invMouseY;
 
         if (isInvertedY) invMouseY = -1;
         else invMouseY = 1;
 
-        if(useRotation)
+        if (useRotation)
         {
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y") * invMouseY;
 
+            _LocalRotation.x += mouseX * MouseXSensitivity;
+            _LocalRotation.y -= mouseY * MouseYSensitivity;
 
-            offset = Quaternion.AngleAxis(mouseX * MouseXSensitivity, Vector3.up) * offset;
-            offset = Quaternion.AngleAxis(mouseY * MouseYSensitivity, Vector3.left) * offset;
+            //Clamp the Y rotation
+            _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, -95f, 62f);
+
+
+            Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);
+            _pivot.rotation = Quaternion.Lerp(_pivot.rotation, QT, /*Time.deltaTime **/ smoothSpeed);
+            
+           
         }
-        
-        transform.LookAt(TempTarget);
-    }
 
+    }
+    
     void Update()
     {
         //racast
         Debug.DrawLine(this.transform.position, TempTarget, Color.cyan);
 
+        transform.localPosition = Vector3.Lerp(transform.localPosition, startedPos, smoothSpeed);
+
         RaycastHit hit = new RaycastHit();
-        if(Physics.Linecast(TempTarget, this.transform.position, out hit) && hit.transform.tag != "Player")
+        if (Physics.Linecast(TempTarget, this.transform.position, out hit) && hit.transform.tag != "Player")
         {
             Debug.DrawRay(hit.point, Vector3.left, Color.red);
-
-            transform.position = Vector3.Lerp(transform.position, 
+            
+            transform.position = Vector3.Lerp(transform.position,
                 new Vector3(hit.point.x, hit.point.y, hit.point.z),
                 1f);
+            //transform.position = hit.point;
+        }
+        else
+        {
+            //transform.localPosition = Vector3.Lerp(transform.localPosition, startedPos, 1f);
+            
         }
     }
     /*
