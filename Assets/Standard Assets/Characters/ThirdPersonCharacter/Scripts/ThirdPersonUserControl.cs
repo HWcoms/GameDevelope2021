@@ -13,7 +13,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
 
-        
+        [SerializeField] protected bool moveAble;
+        [SerializeField] protected bool stamina; //true = albe to run, jump
+
         private void Start()
         {
             // get the transform of the main camera
@@ -30,12 +32,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
+
+            moveAble = true;
+
+            stamina = true;
         }
 
 
         private void Update()
         {
-            if (!m_Jump)
+            if (!m_Jump && stamina)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
@@ -63,13 +69,45 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 m_Move = v*Vector3.forward + h*Vector3.right;
             }
 #if !MOBILE_INPUT
-			// walk speed multiplier
-	        if (Input.GetKey(KeyCode.LeftShift)) m_Move *= 0.5f;
-#endif
 
+            // walk speed multiplier
+            if (!Input.GetKey(KeyCode.LeftShift) || !stamina)
+            {
+                m_Move.Normalize();
+                m_Move *= 0.85f;
+            }
+
+            if (Input.GetKey(KeyCode.LeftAlt))
+            {
+                m_Move.Normalize();
+                m_Move *= 0.5f;
+            }
+
+
+#endif
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, m_Jump);
+            if (moveAble) m_Character.Move(m_Move, crouch, m_Jump);
+
             m_Jump = false;
+        }
+
+        //can change moveAble flag from other script
+        public void setMoveAble(bool flag)
+        {
+            if (flag)
+                moveAble = true;
+            else
+                moveAble = false;
+        }
+
+        public void setStaminaAble(bool flag)       //set flag character can jump or run
+        {
+            if (flag)
+                stamina = true;
+            else
+                stamina = false;
         }
     }
 }
+
+
