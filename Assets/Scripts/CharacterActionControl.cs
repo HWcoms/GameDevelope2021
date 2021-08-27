@@ -6,7 +6,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 {
     public class CharacterActionControl : MonoBehaviour
     {
-        Animator m_Animator;
+        public Animator m_Animator;
 
         protected bool moveAble;
 
@@ -58,6 +58,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Update is called once per frame
         void Update()
         {
+            if(CHscript.getHp() <= 0)
+            {
+                TPUCscript.setMoveAble(false);
+                m_Animator.SetBool("dead", true);
+            }
+
             if (!m_Animator.GetBool("OnGround")) return;
 
             if(CHscript.getStamina() <= 0)

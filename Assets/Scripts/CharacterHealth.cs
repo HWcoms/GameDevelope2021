@@ -80,8 +80,7 @@ public class CharacterHealth : MonoBehaviour
         if (isStaminaRezen)
         {
             rezenStartTimer(staminaRezenSpeed, 2);
-        }
-
+        }   
     }
 
     public void changeHp(float value)
