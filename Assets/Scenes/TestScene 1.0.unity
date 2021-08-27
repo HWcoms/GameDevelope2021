@@ -417,12 +417,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7a31c077b9f02419fb389445bac441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Animator: {fileID: 0}
   isInvincible: 0
   delayBeforeInvincible: 0.1
   invincibleTime: 0.5
   runStaminaCost: 0.05
   rollStaminaCost: 20
   attackStaminaCost: 10
+  jumpStaminaCost: 20
 --- !u!114 &544350971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fbc3723c9488bb4db20cb00731d0f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   maxHp: 100
   maxStamina: 100
   hp: 0
@@ -442,8 +445,8 @@ MonoBehaviour:
   updateSpeedSeconds: 0.3
   hpRezenDelay: 7
   hpRezenSpeed: 0.05
-  staminaRezenDelay: 4.5
-  staminaRezenSpeed: 0.25
+  staminaRezenDelay: 2.5
+  staminaRezenSpeed: 0.5
 --- !u!1 &601260527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1235,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1688,6 +1691,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c05ba7feae131542b31772204dcb84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamgage: 17
+  hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
+    type: 3}
+  isDealready: 0
+  dealableTime: 1
+  dealTimer: 0
 --- !u!54 &1465155123
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1824,7 +1833,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 10, y: 10, z: 10}
+  m_BoxSize: {x: 50, y: 50, z: 50}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000

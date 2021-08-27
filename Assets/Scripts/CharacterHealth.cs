@@ -7,6 +7,8 @@ public class CharacterHealth : MonoBehaviour
 {
     [Space(10)]
     [Header("----------------------------- Health status -----------------------------")]
+    [SerializeField] private bool isDead = false;
+
     [SerializeField] private float maxHp = 100.0f;
     [SerializeField] private float maxStamina = 100.0f;
 
@@ -46,6 +48,9 @@ public class CharacterHealth : MonoBehaviour
     //dodge
     private UnityStandardAssets.Characters.ThirdPerson.CharacterActionControl CACscript;
 
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +78,8 @@ public class CharacterHealth : MonoBehaviour
         hpText.text = ((int)hp).ToString() + " / " + maxHp.ToString();
         staminaText.text = ((int)stamina).ToString() + " / " + maxStamina.ToString();
 
+        if (isDead) return;
+
         if(isHpRezen)
         {
             rezenStartTimer(hpRezenSpeed, 1);
@@ -83,13 +90,13 @@ public class CharacterHealth : MonoBehaviour
         }   
     }
 
-    public void changeHp(float value)
+    public bool changeHp(float value)       //if hit return true, dodge return false
     {
         if (value < 0)
         {
             if (CACscript.getInvincible())
             {
-                return;
+                return false;
             }
             isHpRezen = true;
             hpTimer = hpRezenDelay;
@@ -102,13 +109,15 @@ public class CharacterHealth : MonoBehaviour
 
         currentHealthPct = (float)hp / (float)maxHp;
         handleHealthChange(currentHealthPct);
+
+        return true;
     }
 
-    public void changeHp(float value, int mode)
+    public void changeHp(float value, int mode) //mode 1: small changes, mode2: DOT damage
     {
         if (value < 0)
         {
-            if (CACscript.getInvincible())
+            if (CACscript.getInvincible() && mode != 2) //when dodge
             {
                 return;
             }
@@ -122,7 +131,14 @@ public class CharacterHealth : MonoBehaviour
         else if (hp > maxHp) hp = maxHp;
 
         currentHealthPct = (float)hp / (float)maxHp;
-        hpImg.fillAmount = currentHealthPct;
+        if (mode == 1)
+        {
+            hpImg.fillAmount = currentHealthPct;
+        }
+        else if (mode == 2)
+        {
+            handleStaminaChange(currentStaminaPct);
+        }
     }
 
     public void changeStamina(float value)
@@ -229,5 +245,14 @@ public class CharacterHealth : MonoBehaviour
 
             if (maxStamina <= stamina) isStaminaRezen = false;
         }
+    }
+
+    public void Dead()
+    {
+        isDead = true;
+    }
+    public bool getDead()
+    {
+        return isDead;
     }
 }

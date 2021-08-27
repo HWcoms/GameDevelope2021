@@ -62,6 +62,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 TPUCscript.setMoveAble(false);
                 m_Animator.SetBool("dead", true);
+                CHscript.Dead();
+
+                return;
             }
 
             if (!m_Animator.GetBool("OnGround")) return;
