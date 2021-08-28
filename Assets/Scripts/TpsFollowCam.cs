@@ -2,30 +2,30 @@
 
 public class TpsFollowCam : MonoBehaviour
 {
-    public bool useRotation = true;
-    public bool isCursorLock = false;
+    [SerializeField] private bool useRotation = true;
+    [SerializeField] private bool isCursorLock = true;
 
-    public float MouseXSensitivity = 6f;
-    public float MouseYSensitivity = 6f;
-    public bool isInvertedY = false;
+    [SerializeField] private float MouseXSensitivity = 6f;
+    [SerializeField] private float MouseYSensitivity = 6f;
+    [SerializeField] private bool isInvertedY = false;
 
-    public float CameraDistance = 10f;
-    public float maxDistance = 8f;
+    [SerializeField] private float CameraDistance = 10f;
+    [SerializeField] private float maxDistance = 10f;
     private float userSetDistance;
-    public float ScrollSensitivity = 2f;
-    public float ScrollDampening = 6f;
+    [SerializeField] private float ScrollSensitivity = 2f;
+    [SerializeField] private float ScrollDampening = 6f;
+    
+    private Transform _pivot;
+    private Vector3 _LocalRotation;
 
-    protected Transform _pivot;
-    protected Vector3 _LocalRotation;
-
-    public Transform target;
+    [SerializeField] private Transform target;
     private float lookAtOffset = -1.25f;  //offset for LookAt height
     private Vector3 TempTarget;
 
-    public float smoothSpeed = 0.125f;
+    [SerializeField] private float smoothSpeed = 0.125f;
 
     private Vector3 startedPos;     //position of camera at start game
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,8 @@ public class TpsFollowCam : MonoBehaviour
         startedPos = transform.localPosition;
         userSetDistance = CameraDistance;
         this._pivot = this.transform.parent;
+
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (isCursorLock)
         {

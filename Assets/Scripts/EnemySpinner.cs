@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpinner : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class EnemySpinner : MonoBehaviour
     {
         playerHP = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
         //hitParticle = (GameObject) Resources.Load("Scenes/Model/hit.prefab");
-        hitParticle.GetComponentInChildren<TextMesh>().text = ((int)attackDamgage).ToString();
+        //hitParticle.GetComponentInChildren<TextMesh>().text = ((int)attackDamgage).ToString();
     }
 
     // Update is called once per frame
@@ -47,14 +48,14 @@ public class EnemySpinner : MonoBehaviour
     {
         if (playerHP.getDead()) return;
 
-        print(other.gameObject.tag);
+        //print(other.gameObject.tag);
         if (other.gameObject.tag == "Player")
         {
             if(isDealready)
             {
                 if(playerHP.changeHp(-attackDamgage))
                 {
-                    
+                    hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
                     isDealready = false;
                     GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position) , transform.rotation);
                 }

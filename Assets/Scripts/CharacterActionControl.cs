@@ -6,12 +6,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 {
     public class CharacterActionControl : MonoBehaviour
     {
-        public Animator m_Animator;
+        private Animator m_Animator;
 
-        protected bool moveAble;
+        private bool moveAble;
 
-        protected bool attackAble;
-        protected bool rollAble;
+        private bool attackAble;
+        private bool rollAble;
 
         //roll(dodge) invincible
         private bool dodged;
@@ -19,7 +19,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [Space(10)]
         [Header("----------------------------- Roll Invincible -----------------------------")]
 
-        [SerializeField] protected bool isInvincible;
+        [SerializeField] private bool isInvincible;
         [SerializeField] private float delayBeforeInvincible = 0.1f;
         [SerializeField] private float invincibleTime = 0.5f;
         private float invTimer;
@@ -115,7 +115,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 StartCoroutine(Dodge());
             }
 
-            if (Input.GetKey(KeyCode.LeftShift))
+
+            if (Input.GetKey(KeyCode.LeftShift) && m_Animator.GetFloat("Forward") >= 0.9f)
             {
                 CHscript.changeStamina(-runStaminaCost, 1);
             }
