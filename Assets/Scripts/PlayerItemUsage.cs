@@ -11,12 +11,17 @@ public class PlayerItemUsage : MonoBehaviour
     [SerializeField] private int healItemCount = 5;
     [SerializeField] private float healAmount = 15.0f;
 
+    [SerializeField] private float itemUsableTime = 1.0f;   //item cooldown
+    [SerializeField] private bool itemUsableNow = true;
+
     // Start is called before the first frame update
     void Start()
     {
         CHscript = GetComponent<CharacterHealth>();
 
         HealCountText = GameObject.Find("Heal Count").gameObject.GetComponent<TextMeshProUGUI>();
+
+        itemUsableNow = true;
     }
 
     // Update is called once per frame
@@ -27,7 +32,14 @@ public class PlayerItemUsage : MonoBehaviour
         //use heal item
         if (Input.GetKeyDown(KeyCode.E))
         {
-            useHealItem(1);
+            if(itemUsableNow)
+            {
+                useHealItem(1);
+                setItemUsable(false);
+
+                //item cooldown timer starts
+                StartCoroutine(ItemCoolDown(itemUsableTime));
+            }
         }
     }
 
@@ -56,5 +68,16 @@ public class PlayerItemUsage : MonoBehaviour
         CHscript.changeHp(healAmount);
 
         return count;
+    }
+
+    void setItemUsable(bool flag)
+    {
+        itemUsableNow = flag;
+    }
+
+    IEnumerator ItemCoolDown(float time)
+    {
+        yield return new WaitForSeconds(time);
+        setItemUsable(true);
     }
 }
