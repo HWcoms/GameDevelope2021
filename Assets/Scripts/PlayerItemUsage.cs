@@ -43,12 +43,13 @@ public class PlayerItemUsage : MonoBehaviour
 
     public int useHealItem (int count)
     {
-        /*
-        if (healItemCount <= 0)
+        
+        if (healItemCount - count < 0)
         {
-
+            print("no items");
+            return -1;
         }
-        */
+        
 
         healItemCount -= count;
 
