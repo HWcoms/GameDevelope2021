@@ -9,6 +9,7 @@ public class EnemySpinner : MonoBehaviour
 
     [SerializeField] private float attackDamgage = 25.0f;
     [SerializeField] private GameObject hitParticle;
+    private TextMeshPro hitParticleText;
 
     [Space(10)]
     [Header("----------------------------- Dealable timer -----------------------------")]
@@ -22,6 +23,9 @@ public class EnemySpinner : MonoBehaviour
         playerHP = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
         //hitParticle = (GameObject) Resources.Load("Scenes/Model/hit.prefab");
         //hitParticle.GetComponentInChildren<TextMesh>().text = ((int)attackDamgage).ToString();
+
+        hitParticleText = hitParticle.GetComponentInChildren<TextMeshPro>();
+        hitParticleText.text = "0";
     }
 
     // Update is called once per frame
@@ -55,7 +59,9 @@ public class EnemySpinner : MonoBehaviour
             {
                 if(playerHP.changeHp(-attackDamgage))
                 {
-                    hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
+                    //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
+                    hitParticleText.text = ((int)attackDamgage).ToString();
+
                     isDealready = false;
                     GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position) , transform.rotation);
                 }
