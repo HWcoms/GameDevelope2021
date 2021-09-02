@@ -9,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeshCollider))]
 public class BSPTree:MonoBehaviour
 {
+	#pragma warning disable 0649
 	[SerializeField] private bool drawMeshTreeOnStart;
 
 	public class Node

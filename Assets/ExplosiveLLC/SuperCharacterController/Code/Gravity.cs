@@ -5,6 +5,7 @@
 /// </summary>
 public class Gravity:MonoBehaviour
 {
+	#pragma warning disable 0649
 	[SerializeField] private Transform planet;
 
 	private void Update()

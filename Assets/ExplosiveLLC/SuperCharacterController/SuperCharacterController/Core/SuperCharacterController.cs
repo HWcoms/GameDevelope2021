@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class SuperCharacterController:MonoBehaviour
 {
+	#pragma warning disable 0649
 	[SerializeField] private Vector3 debugMove = Vector3.zero;
 	[SerializeField] private QueryTriggerInteraction triggerInteraction;
 	[SerializeField] private bool fixedTimeStep;
