@@ -12,6 +12,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private bool attackAble;
         private bool rollAble;
+        [SerializeField] private bool attackContinueAble;
 
         //roll(dodge) invincible
         private bool dodged;
@@ -38,6 +39,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [SerializeField] private float attackStaminaCost = 10.0f;
         [SerializeField] private float jumpStaminaCost = 20.0f;
 
+        IEnumerator AttackCoroutine;
+        IEnumerator AttackContinueAbleCoroutine;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -47,6 +51,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             attackAble = true;
             rollAble = true;
+            attackContinueAble = false;
 
             TPUCscript = GetComponent<ThirdPersonUserControl>();
             CHscript = GetComponent<CharacterHealth>();
@@ -88,7 +93,25 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     rollAble = false;
                     m_Animator.SetBool("attack", true);
 
-                    StartCoroutine(attackWait(.9f));
+                    AttackCoroutine = attackWait(.9f);
+                    AttackContinueAbleCoroutine = AttackContinueAbleDelay(.4f);
+                    StartCoroutine(AttackCoroutine);
+                    StartCoroutine(AttackContinueAbleCoroutine);
+                }
+
+                //attack2
+                if(m_Animator.GetBool("attack"))        //while attack
+                {
+                    if(Input.GetMouseButtonDown(0) && attackContinueAble)
+                    {
+                        StopCoroutine(AttackCoroutine);
+                        StopCoroutine(AttackContinueAbleCoroutine);
+                        setAttackContinueAble(false); //attackContinueAble = false;
+
+                        StartCoroutine(AttackCoroutine);
+
+                        setClicked(true); //m_Animator.SetBool("Clicked", true);
+                    }
                 }
 
                 //roll
@@ -142,8 +165,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             yield return new WaitForSeconds(0.15f);
             attackAble = true;
             rollAble = true;
+            attackContinueAble = false;
 
             TPUCscript.setMoveAble(true);
+        }
+
+        IEnumerator AttackContinueAbleDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+
+            attackContinueAble = true;
         }
 
         IEnumerator rollWait(float delay)
@@ -182,6 +213,26 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public bool getInvincible()
         {
             return isInvincible;
+        }
+
+        public void setClicked(bool flag)
+        {
+            m_Animator.SetBool("Clicked", flag);
+        }
+
+        public bool getClicked()
+        {
+            return m_Animator.GetBool("Clicked");
+        }
+
+        public void setAttackContinueAble(bool flag)
+        {
+            attackContinueAble = flag;
+        }
+
+        public bool getAttackContinueAble()
+        {
+            return attackContinueAble;
         }
     }
 }
