@@ -13,6 +13,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private bool attackAble;
         private bool rollAble;
         [SerializeField] private bool attackContinueAble;
+        [SerializeField]private bool isClicked;
 
         //roll(dodge) invincible
         private bool dodged;
@@ -91,12 +92,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
                     attackAble = false;
                     rollAble = false;
-                    m_Animator.SetBool("attack", true);
+                    setAttackInt(1);    //animtor attack -> true
 
                     AttackCoroutine = attackWait(.9f);
-                    AttackContinueAbleCoroutine = AttackContinueAbleDelay(.4f);
-                    StartCoroutine(AttackCoroutine);
-                    StartCoroutine(AttackContinueAbleCoroutine);
+                    AttackContinueAbleCoroutine = AttackContinueAbleDelay(.3f);
+                    //StartCoroutine(AttackCoroutine);
+                    //StartCoroutine(AttackContinueAbleCoroutine);
                 }
 
                 //attack2
@@ -104,13 +105,23 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     if(Input.GetMouseButtonDown(0) && attackContinueAble)
                     {
-                        StopCoroutine(AttackCoroutine);
-                        StopCoroutine(AttackContinueAbleCoroutine);
-                        setAttackContinueAble(false); //attackContinueAble = false;
+                        //StopCoroutine(AttackCoroutine);
+                        //StopCoroutine(AttackContinueAbleCoroutine);
+                        //setAttackContinueAble(false); //attackContinueAble = false;
 
-                        StartCoroutine(AttackCoroutine);
+                        //StartCoroutine(AttackCoroutine);
+                        //StartCoroutine(AttackContinueAbleCoroutine);
 
                         setClicked(true); //m_Animator.SetBool("Clicked", true);
+                       
+                    }
+                }
+
+                if (m_Animator.GetBool("attack"))
+                {
+                    if (getClicked())
+                    {
+                        setContinueAttack(true);
                     }
                 }
 
@@ -159,7 +170,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             yield return new WaitForSeconds(delay);
 
-            m_Animator.SetBool("attack", false);
+            setAttackInt(0);    //animtor attack -> false
 
 
             yield return new WaitForSeconds(0.15f);
@@ -215,14 +226,45 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             return isInvincible;
         }
 
+        public void setContinueAttack(bool flag)
+        {
+            m_Animator.SetBool("ContinueAttack", flag);
+        }
+
+        public void setContinueAttackInt(int flag)
+        {
+            bool fl = (flag == 0 ? false : true);
+
+            m_Animator.SetBool("ContinueAttack", fl);
+            print(fl);
+
+            if(!fl)
+            {
+                setClicked(false);
+                setAttackContinueAble(false);
+            }
+        }
+        public bool getContinueAttack()
+        {
+            return m_Animator.GetBool("ContinueAttack");
+        }
+
         public void setClicked(bool flag)
         {
-            m_Animator.SetBool("Clicked", flag);
+            isClicked = flag;
         }
+        
+        public void setClickedInt(int flag)
+        {
+            bool fl = (flag == 0 ? false : true);
+
+            isClicked = fl;
+        }
+
 
         public bool getClicked()
         {
-            return m_Animator.GetBool("Clicked");
+            return isClicked;
         }
 
         public void setAttackContinueAble(bool flag)
@@ -230,9 +272,42 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             attackContinueAble = flag;
         }
 
+        public void setAttackContinueAbleInt(int flag)
+        {
+            bool fl = (flag == 0 ? false : true);
+
+            attackContinueAble = fl;
+        }
+
         public bool getAttackContinueAble()
         {
             return attackContinueAble;
+        }
+        /*
+        public bool checkAnimContinue()
+        {
+            if (getClicked())
+                return true;
+            else
+                return false;
+        }*/
+
+        public void setAttackInt(int flag)
+        {
+            if (getContinueAttack()) return;
+
+            bool fl = (flag == 0 ? false : true);
+
+            m_Animator.SetBool("attack", fl);
+
+            if(fl == false)
+            {
+                attackAble = true;
+                rollAble = true;
+                attackContinueAble = false;
+
+                TPUCscript.setMoveAble(true);
+            }
         }
     }
 }
