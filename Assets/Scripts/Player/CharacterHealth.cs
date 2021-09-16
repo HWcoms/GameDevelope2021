@@ -141,7 +141,7 @@ public class CharacterHealth : MonoBehaviour
         {
             hpImg.fillAmount = currentHealthPct;
             handleHealthbgChange(currentHealthPct, hpbgDelay);
-            print("a");
+            //print("a");
         }
         else if (mode == 2)
         {
