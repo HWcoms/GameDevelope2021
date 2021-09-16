@@ -95035,6 +95035,13 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 1.2
+    functionName: setAttackInt
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.2
     functionName: setContinueAttackInt
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -95043,13 +95050,6 @@ AnimationClip:
     messageOptions: 0
   - time: 1.2
     functionName: playContinueAttackAnim
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.2
-    functionName: setAttackInt
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
