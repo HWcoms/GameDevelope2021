@@ -5,6 +5,9 @@ using TMPro;
 
 public class EnemySpinner : MonoBehaviour
 {
+    [SerializeField] private bool isMove = true;
+    [SerializeField] private bool isDeal = true;
+
     CharacterHealth playerHP;
     EnemyHealth enemyHP;
 
@@ -33,10 +36,13 @@ public class EnemySpinner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isMove) return;
+
         if (playerHP.getDead() || enemyHP.getDead()) return;
         this.transform.Rotate(0,0.3f,0,Space.Self);
     }
 
+    
     private void FixedUpdate()
     {
         if(!isDealready)
@@ -50,9 +56,12 @@ public class EnemySpinner : MonoBehaviour
             isDealready = true;
         }
     }
+    
 
     private void OnTriggerStay(Collider other)
     {
+        if (!isDeal) return;
+
         if (playerHP.getDead() || enemyHP.getDead()) return;
 
         //print(other.gameObject.tag);

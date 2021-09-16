@@ -2235,6 +2235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c05ba7feae131542b31772204dcb84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMove: 0
+  isDeal: 1
   attackDamgage: 17
   hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
     type: 3}
