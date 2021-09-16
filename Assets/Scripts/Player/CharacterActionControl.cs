@@ -94,10 +94,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     rollAble = false;
                     setAttackInt(1);    //animtor attack -> true
 
+                    /*
                     AttackCoroutine = attackWait(.9f);
                     AttackContinueAbleCoroutine = AttackContinueAbleDelay(.3f);
-                    //StartCoroutine(AttackCoroutine);
-                    //StartCoroutine(AttackContinueAbleCoroutine);
+                    StartCoroutine(AttackCoroutine);
+                    StartCoroutine(AttackContinueAbleCoroutine);*/
                 }
 
                 //attack2
@@ -105,15 +106,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     if(Input.GetMouseButtonDown(0) && attackContinueAble)
                     {
-                        //StopCoroutine(AttackCoroutine);
-                        //StopCoroutine(AttackContinueAbleCoroutine);
-                        //setAttackContinueAble(false); //attackContinueAble = false;
+                        /*
+                        StopCoroutine(AttackCoroutine);
+                        StopCoroutine(AttackContinueAbleCoroutine);
+                        setAttackContinueAble(false); //attackContinueAble = false;
 
-                        //StartCoroutine(AttackCoroutine);
-                        //StartCoroutine(AttackContinueAbleCoroutine);
+                        StartCoroutine(AttackCoroutine);
+                        StartCoroutine(AttackContinueAbleCoroutine);
+                        */
 
                         setClicked(true); //m_Animator.SetBool("Clicked", true);
-                       
                     }
                 }
 
@@ -165,7 +167,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
         }
-
+        /*
         IEnumerator attackWait(float delay)
         {
             yield return new WaitForSeconds(delay);
@@ -187,6 +189,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             attackContinueAble = true;
         }
+        */
 
         IEnumerator rollWait(float delay)
         {
