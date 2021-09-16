@@ -113,6 +113,9 @@ public class CharacterHealth : MonoBehaviour
         currentHealthPct = (float)hp / (float)maxHp;
         handleHealthChange(currentHealthPct);
 
+        //hpbgImg.fillAmount = currentHealthPct;        //reset this img to hpimg fill amount
+        //handleHealthbgChange(currentHealthPct, .0f);
+
         return true;
     }
 
@@ -222,6 +225,7 @@ public class CharacterHealth : MonoBehaviour
         }
 
         hpImg.fillAmount = percent;
+        hpbgImg.fillAmount = hpImg.fillAmount;
     }
 
     //HPbg effect
