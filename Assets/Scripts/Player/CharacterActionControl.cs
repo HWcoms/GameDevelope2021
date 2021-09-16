@@ -308,7 +308,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public void setAttackInt(int flag)
         {
-            if (getContinueAttack()) return;
+            //if (getContinueAttack()) return;
 
             bool fl = (flag == 0 ? false : true);
 
