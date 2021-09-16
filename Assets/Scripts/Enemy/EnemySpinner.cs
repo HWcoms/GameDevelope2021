@@ -57,7 +57,7 @@ public class EnemySpinner : MonoBehaviour
         {
             if(isDealready)
             {
-                if(playerHP.changeHp(-attackDamgage))
+                if(playerHP.changeHp(-attackDamgage, 1))
                 {
                     //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
                     hitParticleText.text = ((int)attackDamgage).ToString();

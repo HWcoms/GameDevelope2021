@@ -20,11 +20,13 @@ public class CharacterHealth : MonoBehaviour
     private float currentStaminaPct;
     private Image hpImg;
     private Image staminaImg;
+    private Image hpbgImg;
 
     [Space(10)]
     [Header("--------------------------- Status Bar (Visual) -----------------------------")]
 
     [SerializeField] private float updateSpeedSeconds = 0.3f;
+    [SerializeField] private float hpbgDelay = 0.5f;
 
     //UIText
     private Text hpText;
@@ -66,6 +68,7 @@ public class CharacterHealth : MonoBehaviour
         CACscript = GetComponent<UnityStandardAssets.Characters.ThirdPerson.CharacterActionControl>();
 
         hpImg = GameObject.Find("HPFill").GetComponent<Image>();
+        hpbgImg = GameObject.Find("HPbgFill").GetComponent<Image>();
         staminaImg = GameObject.Find("STAFill").GetComponent<Image>();
 
         hpText = GameObject.Find("HPnum").GetComponent<Text>();
@@ -113,13 +116,13 @@ public class CharacterHealth : MonoBehaviour
         return true;
     }
 
-    public void changeHp(float value, int mode) //mode 1: small changes, mode2: DOT damage
+    public bool changeHp(float value, int mode) //mode 1: small changes, mode2: DOT damage
     {
         if (value < 0)
         {
             if (CACscript.getInvincible() && mode != 2) //when dodge
             {
-                return;
+                return false;
             }
             isHpRezen = true;
             hpTimer = hpRezenDelay;
@@ -134,11 +137,15 @@ public class CharacterHealth : MonoBehaviour
         if (mode == 1)
         {
             hpImg.fillAmount = currentHealthPct;
+            handleHealthbgChange(currentHealthPct, hpbgDelay);
+            print("a");
         }
         else if (mode == 2)
         {
             handleStaminaChange(currentStaminaPct);
         }
+
+        return true;
     }
 
     public void changeStamina(float value)
@@ -197,6 +204,11 @@ public class CharacterHealth : MonoBehaviour
        StartCoroutine(ChangeStaToPct(percent));
     }
 
+    private void handleHealthbgChange(float percent, float delay)
+    {
+       StartCoroutine(ChangeHpbgToPct(percent, delay));
+    }
+
     private IEnumerator ChangeHpToPct(float percent)
     {
         float preChangePct = hpImg.fillAmount;
@@ -211,6 +223,26 @@ public class CharacterHealth : MonoBehaviour
 
         hpImg.fillAmount = percent;
     }
+
+    //HPbg effect
+    private IEnumerator ChangeHpbgToPct(float percent, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        float preChangePct = hpbgImg.fillAmount;
+        float elapsed = 0f;
+
+        while (elapsed < updateSpeedSeconds)
+        {
+            elapsed += Time.deltaTime;
+            hpbgImg.fillAmount = Mathf.Lerp(preChangePct, percent, elapsed / updateSpeedSeconds);
+            yield return null;
+        }
+
+        hpbgImg.fillAmount = percent;
+    }
+
+
 
     private IEnumerator ChangeStaToPct(float percent)
     {
