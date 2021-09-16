@@ -629,6 +629,7 @@ MonoBehaviour:
   rollStaminaCost: 20
   attackStaminaCost: 10
   jumpStaminaCost: 20
+  playerWeaponScript: {fileID: 0}
 --- !u!114 &544350971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,6 +1183,39 @@ MonoBehaviour:
   ScrollDampening: 6
   target: {fileID: 0}
   smoothSpeed: 0.125
+--- !u!1 &1015791652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 30335432265253405, guid: 917e00053cb499241a1d42e2b2716532,
+    type: 3}
+  m_PrefabInstance: {fileID: 2017805215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1015791656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015791652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7735736796854854e9efda2a92e91558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  WeaponCollider: {fileID: 0}
+--- !u!65 &1015791657
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015791652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.29117963, y: 1.3027449, z: 0.145093}
+  m_Center: {x: -0.00022501107, y: 0.44038746, z: 0.00000011036695}
 --- !u!1 &1023280538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,7 +1839,7 @@ Transform:
   m_GameObject: {fileID: 1364460726}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0.00999999, y: 0.69, z: 0}
-  m_LocalScale: {x: 0.22079295, y: 15.676483, z: 0.22079295}
+  m_LocalScale: {x: 0.22079295, y: 15.676483, z: 1.514176}
   m_Children: []
   m_Father: {fileID: 1465155121}
   m_RootOrder: 0
@@ -2099,6 +2133,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e1af62c13f7cf46a7d9905f0351967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
+  maxHp: 100
+  maxStamina: 100
+  hp: 100
+  stamina: 100
+  playerWeaponScript: {fileID: 0}
+  PlayerWeaponDamage: 0
+  isInvincible: 0
 --- !u!1 &1544816320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,7 +2456,7 @@ Transform:
   m_GameObject: {fileID: 1912120374}
   m_LocalRotation: {x: -0.49999988, y: -0.50000036, z: -0.50000006, w: 0.4999998}
   m_LocalPosition: {x: 0.00999999, y: 0.69, z: 0}
-  m_LocalScale: {x: 0.22079295, y: 15.676487, z: 0.22079301}
+  m_LocalScale: {x: 0.22079295, y: 15.676487, z: 1.5141764}
   m_Children: []
   m_Father: {fileID: 1465155121}
   m_RootOrder: 1
@@ -2486,6 +2528,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 30335432265253405, guid: 917e00053cb499241a1d42e2b2716532,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerWeapon
+      objectReference: {fileID: 0}
     - target: {fileID: 1136994913350202544, guid: 917e00053cb499241a1d42e2b2716532,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -43,6 +43,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         IEnumerator AttackCoroutine;
         IEnumerator AttackContinueAbleCoroutine;
 
+        [Space(10)]
+        [Header("----------------------------- Weapon Collider -----------------------------")]
+        [SerializeField] private PlayerWeapon playerWeaponScript;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -59,6 +63,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             isInvincible = false;
             dodged = false;
+
+            playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
         }
 
         // Update is called once per frame
@@ -250,7 +256,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             bool fl = (flag == 0 ? false : true);
 
             m_Animator.SetBool("ContinueAttack", fl);
-            print(fl);
+            //print(fl);
 
             if(!fl)
             {
@@ -322,6 +328,27 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
                 TPUCscript.setMoveAble(true);
             }
+        }
+
+        //hit trigger
+        public void hit()
+        {
+            print ("hit");
+            playerWeaponScript.switchCollider(true);
+
+            StartCoroutine(hitDisableWait(0.5f));   //disable detector after delay
+        }
+        public void disablehit()
+        {
+            print("hit detact disabled");
+            playerWeaponScript.switchCollider(false);
+        }
+
+        IEnumerator hitDisableWait(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+
+            disablehit();
         }
     }
 }
