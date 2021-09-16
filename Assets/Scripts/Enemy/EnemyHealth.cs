@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -20,15 +21,26 @@ public class EnemyHealth : MonoBehaviour
     private float currentHealthPct;
     private float currentStaminaPct;
 
+    //UIText
+    private TextMeshProUGUI hpText;
+    private TextMeshProUGUI staminaText;
+
     void Start()
     {
+        hp = maxHp;
+        stamina = maxStamina;
+
         playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
         PlayerWeaponDamage = playerWeaponScript.getDamage();
+
+        hpText = GameObject.Find("EnemyHP").GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
     {
-        
+        hpText.text = hp.ToString();
+
+        checkHP();
     }
 
     private void OnTriggerStay(Collider other)
@@ -54,6 +66,12 @@ public class EnemyHealth : MonoBehaviour
                 
             }
         }
+    }
+
+    public void checkHP()
+    {
+        if (hp <= 0)
+            Dead();
     }
 
     public bool changeHp(float value)       //if hit return true, dodge return false

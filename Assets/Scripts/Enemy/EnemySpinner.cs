@@ -6,6 +6,7 @@ using TMPro;
 public class EnemySpinner : MonoBehaviour
 {
     CharacterHealth playerHP;
+    EnemyHealth enemyHP;
 
     [SerializeField] private float attackDamgage = 25.0f;
     [SerializeField] private GameObject hitParticle;
@@ -21,6 +22,7 @@ public class EnemySpinner : MonoBehaviour
     void Start()
     {
         playerHP = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
+        enemyHP = this.GetComponent<EnemyHealth>();
         //hitParticle = (GameObject) Resources.Load("Scenes/Model/hit.prefab");
         //hitParticle.GetComponentInChildren<TextMesh>().text = ((int)attackDamgage).ToString();
 
@@ -31,6 +33,7 @@ public class EnemySpinner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerHP.getDead() || enemyHP.getDead()) return;
         this.transform.Rotate(0,0.3f,0,Space.Self);
     }
 
@@ -50,7 +53,7 @@ public class EnemySpinner : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (playerHP.getDead()) return;
+        if (playerHP.getDead() || enemyHP.getDead()) return;
 
         //print(other.gameObject.tag);
         if (other.gameObject.tag == "Player")
