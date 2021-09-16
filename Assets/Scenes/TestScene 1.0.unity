@@ -620,6 +620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7a31c077b9f02419fb389445bac441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackContinueAble: 0
+  isClicked: 0
   isInvincible: 0
   delayBeforeInvincible: 0.1
   invincibleTime: 0.5
@@ -647,7 +649,7 @@ MonoBehaviour:
   updateSpeedSeconds: 0.3
   hpRezenDelay: 7
   hpRezenSpeed: 0.05
-  staminaRezenDelay: 2.5
+  staminaRezenDelay: 1
   staminaRezenSpeed: 0.5
 --- !u!114 &544350972
 MonoBehaviour:

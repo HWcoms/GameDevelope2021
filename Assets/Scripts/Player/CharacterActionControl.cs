@@ -98,7 +98,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     AttackCoroutine = attackWait(.9f);
                     AttackContinueAbleCoroutine = AttackContinueAbleDelay(.3f);
                     StartCoroutine(AttackCoroutine);
-                    StartCoroutine(AttackContinueAbleCoroutine);*/
+                    StartCoroutine(AttackContinueAbleCoroutine);
+                    */
                 }
 
                 //attack2
@@ -232,6 +233,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public void setContinueAttack(bool flag)
         {
             m_Animator.SetBool("ContinueAttack", flag);
+        }
+
+        public void playContinueAttackAnim(int flag)
+        {
+            bool fl = (flag == 0 ? false : true);
+
+            if (fl)
+                m_Animator.SetBool("ContinueAttackAnim", true);
+            else
+                m_Animator.SetBool("ContinueAttackAnim", false);
         }
 
         public void setContinueAttackInt(int flag)
