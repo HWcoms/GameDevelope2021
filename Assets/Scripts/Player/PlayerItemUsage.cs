@@ -29,6 +29,8 @@ public class PlayerItemUsage : MonoBehaviour
     {
         HealCountText.text = getHealItemCount().ToString();
 
+        if(CHscript.getDead()) return;
+
         //use heal item
         if (Input.GetKeyDown(KeyCode.E))
         {
