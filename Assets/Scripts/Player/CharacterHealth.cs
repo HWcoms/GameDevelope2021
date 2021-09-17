@@ -18,15 +18,17 @@ public class CharacterHealth : MonoBehaviour
     
     private float currentHealthPct;
     private float currentStaminaPct;
-    private Image hpImg;
-    private Image staminaImg;
-    private Image hpbgImg;
+    
 
     [Space(10)]
     [Header("--------------------------- Status Bar (Visual) -----------------------------")]
 
     [SerializeField] private float updateSpeedSeconds = 0.3f;
     [SerializeField] private float hpbgDelay = 0.5f;
+    
+    private Image hpImg;
+    private Image staminaImg;
+    private Image hpbgImg;
 
     //UIText
     private Text hpText;

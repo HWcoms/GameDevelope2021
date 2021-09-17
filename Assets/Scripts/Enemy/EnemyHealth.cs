@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+
 
 public class EnemyHealth : MonoBehaviour
 {
+    [Space(10)]
+    [Header("----------------------------- Health status -----------------------------")]
+
     [SerializeField] private bool isDead = false;
 
     [SerializeField] private float maxHp = 100.0f;
@@ -21,6 +26,13 @@ public class EnemyHealth : MonoBehaviour
     private float currentHealthPct;
     private float currentStaminaPct;
 
+    [Space(10)]
+    [Header("--------------------------- Status Bar (Visual) -----------------------------")]
+
+    private Image hpImg;
+    //private Image staminaImg;
+    private Image hpbgImg;
+
     //UIText
     private TextMeshProUGUI hpText;
     private TextMeshProUGUI staminaText;
@@ -32,6 +44,9 @@ public class EnemyHealth : MonoBehaviour
 
         playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
         PlayerWeaponDamage = playerWeaponScript.getDamage();
+
+        hpImg = GameObject.Find("EnemyHPFill").GetComponent<Image>();
+        //hpbgImg = GameObject.Find("EnemyHPbgFill").GetComponent<Image>();
 
         hpText = GameObject.Find("EnemyHP").GetComponent<TextMeshProUGUI>();
     }
@@ -90,6 +105,7 @@ public class EnemyHealth : MonoBehaviour
         else if (hp > maxHp) hp = maxHp;
 
         currentHealthPct = (float)hp / (float)maxHp;
+        hpImg.fillAmount = currentHealthPct;
 
         return true;
     }
