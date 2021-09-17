@@ -29,6 +29,9 @@ public class EnemyHealth : MonoBehaviour
     [Space(10)]
     [Header("--------------------------- Status Bar (Visual) -----------------------------")]
 
+    [SerializeField] private float updateSpeedSeconds = 0.3f;
+    [SerializeField] private float hpbgDelay = 0.5f;
+
     private Image hpImg;
     //private Image staminaImg;
     private Image hpbgImg;
@@ -46,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
         PlayerWeaponDamage = playerWeaponScript.getDamage();
 
         hpImg = GameObject.Find("EnemyHPFill").GetComponent<Image>();
-        //hpbgImg = GameObject.Find("EnemyHPbgFill").GetComponent<Image>();
+        hpbgImg = GameObject.Find("EnemyHPbgFill").GetComponent<Image>();
 
         hpText = GameObject.Find("EnemyHP").GetComponent<TextMeshProUGUI>();
     }
@@ -106,8 +109,31 @@ public class EnemyHealth : MonoBehaviour
 
         currentHealthPct = (float)hp / (float)maxHp;
         hpImg.fillAmount = currentHealthPct;
+        handleHealthbgChange(currentHealthPct, hpbgDelay);
 
         return true;
+    }
+
+    private void handleHealthbgChange(float percent, float delay)
+    {
+       StartCoroutine(ChangeHpbgToPct(percent, delay));
+    }
+
+    private IEnumerator ChangeHpbgToPct(float percent, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        float preChangePct = hpbgImg.fillAmount;
+        float elapsed = 0f;
+
+        while (elapsed < updateSpeedSeconds)
+        {
+            elapsed += Time.deltaTime;
+            hpbgImg.fillAmount = Mathf.Lerp(preChangePct, percent, elapsed / updateSpeedSeconds);
+            yield return null;
+        }
+
+        hpbgImg.fillAmount = percent;
     }
 
     public bool getInvincible()
