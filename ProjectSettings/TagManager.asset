@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerWeapon
+  - Collide
+  - Fire
+  - Enemy
   layers:
   - Default
   - TransparentFX
