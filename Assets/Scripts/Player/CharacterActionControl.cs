@@ -333,14 +333,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         //hit trigger
         public void hit()
         {
-            print ("hit");
+            //print ("hit");
             playerWeaponScript.switchCollider(true);
 
             StartCoroutine(hitDisableWait(0.5f));   //disable detector after delay
         }
         public void disablehit()
         {
-            print("hit detact disabled");
+            //print("hit detact disabled");
             playerWeaponScript.switchCollider(false);
         }
 
