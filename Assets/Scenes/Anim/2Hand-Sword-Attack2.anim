@@ -95013,7 +95013,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 0.46666667
+  - time: 0.43333334
     functionName: hit
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -95026,6 +95026,13 @@ AnimationClip:
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 1
+    messageOptions: 0
+  - time: 0.6666667
+    functionName: disablehit
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
     messageOptions: 0
   - time: 1.2
     functionName: setContinueAttackInt
