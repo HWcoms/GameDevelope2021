@@ -32,9 +32,9 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float updateSpeedSeconds = 0.3f;
     [SerializeField] private float hpbgDelay = 0.5f;
 
-    private Image hpImg;
+    [SerializeField] private Image hpImg;
     //private Image staminaImg;
-    private Image hpbgImg;
+    [SerializeField] private Image hpbgImg;
 
     //UIText
     private TextMeshProUGUI hpText;
@@ -48,15 +48,19 @@ public class EnemyHealth : MonoBehaviour
         playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
         PlayerWeaponDamage = playerWeaponScript.getDamage();
 
-        hpImg = GameObject.Find("EnemyHPFill").GetComponent<Image>();
-        hpbgImg = GameObject.Find("EnemyHPbgFill").GetComponent<Image>();
+        hpImg = transform.Find("Canvas/EnemyHPBar/EnemyHPFill").GetComponent<Image>();
 
-        hpText = GameObject.Find("EnemyHP").GetComponent<TextMeshProUGUI>();
+        hpbgImg = transform.Find("Canvas/EnemyHPBar/EnemyHPbgFill").GetComponent<Image>();
+
+        //hpText = this.transform.Find("Canvas/EnemyHPBar/EnemyHP").GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
     {
-        hpText.text = hp.ToString();
+        /*
+        if(hpText != null)
+            hpText.text = hp.ToString();
+        */
 
         checkHP();
     }
@@ -73,7 +77,7 @@ public class EnemyHealth : MonoBehaviour
                 if (changeHp(-PlayerWeaponDamage))
                 {
                     playerWeaponScript.switchCollider(false);
-                    print("hit detact disabled");
+                    //print("hit detact disabled");
 
                     //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
                     //hitParticleText.text = ((int)attackDamgage).ToString();
