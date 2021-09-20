@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -53,14 +53,15 @@ public class CharacterHealth : MonoBehaviour
     private UnityStandardAssets.Characters.ThirdPerson.CharacterActionControl CACscript;
 
 
-
+    IEnumerator hpCoroutine;
+    IEnumerator hpbgCoroutine;
 
     // Start is called before the first frame update
     void Start()
     {
         hp = maxHp;
         stamina = maxStamina;
-
+        
         currentHealthPct = (float) hp / (float) maxHp;
         currentStaminaPct = (float)stamina / (float)maxStamina;
 
@@ -116,7 +117,7 @@ public class CharacterHealth : MonoBehaviour
         handleHealthChange(currentHealthPct);
 
         //hpbgImg.fillAmount = currentHealthPct;        //reset this img to hpimg fill amount
-        //handleHealthbgChange(currentHealthPct, .0f);
+        handleHealthbgChange(currentHealthPct, .0f);
 
         return true;
     }
@@ -201,7 +202,10 @@ public class CharacterHealth : MonoBehaviour
 
     private void handleHealthChange(float percent)
     {
-        StartCoroutine(ChangeHpToPct(percent));
+        hpCoroutine = ChangeHpToPct(percent);
+
+        StopCoroutine(hpbgCoroutine);
+        StartCoroutine(hpCoroutine);
     }
 
     private void handleStaminaChange(float percent)
@@ -211,7 +215,10 @@ public class CharacterHealth : MonoBehaviour
 
     private void handleHealthbgChange(float percent, float delay)
     {
-       StartCoroutine(ChangeHpbgToPct(percent, delay));
+       hpbgCoroutine = ChangeHpbgToPct(percent, delay);
+
+       StopCoroutine(hpbgCoroutine);
+       StartCoroutine(hpbgCoroutine);
     }
 
     private IEnumerator ChangeHpToPct(float percent)
