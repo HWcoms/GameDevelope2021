@@ -70,13 +70,14 @@ public class EnemyHealth : MonoBehaviour
         if (getDead()) return;
 
         //print(other.gameObject.tag);
-        if (other.gameObject.tag == "PlayerWeapon")
+        if (other.gameObject.tag == "PlayerWeaponCollider" && playerWeaponScript.getHitDetector())
         {
             //if (isDealready)
             {
                 if (changeHp(-PlayerWeaponDamage))
                 {
-                    playerWeaponScript.switchCollider(false);
+                    //playerWeaponScript.switchCollider(false);
+                    playerWeaponScript.switchHitDetector(false);
                     //print("hit detact disabled");
 
                     //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();

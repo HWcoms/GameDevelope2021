@@ -8,6 +8,7 @@ TagManager:
   - Collide
   - Fire
   - Enemy
+  - PlayerWeaponCollider
   layers:
   - Default
   - TransparentFX
