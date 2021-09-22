@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Collider WeaponCollider;
     [SerializeField] private bool isHitDetected;
 
+    [SerializeField] private GameObject hitParticle;
+    [SerializeField] private GameObject hitParticleTextObj;
+    private TextMeshPro hitParticleText;
+
     void Start()
     {
         hitDetector = GameObject.FindGameObjectWithTag("Player").transform.Find("hitDetector").gameObject;
@@ -18,11 +23,39 @@ public class PlayerWeapon : MonoBehaviour
         WeaponCollider = hitDetector.GetComponent<Collider>();
 
         isHitDetected = false;
+
+        hitParticleText = hitParticleTextObj.GetComponentInChildren<TextMeshPro>();
+        hitParticleText.text = "0";
     }
 
     void Update()
     {
 
+    }
+
+    /*
+    private void OnTriggerStay(Collider other)
+    {
+
+        //print(other.gameObject.tag);
+        if (other.gameObject.tag == "Enemy")
+        {
+            //if (isDealready)
+            {
+                //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
+                
+
+                //isDealready = false;
+                
+            }
+        }
+    }
+    */
+
+    public void playHitParticle(Transform pos)
+    {
+        hitParticleText.text = ((int)damage).ToString();
+        GameObject.Instantiate(hitParticleTextObj, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(pos.transform.position), transform.rotation);
     }
 
     public bool getHitDetector()

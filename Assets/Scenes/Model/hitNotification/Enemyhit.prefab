@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7574874962956237784}
   m_Layer: 9
-  m_Name: hit
+  m_Name: Enemyhit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +89,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6436cef1d172e1a4c8840aa866a6242f, type: 2}
+  - {fileID: 2100000, guid: d0361d2fda2b0cf4cb8603d4b2100532, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,10 +137,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 17
+  m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04f07c2d35da40945a99a5b8cb64abef, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6436cef1d172e1a4c8840aa866a6242f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d50fdf200611f74287dce3a1d65347f, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: d0361d2fda2b0cf4cb8603d4b2100532, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
