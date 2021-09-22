@@ -5,40 +5,27 @@ using TMPro;
 
 public class alphaFadeOut : MonoBehaviour
 {
-    public MeshRenderer meshRenderer;
-    public Color meshColor;
-
-    public float updateSpeedSeconds = 0.3f;
+    [SerializeField] private TextMeshPro tmpText;
+    public float fadeSpeed = 0.3f;
 
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer = this.GetComponent<MeshRenderer>();
-        meshColor = meshRenderer.material.color;
+        tmpText = this.GetComponent<TextMeshPro>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void textFadeOut()
     {
-        
+        StartCoroutine(fadeOutAnim(fadeSpeed, tmpText));
     }
 
-    void fadeOut()
+    private IEnumerator fadeOutAnim(float timeSpeed, TextMeshPro text)
     {
-        StartCoroutine(fadeOutAnim());
-    }
-
-    private IEnumerator fadeOutAnim()
-    {
-        float elapsed = 0f;
-
-        while (elapsed < updateSpeedSeconds)
+        text.color = new Color(text.color.r, text.color.g, text.color.b, 1);
+        while (text.color.a > 0.0f)
         {
-            elapsed += Time.deltaTime;
-            meshColor.a = Mathf.Lerp(1.0f, 0.0f, elapsed / updateSpeedSeconds);
+            text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - (Time.deltaTime * timeSpeed));
             yield return null;
         }
-
-        //hpbgImg.fillAmount = percent;
     }
 }
