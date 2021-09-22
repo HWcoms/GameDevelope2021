@@ -26,6 +26,9 @@ public class EnemyHealth : MonoBehaviour
     private float currentHealthPct;
     private float currentStaminaPct;
 
+    [SerializeField] private bool isDamaged;
+    
+
     [Space(10)]
     [Header("--------------------------- Status Bar (Visual) -----------------------------")]
 
@@ -40,6 +43,11 @@ public class EnemyHealth : MonoBehaviour
     private TextMeshProUGUI hpText;
     private TextMeshProUGUI staminaText;
 
+    [Space(10)]
+    [Header("----------------------------- Weapon Collider -----------------------------")]
+
+    [SerializeField] private PlayerWeaponCollider PlayerWeaponColliderScript;
+
     void Start()
     {
         hp = maxHp;
@@ -48,11 +56,15 @@ public class EnemyHealth : MonoBehaviour
         playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
         PlayerWeaponDamage = playerWeaponScript.getDamage();
 
+        isDamaged = false;
+
         hpImg = transform.Find("Canvas/EnemyHPBar/EnemyHPFill").GetComponent<Image>();
 
         hpbgImg = transform.Find("Canvas/EnemyHPBar/EnemyHPbgFill").GetComponent<Image>();
 
         //hpText = this.transform.Find("Canvas/EnemyHPBar/EnemyHP").GetComponent<TextMeshProUGUI>();
+
+        PlayerWeaponColliderScript = GameObject.FindGameObjectWithTag("PlayerWeaponCollider").GetComponent<PlayerWeaponCollider>();
     }
 
     void Update()
@@ -63,6 +75,8 @@ public class EnemyHealth : MonoBehaviour
         */
 
         checkHP();
+
+        //print(getDamaged());
     }
 
     private void OnTriggerStay(Collider other)
@@ -72,21 +86,25 @@ public class EnemyHealth : MonoBehaviour
         //print(other.gameObject.tag);
         if (other.gameObject.tag == "PlayerWeaponCollider" && playerWeaponScript.getHitDetector())
         {
-            //if (isDealready)
+
+            if (!getDamaged())
             {
+                PlayerWeaponColliderScript.addEnemyDamaged(this.gameObject);
+                setDamaged(true);
                 if (changeHp(-PlayerWeaponDamage))
                 {
                     //playerWeaponScript.switchCollider(false);
-                    playerWeaponScript.switchHitDetector(false);
+                    //playerWeaponScript.switchHitDetector(false);
                     //print("hit detact disabled");
 
                     //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
                     //hitParticleText.text = ((int)attackDamgage).ToString();
 
                     //isDealready = false;
-                    //GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
+                    //GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation)
+                    
+                    
                 }
-                
             }
         }
     }
@@ -153,5 +171,15 @@ public class EnemyHealth : MonoBehaviour
     public bool getDead()
     {
         return isDead;
+    }
+
+    public bool getDamaged()
+    {
+        return isDamaged;
+    }
+
+    public void setDamaged(bool fl)
+    {
+        isDamaged = fl;
     }
 }

@@ -46,6 +46,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [Space(10)]
         [Header("----------------------------- Weapon Collider -----------------------------")]
         [SerializeField] private PlayerWeapon playerWeaponScript;
+        [SerializeField] private PlayerWeaponCollider playerWeaponColliderScript;
+
 
         // Start is called before the first frame update
         void Start()
@@ -65,6 +67,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             dodged = false;
 
             playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
+            playerWeaponColliderScript = GameObject.FindGameObjectWithTag("PlayerWeaponCollider").GetComponent<PlayerWeaponCollider>();
         }
 
         // Update is called once per frame
@@ -344,6 +347,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //print("hit detact disabled");
             //playerWeaponScript.switchCollider(false);
             playerWeaponScript.switchHitDetector(false);
+
+            //reset Enemy's getDamaged
+            playerWeaponColliderScript.resetAllEnemyDamaged();
         }
 
         IEnumerator hitDisableWait(float delay)

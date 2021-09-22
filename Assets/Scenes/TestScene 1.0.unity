@@ -699,10 +699,12 @@ MonoBehaviour:
   playerWeaponScript: {fileID: 0}
   PlayerWeaponDamage: 0
   isInvincible: 0
+  isDamaged: 0
   updateSpeedSeconds: 0.3
   hpbgDelay: 0.5
   hpImg: {fileID: 0}
   hpbgImg: {fileID: 0}
+  PlayerWeaponColliderScript: {fileID: 0}
 --- !u!136 &292699233
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1225,6 +1227,7 @@ MonoBehaviour:
   attackStaminaCost: 10
   jumpStaminaCost: 20
   playerWeaponScript: {fileID: 0}
+  playerWeaponColliderScript: {fileID: 0}
 --- !u!114 &544350971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2923,7 +2926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c05ba7feae131542b31772204dcb84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMove: 1
+  isMove: 0
   isDeal: 1
   attackDamgage: 17
   hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
@@ -2967,10 +2970,12 @@ MonoBehaviour:
   playerWeaponScript: {fileID: 0}
   PlayerWeaponDamage: 0
   isInvincible: 0
+  isDamaged: 0
   updateSpeedSeconds: 0.3
   hpbgDelay: 0.5
   hpImg: {fileID: 0}
   hpbgImg: {fileID: 0}
+  PlayerWeaponColliderScript: {fileID: 0}
 --- !u!1 &1544816320
 GameObject:
   m_ObjectHideFlags: 0
@@ -3502,6 +3507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerWeaponScript: {fileID: 0}
+  collidedObjs: []
 --- !u!1 &1890994022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,7 +3779,7 @@ PrefabInstance:
     - target: {fileID: 1136994913350202544, guid: 917e00053cb499241a1d42e2b2716532,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.587
       objectReference: {fileID: 0}
     - target: {fileID: 1136994913350202544, guid: 917e00053cb499241a1d42e2b2716532,
         type: 3}
@@ -3783,7 +3789,7 @@ PrefabInstance:
     - target: {fileID: 1136994913350202544, guid: 917e00053cb499241a1d42e2b2716532,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 1136994913350202544, guid: 917e00053cb499241a1d42e2b2716532,
         type: 3}

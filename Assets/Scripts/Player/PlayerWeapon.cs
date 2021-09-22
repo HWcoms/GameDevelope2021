@@ -7,7 +7,6 @@ public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField] private float damage = 10.0f;
     
-
     private GameObject hitDetector;
     [SerializeField] private Collider WeaponCollider;
     [SerializeField] private bool isHitDetected;
