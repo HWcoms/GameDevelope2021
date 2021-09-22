@@ -204,7 +204,8 @@ public class CharacterHealth : MonoBehaviour
     {
         hpCoroutine = ChangeHpToPct(percent);
 
-        StopCoroutine(hpbgCoroutine);
+        if(hpCoroutine != null)
+            StopCoroutine(hpbgCoroutine);
         StartCoroutine(hpCoroutine);
     }
 
@@ -215,10 +216,11 @@ public class CharacterHealth : MonoBehaviour
 
     private void handleHealthbgChange(float percent, float delay)
     {
-       hpbgCoroutine = ChangeHpbgToPct(percent, delay);
+        hpbgCoroutine = ChangeHpbgToPct(percent, delay);
 
-       StopCoroutine(hpbgCoroutine);
-       StartCoroutine(hpbgCoroutine);
+        if (hpbgCoroutine != null)
+            StopCoroutine(hpbgCoroutine);
+        StartCoroutine(hpbgCoroutine);
     }
 
     private IEnumerator ChangeHpToPct(float percent)
