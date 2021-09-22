@@ -55,7 +55,7 @@ public class PlayerWeapon : MonoBehaviour
     public void playHitParticle(Transform pos)
     {
         hitParticleText.text = ((int)damage).ToString();
-        GameObject.Instantiate(hitParticleTextObj, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(pos.transform.position), transform.rotation);
+        GameObject.Instantiate(hitParticleTextObj, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(pos.transform.position), Quaternion.Euler(0,0,0));
     }
 
     public bool getHitDetector()

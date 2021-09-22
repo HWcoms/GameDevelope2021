@@ -22,9 +22,11 @@ public class PlayerWeaponCollider : MonoBehaviour
     {
 
         //print(other.gameObject.tag);
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" && playerWeaponScript.getHitDetector())
         {
             playerWeaponScript.playHitParticle(other.transform);
+
+            print( other);
 
             //if (isDealready)
             {
