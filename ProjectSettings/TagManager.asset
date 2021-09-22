@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boss01
   - AD
+  - Monster
   layers:
   - Default
   - TransparentFX

@@ -20,9 +20,11 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="")
+        if(Input.GetKey("Enter"))
         {
+            curHp = curHp - 5;
 
+            Debug.Log("curHp: " + curHp);
         }
         else
         {
