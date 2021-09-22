@@ -27,5 +27,6 @@ public class alphaFadeOut : MonoBehaviour
             text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - (Time.deltaTime * timeSpeed));
             yield return null;
         }
+        Destroy(this.transform.parent.gameObject);
     }
 }
