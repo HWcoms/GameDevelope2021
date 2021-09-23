@@ -1,0 +1,15 @@
+
+
+Requires Unity 5.6.1 or higher.
+
+
+Spider Queen
+
+
+Spider Queen game asset is an animated and rigged 3D model.
+
+She has a walk, jump, die , get hit, idle, right attack and left attack animations.
+
+Textures are hand painted. She has a main spider texture, with a size off 2048x2048, a sword texture with a size off 1024x1024 and a crown texture with 512x512 dimensions.
+The sword and the spider also have normal maps off the same size.
+
