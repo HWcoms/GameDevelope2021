@@ -61,7 +61,6 @@ public class PlayerWeaponCollider : MonoBehaviour
             else if (isEnemy == 2)
             {
                 enemyRoot = other.transform.parent.gameObject;
-                
             }
             enemyHealthScript = enemyRoot.GetComponent<EnemyHealth>();
 
@@ -69,7 +68,14 @@ public class PlayerWeaponCollider : MonoBehaviour
             if (enemyHealthScript.getDead()) return;
 
             if (!enemyHealthScript.getDamaged())
-                playerWeaponScript.playHitParticle(other.transform);
+            {
+               // foreach (GameObject objs in collidedObjs)
+               for(int i=0; i<collidedObjs.Count; i++)
+                {
+                    playerWeaponScript.playHitParticle(other.transform);
+                }
+                    
+            }
         }
     }
 
