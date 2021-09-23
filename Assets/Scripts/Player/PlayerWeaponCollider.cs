@@ -27,15 +27,24 @@ public class PlayerWeaponCollider : MonoBehaviour
     {
         int isEnemy = 0;    //0: false, 1:this. 2:parent's
 
-        if(other.gameObject.tag == "Enemy")
+        try
         {
-            isEnemy = 1;
+            if (other.gameObject.tag == "Enemy")
+            {
+                isEnemy = 1;
+            }
+            else if (other.transform.parent.tag == "Enemy")
+            {
+                //print("this is parent");
+                isEnemy = 2;
+            }
         }
-        else if (other.transform.parent.tag == "Enemy")
+        catch (NullReferenceException ex)
         {
-            print("parent");
-            isEnemy = 2;
+            //Debug.Log("collided obj has tag " + "\""+ "Enemy" + "\"" + " in parent");
         }
+
+        
             
         if (isEnemy != 0 && playerWeaponScript.getHitDetector())
         {
