@@ -700,6 +700,7 @@ MonoBehaviour:
   PlayerWeaponDamage: 0
   isInvincible: 0
   isDamaged: 0
+  isShowedParticle: 0
   updateSpeedSeconds: 0.3
   hpbgDelay: 0.5
   hpImg: {fileID: 0}
@@ -1880,6 +1881,8 @@ MonoBehaviour:
   hitParticle: {fileID: 0}
   hitParticleTextObj: {fileID: 7574874962956237787, guid: 7252ff791f4e4ac439b2415566660a63,
     type: 3}
+  localGameobj: {fileID: 2020621727}
+  offset: 0.63
 --- !u!65 &1015791657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1889,10 +1892,10 @@ BoxCollider:
   m_GameObject: {fileID: 1015791652}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29117963, y: 1.3027449, z: 0.145093}
-  m_Center: {x: -0.00022501107, y: 0.44038746, z: 0.00000011036695}
+  m_Size: {x: 0.29117963, y: 1.5313436, z: 0.145093}
+  m_Center: {x: -0.00022508661, y: 0.55468583, z: 0.000000103414024}
 --- !u!1 &1023280538
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,6 +2640,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358643945}
   m_CullTransparentMesh: 0
+--- !u!4 &1360048193 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4676239291996001297, guid: 917e00053cb499241a1d42e2b2716532,
+    type: 3}
+  m_PrefabInstance: {fileID: 2017805215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1364460726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,6 +2980,7 @@ MonoBehaviour:
   PlayerWeaponDamage: 0
   isInvincible: 0
   isDamaged: 0
+  isShowedParticle: 0
   updateSpeedSeconds: 0.3
   hpbgDelay: 0.5
   hpImg: {fileID: 0}
@@ -3490,7 +3500,7 @@ BoxCollider:
   m_GameObject: {fileID: 1862529860}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.0406123, y: 1.8209311, z: 1.0586945}
   m_Center: {x: -0.02030768, y: 0.9668725, z: 0.6596893}
@@ -3508,6 +3518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerWeaponScript: {fileID: 0}
   collidedObjs: []
+  localGameobj: {fileID: 0}
+  offset: 0.63
 --- !u!1 &1890994022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3869,6 +3881,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2017805215}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2020621727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020621728}
+  m_Layer: 0
+  m_Name: SwordDamageMsgOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2020621728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020621727}
+  m_LocalRotation: {x: -0.19967714, y: -0.6603886, z: 0.71822315, w: 0.09039611}
+  m_LocalPosition: {x: -0.2172877, y: -0.4705089, z: 0.029633641}
+  m_LocalScale: {x: 1.1811976, y: 1.1811974, z: 1.1811976}
+  m_Children: []
+  m_Father: {fileID: 1360048193}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061450687
 GameObject:
   m_ObjectHideFlags: 0

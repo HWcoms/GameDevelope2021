@@ -27,7 +27,8 @@ public class EnemyHealth : MonoBehaviour
     private float currentStaminaPct;
 
     [SerializeField] private bool isDamaged;
-    
+    [SerializeField] private bool isShowedParticle;
+
 
     [Space(10)]
     [Header("--------------------------- Status Bar (Visual) -----------------------------")]
@@ -57,6 +58,7 @@ public class EnemyHealth : MonoBehaviour
         PlayerWeaponDamage = playerWeaponScript.getDamage();
 
         isDamaged = false;
+        isShowedParticle = false;
 
         hpImg = transform.Find("Canvas/EnemyHPBar/EnemyHPFill").GetComponent<Image>();
 
@@ -84,7 +86,7 @@ public class EnemyHealth : MonoBehaviour
         if (getDead()) return;
 
         //print(other.gameObject.tag);
-        if (other.gameObject.tag == "PlayerWeaponCollider" && playerWeaponScript.getHitDetector())
+        if (other.gameObject.tag == "PlayerWeapon" && playerWeaponScript.getHitDetector())
         {
 
             if (!getDamaged())
@@ -179,5 +181,15 @@ public class EnemyHealth : MonoBehaviour
     public void setDamaged(bool fl)
     {
         isDamaged = fl;
+    }
+
+    public bool getShowedParticle()
+    {
+        return isShowedParticle;
+    }
+
+    public void setShowedParticle(bool fl)
+    {
+        isShowedParticle = fl;
     }
 }

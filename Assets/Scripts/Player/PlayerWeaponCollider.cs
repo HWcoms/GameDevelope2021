@@ -11,6 +11,10 @@ public class PlayerWeaponCollider : MonoBehaviour
 
     private Transform swordPos;
 
+    public GameObject localGameobj;
+    public float offset = 0.63f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +25,7 @@ public class PlayerWeaponCollider : MonoBehaviour
         swordPos = GameObject.FindGameObjectWithTag("PlayerWeapon").transform;
         playerWeaponScript = swordPos.GetComponent<PlayerWeapon>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /*
     private void OnTriggerStay(Collider other)
     {
         int isEnemy = 0;    //0: false, 1:this. 2:parent's
@@ -71,17 +69,30 @@ public class PlayerWeaponCollider : MonoBehaviour
 
 
             if (enemyHealthScript.getDead()) return;
-
+            
             if (!enemyHealthScript.getDamaged())
             {
-                playerWeaponScript.playHitParticle(other.transform);
+                Transform localPos = localGameobj.transform;
+                localPos.transform.position = swordPos.transform.position;
+                localPos.rotation = swordPos.rotation;
+                localPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
+
+                //playerWeaponScript.playHitParticle(other.transform);
             }
+            
         }
     }
-
+    */
     public void addEnemyDamaged(GameObject obj)
     {
         collidedObjs.Add(obj);
+
+        Transform localPos = localGameobj.transform;
+        localPos.transform.position = swordPos.transform.position;
+        localPos.rotation = swordPos.rotation;
+        localPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
+
+        playerWeaponScript.playHitParticle(localPos.transform);
     }
 
     public void resetAllEnemyDamaged()
@@ -89,7 +100,13 @@ public class PlayerWeaponCollider : MonoBehaviour
         foreach (GameObject objs in collidedObjs)
         {
             objs.GetComponent<EnemyHealth>().setDamaged(false);
+            objs.GetComponent<EnemyHealth>().setShowedParticle(false);
         }
         collidedObjs.Clear();
+    }
+
+    public List<GameObject> getCollidedObjs()
+    {
+        return collidedObjs;
     }
 }
