@@ -9,12 +9,17 @@ public class PlayerWeaponCollider : MonoBehaviour
 
     [SerializeField] private List<GameObject> collidedObjs;
 
+    private Transform swordPos;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
+        //playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
 
         collidedObjs = new List<GameObject>();
+
+        swordPos = GameObject.FindGameObjectWithTag("PlayerWeapon").transform;
+        playerWeaponScript = swordPos.GetComponent<PlayerWeapon>();
     }
 
     // Update is called once per frame
@@ -69,12 +74,7 @@ public class PlayerWeaponCollider : MonoBehaviour
 
             if (!enemyHealthScript.getDamaged())
             {
-               // foreach (GameObject objs in collidedObjs)
-               for(int i=0; i<collidedObjs.Count; i++)
-                {
-                    playerWeaponScript.playHitParticle(other.transform);
-                }
-                    
+                playerWeaponScript.playHitParticle(other.transform);
             }
         }
     }

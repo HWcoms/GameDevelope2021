@@ -102,8 +102,6 @@ public class EnemyHealth : MonoBehaviour
 
                     //isDealready = false;
                     //GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation)
-                    
-                    
                 }
             }
         }
