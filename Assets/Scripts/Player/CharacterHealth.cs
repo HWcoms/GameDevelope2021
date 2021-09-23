@@ -55,6 +55,8 @@ public class CharacterHealth : MonoBehaviour
 
     IEnumerator hpCoroutine;
     IEnumerator hpbgCoroutine;
+    bool hpCoroutineRunning = false;
+    bool hpbgCoroutineRunning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -204,7 +206,7 @@ public class CharacterHealth : MonoBehaviour
     {
         hpCoroutine = ChangeHpToPct(percent);
 
-        if(hpCoroutine != null)
+        if(hpCoroutineRunning)
             StopCoroutine(hpbgCoroutine);
         StartCoroutine(hpCoroutine);
     }
@@ -218,13 +220,15 @@ public class CharacterHealth : MonoBehaviour
     {
         hpbgCoroutine = ChangeHpbgToPct(percent, delay);
 
-        if (hpbgCoroutine != null)
+        if (hpbgCoroutineRunning)
             StopCoroutine(hpbgCoroutine);
         StartCoroutine(hpbgCoroutine);
     }
 
     private IEnumerator ChangeHpToPct(float percent)
     {
+        hpCoroutineRunning = true;
+
         float preChangePct = hpImg.fillAmount;
         float elapsed = 0f;
 
@@ -237,11 +241,15 @@ public class CharacterHealth : MonoBehaviour
 
         hpImg.fillAmount = percent;
         hpbgImg.fillAmount = hpImg.fillAmount;
+
+        hpCoroutineRunning = false;
     }
 
     //HPbg effect
     private IEnumerator ChangeHpbgToPct(float percent, float delay)
     {
+        hpbgCoroutineRunning = true;
+
         yield return new WaitForSeconds(delay);
 
         float preChangePct = hpbgImg.fillAmount;
@@ -255,6 +263,8 @@ public class CharacterHealth : MonoBehaviour
         }
 
         hpbgImg.fillAmount = percent;
+
+        hpbgCoroutineRunning = false;
     }
 
 
