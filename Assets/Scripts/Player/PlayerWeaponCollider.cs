@@ -15,6 +15,9 @@ public class PlayerWeaponCollider : MonoBehaviour
     public float offset = 0.63f;
     Transform weaponLocalPos;
 
+    bool drawOnce = false;
+    Vector3 TempPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +30,23 @@ public class PlayerWeaponCollider : MonoBehaviour
 
         localGameobj = GameObject.Find("SwordDamageMsgOffset").gameObject;
         weaponLocalPos = localGameobj.transform;
+        TempPos = weaponLocalPos.position;
     }
-
+    /*
     void OnDrawGizmos()
     {
         // Draw a yellow sphere at the transform's position
         if (!Application.isPlaying) return;
-            Gizmos.DrawSphere(weaponLocalPos.position, 0.10f);
-    }
 
+        if (drawOnce)
+        {
+            TempPos = weaponLocalPos.position;
+            drawOnce = false;
+        }
+
+        Gizmos.DrawSphere(TempPos, 0.10f);
+    }*/
+    
 
     /*
     private void OnTriggerStay(Collider other)
@@ -103,8 +114,6 @@ public class PlayerWeaponCollider : MonoBehaviour
         weaponLocalPos.transform.position = swordPos.transform.position;
         weaponLocalPos.rotation = swordPos.rotation;
         weaponLocalPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
-
-        playerWeaponScript.playHitParticle(weaponLocalPos.transform);
     }
 
     public void resetAllEnemyDamaged()
