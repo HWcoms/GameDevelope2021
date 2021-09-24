@@ -32,7 +32,7 @@ public class PlayerWeaponCollider : MonoBehaviour
         weaponLocalPos = localGameobj.transform;
         TempPos = weaponLocalPos.position;
     }
-    /*
+    
     void OnDrawGizmos()
     {
         // Draw a yellow sphere at the transform's position
@@ -44,8 +44,11 @@ public class PlayerWeaponCollider : MonoBehaviour
             drawOnce = false;
         }
 
-        Gizmos.DrawSphere(TempPos, 0.10f);
-    }*/
+        
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(TempPos, 0.10f);
+    }
     
 
     /*
@@ -106,6 +109,8 @@ public class PlayerWeaponCollider : MonoBehaviour
         }
     }
     */
+
+    /*
     public void addEnemyDamaged(GameObject obj)
     {
         collidedObjs.Add(obj);
@@ -114,6 +119,33 @@ public class PlayerWeaponCollider : MonoBehaviour
         weaponLocalPos.transform.position = swordPos.transform.position;
         weaponLocalPos.rotation = swordPos.rotation;
         weaponLocalPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
+
+        playerWeaponScript.playHitParticle(weaponLocalPos.transform);
+
+        drawOnce = true;
+    }
+    */
+
+    public void addEnemyDamaged(GameObject obj)
+    {
+        collidedObjs.Add(obj);
+
+        weaponLocalPos = localGameobj.transform;
+        weaponLocalPos.transform.position = swordPos.transform.position;
+        weaponLocalPos.rotation = swordPos.rotation;
+        weaponLocalPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
+
+        Vector3 closestPoint;
+
+        Collider enemyCollider = obj.GetComponent<Collider>();
+
+        closestPoint = enemyCollider.ClosestPoint(weaponLocalPos.position);
+
+        weaponLocalPos.position = closestPoint;
+
+        playerWeaponScript.playHitParticle(weaponLocalPos.transform);
+
+        drawOnce = true;
     }
 
     public void resetAllEnemyDamaged()
