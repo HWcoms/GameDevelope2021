@@ -24,6 +24,8 @@ public class PlayerWeaponCollider : MonoBehaviour
 
         swordPos = GameObject.FindGameObjectWithTag("PlayerWeapon").transform;
         playerWeaponScript = swordPos.GetComponent<PlayerWeapon>();
+
+        localGameobj = GameObject.Find("SwordDamageMsgOffset").gameObject;
     }
     /*
     private void OnTriggerStay(Collider other)

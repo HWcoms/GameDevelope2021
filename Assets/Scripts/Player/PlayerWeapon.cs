@@ -16,12 +16,12 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private GameObject hitParticleTextObj;
     private TextMeshPro hitParticleText;
 
+    /*
     private PlayerWeaponCollider playerWeaponColliderScript;
-
     private Transform swordPos;
-
     public GameObject localGameobj;
     public float offset = 0.63f;
+    */
 
     void Start()
     {
@@ -34,9 +34,11 @@ public class PlayerWeapon : MonoBehaviour
         hitParticleText = hitParticleTextObj.GetComponentInChildren<TextMeshPro>();
         hitParticleText.text = "0";
 
+        /*
         playerWeaponColliderScript = GameObject.FindGameObjectWithTag("PlayerWeaponCollider").GetComponent<PlayerWeaponCollider>();
-
         swordPos = GameObject.FindGameObjectWithTag("PlayerWeapon").transform;
+        localGameobj = GameObject.Find("SwordDamageMsgOffset").gameObject;
+        */
     }
 
     /*
