@@ -137,15 +137,20 @@ public class PlayerWeaponCollider : MonoBehaviour
 
         Vector3 closestPoint;
 
-        Collider enemyCollider = obj.GetComponent<Collider>();
+        Collider enemyCollider = GetComponent<Collider>();
+
+        if (obj.GetComponentInChildren<Collider>() != null)
+            enemyCollider = obj.GetComponentInChildren<Collider>();
+        else
+            enemyCollider = obj.GetComponent<Collider>();
 
         closestPoint = enemyCollider.ClosestPoint(weaponLocalPos.position);
 
         weaponLocalPos.position = closestPoint;
 
-        playerWeaponScript.playHitParticle(weaponLocalPos.transform);
-
         drawOnce = true;
+
+        playerWeaponScript.playHitParticle(weaponLocalPos.transform);
     }
 
     public void resetAllEnemyDamaged()
