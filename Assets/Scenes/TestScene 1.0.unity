@@ -3518,7 +3518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerWeaponScript: {fileID: 0}
   collidedObjs: []
-  localGameobj: {fileID: 0}
+  localGameobj: {fileID: 2020621727}
   offset: 0.63
 --- !u!1 &1890994022
 GameObject:
