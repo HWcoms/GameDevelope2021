@@ -15,9 +15,15 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private GameObject hitParticle;
     [SerializeField] private GameObject hitParticleTextObj;
     private TextMeshPro hitParticleText;
+    
+    //private PlayerWeaponCollider playerWeaponColliderScript;
+    //public GameObject hitPos;
 
     /*
-    private PlayerWeaponCollider playerWeaponColliderScript;
+    public ContactPoint[] contacts = new ContactPoint[10];
+    int numContact;
+    */
+    /*
     private Transform swordPos;
     public GameObject localGameobj;
     public float offset = 0.63f;
@@ -34,12 +40,36 @@ public class PlayerWeapon : MonoBehaviour
         hitParticleText = hitParticleTextObj.GetComponentInChildren<TextMeshPro>();
         hitParticleText.text = "0";
 
+        
+        //playerWeaponColliderScript = GameObject.FindGameObjectWithTag("PlayerWeaponCollider").GetComponent<PlayerWeaponCollider>();
+        //hitPos = GameObject.Find("hitPos").gameObject;
         /*
-        playerWeaponColliderScript = GameObject.FindGameObjectWithTag("PlayerWeaponCollider").GetComponent<PlayerWeaponCollider>();
         swordPos = GameObject.FindGameObjectWithTag("PlayerWeapon").transform;
         localGameobj = GameObject.Find("SwordDamageMsgOffset").gameObject;
         */
     }
+
+    /*
+    
+    private void OnTriggerStay(Collider other)
+    {
+        print(other.gameObject);
+        
+        numContact = other.get(contacts);
+        Debug.Log(other.contacts.Length);
+        for (int i = 0;i<numContact; i++)
+        {
+            if(Vector3.Distance(contacts[i].point, playerWeaponColliderScript.getWeaponLocalPos().transform.position) < .2f)
+            {
+                hitPos.transform.position = contacts[i].point;
+                //Gizmos.color = Color.blue;
+                //Gizmos.DrawWireSphere(contacts[i].point, 0.15f);
+                
+            }
+            
+        }
+    }
+    */
 
     /*
     private void OnTriggerStay(Collider other)
@@ -103,7 +133,7 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
     */
-    
+
 
     public void playHitParticle(Transform pos)
     {

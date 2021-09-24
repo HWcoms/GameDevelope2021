@@ -13,7 +13,7 @@ public class PlayerWeaponCollider : MonoBehaviour
 
     public GameObject localGameobj;
     public float offset = 0.63f;
-
+    Transform weaponLocalPos;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,17 @@ public class PlayerWeaponCollider : MonoBehaviour
         playerWeaponScript = swordPos.GetComponent<PlayerWeapon>();
 
         localGameobj = GameObject.Find("SwordDamageMsgOffset").gameObject;
+        weaponLocalPos = localGameobj.transform;
     }
+
+    void OnDrawGizmos()
+    {
+        // Draw a yellow sphere at the transform's position
+        if (!Application.isPlaying) return;
+            Gizmos.DrawSphere(weaponLocalPos.position, 0.10f);
+    }
+
+
     /*
     private void OnTriggerStay(Collider other)
     {
@@ -74,10 +84,10 @@ public class PlayerWeaponCollider : MonoBehaviour
             
             if (!enemyHealthScript.getDamaged())
             {
-                Transform localPos = localGameobj.transform;
-                localPos.transform.position = swordPos.transform.position;
-                localPos.rotation = swordPos.rotation;
-                localPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
+                Transform weaponLocalPos = localGameobj.transform;
+                weaponLocalPos.transform.position = swordPos.transform.position;
+                weaponLocalPos.rotation = swordPos.rotation;
+                weaponLocalPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
 
                 //playerWeaponScript.playHitParticle(other.transform);
             }
@@ -89,12 +99,12 @@ public class PlayerWeaponCollider : MonoBehaviour
     {
         collidedObjs.Add(obj);
 
-        Transform localPos = localGameobj.transform;
-        localPos.transform.position = swordPos.transform.position;
-        localPos.rotation = swordPos.rotation;
-        localPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
+        weaponLocalPos = localGameobj.transform;
+        weaponLocalPos.transform.position = swordPos.transform.position;
+        weaponLocalPos.rotation = swordPos.rotation;
+        weaponLocalPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
 
-        playerWeaponScript.playHitParticle(localPos.transform);
+        playerWeaponScript.playHitParticle(weaponLocalPos.transform);
     }
 
     public void resetAllEnemyDamaged()
@@ -110,5 +120,10 @@ public class PlayerWeaponCollider : MonoBehaviour
     public List<GameObject> getCollidedObjs()
     {
         return collidedObjs;
+    }
+
+    public Transform getWeaponLocalPos()
+    {
+        return weaponLocalPos;
     }
 }
