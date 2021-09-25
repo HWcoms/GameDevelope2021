@@ -1207,6 +1207,14 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!81 &544350968
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544350962}
+  m_Enabled: 1
 --- !u!114 &544350970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,6 +1238,7 @@ MonoBehaviour:
   jumpStaminaCost: 20
   playerWeaponScript: {fileID: 0}
   playerWeaponColliderScript: {fileID: 0}
+  swooshSound: {fileID: 8300000, guid: 08b6586b449bf0e4894750b379d28bd8, type: 3}
 --- !u!114 &544350971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,7 +1725,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0

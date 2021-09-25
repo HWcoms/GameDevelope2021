@@ -48,6 +48,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         [SerializeField] private PlayerWeapon playerWeaponScript;
         [SerializeField] private PlayerWeaponCollider playerWeaponColliderScript;
 
+        [Space(10)]
+        [Header("----------------------------- Audio -----------------------------")]
+        public AudioClip swooshSound;
+
 
         // Start is called before the first frame update
         void Start()
@@ -339,6 +343,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             //print ("hit");
             //playerWeaponScript.switchCollider(true);
             playerWeaponScript.switchHitDetector(true);
+
+            //swoosh audio
+            AudioSource.PlayClipAtPoint(swooshSound, transform.position);
 
             StartCoroutine(hitDisableWait(0.5f));   //disable detector after delay
         }
