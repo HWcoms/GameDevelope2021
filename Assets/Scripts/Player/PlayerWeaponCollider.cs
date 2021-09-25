@@ -150,7 +150,7 @@ public class PlayerWeaponCollider : MonoBehaviour
 
         drawOnce = true;
 
-        playerWeaponScript.playHitParticle(weaponLocalPos.transform);
+        playerWeaponScript.playHitParticle(weaponLocalPos.transform, obj.GetComponent<EnemyHealth>().getBodyTpye());
     }
 
     public void resetAllEnemyDamaged()

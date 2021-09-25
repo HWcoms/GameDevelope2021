@@ -12,7 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Collider WeaponCollider;
     [SerializeField] private bool isHitDetected;
 
-    [SerializeField] private GameObject hitParticle;
+    [SerializeField] private GameObject[] hitParticles;
     [SerializeField] private GameObject hitParticleTextObj;
     private TextMeshPro hitParticleText;
     
@@ -135,10 +135,26 @@ public class PlayerWeapon : MonoBehaviour
     */
 
 
-    public void playHitParticle(Transform pos)
+    public void playHitParticle(Transform pos, EnemyHealth.BodyTypeEnum bodyType)
     {
         hitParticleText.text = ((int)damage).ToString();
         GameObject.Instantiate(hitParticleTextObj, pos.transform.position, Quaternion.Euler(0,0,0));
+
+        switch (bodyType)
+        {
+            case EnemyHealth.BodyTypeEnum.FLESH:
+                GameObject.Instantiate(hitParticles[0], pos.transform.position, Quaternion.identity);
+                break;
+            case EnemyHealth.BodyTypeEnum.WOOD:
+                GameObject.Instantiate(hitParticles[1], pos.transform.position, Quaternion.identity);
+                break;
+            case EnemyHealth.BodyTypeEnum.STONE:
+                GameObject.Instantiate(hitParticles[2], pos.transform.position, Quaternion.identity);
+                break;
+            case EnemyHealth.BodyTypeEnum.METAL:
+                GameObject.Instantiate(hitParticles[3], pos.transform.position, Quaternion.identity);
+                break;
+        }
     }
 
     public bool getHitDetector()

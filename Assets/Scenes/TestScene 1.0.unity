@@ -706,6 +706,7 @@ MonoBehaviour:
   hpImg: {fileID: 0}
   hpbgImg: {fileID: 0}
   PlayerWeaponColliderScript: {fileID: 0}
+  bodyTypes: 1
 --- !u!136 &292699233
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1878,7 +1879,11 @@ MonoBehaviour:
   damage: 10
   WeaponCollider: {fileID: 0}
   isHitDetected: 0
-  hitParticle: {fileID: 0}
+  hitParticles:
+  - {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
+  - {fileID: 1000011190285628, guid: beb3acff7ab73944fb8f470f24d74ed3, type: 3}
+  - {fileID: 1000010844420130, guid: 4edabb1c0dde62743b137378c7d22980, type: 3}
+  - {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
   hitParticleTextObj: {fileID: 7574874962956237787, guid: 7252ff791f4e4ac439b2415566660a63,
     type: 3}
 --- !u!65 &1015791657
@@ -3015,6 +3020,7 @@ MonoBehaviour:
   hpImg: {fileID: 0}
   hpbgImg: {fileID: 0}
   PlayerWeaponColliderScript: {fileID: 0}
+  bodyTypes: 2
 --- !u!1 &1544816320
 GameObject:
   m_ObjectHideFlags: 0

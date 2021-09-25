@@ -48,7 +48,8 @@ public class EnemyHealth : MonoBehaviour
     [Header("----------------------------- Weapon Collider -----------------------------")]
 
     [SerializeField] private PlayerWeaponCollider PlayerWeaponColliderScript;
-
+    public enum BodyTypeEnum {FLESH, WOOD, STONE, METAL};
+    [SerializeField] private BodyTypeEnum bodyTypes;
     void Start()
     {
         hp = maxHp;
@@ -191,5 +192,10 @@ public class EnemyHealth : MonoBehaviour
     public void setShowedParticle(bool fl)
     {
         isShowedParticle = fl;
+    }
+
+    public BodyTypeEnum getBodyTpye()
+    {
+        return bodyTypes;
     }
 }
