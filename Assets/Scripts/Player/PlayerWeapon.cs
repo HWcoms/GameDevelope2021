@@ -15,6 +15,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private GameObject[] hitParticles;
     [SerializeField] private GameObject hitParticleTextObj;
     private TextMeshPro hitParticleText;
+
+    public AudioClip[] hitAudios;
     
     //private PlayerWeaponCollider playerWeaponColliderScript;
     //public GameObject hitPos;
@@ -144,15 +146,19 @@ public class PlayerWeapon : MonoBehaviour
         {
             case EnemyHealth.BodyTypeEnum.FLESH:
                 GameObject.Instantiate(hitParticles[0], pos.transform.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(hitAudios[0], pos.transform.position);
                 break;
             case EnemyHealth.BodyTypeEnum.WOOD:
                 GameObject.Instantiate(hitParticles[1], pos.transform.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(hitAudios[1], pos.transform.position);
                 break;
             case EnemyHealth.BodyTypeEnum.STONE:
                 GameObject.Instantiate(hitParticles[2], pos.transform.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(hitAudios[2], pos.transform.position);
                 break;
             case EnemyHealth.BodyTypeEnum.METAL:
                 GameObject.Instantiate(hitParticles[3], pos.transform.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(hitAudios[3], pos.transform.position);
                 break;
         }
     }
