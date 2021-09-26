@@ -6,7 +6,7 @@ public class DebugCommandFunctions : MonoBehaviour
 {
     public static DebugCommandFunctions instance;
 
-    [SerializeField] private EnemyHealth[] load_EnemyHealth;
+    [SerializeField] private Object[] loaded_Script;
 
     static string des;
 
@@ -27,23 +27,23 @@ public class DebugCommandFunctions : MonoBehaviour
 
     public void heal()
     {
-        load_EnemyHealth = GameObject.FindObjectsOfType<EnemyHealth>();
+        loaded_Script = GameObject.FindObjectsOfType<EnemyHealth>();
         
-        foreach(EnemyHealth enemy in load_EnemyHealth)
+        foreach(EnemyHealth enemyScript in loaded_Script)
         {
-            if (enemy.getDead()) enemy.setDead(false);
+            if (enemyScript.getDead()) enemyScript.setDead(false);
 
-            enemy.changeHp(99999);
+            enemyScript.changeHp(99999);
         }
     }
 
     public void kill()
     {
-        load_EnemyHealth = GameObject.FindObjectsOfType<EnemyHealth>();
+        loaded_Script = GameObject.FindObjectsOfType<EnemyHealth>();
 
-        foreach (EnemyHealth enemy in load_EnemyHealth)
+        foreach (EnemyHealth enemyScript in loaded_Script)
         {
-            enemy.changeHp(-99999);
+            enemyScript.changeHp(-99999);
         }
     }
     
