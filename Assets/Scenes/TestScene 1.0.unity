@@ -1214,7 +1214,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544350962}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &544350970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,7 +1238,8 @@ MonoBehaviour:
   jumpStaminaCost: 20
   playerWeaponScript: {fileID: 0}
   playerWeaponColliderScript: {fileID: 0}
-  swooshSound: {fileID: 8300000, guid: 08b6586b449bf0e4894750b379d28bd8, type: 3}
+  swordAudioFX_swoosh: {fileID: 3238343129412994070, guid: 7b07477cbbac92048afca4a08b81b4dc,
+    type: 3}
 --- !u!114 &544350971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,7 +1726,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -2491,6 +2492,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2017805216}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1220782287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1220782288}
+  m_Layer: 0
+  m_Name: swordAudioFXPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1220782288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220782287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.41, z: 0.57}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2017805216}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1255411719
 GameObject:

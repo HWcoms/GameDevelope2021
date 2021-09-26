@@ -50,8 +50,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         [Space(10)]
         [Header("----------------------------- Audio -----------------------------")]
-        public AudioClip swooshSound;
-
+        //public AudioClip swooshSound;
+        public GameObject swordAudioFX_swoosh;
+        private Transform swordAudioFXPos;
 
         // Start is called before the first frame update
         void Start()
@@ -72,6 +73,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
             playerWeaponColliderScript = GameObject.FindGameObjectWithTag("PlayerWeaponCollider").GetComponent<PlayerWeaponCollider>();
+
+            //audio
+            swordAudioFXPos = transform.Find("swordAudioFXPos").transform;
         }
 
         // Update is called once per frame
@@ -345,7 +349,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             playerWeaponScript.switchHitDetector(true);
 
             //swoosh audio
-            AudioSource.PlayClipAtPoint(swooshSound, transform.position);
+            //AudioSource.PlayClipAtPoint(swooshSound, transform.position);
+            Instantiate(swordAudioFX_swoosh, swordAudioFXPos.position, Quaternion.identity);
 
             StartCoroutine(hitDisableWait(0.5f));   //disable detector after delay
         }
