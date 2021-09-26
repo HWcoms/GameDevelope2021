@@ -8,20 +8,25 @@ public class DebugCommandFunctions : MonoBehaviour
 
     [SerializeField] private EnemyHealth[] load_EnemyHealth;
 
+    static string des;
+
     public void InvokeRun(string function, float delay)
     {
+        print("<color=#00FF00> *command* </color>" + "<color=#00FF00>" + function.ToUpper() +"</color>" + " : " + des);
         Invoke(function, delay);
     }
 
-    public static void run(string command)
+    public static void run(string command, string description)
     {
-        if(instance)
+        if (instance)
+        {
+            des = description;
             instance.InvokeRun(command, 0.0f);
+        }
     }
 
     public void heal()
     {
-        print("healed all");
         load_EnemyHealth = GameObject.FindObjectsOfType<EnemyHealth>();
         
         foreach(EnemyHealth enemy in load_EnemyHealth)
@@ -34,7 +39,6 @@ public class DebugCommandFunctions : MonoBehaviour
 
     public void kill()
     {
-        print("killed all");
         load_EnemyHealth = GameObject.FindObjectsOfType<EnemyHealth>();
 
         foreach (EnemyHealth enemy in load_EnemyHealth)

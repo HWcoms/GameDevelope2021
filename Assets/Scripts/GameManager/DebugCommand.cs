@@ -33,7 +33,7 @@ public class DebugCommand : DebugCommandBase
 
     public void runCommand()
     {
-        DebugCommandFunctions.run(this.command);
+        DebugCommandFunctions.run(this.command, commandDescription);
     }
 
 }
