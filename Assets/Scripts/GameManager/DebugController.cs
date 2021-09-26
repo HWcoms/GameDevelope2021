@@ -12,8 +12,10 @@ public class DebugController : MonoBehaviour
 
     public static DebugCommand HEAL;
     public static DebugCommand KILL_ALL;
+    public static DebugCommand HEAL_PLAYER;
+    public static DebugCommand KILL_PLAYER;
 
-    
+
     private DebugCommand[] commandList;
     [SerializeField] private string[] commandListID;
 
@@ -38,14 +40,20 @@ public class DebugController : MonoBehaviour
     private void Awake()
     {
         //commands info
-        HEAL = new DebugCommand("heal", "heal all enemys from the scene.", "heal", "heal");
+        HEAL = new DebugCommand("heal", "heal all enemys to max HP from the scene.", "heal", "heal");
 
         KILL_ALL = new DebugCommand("kill", "kill all enemys from the scene.", "kill", "kill");
-        
+
+        HEAL_PLAYER = new DebugCommand("heal player", "heal player to max HP.", "heal player", "heal_player");
+
+        KILL_PLAYER = new DebugCommand("kill player", "kill player.", "kill player", "kill_player");
+
         commandList = new DebugCommand[]
         {
             HEAL,
-            KILL_ALL
+            KILL_ALL,
+            HEAL_PLAYER,
+            KILL_PLAYER
         };
 
         getCommandListToTextArray();
@@ -110,7 +118,7 @@ public class DebugController : MonoBehaviour
         {
             DebugCommandBase commandBase = commandList[i] as DebugCommandBase;
 
-            if(input.Contains(commandBase.commandId))
+            if(input.Equals(commandBase.commandId))
             {
 
                 if(commandList[i] as DebugCommand != null)

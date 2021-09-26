@@ -6,7 +6,8 @@ public class DebugCommandFunctions : MonoBehaviour
 {
     public static DebugCommandFunctions instance;
 
-    [SerializeField] private Object[] loaded_Script;
+    //[SerializeField] private Object[] loaded_Script;
+    [SerializeField] private List<Object> loaded_Script;
 
     static string des;
 
@@ -14,6 +15,8 @@ public class DebugCommandFunctions : MonoBehaviour
     {
         print("<color=#00FF00> *command* </color>" + "<color=#00FF00>" + function.ToUpper() +"</color>" + " : " + des);
         Invoke(function, delay);
+
+        ClearLoadedList();
     }
 
     public static void run(string command, string description)
@@ -27,9 +30,10 @@ public class DebugCommandFunctions : MonoBehaviour
 
     public void heal()
     {
-        loaded_Script = GameObject.FindObjectsOfType<EnemyHealth>();
-        
-        foreach(EnemyHealth enemyScript in loaded_Script)
+        //loaded_Script = GameObject.FindObjectsOfType<EnemyHealth>();
+        loaded_Script.AddRange(GameObject.FindObjectsOfType<EnemyHealth>());
+
+        foreach (EnemyHealth enemyScript in loaded_Script)
         {
             if (enemyScript.getDead()) enemyScript.setDead(false);
 
@@ -39,17 +43,46 @@ public class DebugCommandFunctions : MonoBehaviour
 
     public void kill()
     {
-        loaded_Script = GameObject.FindObjectsOfType<EnemyHealth>();
+        loaded_Script.AddRange(GameObject.FindObjectsOfType<EnemyHealth>());
 
         foreach (EnemyHealth enemyScript in loaded_Script)
         {
             enemyScript.changeHp(-99999);
         }
     }
+
+    public void heal_player()
+    {
+        loaded_Script.AddRange(GameObject.FindObjectsOfType<CharacterHealth>());
+
+        foreach (CharacterHealth playerScript in loaded_Script)
+        {
+            if (playerScript.getDead()) playerScript.setDead(false);
+
+            playerScript.changeHp(99999);
+        }
+    }
+
+    public void kill_player()
+    {
+        loaded_Script.AddRange(GameObject.FindObjectsOfType<CharacterHealth>());
+
+        foreach (CharacterHealth playerScript in loaded_Script)
+        {
+            playerScript.changeHp(-99999, 1);
+        }
+    }
     
     void Awake()
     {
         instance = this;
+
+        loaded_Script = new List<Object>();
+    }
+
+    void ClearLoadedList()
+    {
+        loaded_Script.Clear();
     }
 
 }
