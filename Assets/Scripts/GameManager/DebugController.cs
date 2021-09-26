@@ -106,6 +106,11 @@ public class DebugController : MonoBehaviour
             if (e.keyCode == KeyCode.Return) {
                 OnReturn();
             }
+            else if (e.keyCode == KeyCode.Escape) {
+                OnToggleDebug();
+                input = "";
+                focused = false;
+            }
         }
 
     }
