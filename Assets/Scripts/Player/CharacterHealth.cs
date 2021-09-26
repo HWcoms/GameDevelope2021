@@ -306,8 +306,14 @@ public class CharacterHealth : MonoBehaviour
 
     public void Dead()
     {
-        isDead = true;
+        setDead(true);
     }
+
+    public void setDead(bool flag)
+    {
+        isDead = flag;
+    }
+
     public bool getDead()
     {
         return isDead;

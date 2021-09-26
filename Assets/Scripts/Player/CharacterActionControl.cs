@@ -89,6 +89,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
                 return;
             }
+            else 
+            {
+                TPUCscript.setMoveAble(true);
+                CHscript.setDead(false);
+                m_Animator.SetBool("dead", false);
+            }
 
             if (!m_Animator.GetBool("OnGround")) return;
 
