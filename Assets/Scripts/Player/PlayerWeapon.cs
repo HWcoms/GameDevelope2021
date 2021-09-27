@@ -17,7 +17,9 @@ public class PlayerWeapon : MonoBehaviour
     private TextMeshPro hitParticleText;
 
     public AudioClip[] hitAudios;
-    
+
+    [SerializeField] private Quaternion rot;
+
     //private PlayerWeaponCollider playerWeaponColliderScript;
     //public GameObject hitPos;
 
@@ -72,7 +74,7 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
     */
-
+    
     /*
     private void OnTriggerStay(Collider other)
     {
@@ -135,29 +137,34 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
     */
-
+    void Update()
+    {
+        Debug.DrawRay(this.transform.position, rot*Vector3.forward, Color.red, 0f, true);
+    }
 
     public void playHitParticle(Transform pos, EnemyHealth.BodyTypeEnum bodyType)
     {
         hitParticleText.text = ((int)damage).ToString();
         GameObject.Instantiate(hitParticleTextObj, pos.transform.position, Quaternion.Euler(0,0,0));
 
+        rot = Quaternion.LookRotation(-(pos.transform.position - this.transform.position).normalized);
+
         switch (bodyType)
         {
             case EnemyHealth.BodyTypeEnum.FLESH:
-                GameObject.Instantiate(hitParticles[0], pos.transform.position, Quaternion.identity);
+                GameObject.Instantiate(hitParticles[0], pos.transform.position, rot);
                 AudioSource.PlayClipAtPoint(hitAudios[0], pos.transform.position);
                 break;
             case EnemyHealth.BodyTypeEnum.WOOD:
-                GameObject.Instantiate(hitParticles[1], pos.transform.position, Quaternion.identity);
+                GameObject.Instantiate(hitParticles[1], pos.transform.position, rot);
                 AudioSource.PlayClipAtPoint(hitAudios[1], pos.transform.position);
                 break;
             case EnemyHealth.BodyTypeEnum.STONE:
-                GameObject.Instantiate(hitParticles[2], pos.transform.position, Quaternion.identity);
+                GameObject.Instantiate(hitParticles[2], pos.transform.position, rot);
                 AudioSource.PlayClipAtPoint(hitAudios[2], pos.transform.position);
                 break;
             case EnemyHealth.BodyTypeEnum.METAL:
-                GameObject.Instantiate(hitParticles[3], pos.transform.position, Quaternion.identity);
+                GameObject.Instantiate(hitParticles[3], pos.transform.position, rot);
                 AudioSource.PlayClipAtPoint(hitAudios[3], pos.transform.position);
                 break;
         }
