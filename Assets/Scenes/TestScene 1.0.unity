@@ -1887,6 +1887,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  damages:
+  - 10
+  - 15
+  - 30
+  attackMode: 0
   WeaponCollider: {fileID: 0}
   isHitDetected: 0
   hitParticles:

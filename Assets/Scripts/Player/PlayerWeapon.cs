@@ -6,8 +6,10 @@ using System;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    [SerializeField] private float damage = 10.0f;
-    
+    [SerializeField] private float damage = 0;
+    [SerializeField] private float[] damages = {10.0f, 15.0f, 30.0f};
+    [SerializeField] private int attackMode = 0;
+
     private GameObject hitDetector;
     [SerializeField] private Collider WeaponCollider;
     [SerializeField] private bool isHitDetected;
@@ -19,6 +21,9 @@ public class PlayerWeapon : MonoBehaviour
     public AudioClip[] hitAudios;
 
     [SerializeField] private Quaternion rot;
+
+    //anim
+    private Animator CACAnim;
 
     //private PlayerWeaponCollider playerWeaponColliderScript;
     //public GameObject hitPos;
@@ -44,7 +49,7 @@ public class PlayerWeapon : MonoBehaviour
         hitParticleText = hitParticleTextObj.GetComponentInChildren<TextMeshPro>();
         hitParticleText.text = "0";
 
-        
+        CACAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         //playerWeaponColliderScript = GameObject.FindGameObjectWithTag("PlayerWeaponCollider").GetComponent<PlayerWeaponCollider>();
         //hitPos = GameObject.Find("hitPos").gameObject;
         /*
@@ -140,6 +145,21 @@ public class PlayerWeapon : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(this.transform.position, rot*Vector3.forward, Color.red, 0f, true);
+
+        currentDamage();
+    }
+
+    public void currentDamage() //몇 연타인지에 따라 데미지 변경
+    {
+        AnimatorStateInfo animatorInfo = CACAnim.GetCurrentAnimatorStateInfo(0);
+        if (animatorInfo.tagHash == Animator.StringToHash("Attack1"))
+            attackMode = 0; 
+        else if (animatorInfo.tagHash == Animator.StringToHash("Attack2"))
+            attackMode = 1;
+        else
+            attackMode = 2;
+
+        damage = damages[attackMode];
     }
 
     public void playHitParticle(Transform pos, EnemyHealth.BodyTypeEnum bodyType)
