@@ -43,6 +43,8 @@ public class EnemySpinner : MonoBehaviour
         }
     }
 
+    
+
     private void OnTriggerStay(Collider other)
     {
         if (playerHP.getDead()) return;
