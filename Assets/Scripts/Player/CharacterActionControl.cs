@@ -91,7 +91,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             else 
             {
-                TPUCscript.setMoveAble(true);
+                //TPUCscript.setMoveAble(true);
                 CHscript.setDead(false);
                 m_Animator.SetBool("dead", false);
             }
