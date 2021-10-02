@@ -56,7 +56,7 @@ public class EnemyHealth : MonoBehaviour
         stamina = maxStamina;
 
         playerWeaponScript = GameObject.FindGameObjectWithTag("PlayerWeapon").GetComponent<PlayerWeapon>();
-        PlayerWeaponDamage = playerWeaponScript.getDamage();
+        
 
         isDamaged = false;
         isShowedParticle = false;
@@ -92,6 +92,8 @@ public class EnemyHealth : MonoBehaviour
 
             if (!getDamaged())
             {
+                PlayerWeaponDamage = playerWeaponScript.getDamage();
+
                 PlayerWeaponColliderScript.addEnemyDamaged(this.gameObject);
                 setDamaged(true);
                 if (changeHp(-PlayerWeaponDamage))
