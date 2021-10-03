@@ -1111,6 +1111,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4115ad375a02cb8499811d93967985d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &477520216
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2304371991414566689, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_Name
+      value: RollCube (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566744, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 627df283154ca674395480744c843e6b, type: 2}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.504
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2346451b12b374a4b8e9d23cce23e2c6, type: 3}
 --- !u!1001 &479279121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24848,11 +24922,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: RollCube
       objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566691, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: damage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566691, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: jumpPower
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2304371991414566744, guid: 2346451b12b374a4b8e9d23cce23e2c6,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 627df283154ca674395480744c843e6b, type: 2}
+    - target: {fileID: 2304371991414566745, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 96
+      objectReference: {fileID: 0}
     - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
         type: 3}
       propertyPath: m_LocalPosition.x

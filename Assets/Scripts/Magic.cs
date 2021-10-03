@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class Magic : Bullet
 {
+
+
+
     Rigidbody rigid;
-    Rigidbody a;
+    Rigidbody rb;
+    public float jumpPower;
     public float angularPower = 2;
     float scaleValue = 0.1f;
     bool isShoot;
+    Collision collision;
 
-    bool isFall;
+    // bool col;
+
+
+    // bool isFall;
+
+
+private void OnCollisionEnter(Collision other) {
+    
+        this.gameObject.SetActive(false);
+    
+}
+
 
 
     // Start is called before the first frame update
@@ -22,6 +38,9 @@ public class Magic : Bullet
         rigid = GetComponent<Rigidbody>();
         StartCoroutine(GainPowerTimer());
         StartCoroutine(GainPower());
+
+        rb = GetComponent<Rigidbody>();
+        // StartCoroutine(FadeAway());
         //  StartCoroutine(FadeAway());
     }
 
@@ -48,12 +67,36 @@ public class Magic : Bullet
         }
     }
 
+//  IEnumerator FadeAway()
+//     {
+//         yield return new WaitForSeconds(1);
+//         while (_spriteRenderer.color.a > 0)
+//         {
+//             var color = _spriteRenderer.color;
+//             //color.a is 0 to 1. So .5*time.deltaTime will take 2 seconds to fade out
+//             color.a -= (.5f * Time.deltaTime);
+
+//             _spriteRenderer.color = color;
+//             //wait for a frame
+//             yield return null;
+//         }
+//         Destroy(gameObject);
+//     }
+
 
 
 
 
     void Update()
     {
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            rb.velocity = Vector3.up * jumpPower;
+            
+        }
+
+
 
     }
 }
