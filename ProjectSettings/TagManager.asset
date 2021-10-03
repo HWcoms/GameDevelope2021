@@ -9,6 +9,7 @@ TagManager:
   - Fire
   - Enemy
   - PlayerWeaponCollider
+  - monster_A
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - PostFX
   - UIwithPostFX
-  - 
+  - Monster
   - 
   - 
   - 

@@ -1,0 +1,2717 @@
+fileFormatVersion: 2
+guid: aba13268f3039f249b841834f4dad755
+timeCreated: 1497562803
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 1_Leg_L.001
+    100002: 1_Leg_L.002
+    100004: 1_Leg_L.003
+    100006: 1_Leg_L.004
+    100008: 1_Leg_L.005
+    100010: 1_Leg_L.006
+    100012: 1_Leg_L.006_end
+    100014: 1_Leg_L.Ctrl
+    100016: 1_Leg_L.Ctrl_end
+    100018: 1_Leg_R.001
+    100020: 1_Leg_R.002
+    100022: 1_Leg_R.003
+    100024: 1_Leg_R.004
+    100026: 1_Leg_R.005
+    100028: 1_Leg_R.006
+    100030: 1_Leg_R.006_end
+    100032: 1_Leg_R_Ctrl
+    100034: 1_Leg_R_Ctrl_end
+    100036: 2_Leg_L.001
+    100038: 2_Leg_L.002
+    100040: 2_Leg_L.003
+    100042: 2_Leg_L.004
+    100044: 2_Leg_L.005
+    100046: 2_Leg_L.006
+    100048: 2_Leg_L.006_end
+    100050: 2_Leg_L.Ctrl
+    100052: 2_Leg_L.Ctrl_end
+    100054: 2_Leg_R.001
+    100056: 2_Leg_R.002
+    100058: 2_Leg_R.003
+    100060: 2_Leg_R.004
+    100062: 2_Leg_R.005
+    100064: 2_Leg_R.006
+    100066: 2_Leg_R.006_end
+    100068: 2_Leg_R_Ctrl
+    100070: 2_Leg_R_Ctrl_end
+    100072: 3_Leg_L.001
+    100074: 3_Leg_L.002
+    100076: 3_Leg_L.003
+    100078: 3_Leg_L.004
+    100080: 3_Leg_L.005
+    100082: 3_Leg_L.006
+    100084: 3_Leg_L.006_end
+    100086: 3_Leg_L.Ctrl
+    100088: 3_Leg_L.Ctrl_end
+    100090: 3_Leg_R.001
+    100092: 3_Leg_R.002
+    100094: 3_Leg_R.003
+    100096: 3_Leg_R.004
+    100098: 3_Leg_R.005
+    100100: 3_Leg_R.006
+    100102: 3_Leg_R.006_end
+    100104: 3_Leg_R_Ctrl
+    100106: 3_Leg_R_Ctrl_end
+    100108: 4_Leg_L.001
+    100110: 4_Leg_L.002
+    100112: 4_Leg_L.003
+    100114: 4_Leg_L.004
+    100116: 4_Leg_L.005
+    100118: 4_Leg_L.006
+    100120: 4_Leg_L.006_end
+    100122: 4_Leg_L.Ctrl
+    100124: 4_Leg_L.Ctrl_end
+    100126: 4_Leg_R.001
+    100128: 4_Leg_R.002
+    100130: 4_Leg_R.003
+    100132: 4_Leg_R.004
+    100134: 4_Leg_R.005
+    100136: 4_Leg_R.006
+    100138: 4_Leg_R.006_end
+    100140: 4_Leg_R_Ctrl
+    100142: 4_Leg_R_Ctrl_end
+    100144: Arm_Bot_L
+    100146: Arm_Bot_R
+    100148: Arm_Top_L
+    100150: Arm_Top_R
+    100152: Back
+    100154: Back.001
+    100156: Back.002
+    100158: Back.002_end
+    100160: Base
+    100162: Crown
+    100164: Finger_1_L.001
+    100166: Finger_1_L.002
+    100168: Finger_1_L.003
+    100170: Finger_1_L.003_end
+    100172: Finger_1_R.001
+    100174: Finger_1_R.002
+    100176: Finger_1_R.003
+    100178: Finger_1_R.003_end
+    100180: Finger_2_L.001
+    100182: Finger_2_L.002
+    100184: Finger_2_L.003
+    100186: Finger_2_L.003_end
+    100188: Finger_2_R.001
+    100190: Finger_2_R.002
+    100192: Finger_2_R.003
+    100194: Finger_2_R.003_end
+    100196: Finger_3_L.001
+    100198: Finger_3_L.002
+    100200: Finger_3_L.003
+    100202: Finger_3_L.003_end
+    100204: Finger_3_R.001
+    100206: Finger_3_R.002
+    100208: Finger_3_R.003
+    100210: Finger_3_R.003_end
+    100212: Finger_4_L.001
+    100214: Finger_4_L.002
+    100216: Finger_4_L.003
+    100218: Finger_4_L.003_end
+    100220: Finger_4_R.001
+    100222: Finger_4_R.002
+    100224: Finger_4_R.003
+    100226: Finger_4_R.003_end
+    100228: Finger_5_L.001
+    100230: Finger_5_L.002
+    100232: Finger_5_L.002_end
+    100234: Finger_5_R.001
+    100236: Finger_5_R.002
+    100238: Finger_5_R.002_end
+    100240: Hair
+    100242: Hair.001
+    100244: Hair.002
+    100246: Hair.003
+    100248: Hair.004
+    100250: Hair.005
+    100252: Hair.006
+    100254: Hair.007
+    100256: Hair.008
+    100258: Hair.009
+    100260: Hair.010
+    100262: Hair.010_end
+    100264: Hair_Ctrl
+    100266: Hair_Ctrl_end
+    100268: Hand_L
+    100270: Hand_R
+    100272: Head
+    100274: Hips.001
+    100276: Main
+    100278: Neck
+    100280: Shoulder_L
+    100282: Shoulder_R
+    100284: Spider_Queen
+    100286: //RootNode
+    100288: Spider_Queen_rig
+    100290: Spine.002
+    100292: Spine.01
+    100294: Sword_L
+    100296: Sword_L_end
+    100298: Sword_R
+    100300: Sword_R_end
+    100302: Swords
+    400000: 1_Leg_L.001
+    400002: 1_Leg_L.002
+    400004: 1_Leg_L.003
+    400006: 1_Leg_L.004
+    400008: 1_Leg_L.005
+    400010: 1_Leg_L.006
+    400012: 1_Leg_L.006_end
+    400014: 1_Leg_L.Ctrl
+    400016: 1_Leg_L.Ctrl_end
+    400018: 1_Leg_R.001
+    400020: 1_Leg_R.002
+    400022: 1_Leg_R.003
+    400024: 1_Leg_R.004
+    400026: 1_Leg_R.005
+    400028: 1_Leg_R.006
+    400030: 1_Leg_R.006_end
+    400032: 1_Leg_R_Ctrl
+    400034: 1_Leg_R_Ctrl_end
+    400036: 2_Leg_L.001
+    400038: 2_Leg_L.002
+    400040: 2_Leg_L.003
+    400042: 2_Leg_L.004
+    400044: 2_Leg_L.005
+    400046: 2_Leg_L.006
+    400048: 2_Leg_L.006_end
+    400050: 2_Leg_L.Ctrl
+    400052: 2_Leg_L.Ctrl_end
+    400054: 2_Leg_R.001
+    400056: 2_Leg_R.002
+    400058: 2_Leg_R.003
+    400060: 2_Leg_R.004
+    400062: 2_Leg_R.005
+    400064: 2_Leg_R.006
+    400066: 2_Leg_R.006_end
+    400068: 2_Leg_R_Ctrl
+    400070: 2_Leg_R_Ctrl_end
+    400072: 3_Leg_L.001
+    400074: 3_Leg_L.002
+    400076: 3_Leg_L.003
+    400078: 3_Leg_L.004
+    400080: 3_Leg_L.005
+    400082: 3_Leg_L.006
+    400084: 3_Leg_L.006_end
+    400086: 3_Leg_L.Ctrl
+    400088: 3_Leg_L.Ctrl_end
+    400090: 3_Leg_R.001
+    400092: 3_Leg_R.002
+    400094: 3_Leg_R.003
+    400096: 3_Leg_R.004
+    400098: 3_Leg_R.005
+    400100: 3_Leg_R.006
+    400102: 3_Leg_R.006_end
+    400104: 3_Leg_R_Ctrl
+    400106: 3_Leg_R_Ctrl_end
+    400108: 4_Leg_L.001
+    400110: 4_Leg_L.002
+    400112: 4_Leg_L.003
+    400114: 4_Leg_L.004
+    400116: 4_Leg_L.005
+    400118: 4_Leg_L.006
+    400120: 4_Leg_L.006_end
+    400122: 4_Leg_L.Ctrl
+    400124: 4_Leg_L.Ctrl_end
+    400126: 4_Leg_R.001
+    400128: 4_Leg_R.002
+    400130: 4_Leg_R.003
+    400132: 4_Leg_R.004
+    400134: 4_Leg_R.005
+    400136: 4_Leg_R.006
+    400138: 4_Leg_R.006_end
+    400140: 4_Leg_R_Ctrl
+    400142: 4_Leg_R_Ctrl_end
+    400144: Arm_Bot_L
+    400146: Arm_Bot_R
+    400148: Arm_Top_L
+    400150: Arm_Top_R
+    400152: Back
+    400154: Back.001
+    400156: Back.002
+    400158: Back.002_end
+    400160: Base
+    400162: Crown
+    400164: Finger_1_L.001
+    400166: Finger_1_L.002
+    400168: Finger_1_L.003
+    400170: Finger_1_L.003_end
+    400172: Finger_1_R.001
+    400174: Finger_1_R.002
+    400176: Finger_1_R.003
+    400178: Finger_1_R.003_end
+    400180: Finger_2_L.001
+    400182: Finger_2_L.002
+    400184: Finger_2_L.003
+    400186: Finger_2_L.003_end
+    400188: Finger_2_R.001
+    400190: Finger_2_R.002
+    400192: Finger_2_R.003
+    400194: Finger_2_R.003_end
+    400196: Finger_3_L.001
+    400198: Finger_3_L.002
+    400200: Finger_3_L.003
+    400202: Finger_3_L.003_end
+    400204: Finger_3_R.001
+    400206: Finger_3_R.002
+    400208: Finger_3_R.003
+    400210: Finger_3_R.003_end
+    400212: Finger_4_L.001
+    400214: Finger_4_L.002
+    400216: Finger_4_L.003
+    400218: Finger_4_L.003_end
+    400220: Finger_4_R.001
+    400222: Finger_4_R.002
+    400224: Finger_4_R.003
+    400226: Finger_4_R.003_end
+    400228: Finger_5_L.001
+    400230: Finger_5_L.002
+    400232: Finger_5_L.002_end
+    400234: Finger_5_R.001
+    400236: Finger_5_R.002
+    400238: Finger_5_R.002_end
+    400240: Hair
+    400242: Hair.001
+    400244: Hair.002
+    400246: Hair.003
+    400248: Hair.004
+    400250: Hair.005
+    400252: Hair.006
+    400254: Hair.007
+    400256: Hair.008
+    400258: Hair.009
+    400260: Hair.010
+    400262: Hair.010_end
+    400264: Hair_Ctrl
+    400266: Hair_Ctrl_end
+    400268: Hand_L
+    400270: Hand_R
+    400272: Head
+    400274: Hips.001
+    400276: Main
+    400278: Neck
+    400280: Shoulder_L
+    400282: Shoulder_R
+    400284: //RootNode
+    400286: Spider_Queen
+    400288: Spider_Queen_rig
+    400290: Spine.002
+    400292: Spine.01
+    400294: Sword_L
+    400296: Sword_L_end
+    400298: Sword_R
+    400300: Sword_R_end
+    400302: Swords
+    4300000: Spider_Queen
+    4300002: Crown
+    4300004: Swords
+    7400000: Attack_Left
+    7400002: Attack_Right
+    7400004: Die
+    7400006: GetHit
+    7400008: Idle
+    7400010: Jump
+    7400012: Walk
+    7400014: Spider_Queen_rig|Attack_Left
+    7400016: Spider_Queen_rig|Attack_Right
+    7400018: Spider_Queen_rig|Idle
+    7400020: Spider_Queen_rig|Walk
+    9500000: //RootNode
+    13700000: Crown
+    13700002: Spider_Queen
+    13700004: Swords
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack_Left
+      takeName: Attack_Left
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crown
+        weight: 1
+      - path: Spider_Queen
+        weight: 1
+      - path: Spider_Queen_rig
+        weight: 1
+      - path: Spider_Queen_rig/Main
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl/1_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl/1_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl/2_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl/2_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl/3_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl/3_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl/4_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl/4_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006/1_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006/1_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006/2_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006/2_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006/3_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006/3_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006/4_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006/4_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002/Back.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010/Hair.010_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003/Finger_1_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003/Finger_2_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003/Finger_3_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003/Finger_4_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002/Finger_5_L.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L/Sword_L_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003/Finger_1_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003/Finger_2_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003/Finger_3_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003/Finger_4_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002/Finger_5_R.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R/Sword_R_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl/Hair_Ctrl_end
+        weight: 1
+      - path: Swords
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack_Right
+      takeName: Attack_Right
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crown
+        weight: 1
+      - path: Spider_Queen
+        weight: 1
+      - path: Spider_Queen_rig
+        weight: 1
+      - path: Spider_Queen_rig/Main
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl/1_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl/1_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl/2_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl/2_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl/3_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl/3_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl/4_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl/4_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006/1_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006/1_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006/2_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006/2_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006/3_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006/3_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006/4_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006/4_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002/Back.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010/Hair.010_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003/Finger_1_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003/Finger_2_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003/Finger_3_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003/Finger_4_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002/Finger_5_L.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L/Sword_L_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003/Finger_1_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003/Finger_2_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003/Finger_3_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003/Finger_4_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002/Finger_5_R.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R/Sword_R_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl/Hair_Ctrl_end
+        weight: 1
+      - path: Swords
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Die
+      takeName: Die
+      firstFrame: 0
+      lastFrame: 54
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crown
+        weight: 1
+      - path: Spider_Queen
+        weight: 1
+      - path: Spider_Queen_rig
+        weight: 1
+      - path: Spider_Queen_rig/Main
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl/1_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl/1_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl/2_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl/2_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl/3_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl/3_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl/4_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl/4_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006/1_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006/1_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006/2_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006/2_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006/3_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006/3_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006/4_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006/4_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002/Back.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010/Hair.010_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003/Finger_1_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003/Finger_2_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003/Finger_3_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003/Finger_4_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002/Finger_5_L.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L/Sword_L_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003/Finger_1_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003/Finger_2_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003/Finger_3_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003/Finger_4_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002/Finger_5_R.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R/Sword_R_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl/Hair_Ctrl_end
+        weight: 1
+      - path: Swords
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: GetHit
+      takeName: GetHit
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crown
+        weight: 1
+      - path: Spider_Queen
+        weight: 1
+      - path: Spider_Queen_rig
+        weight: 1
+      - path: Spider_Queen_rig/Main
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl/1_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl/1_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl/2_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl/2_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl/3_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl/3_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl/4_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl/4_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006/1_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006/1_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006/2_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006/2_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006/3_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006/3_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006/4_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006/4_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002/Back.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010/Hair.010_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003/Finger_1_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003/Finger_2_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003/Finger_3_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003/Finger_4_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002/Finger_5_L.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L/Sword_L_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003/Finger_1_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003/Finger_2_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003/Finger_3_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003/Finger_4_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002/Finger_5_R.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R/Sword_R_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl/Hair_Ctrl_end
+        weight: 1
+      - path: Swords
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crown
+        weight: 1
+      - path: Spider_Queen
+        weight: 1
+      - path: Spider_Queen_rig
+        weight: 1
+      - path: Spider_Queen_rig/Main
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl/1_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl/1_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl/2_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl/2_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl/3_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl/3_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl/4_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl/4_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006/1_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006/1_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006/2_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006/2_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006/3_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006/3_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006/4_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006/4_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002/Back.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010/Hair.010_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003/Finger_1_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003/Finger_2_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003/Finger_3_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003/Finger_4_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002/Finger_5_L.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L/Sword_L_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003/Finger_1_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003/Finger_2_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003/Finger_3_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003/Finger_4_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002/Finger_5_R.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R/Sword_R_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl/Hair_Ctrl_end
+        weight: 1
+      - path: Swords
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump
+      takeName: Jump
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crown
+        weight: 1
+      - path: Spider_Queen
+        weight: 1
+      - path: Spider_Queen_rig
+        weight: 1
+      - path: Spider_Queen_rig/Main
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl/1_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl/1_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl/2_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl/2_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl/3_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl/3_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl/4_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl/4_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006/1_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006/1_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006/2_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006/2_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006/3_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006/3_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006/4_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006/4_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002/Back.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010/Hair.010_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003/Finger_1_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003/Finger_2_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003/Finger_3_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003/Finger_4_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002/Finger_5_L.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L/Sword_L_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003/Finger_1_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003/Finger_2_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003/Finger_3_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003/Finger_4_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002/Finger_5_R.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R/Sword_R_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl/Hair_Ctrl_end
+        weight: 1
+      - path: Swords
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crown
+        weight: 1
+      - path: Spider_Queen
+        weight: 1
+      - path: Spider_Queen_rig
+        weight: 1
+      - path: Spider_Queen_rig/Main
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_L.Ctrl/1_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/1_Leg_R_Ctrl/1_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_L.Ctrl/2_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/2_Leg_R_Ctrl/2_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_L.Ctrl/3_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/3_Leg_R_Ctrl/3_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_L.Ctrl/4_Leg_L.Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/4_Leg_R_Ctrl/4_Leg_R_Ctrl_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_L.001/1_Leg_L.002/1_Leg_L.003/1_Leg_L.004/1_Leg_L.005/1_Leg_L.006/1_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/1_Leg_R.001/1_Leg_R.002/1_Leg_R.003/1_Leg_R.004/1_Leg_R.005/1_Leg_R.006/1_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_L.001/2_Leg_L.002/2_Leg_L.003/2_Leg_L.004/2_Leg_L.005/2_Leg_L.006/2_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/2_Leg_R.001/2_Leg_R.002/2_Leg_R.003/2_Leg_R.004/2_Leg_R.005/2_Leg_R.006/2_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_L.001/3_Leg_L.002/3_Leg_L.003/3_Leg_L.004/3_Leg_L.005/3_Leg_L.006/3_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/3_Leg_R.001/3_Leg_R.002/3_Leg_R.003/3_Leg_R.004/3_Leg_R.005/3_Leg_R.006/3_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_L.001/4_Leg_L.002/4_Leg_L.003/4_Leg_L.004/4_Leg_L.005/4_Leg_L.006/4_Leg_L.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/4_Leg_R.001/4_Leg_R.002/4_Leg_R.003/4_Leg_R.004/4_Leg_R.005/4_Leg_R.006/4_Leg_R.006_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Back/Back.001/Back.002/Back.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Neck/Head/Hair/Hair.001/Hair.002/Hair.003/Hair.004/Hair.005/Hair.006/Hair.007/Hair.008/Hair.009/Hair.010/Hair.010_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_1_L.001/Finger_1_L.002/Finger_1_L.003/Finger_1_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_2_L.001/Finger_2_L.002/Finger_2_L.003/Finger_2_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_3_L.001/Finger_3_L.002/Finger_3_L.003/Finger_3_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_4_L.001/Finger_4_L.002/Finger_4_L.003/Finger_4_L.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Finger_5_L.001/Finger_5_L.002/Finger_5_L.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_L/Arm_Top_L/Arm_Bot_L/Hand_L/Sword_L/Sword_L_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_1_R.001/Finger_1_R.002/Finger_1_R.003/Finger_1_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_2_R.001/Finger_2_R.002/Finger_2_R.003/Finger_2_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_3_R.001/Finger_3_R.002/Finger_3_R.003/Finger_3_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_4_R.001/Finger_4_R.002/Finger_4_R.003/Finger_4_R.003_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Finger_5_R.001/Finger_5_R.002/Finger_5_R.002_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R
+        weight: 1
+      - path: Spider_Queen_rig/Main/Base/Hips.001/Spine.01/Spine.002/Shoulder_R/Arm_Top_R/Arm_Bot_R/Hand_R/Sword_R/Sword_R_end
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl
+        weight: 1
+      - path: Spider_Queen_rig/Main/Hair_Ctrl/Hair_Ctrl_end
+        weight: 1
+      - path: Swords
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
