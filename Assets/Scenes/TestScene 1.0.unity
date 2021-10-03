@@ -496,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMove: 0
   isDeal: 1
+  isHp: 1
   attackDamgage: 25
   hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
     type: 3}
@@ -1135,6 +1136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMove: 0
   isDeal: 1
+  isHp: 1
   attackDamgage: 25
   hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
     type: 3}
@@ -3530,6 +3532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMove: 1
   isDeal: 1
+  isHp: 1
   attackDamgage: 25
   hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
     type: 3}
@@ -3813,6 +3816,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1309433901
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 927137818, guid: 2346451b12b374a4b8e9d23cce23e2c6, type: 3}
+      propertyPath: dealableTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566689, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_Name
+      value: RollCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.9317
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304371991414566751, guid: 2346451b12b374a4b8e9d23cce23e2c6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2346451b12b374a4b8e9d23cce23e2c6, type: 3}
 --- !u!1 &1316479998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4332,6 +4408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMove: 0
   isDeal: 1
+  isHp: 1
   attackDamgage: 17
   hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
     type: 3}

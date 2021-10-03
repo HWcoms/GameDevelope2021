@@ -7,6 +7,7 @@ public class EnemySpinner : MonoBehaviour
 {
     [SerializeField] private bool isMove = true;
     [SerializeField] private bool isDeal = true;
+    [SerializeField] private bool isHp = true;
 
     CharacterHealth playerHP;
     EnemyHealth enemyHP;
@@ -38,6 +39,8 @@ public class EnemySpinner : MonoBehaviour
     {
         if (!isMove) return;
 
+        if (!isHp) return;
+
         if (playerHP.getDead() || enemyHP.getDead()) return;
         this.transform.Rotate(0,0.3f,0,Space.Self);
     }
@@ -57,12 +60,15 @@ public class EnemySpinner : MonoBehaviour
         }
     }
     
-
+    
     private void OnTriggerStay(Collider other)
     {
         if (!isDeal) return;
 
-        if (playerHP.getDead() || enemyHP.getDead()) return;
+        if (playerHP.getDead()) return;
+
+        if (isHp)
+            if (enemyHP.getDead()) return;
 
         //print(other.gameObject.tag);
         if (other.gameObject.tag == "Player")
@@ -78,6 +84,34 @@ public class EnemySpinner : MonoBehaviour
                     GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position) , transform.rotation);
                 }
                     
+            }
+        }
+    }
+    
+    private void OnCollisionStay(Collision other)
+    {
+        if (!isDeal) return;
+
+        if (playerHP.getDead()) return;
+
+        if (isHp)
+            if (enemyHP.getDead()) return;
+
+        //print(other.gameObject.tag);
+        if (other.gameObject.tag == "Player")
+        {
+            if (isDealready)
+            {
+                if (playerHP.changeHp(-attackDamgage, 1) && hitParticle != null)
+                {
+                    
+                    //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
+                    hitParticleText.text = ((int)attackDamgage).ToString();
+
+                    isDealready = false;
+                    GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
+                }
+
             }
         }
     }

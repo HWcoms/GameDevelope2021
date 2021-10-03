@@ -34,41 +34,28 @@ public class SimpleTrap : MonoBehaviour
     
     private void OnTriggerStay(Collider other)
     {
-        
-           // print(other.tag);
-            
-               
+        if(other.tag == "Player")
+        {
+            if (isStone)
+            {
+                Instantiate(stone, this.transform.position + new Vector3(-0, 10, 0), Quaternion.Euler(0, 0, 0));  //오브젝트 생성, 위치, 회전값
 
-               
-
-                if(isStone)
-                {
-                    Instantiate(stone, this.transform.position + new Vector3(-0,10,0), Quaternion.Euler(0,0,0));  //오브젝트 생성, 위치, 회전값
-                    
-                    isStone = false;
-                    StartCoroutine(stoneSpawn(stoneDelay));
-                }
+                isStone = false;
+                StartCoroutine(stoneSpawn(stoneDelay));
+            }
 
 
-                for (int i = 0; i < 0; i++)
-                {
-                    // rigid[i].useGravity = true;
-                    // rigid[i].isKinematic = false;
-                }
+            for (int i = 0; i < 0; i++)
+            {
+                // rigid[i].useGravity = true;
+                // rigid[i].isKinematic = false;
+            }
 
-                // if(other.transform.name == "Player")
-                // {
-                //     other.transform.GetComponent<StatusController>().DecreaseHP(damage);
-                // }
-            
-
-
-
-
-
-
-        
-
+            // if(other.transform.name == "Player")
+            // {
+            //     other.transform.GetComponent<StatusController>().DecreaseHP(damage);
+            // }
+        }
     }
 
 

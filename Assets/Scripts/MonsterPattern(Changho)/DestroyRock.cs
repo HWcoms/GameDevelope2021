@@ -19,10 +19,10 @@ public class DestroyRock : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        print(coll.gameObject.tag);
+        //print(coll.gameObject.tag);
       if(coll.gameObject.tag=="Floor")
         {
-            print("디스트로이");
+            //print("디스트로이");
 
             StartCoroutine(stoneSpawn());
         }
