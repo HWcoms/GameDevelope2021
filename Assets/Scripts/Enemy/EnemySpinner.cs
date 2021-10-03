@@ -88,7 +88,7 @@ public class EnemySpinner : MonoBehaviour
         }
     }
     
-    private void OnCollisionStay(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         if (!isDeal) return;
 
@@ -105,6 +105,34 @@ public class EnemySpinner : MonoBehaviour
                 if (playerHP.changeHp(-attackDamgage, 1) && hitParticle != null)
                 {
                     
+                    //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
+                    hitParticleText.text = ((int)attackDamgage).ToString();
+
+                    isDealready = false;
+                    GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
+                }
+
+            }
+        }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (!isDeal) return;
+
+        if (playerHP.getDead()) return;
+
+        if (isHp)
+            if (enemyHP.getDead()) return;
+
+        //print(other.gameObject.tag);
+        if (other.gameObject.tag == "Player")
+        {
+            if (isDealready)
+            {
+                if (playerHP.changeHp(-attackDamgage, 1) && hitParticle != null)
+                {
+
                     //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
                     hitParticleText.text = ((int)attackDamgage).ToString();
 
