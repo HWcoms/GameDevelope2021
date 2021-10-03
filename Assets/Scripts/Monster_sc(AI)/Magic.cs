@@ -15,6 +15,8 @@ public class Magic : MonoBehaviour
     bool isShoot;
     Collision collision;
 
+    public float waitTime = 0.8f;
+
     // bool col;
 
 
@@ -50,6 +52,7 @@ public class Magic : MonoBehaviour
 
     IEnumerator GainPower()
     {
+        yield return new WaitForSeconds(waitTime);
         while (!isShoot)
         {
             angularPower += 0.02f;
@@ -83,12 +86,12 @@ public class Magic : MonoBehaviour
 
     void Update()
     {
-
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector3.up * jumpPower;
 
-        }
+        }*/
 
 
 

@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpPower: 0
   angularPower: 2
+  waitTime: 0.8
 --- !u!114 &1898457690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  destroyTime: 5
+  destroyTime: 3
   meshRenderer:
   - {fileID: 0}
   alpha: 1
