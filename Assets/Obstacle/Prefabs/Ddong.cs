@@ -10,10 +10,6 @@ public class Ddong : MonoBehaviour
 
     private float mVelocity = 0f;
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        Destroy(this.gameObject);
-    }
 
 
     

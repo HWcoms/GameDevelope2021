@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public int damage;
     //public bool attack;
     public bool magic;
-
+    
     void OnCollisionEnter(Collision coll)
     {
       if(!magic && coll.gameObject.tag=="Floor")

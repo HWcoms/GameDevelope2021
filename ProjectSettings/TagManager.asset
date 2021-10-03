@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - PlayerWeaponCollider
   - monster_A
+  - Floor
   layers:
   - Default
   - TransparentFX

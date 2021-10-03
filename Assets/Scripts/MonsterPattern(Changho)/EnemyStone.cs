@@ -5,12 +5,10 @@ using UnityEngine;
 public class EnemyStone : MonoBehaviour
 {
 
-CharacterHealth playerHP;
+    CharacterHealth playerHP;
 
-[SerializeField] private float attackDamgage = 25.0f;
-[SerializeField] private GameObject hitParticle;
-
-
+    [SerializeField] private float attackDamgage = 25.0f;
+    [SerializeField] private GameObject hitParticle;
 
 
 
