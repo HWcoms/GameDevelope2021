@@ -16,7 +16,7 @@ public class HealItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("HealItem pick up!");
+        //print("HealItem pick up!");
         CHscript.changeHp(healAmount);
         Destroy(this.gameObject);
     }

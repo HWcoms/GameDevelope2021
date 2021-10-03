@@ -57,7 +57,11 @@ public class DebugCommandFunctions : MonoBehaviour
 
         foreach (CharacterHealth playerScript in loaded_Script)
         {
-            if (playerScript.getDead()) playerScript.setDead(false);
+            if (playerScript.getDead())
+            {
+                playerScript.setDead(false);
+                playerScript.GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>().setMoveAble(true);   //set player moveAble = true
+            }
 
             playerScript.changeHp(99999);
         }
