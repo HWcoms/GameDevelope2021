@@ -153,12 +153,47 @@ public class PlayerWeaponCollider : MonoBehaviour
         playerWeaponScript.playHitParticle(weaponLocalPos.transform, obj.GetComponent<EnemyHealth>().getBodyTpye());
     }
 
+    public void addObjectHit(GameObject obj)
+    {
+        collidedObjs.Add(obj);
+
+        weaponLocalPos = localGameobj.transform;
+        weaponLocalPos.transform.position = swordPos.transform.position;
+        weaponLocalPos.rotation = swordPos.rotation;
+        weaponLocalPos.transform.Translate(new Vector3(0, offset, 0), Space.Self);
+
+        Vector3 closestPoint;
+
+        Collider objectCollider = GetComponent<Collider>();
+
+        if (obj.GetComponentInChildren<Collider>() != null)
+            objectCollider = obj.GetComponentInChildren<Collider>();
+        else
+            objectCollider = obj.GetComponent<Collider>();
+
+        closestPoint = objectCollider.ClosestPoint(weaponLocalPos.position);
+
+        weaponLocalPos.position = closestPoint;
+
+        drawOnce = true;
+
+        playerWeaponScript.playHitParticle(weaponLocalPos.transform, obj.GetComponent<NormalObjectCollider>().getBodyTpye());
+    }
+
     public void resetAllEnemyDamaged()
     {
         foreach (GameObject objs in collidedObjs)
         {
-            objs.GetComponent<EnemyHealth>().setDamaged(false);
-            objs.GetComponent<EnemyHealth>().setShowedParticle(false);
+            if (objs.GetComponent<EnemyHealth>() != null)
+            {
+                objs.GetComponent<EnemyHealth>().setDamaged(false);
+                objs.GetComponent<EnemyHealth>().setShowedParticle(false);
+            }
+            else if (objs.GetComponent<NormalObjectCollider>() != null)
+            {
+                objs.GetComponent<NormalObjectCollider>().setDamaged(false);
+                objs.GetComponent<NormalObjectCollider>().setShowedParticle(false);
+            }
         }
         collidedObjs.Clear();
     }

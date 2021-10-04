@@ -190,6 +190,34 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
+    public void playHitParticle(Transform pos, NormalObjectCollider.BodyTypeEnum bodyType)
+    {
+        //hitParticleText.text = ((int)damage).ToString();
+        //GameObject.Instantiate(hitParticleTextObj, pos.transform.position, Quaternion.Euler(0, 0, 0));
+
+        rot = Quaternion.LookRotation(-(pos.transform.position - this.transform.position).normalized);
+
+        switch (bodyType)
+        {
+            case NormalObjectCollider.BodyTypeEnum.FLESH:
+                GameObject.Instantiate(hitParticles[0], pos.transform.position, rot);
+                AudioSource.PlayClipAtPoint(hitAudios[0], pos.transform.position);
+                break;
+            case NormalObjectCollider.BodyTypeEnum.WOOD:
+                GameObject.Instantiate(hitParticles[1], pos.transform.position, rot);
+                AudioSource.PlayClipAtPoint(hitAudios[1], pos.transform.position);
+                break;
+            case NormalObjectCollider.BodyTypeEnum.STONE:
+                GameObject.Instantiate(hitParticles[2], pos.transform.position, rot);
+                AudioSource.PlayClipAtPoint(hitAudios[2], pos.transform.position);
+                break;
+            case NormalObjectCollider.BodyTypeEnum.METAL:
+                GameObject.Instantiate(hitParticles[3], pos.transform.position, rot);
+                AudioSource.PlayClipAtPoint(hitAudios[3], pos.transform.position);
+                break;
+        }
+    }
+
     public bool getHitDetector()
     {
         return isHitDetected;
