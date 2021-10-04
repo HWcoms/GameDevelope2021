@@ -9,22 +9,21 @@ public class Magic : MonoBehaviour
 
     Rigidbody rigid;
     Rigidbody rb;
-    public float jumpPower;
-    public float angularPower = 2;
+
+    private float jumpPower;
+    [SerializeField] private float angularPower = 2;
     float scaleValue = 0.1f;
+
     bool isShoot;
-    Collision collision;
+
+    //Collision collision;
+
+    public float trackTime = 3.0f;
 
     public float waitTime = 0.8f;
 
-    // bool col;
+    [SerializeField] private Transform playerPos;
 
-
-    // bool isFall;
-
-
-
-    // Start is called before the first frame update
     void Awake()
     {
 
@@ -32,36 +31,45 @@ public class Magic : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();
-        StartCoroutine(GainPowerTimer());
-        StartCoroutine(GainPower());
-
         rb = GetComponent<Rigidbody>();
-        // StartCoroutine(FadeAway());
-        //  StartCoroutine(FadeAway());
+        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        StartCoroutine(GainPower());
     }
-
-
-
 
     // Update is called once per frame
     IEnumerator GainPowerTimer()
     {
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(trackTime);
         isShoot = true;
     }
 
     IEnumerator GainPower()
     {
         yield return new WaitForSeconds(waitTime);
+
+        StartCoroutine(GainPowerTimer());
         while (!isShoot)
         {
             angularPower += 0.02f;
             scaleValue += 0.005f;
             //transform.localScale = Vector3.one * scaleValue;
-            rigid.AddTorque(transform.right * angularPower, ForceMode.Acceleration);
-            //rotatation power
+            
+            FollowPlayer();
+
             yield return null;
         }
+    }
+
+    private void FollowPlayer()
+    {
+        //target - origin = direction
+        Vector3 TargetDir = playerPos.transform.position - this.transform.position;
+        TargetDir.Normalize();
+
+        Vector3 rockForard = Vector3.Cross(TargetDir, Vector3.up).normalized * -1f;
+
+        rigid.AddTorque(rockForard * angularPower, ForceMode.Acceleration);
     }
 
     //  IEnumerator FadeAway()
@@ -80,20 +88,8 @@ public class Magic : MonoBehaviour
     //         Destroy(gameObject);
     //     }
 
-
-
-
-
     void Update()
     {
-        /*
-        if (Input.GetMouseButtonDown(0))
-        {
-            rb.velocity = Vector3.up * jumpPower;
-
-        }*/
-
-
 
     }
 }
