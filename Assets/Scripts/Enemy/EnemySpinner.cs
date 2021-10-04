@@ -143,4 +143,21 @@ public class EnemySpinner : MonoBehaviour
             }
         }
     }
+
+    public void setMove(bool flag) {
+        isMove = flag;
+    }
+    public void setDeal (bool flag)
+    {
+        isDeal = flag;
+    }
+
+    public void setMove()
+    {
+        isMove = !isMove;
+    }
+    public void setDeal()
+    {
+        isDeal = !isDeal;
+    }
 }

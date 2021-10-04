@@ -77,6 +77,26 @@ public class DebugCommandFunctions : MonoBehaviour
         }
     }
     
+    public void enemy_move()
+    {
+        loaded_Script.AddRange(GameObject.FindObjectsOfType<EnemySpinner>());
+
+        foreach(EnemySpinner enemyScript in loaded_Script)
+        {
+            enemyScript.setMove();
+        }
+    }
+
+    public void enemy_deal()
+    {
+        loaded_Script.AddRange(GameObject.FindObjectsOfType<EnemySpinner>());
+
+        foreach (EnemySpinner enemyScript in loaded_Script)
+        {
+            enemyScript.setDeal();
+        }
+    }
+
     void Awake()
     {
         instance = this;

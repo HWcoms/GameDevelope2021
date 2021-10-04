@@ -14,6 +14,8 @@ public class DebugController : MonoBehaviour
     public static DebugCommand KILL_ALL;
     public static DebugCommand HEAL_PLAYER;
     public static DebugCommand KILL_PLAYER;
+    public static DebugCommand ENEMY_MOVE;
+    public static DebugCommand ENEMY_DEAL;
 
 
     private DebugCommand[] commandList;
@@ -48,12 +50,18 @@ public class DebugController : MonoBehaviour
 
         KILL_PLAYER = new DebugCommand("kill player", "kill player.", "kill player", "kill_player");
 
+        ENEMY_MOVE = new DebugCommand("enemy move", "Toggle isMove Boolean of enemis", "enemy move", "enemy_move");
+
+        ENEMY_DEAL = new DebugCommand("enemy deal", "Toggle isDeal Boolean of enemis", "enemy deal", "enemy_deal");
+
         commandList = new DebugCommand[]
         {
             HEAL,
             KILL_ALL,
             HEAL_PLAYER,
-            KILL_PLAYER
+            KILL_PLAYER,
+            ENEMY_MOVE,
+            ENEMY_DEAL
         };
 
         getCommandListToTextArray();
