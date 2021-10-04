@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1898457689}
   - component: {fileID: 1898457690}
   - component: {fileID: 927137818}
+  - component: {fileID: 1142449573}
   m_Layer: 0
   m_Name: RollCube
   m_TagString: Untagged
@@ -148,6 +149,26 @@ MonoBehaviour:
   isDealready: 0
   dealableTime: 1
   dealTimer: 0
+--- !u!114 &1142449573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2304371991414566689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63fd79c056cc244e81f5234617a36b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+  playerWeaponScript: {fileID: 0}
+  PlayerWeaponDamage: 0
+  isInvincible: 0
+  isDamaged: 0
+  isShowedParticle: 0
+  PlayerWeaponColliderScript: {fileID: 0}
+  bodyTypes: 2
 --- !u!95 &2304371989909943999
 Animator:
   serializedVersion: 3
