@@ -35,6 +35,11 @@ public class CharacterHealth : MonoBehaviour
     private Text staminaText;
 
     [Space(10)]
+    [Header("----------------------------- reward status -----------------------------")]
+
+    private Text spiritText;
+
+    [Space(10)]
     [Header("----------------------------- Rezen status -----------------------------")]
 
     //rezenTimer
@@ -78,6 +83,8 @@ public class CharacterHealth : MonoBehaviour
 
         hpText = GameObject.Find("HPnum").GetComponent<Text>();
         staminaText = GameObject.Find("Staminanum").GetComponent<Text>();
+
+        spiritText = GameObject.Find("Spirit Count").GetComponent<Text>();
     }
 
     // Update is called once per frame

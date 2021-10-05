@@ -31,6 +31,12 @@ public class EnemyHealth : MonoBehaviour
 
 
     [Space(10)]
+    [Header("----------------------------- reward status -----------------------------")]
+
+    [SerializeField]
+    public float spirit = 50.0f;
+
+    [Space(10)]
     [Header("--------------------------- Status Bar (Visual) -----------------------------")]
 
     [SerializeField] private float updateSpeedSeconds = 0.3f;
@@ -98,15 +104,12 @@ public class EnemyHealth : MonoBehaviour
                 setDamaged(true);
                 if (changeHp(-PlayerWeaponDamage))
                 {
-                    //playerWeaponScript.switchCollider(false);
-                    //playerWeaponScript.switchHitDetector(false);
-                    //print("hit detact disabled");
-
-                    //hitParticle.GetComponentInChildren<TextMeshPro>().text = ((int)attackDamgage).ToString();
-                    //hitParticleText.text = ((int)attackDamgage).ToString();
-
-                    //isDealready = false;
-                    //GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation)
+                    if(hp <= 0f)    //dead by player weapon
+                    {
+                        //call getSpirit from player script
+                        PlayerSpirit spiritScript = GameObject.FindWithTag("Player").GetComponent<PlayerSpirit>();
+                        spiritScript.changePlayerSpirit(spirit);
+                    }
                 }
             }
         }
@@ -205,5 +208,14 @@ public class EnemyHealth : MonoBehaviour
     public BodyTypeEnum getBodyTpye()
     {
         return bodyTypes;
+    }
+
+    public float getSpirit()
+    {
+        return spirit;
+    }
+    public void setSpirit(float value)
+    {
+        spirit = value;
     }
 }
