@@ -37,6 +37,12 @@ public class DestroyRock : MonoBehaviour
                 StartCoroutine(magicScrpit.TrackTimer());
             }
         }
+        else if(coll.gameObject.tag=="Player")
+        {
+            print("bounce by player");
+            magicScrpit.setTrack(false);
+            StartCoroutine(magicScrpit.BounceToward());
+        }
     }
     /*
     private void OnTriggerEnter(Collider other)

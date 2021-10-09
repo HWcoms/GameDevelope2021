@@ -68,6 +68,21 @@ public class Magic : MonoBehaviour
         StartCoroutine(TrackTimer());
     }
 
+    public IEnumerator BounceToward()
+    {
+        yield return new WaitForSeconds(0);
+
+        Vector3 TargetDir = (playerPos.transform.position - this.transform.position) * -1.0f;
+
+        TargetDir.Normalize();
+
+        Debug.DrawLine(transform.position, transform.position + TargetDir, Color.green);
+
+        rb.AddForce(TargetDir * moveSpeed * 100.0f * Time.deltaTime);
+
+        print("need edit");
+    }
+
     private IEnumerator AnimationDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
