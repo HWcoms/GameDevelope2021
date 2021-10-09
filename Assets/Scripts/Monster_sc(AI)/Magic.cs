@@ -4,29 +4,33 @@ using UnityEngine;
 
 public class Magic : MonoBehaviour
 {
-
-
-
     Rigidbody rigid;
     Rigidbody rb;
 
     private float jumpPower;
-    [SerializeField] private float angularPower = 2;
+    //[SerializeField] private float angularPower = 2;
+    [SerializeField] private float moveSpeed = 10.0f;
+
     float scaleValue = 0.1f;
 
     bool isShoot;
+    private bool isTrack = false;
 
     //Collision collision;
 
     public float trackTime = 3.0f;
-
     public float waitTime = 0.8f;
 
     [SerializeField] private Transform playerPos;
 
+    //anim
+    private Animator anim;
+    [SerializeField] private float animDelayTime;
+    [SerializeField] private float animDelayTimeOffset = -0.2f;
+
     void Awake()
     {
-
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
     void Start()
     {
@@ -34,42 +38,58 @@ public class Magic : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        StartCoroutine(GainPower());
+        rb.useGravity = false;
+
+        UpdateAnimClipTimes();
+        //UpdateAnimClipTimes();
+        StartCoroutine(AnimationDelay(animDelayTime + animDelayTimeOffset));
+        print(animDelayTime + animDelayTimeOffset);
     }
-
-    // Update is called once per frame
-    IEnumerator GainPowerTimer()
+    void Update()
     {
-        yield return new WaitForSeconds(trackTime);
-        isShoot = true;
-    }
-
-    IEnumerator GainPower()
-    {
-        yield return new WaitForSeconds(waitTime);
-
-        StartCoroutine(GainPowerTimer());
-        while (!isShoot)
+        
+        if (isTrack)
         {
-            angularPower += 0.02f;
-            scaleValue += 0.005f;
-            //transform.localScale = Vector3.one * scaleValue;
-            
             FollowPlayer();
-
-            yield return null;
         }
     }
 
-    private void FollowPlayer()
+    // Update is called once per frame
+    public IEnumerator TrackTimer()
     {
+        yield return new WaitForSeconds(trackTime);
+        setTrack(false);
+        print("TrackDone");
+    }
+
+    public IEnumerator WaitTimer()
+    {
+        yield return new WaitForSeconds(waitTime);
+        StartCoroutine(TrackTimer());
+    }
+
+    private IEnumerator AnimationDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        rb.useGravity = true;
+        print("Animation Delay Done");
+    }
+
+    public void FollowPlayer()
+    {
+        //print("tracking");
         //target - origin = direction
         Vector3 TargetDir = playerPos.transform.position - this.transform.position;
+
+        Debug.DrawLine(transform.position, playerPos.transform.position, Color.red);
+
         TargetDir.Normalize();
+        rb.AddForce(TargetDir * moveSpeed * 1000.0f * Time.deltaTime);
 
-        Vector3 rockForard = Vector3.Cross(TargetDir, Vector3.up).normalized * -1f;
 
-        rigid.AddTorque(rockForard * angularPower, ForceMode.Acceleration);
+        //Vector3 rockForard = Vector3.Cross(TargetDir, Vector3.up).normalized * -1f;
+
+        //rigid.AddTorque(rockForard * angularPower, ForceMode.Acceleration);
     }
 
     //  IEnumerator FadeAway()
@@ -88,8 +108,24 @@ public class Magic : MonoBehaviour
     //         Destroy(gameObject);
     //     }
 
-    void Update()
+    public void setTrack(bool flag)
     {
+        if (flag) isTrack = true;
+        else isTrack = false;
+            
+    }
+    public void UpdateAnimClipTimes()
+    {
+        AnimatorClipInfo[] m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
 
+        foreach (AnimatorClipInfo clipInfo in m_CurrentClipInfo)
+        {
+            switch (clipInfo.clip.name)
+            {
+                case "EnemyStoneRoll":
+                    animDelayTime = clipInfo.clip.length;
+                    break;
+            }
+        }
     }
 }

@@ -12,19 +12,30 @@ public class DestroyRock : MonoBehaviour
     public MeshRenderer[] meshRenderer;
     public float alpha = 1;
 
+    private Magic magicScrpit;
+    private bool isOnce = false;
+        
     private void Start()
     {
         meshRenderer = GetComponentsInChildren<MeshRenderer>();
+        magicScrpit = GetComponent<Magic>();
+        isOnce = false;
     }
 
     void OnCollisionEnter(Collision coll)
     {
         //print(coll.gameObject.tag);
-      if(coll.gameObject.tag=="Floor")
+        if(coll.gameObject.tag=="Floor")
         {
-            //print("디스트로이");
+            StartCoroutine(DestroyStone());
 
-            StartCoroutine(stoneSpawn());
+            if(!isOnce)
+            {
+                magicScrpit.setTrack(true);
+                isOnce = true;
+
+                StartCoroutine(magicScrpit.TrackTimer());
+            }
         }
     }
     /*
@@ -46,7 +57,7 @@ public class DestroyRock : MonoBehaviour
         }
     }
 
-    IEnumerator stoneSpawn()
+    IEnumerator DestroyStone()
     {
         yield return new WaitForSeconds(destroyTime);
         while (alpha > 0)

@@ -61,7 +61,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 96
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!135 &2304371991414566690
 SphereCollider:
@@ -74,8 +74,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.26
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.2
+  m_Center: {x: -0.1, y: -0.08, z: -0.05}
 --- !u!95 &2304371991414566744
 Animator:
   serializedVersion: 3
@@ -107,10 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f696c36c509e2c409c41bef3de611bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angularPower: 10
-  trackTime: 3
-  waitTime: 0.8
+  moveSpeed: 50
+  trackTime: 1
+  waitTime: 2
   playerPos: {fileID: 0}
+  animDelayTime: 0
+  animDelayTimeOffset: -0.2
 --- !u!114 &1898457690
 MonoBehaviour:
   m_ObjectHideFlags: 0
