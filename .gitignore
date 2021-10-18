@@ -58,3 +58,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Main Character (Player) Asset (4GB Texture files)
+Assets/Ranvens_S2/Textures/
