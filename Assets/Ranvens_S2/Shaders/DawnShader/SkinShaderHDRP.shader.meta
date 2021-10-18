@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 102191d06bc92af43b401f71f29e5ae2
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _SkinColor: {fileID: 2800000, guid: eb3a384bc2bb00d4fb3f5e04fe82e67b, type: 3}
+  - _RoughnessMod_R: {fileID: 2800000, guid: c0b7b18616e3d4c4d9f007d6681e9331, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

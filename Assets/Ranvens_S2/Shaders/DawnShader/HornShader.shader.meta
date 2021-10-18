@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c1607dccecb5abf4080b7e01ceb13aef
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _SSSMask: {fileID: 2800000, guid: 81fd2d1aa60a02c4383d6759b7fbcad7, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

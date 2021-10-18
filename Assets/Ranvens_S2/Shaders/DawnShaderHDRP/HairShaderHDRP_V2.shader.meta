@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4bcbb9639e2460242b97b7c83a4bbfad
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Root: {fileID: 2800000, guid: f245fa6580a8d504c8f07460097acccc, type: 3}
+  - _TextNoise: {fileID: 2800000, guid: dfeb1ce67808dcd4cb71e8ed64a757b1, type: 3}
+  - _DyeMask: {fileID: 2800000, guid: 3591935b645c0f848a64b9ca4d25a918, type: 3}
+  - _HairBaseColor: {fileID: 2800000, guid: 444e51c4784c06a4bb6f8b6079e5c549, type: 3}
+  - _ID: {fileID: 2800000, guid: 71ac44594154a62459ec995d22af5563, type: 3}
+  - _Alpha: {fileID: 2800000, guid: 347bee86d8ff03845bfdb6e6cac93870, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
