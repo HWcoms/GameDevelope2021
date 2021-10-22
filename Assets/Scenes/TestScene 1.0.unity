@@ -3056,17 +3056,17 @@ PrefabInstance:
     - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.976
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.04
       objectReference: {fileID: 0}
     - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
         type: 3}
@@ -7205,17 +7205,17 @@ PrefabInstance:
     - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.546
+      value: -0.29000002
       objectReference: {fileID: 0}
     - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.04
       objectReference: {fileID: 0}
     - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
         type: 3}
@@ -9377,6 +9377,11 @@ PrefabInstance:
       propertyPath: m_GroundCheckDistance
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2151193571801858602, guid: fd5b652aaaf4a7a4b84a76356942b468,
+        type: 3}
+      propertyPath: staminaRezenDelay
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5571552243486851992, guid: fd5b652aaaf4a7a4b84a76356942b468,
         type: 3}
       propertyPath: m_IsActive
@@ -9403,5 +9408,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3238343129412994070, guid: 7b07477cbbac92048afca4a08b81b4dc,
         type: 3}
+    - target: {fileID: 8506353259912309715, guid: fd5b652aaaf4a7a4b84a76356942b468,
+        type: 3}
+      propertyPath: attackStaminaCost
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd5b652aaaf4a7a4b84a76356942b468, type: 3}
