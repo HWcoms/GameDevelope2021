@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.3371, g: 325.05005, b: 430.21954, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3046,6 +3046,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &806856190
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.976
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237787, guid: 7252ff791f4e4ac439b2415566660a63,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemyhit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7252ff791f4e4ac439b2415566660a63, type: 3}
 --- !u!1 &821413049
 GameObject:
   m_ObjectHideFlags: 0
@@ -7126,6 +7195,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779345247}
   m_CullTransparentMesh: 0
+--- !u!1001 &1857326629
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.546
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237784, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
+        type: 3}
+      propertyPath: m_Name
+      value: hit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e00dc00887477c40aad7d68d038b1e2, type: 3}
 --- !u!1 &1862529860
 GameObject:
   m_ObjectHideFlags: 0
@@ -8127,7 +8265,7 @@ ReflectionProbe:
   m_TimeSlicingMode: 0
   m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 10, y: 10, z: 10}
+  m_BoxSize: {x: 60, y: 50, z: 60}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
