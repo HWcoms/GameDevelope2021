@@ -60,3 +60,10 @@ crashlytics-build.properties
 
 # Main Character (Player) Asset (4GB Texture files)
 Assets/Ranvens_S2/Textures/
+
+# Map Asset (2GB files)
+Assets/Dark_Fantasy/*
+!/Assets/Dark_Fantasy/Assets/
+Assets/Dark_Fantasy/Assets/*
+!/Assets/Dark_Fantasy/Assets/Materials_Grp/
+/Assets/Dark_Fantasy/Assets/Materials_Grp/Materials/*.png
