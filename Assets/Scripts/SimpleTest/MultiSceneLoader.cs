@@ -57,11 +57,12 @@ public class MultiSceneLoader : MonoBehaviour
 
     private IEnumerator WaitToSpawn(float delay)
     {
-        player.SetActive(false);
+        player.transform.position = new Vector3(100.0f,100.0f,100.0f);
+        player.GetComponent<Rigidbody>().isKinematic = true;
 
         yield return new WaitForSeconds(delay);
 
-        player.SetActive(true);
         player.transform.position = playerSpawnPoint.position;
+        player.GetComponent<Rigidbody>().isKinematic = false;
     }
 }
