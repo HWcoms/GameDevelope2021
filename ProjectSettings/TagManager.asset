@@ -11,6 +11,10 @@ TagManager:
   - PlayerWeaponCollider
   - monster_A
   - Floor
+  - Head
+  - charaVoiceOverAudioSource
+  - a_Listener
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -23,8 +27,8 @@ TagManager:
   - PostFX
   - UIwithPostFX
   - Monster
-  - 
-  - 
+  - Player
+  - Wall
   - 
   - 
   - 
