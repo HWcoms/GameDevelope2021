@@ -10,7 +10,7 @@ public class Monster : MonoBehaviour
     //Start is called before the first frame update
     //Rigidbody rig;
     //BoxCollider box;
-    
+    CharacterHealth attck_Hp;    
     public enum Type {monster_A,monster_B, Boss};
     public Type enumType;
     public int maxHp;
@@ -36,6 +36,7 @@ public class Monster : MonoBehaviour
 
     void Awake()
     {
+        attck_Hp = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
         /*rig = GetComponent<Rigidbody>();
         box = GetComponent<BoxCollider>();*/
         rigid = GetComponent<Rigidbody>();
@@ -51,7 +52,7 @@ public class Monster : MonoBehaviour
 
         if (enumType != Type.Boss)
         {
-            Invoke("ChaseStart", 2);
+            Invoke("ChaseStart", 2); // 추적을 2초뒤 스타트
         }
     }
 
@@ -128,11 +129,11 @@ public class Monster : MonoBehaviour
                 //추후 타입별 범위 설정
             }
 
-            /*RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, targetRaius, transform.forward, targetRange,
-                LayerMask.GetMask("Player"));*/
+            RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, targetRaius, transform.forward, targetRange,
+                LayerMask.GetMask("Player"));
 
             //int count = 0;
-            RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, targetRaius, transform.forward, targetRange);
+            /*RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, targetRaius, transform.forward, targetRange);
             print(rayHits.Length);
 
             foreach(RaycastHit rh in rayHits)
@@ -144,7 +145,7 @@ public class Monster : MonoBehaviour
                     
                    //count = 1;
                 }
-            }
+            }*/
             
             
             /*if(rayHits.Length<=traceDist)
@@ -157,7 +158,7 @@ public class Monster : MonoBehaviour
                 isChase = false;
             }*/
 
-            if(rayHits.Length>0&&!isAttack)
+            if(rayHits.Length>0&&!isAttack) //공격 중이면 공격 마저 끝내고
             {
                 StartCoroutine(Attack());
             }
@@ -167,18 +168,19 @@ public class Monster : MonoBehaviour
 
     IEnumerator Attack()
     {
-        isChase = false;
+        isChase = false; //더 이상 추적 x
         isAttack = true;
         anim.SetBool("Is_Attack", true);
 
         switch (enumType)
         {
             case Type.monster_A:
-                yield return new WaitForSeconds(0.2f);
-                //meleeArea.enabled = true;
+                yield return new WaitForSeconds(0.1f);
+                meleeArea.enabled = true; //공격 범위 활성화
+                
 
                 yield return new WaitForSeconds(1f);
-                //meleeArea.enabled = false;
+                meleeArea.enabled = false;
 
                 yield return new WaitForSeconds(1f);
                 break;
@@ -186,44 +188,27 @@ public class Monster : MonoBehaviour
             case Type.monster_B:
                 yield return new WaitForSeconds(0.1f);
                 rigid.AddForce(transform.forward * 20, ForceMode.Impulse);
-                //meleeArea.enabled = true;
+                meleeArea.enabled = true;
 
                 yield return new WaitForSeconds(0.5f);
                 rigid.velocity = Vector3.zero;
-               // meleeArea.enabled = false;
+                meleeArea.enabled = false;
 
                 yield return new WaitForSeconds(2f);
                 break;
         }
 
-        isChase = true;
+        isChase = true; //공격 끝 다시 추적 시작
         isAttack = false;
         anim.SetBool("Is_Attack", false);
 
     }
 
-    /*void FixedUpdate()
+    void FixedUpdate()
     {
         Targeting();
         FrezeVelocity();
-    }*/
+    }    
 
-    void OnTriggerEnter(Collider other)
-    {
-        /* if (Input.GetKeyDown(KeyCode.V))
-         {
-             curHp = curHp - 5;
-
-             Debug.Log("curHp: " + curHp);
-         }
-         else
-         {
-
-         }*/
-
-        if(other.tag=="Atack") // 공격
-        {
-            
-        }
-    }
+ 
 }

@@ -7,11 +7,10 @@ public class animation_length : MonoBehaviour
     // Start is called before the first frame update
 
     // Update is called once per frame
-    public float attackTime_R;
-    public float attackTime_L;
-    public float damageTime;
-    public float deathTime;
-    public float idleTime;
+    public float ShortAttack;
+    public float LongAttack;
+    public float Block;
+    
 
     private Animator anim;
     private AnimationClip clip;
@@ -39,15 +38,16 @@ public class animation_length : MonoBehaviour
         {
             switch (clip.name)
             {
-                case "Attack_Right":
-                    attackTime_R = clip.length;
+                case "S_Attack":
+                    ShortAttack = clip.length;
                     break;
-                case "Attack_Left":
-                    attackTime_L = clip.length;
+                case "L_Attack":
+                    LongAttack = clip.length;
                     break;
-                case "Idle":
-                    idleTime = clip.length;
+                case "Blcok":
+                    Block = clip.length;
                     break;
+
             }
         }
     }

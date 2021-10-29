@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyRock : MonoBehaviour
 {
+    /*
     // Start is called before the first frame update
     public int damage;
     //public bool attack;
@@ -44,6 +45,8 @@ public class DestroyRock : MonoBehaviour
             StartCoroutine(magicScrpit.BounceToward());
         }
     }
+    */
+
     /*
     private void OnTriggerEnter(Collider other)
     {
@@ -53,7 +56,7 @@ public class DestroyRock : MonoBehaviour
         }
     }
     */
-
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -73,6 +76,7 @@ public class DestroyRock : MonoBehaviour
         }
         Destroy(gameObject);
     }
+    */
 }
 
 
