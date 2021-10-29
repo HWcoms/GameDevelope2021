@@ -23,25 +23,28 @@ public class MultiSceneLoader : MonoBehaviour
         playerSpawnPoint = GameObject.Find("Spawn_Point").transform;
         player = GameObject.FindWithTag("Player").gameObject;
 
-        if (SceneManager.sceneCount > 0)
+        if (!string.IsNullOrEmpty(mapSceneName))
         {
-            for (int i = 0; i < SceneManager.sceneCount; ++i)
+            if (SceneManager.sceneCount > 0)
             {
-                Scene _scene = SceneManager.GetSceneAt(i);
-                if (_scene.name.Equals(mapSceneName))
+                for (int i = 0; i < SceneManager.sceneCount; ++i)
                 {
-                    isLoaded = true;
+                    Scene _scene = SceneManager.GetSceneAt(i);
+                    if (_scene.name.Equals(mapSceneName))
+                    {
+                        isLoaded = true;
+                    }
                 }
+            }
+
+            if (!isLoaded)
+            {
+                LoadScene(mapSceneName, 1);
+
+                isLoaded = true;
             }
         }
 
-        if (!isLoaded)
-        {
-            LoadScene(mapSceneName, 1);
-
-            isLoaded = true;
-        }
-        
         //spawn player
         StartCoroutine(WaitToSpawn(playerSpawnDelay));
     }
