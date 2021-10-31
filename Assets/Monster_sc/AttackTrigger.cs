@@ -25,7 +25,7 @@ public class AttackTrigger : MonoBehaviour
     {
         if (attck_Hp.getDead()) return;
 
-        //print(other.gameObject.tag);
+        print(other.gameObject.tag);
         if (other.gameObject.tag == "Player" && bs.getAttack())
         {
             if (attck_Hp.changeHp(-bs.AttackDamage))

@@ -11,6 +11,7 @@ public class BossAi : MonoBehaviour
     private animation_length ani_in;
     FOV_Track fov;
     int ranAction;
+    float dist;
 
     Vector3 lookVec;
     //Vector3 tauntVec; //범위 공격
@@ -21,6 +22,11 @@ public class BossAi : MonoBehaviour
     public NavMeshAgent nav;
     public Transform target;
     //bool isChase = false;   
+    bool LongAttack_check = false;
+    bool ShortAttack_check = false;
+    bool Chase_check = false;
+    bool StoneMagic_check = false;
+
 
     [SerializeField] bool is_Attack = false;
 
@@ -44,23 +50,35 @@ public class BossAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isLook)
+        dist = Vector3.Distance(target.position, transform.position);
+        /*if (isLook)
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
             lookVec = new Vector3(h, 0, v) * 5f;
             transform.LookAt(target.position + lookVec);
-        }
+        }*/
         //StartCoroutine(Think());
-        if (fov.visibleTargets.Count == 0)
+
+        boss_patton();
+
+        if ( Chase_check ) //float dist = Vector3.Distance(other.position, transform.position);
         {
             ChaseStart();
         }
-        else
+        else if(ShortAttack_check )
         {
-            InvokeRepeating("Random_patton", 1, 3.0f);
-            //print(ranAction);
-            StartCoroutine(Think());
+            anim.SetBool("Is_Run", false);
+            //InvokeRepeating("Random_patton_Attack1", 1, 5.0f);            
+            print("Short Attack");
+            StartCoroutine(ShortAttack());
+        }
+        else if( LongAttack_check )
+        {
+            anim.SetBool("Is_Run", false);
+            //InvokeRepeating("Random_patton_Attack1", 1, 5.0f);            
+            print("Long Attack");
+            StartCoroutine(LongAttack());
         }
     }
 
@@ -68,40 +86,49 @@ public class BossAi : MonoBehaviour
     {
         //yield return new WaitForSeconds(0.1f); //늘릴수록 보스 패턴 어려워짐
             anim.SetBool("Is_Block", false);
-            anim.SetBool("Is_LongAttack", false);
-            anim.SetBool("Is_ShortAttack", false);
 
-            float random_patton = Random.Range(0.01f, 0.5f);
-            //yield return new WaitForSeconds(0.1f);
-            //int ranAction = Random.Range(0,3);
-            yield return new WaitForSeconds(random_patton);
+            anim.SetBool("Is_LongAttack", false);
+            LongAttack_check = false;
+
+            anim.SetBool("Is_ShortAttack", false);
+            ShortAttack_check = false;
+
+            //anim.SetBool("Is_Run", false);
+            Chase_check = false;
+
+        //float random_patton = Random.Range(0.01f, 0.5f);
+        //yield return new WaitForSeconds(0.1f);
+        //int ranAction = Random.Range(0,3);
+        yield return new WaitForSeconds(5);
             //int ranAction = Random.Range(0,3); //패턴 갯수 정함.
-            if (fov.visibleTargets.Count == 1)
-            {
-                //print("Chase_Exit");
-                //int ranAction = Random.Range(0, 3);         
-                nav.isStopped = true;
-                anim.SetBool("Is_Run", false);
-                switch (ranAction)
-                {
-                    case 0: //짧은 근거리 공격
+            //print("Chase_Exit");
+            //int ranAction = Random.Range(0, 3); 
+                   
+             /* switch (ranAction)
+               {
+                   case 0: //짧은 근거리 공격
                         StartCoroutine(ShortAttack());
+                        //Attack_check = false;
                         break;
                     case 1: //긴 연속 공격
                         StartCoroutine(LongAttack());
-                        break;
+                        //Attack_check = false;
+                    break;
                     case 2: //가드
                         StartCoroutine(Block());
-                        break;
-                }
-            }         
+                       //Attack_check = false;
+                    break;
+               }*/
+                  
         
     }
 
     IEnumerator ShortAttack()
     {
         //anim.SetTrigger("DoMagic");
-        anim.SetBool("Is_ShortAttack", true);
+        //Attack_check = true;
+        nav.isStopped = true;
+        anim.SetBool("Is_ShortAttack", true);        
         //AttackDamage = 10.0f;
         yield return new WaitForSeconds(ani_in.ShortAttack);
 
@@ -111,6 +138,9 @@ public class BossAi : MonoBehaviour
     IEnumerator LongAttack()
     {
         //anim.SetTrigger("DoTaunt");
+        //Attack_check = true;
+        
+        nav.isStopped = true;
         anim.SetBool("Is_LongAttack", true);
         //AttackDamage = 40.0f;
         yield return new WaitForSeconds(ani_in.LongAttack);
@@ -121,6 +151,8 @@ public class BossAi : MonoBehaviour
     IEnumerator Block()
     {
         //anim.SetTrigger("DoTaunt");
+        //Attack_check = true; //추후 가드는 다른 옵션 집어 넣을 예정임
+        nav.isStopped = true;
         anim.SetBool("Is_Block", true);
         yield return new WaitForSeconds(ani_in.Block);
 
@@ -146,15 +178,57 @@ public class BossAi : MonoBehaviour
     }
 
     void ChaseStart()
-    {      
-        //print("Chase");
-        nav.isStopped = false;
-        nav.SetDestination(target.position);       
-        anim.SetBool("Is_Run", true);        
+    {    
+       
+            print("Chase");
+            nav.isStopped = false;
+            nav.SetDestination(target.position);
+            anim.SetBool("Is_Run", true);
+
+           StartCoroutine(Think());
+
+
     }
 
-    void Random_patton()
+    void boss_patton()
     {
-        ranAction = Random.Range(0, 3);
+        if (dist > 13 ) //float dist = Vector3.Distance(other.position, transform.position);
+        {
+            Chase_check = true;
+        }
+        else if(fov.visibleTargets.Count == 0 && dist<10) //사각지대에서 플레이어가 보스 가격시 마법 발동
+        {
+            StoneMagic_check = true;
+        }
+        else if (dist < 5 && fov.visibleTargets.Count == 1)
+        {
+            ShortAttack_check = true;
+        }
+        else if (dist >= 5 && fov.visibleTargets.Count == 1)
+        {
+            LongAttack_check = true;
+        }
+    }
+
+    /*void Random_patton_Attack1()
+    {
+        ranAction = Random.Range(0, 2);
+    }*/
+
+    void Set_Animation(int x)
+    {
+        if (x==1)
+        {
+           anim.SetBool("Is_Block", false);
+           anim.SetBool("Is_LongAttack", false);
+           anim.SetBool("Is_ShortAttack", false);
+        }
+        else
+        {
+            anim.SetBool("Is_Block", true);
+            anim.SetBool("Is_LongAttack", true);
+            anim.SetBool("Is_ShortAttack", true);
+        }
+        
     }
 }

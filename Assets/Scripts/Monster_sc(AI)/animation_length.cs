@@ -10,6 +10,7 @@ public class animation_length : MonoBehaviour
     public float ShortAttack;
     public float LongAttack;
     public float Block;
+    public float Run;
     
 
     private Animator anim;
@@ -38,14 +39,17 @@ public class animation_length : MonoBehaviour
         {
             switch (clip.name)
             {
-                case "S_Attack":
+                case "ShortAttack":
                     ShortAttack = clip.length;
                     break;
-                case "L_Attack":
+                case "LongAttack":
                     LongAttack = clip.length;
                     break;
                 case "Blcok":
                     Block = clip.length;
+                    break;
+                case "Run_inPlace":
+                    Run = clip.length;
                     break;
 
             }
