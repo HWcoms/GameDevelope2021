@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.35345, g: 324.94678, b: 429.8709, a: 1}
+  m_IndirectSpecularColor: {r: 262.3615, g: 325.02832, b: 430.06622, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7262,6 +7262,8 @@ MonoBehaviour:
   enemyhealthScript: {fileID: 0}
   AttackDamage: 0
   cape: {fileID: 0}
+  Prefab: {fileID: 0}
+  RollPrefab: {fileID: 0}
 --- !u!95 &580800490
 Animator:
   serializedVersion: 3
@@ -9338,7 +9340,7 @@ PrefabInstance:
     - target: {fileID: 3698895544794635625, guid: 2e7bd230b356b494487b27bfad394bd7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3698895544794635625, guid: 2e7bd230b356b494487b27bfad394bd7,
         type: 3}
@@ -10702,17 +10704,17 @@ PrefabInstance:
     - target: {fileID: 990738043809906817, guid: 6137317d0bdd9524d92f54c5412eef82,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -63.18
+      value: -85.05
       objectReference: {fileID: 0}
     - target: {fileID: 990738043809906817, guid: 6137317d0bdd9524d92f54c5412eef82,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.97
+      value: 18.22
       objectReference: {fileID: 0}
     - target: {fileID: 990738043809906817, guid: 6137317d0bdd9524d92f54c5412eef82,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.21
+      value: 91.59
       objectReference: {fileID: 0}
     - target: {fileID: 990738043809906817, guid: 6137317d0bdd9524d92f54c5412eef82,
         type: 3}
@@ -11623,6 +11625,8 @@ MonoBehaviour:
   enemyhealthScript: {fileID: 0}
   AttackDamage: 0
   cape: {fileID: 0}
+  Prefab: {fileID: 0}
+  RollPrefab: {fileID: 0}
 --- !u!114 &1160662812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13095,7 +13099,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -14321,7 +14325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawnDelay: 0
   characterSceneName: TestScene 1.1
-  mapSceneName: 
+  mapSceneName: mapTest
   isLoaded: 0
 --- !u!1 &1465155120
 GameObject:
@@ -14571,13 +14575,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501203493}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.85, y: 4.1, z: 1.89}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.70710534, z: -0, w: -0.70710826}
+  m_LocalPosition: {x: -42.53, y: 18.22, z: 91.59}
+  m_LocalScale: {x: 1.0123273, y: 1.0536982, z: 1.3057951}
   m_Children: []
   m_Father: {fileID: 1430863881}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &1503034318
 GameObject:
   m_ObjectHideFlags: 0
@@ -14957,7 +14961,7 @@ PrefabInstance:
     - target: {fileID: 4936478027522509218, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4936478027522509218, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
@@ -15028,6 +15032,9 @@ MonoBehaviour:
   enemyhealthScript: {fileID: 0}
   AttackDamage: 0
   cape: {fileID: 0}
+  Prefab: {fileID: -2697223345607225703, guid: 730bb2405ddaaa7489434e4393224a15, type: 3}
+  RollPrefab: {fileID: 6198800580414137920, guid: 87b42aa189f7b044786e6a2e0661426f,
+    type: 3}
 --- !u!114 &1543367011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15751,7 +15758,7 @@ Transform:
   - {fileID: 1281198021}
   - {fileID: 1362824691}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1742480627
 GameObject:

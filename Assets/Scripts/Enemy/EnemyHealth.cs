@@ -218,4 +218,9 @@ public class EnemyHealth : MonoBehaviour
     {
         spirit = value;
     }
+
+    public float getHp()
+    {
+        return hp;
+    }
 }

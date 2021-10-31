@@ -141,7 +141,7 @@ public class FOV_Track : MonoBehaviour
         //enemyPos = new Vector3(enemy.transform.position.x, 0, enemy.transform.position.z);
 
         Vector3 forwardV = transform.position + (transform.forward * trackRange);
-
+        /*
         Handles.color = Color.white;
         Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, trackRange);
         Vector3 viewAngleA = DirFromAngle(-viewAngle / 2, false);
@@ -151,7 +151,7 @@ public class FOV_Track : MonoBehaviour
 
         Handles.DrawLine(transform.position, transform.position + viewAngleA * trackRange);
         Handles.DrawLine(transform.position, transform.position + viewAngleB * trackRange);
-
+        */
         if (_Track())
         {
             Gizmos.color = Color.red;

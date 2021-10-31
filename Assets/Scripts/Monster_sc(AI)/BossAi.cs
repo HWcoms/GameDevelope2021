@@ -34,7 +34,14 @@ public class BossAi : MonoBehaviour
 
     public float AttackDamage;
     public GameObject cape;
-     
+
+    bool isDone = false;
+    public GameObject Prefab;
+    public GameObject RollPrefab;
+
+    bool isRockSpawn = true;
+
+
     void Awake()
     {
         //isLook = true;
@@ -92,6 +99,33 @@ public class BossAi : MonoBehaviour
             print("Long Attack");
             StartCoroutine(LongAttack());
         }
+        else if(StoneMagic_check)
+        {
+            if (!isDone)
+            {
+                Debug.Log("one");
+                Instantiate(Prefab, target.transform.position, Quaternion.identity);
+            }
+            isDone = true;
+        }
+        if(enemyhealthScript.getHp() < 30.0f && isRockSpawn)
+        {
+            print("roll ");
+
+            StartCoroutine(SpawnRock(8.0f));
+           
+        }
+    }
+
+    IEnumerator SpawnRock(float delay)
+    {
+        isRockSpawn = false;
+
+        Instantiate(RollPrefab, target.transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(delay);
+
+        isRockSpawn = true;
     }
 
     IEnumerator Think() //보스 로직 구현 - 보스가 생각해서.. ai처럼
@@ -208,7 +242,7 @@ public class BossAi : MonoBehaviour
         {
             Chase_check = true;
         }
-        else if(fov.visibleTargets.Count == 0 && dist<10) //사각지대에서 플레이어가 보스 가격시 마법 발동
+        else if(fov.visibleTargets.Count == 0 && dist<3) //사각지대에서 플레이어가 보스 가격시 마법 발동
         {
             StoneMagic_check = true;
         }
