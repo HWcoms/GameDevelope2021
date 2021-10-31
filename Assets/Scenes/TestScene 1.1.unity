@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.3371, g: 325.05005, b: 430.21954, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9226,7 +9226,7 @@ GameObject:
   - component: {fileID: 1013593870}
   - component: {fileID: 1013593871}
   m_Layer: 0
-  m_Name: weapon2
+  m_Name: Arrow
   m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9239,9 +9239,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013593869}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.0209384, y: 0.70706004, z: -0.7061694, w: -0.030861981}
+  m_LocalPosition: {x: 0.11099988, y: -0.07499921, z: 0.031000014}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2044148945}
   m_Father: {fileID: 4367684929650269575}
@@ -9396,7 +9396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1022159555}
   m_Layer: 0
-  m_Name: weapon2
+  m_Name: Bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15529,9 +15529,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044148944}
-  m_LocalRotation: {x: 0.02093851, y: 0.70706, z: -0.7061695, w: -0.030862141}
-  m_LocalPosition: {x: 0.111, y: -0.075, z: 0.031}
-  m_LocalScale: {x: 10.0000925, y: 13.000021, z: 10.000089}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0000000027939657, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1937447241}
   m_Father: {fileID: 1013593870}
