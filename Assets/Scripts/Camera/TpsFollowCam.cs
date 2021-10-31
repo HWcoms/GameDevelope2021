@@ -25,7 +25,8 @@ public class TpsFollowCam : MonoBehaviour
     [SerializeField] private float smoothSpeed = 0.125f;
 
     private Vector3 startedPos;     //position of camera at start game
-    
+
+    public LayerMask ignoreCollide;
 
     // Start is called before the first frame update
     void Start()
@@ -133,8 +134,9 @@ public class TpsFollowCam : MonoBehaviour
         Debug.DrawLine(this.transform.position, TempTarget, Color.cyan);
 
         RaycastHit hit = new RaycastHit();
-        if (Physics.Linecast(TempTarget, this.transform.position, out hit) && hit.transform.tag != "Player")
+        if (Physics.Linecast(TempTarget, this.transform.position, out hit, ignoreCollide) /*(hit.transform.tag != "Player" || hit.transform.tag != "Monster")*/)
         {
+            print(hit.transform.gameObject.layer.ToString());
             Debug.DrawRay(hit.point, Vector3.left, Color.red);
 
             float distance = hit.distance;

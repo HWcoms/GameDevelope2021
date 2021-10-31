@@ -30,7 +30,10 @@ public class BossAi : MonoBehaviour
 
     [SerializeField] bool is_Attack = false;
 
+    public EnemyHealth enemyhealthScript;
+
     public float AttackDamage;
+    public GameObject cape;
      
     void Awake()
     {
@@ -45,11 +48,20 @@ public class BossAi : MonoBehaviour
         //StartCoroutine(Think());
         //int ranAction = Random.Range(0, 3);
 
+        enemyhealthScript = GetComponent<EnemyHealth>();
+        cape = GameObject.Find("King's cape");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(enemyhealthScript.getDead())
+        {
+            anim.SetBool("Death", true);
+            cape.GetComponent<Animator>().SetBool("Death", true);
+            return;
+        }
+
         dist = Vector3.Distance(target.position, transform.position);
         /*if (isLook)
         {
