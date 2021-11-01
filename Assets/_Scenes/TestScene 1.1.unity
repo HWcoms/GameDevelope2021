@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
+  m_IndirectSpecularColor: {r: 0.36236456, g: 0.44876656, b: 0.5936064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16700,7 +16700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  maxHp: 1000
+  maxHp: 600
   maxStamina: 1000
   hp: 100
   stamina: 100
@@ -20311,6 +20311,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_RavensS2_Play
       objectReference: {fileID: 0}
+    - target: {fileID: 6866230877578209175, guid: 66224e56a01e8e74faa58a21fbe59af3,
+        type: 3}
+      propertyPath: hitAudios.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6bf67b22ae11d1d4995f7d61cdbae433, type: 3}
     - target: {fileID: 6866230878786624924, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
       propertyPath: m_Layer

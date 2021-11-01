@@ -132,7 +132,7 @@ public class BossAi : MonoBehaviour
             }
             isDone = true;
         }
-        if(enemyhealthScript.getHp() < 30.0f && isRockSpawn)
+        if( (enemyhealthScript.getHp() / enemyhealthScript.getMaxHp()) * 100.0f < 30.0f && isRockSpawn)
         {
             print("roll ");
 
