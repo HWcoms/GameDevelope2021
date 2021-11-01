@@ -26,6 +26,7 @@ public class BossAi : MonoBehaviour
     bool ShortAttack_check = false;
     bool Chase_check = false;
     bool StoneMagic_check = false;
+    [SerializeField] private float temp_Hp;
 
 
     [SerializeField] bool is_Attack = false;
@@ -57,11 +58,16 @@ public class BossAi : MonoBehaviour
 
         enemyhealthScript = GetComponent<EnemyHealth>();
         cape = GameObject.Find("King's cape");
+
+        temp_Hp = enemyhealthScript.getHp();
     }
 
     // Update is called once per frame
     void Update()
     {
+        print(enemyhealthScript.getHp());
+        print("\n\n");
+        print(temp_Hp);
         if(enemyhealthScript.getDead())
         {
             anim.SetBool("Death", true);
@@ -114,6 +120,16 @@ public class BossAi : MonoBehaviour
 
             StartCoroutine(SpawnRock(8.0f));
            
+        }
+        if (enemyhealthScript.getHp() < temp_Hp)
+        {
+            print("Attacking");
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
+            lookVec = new Vector3(h, 0, v) * 5f;
+            transform.LookAt(target.position + lookVec);
+
+            temp_Hp = enemyhealthScript.getHp();
         }
     }
 
@@ -254,6 +270,16 @@ public class BossAi : MonoBehaviour
         {
             LongAttack_check = true;
         }
+       /*if(enemyhealthScript.getHp() < temp_Hp)
+        {
+            print("Attacking");
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
+            lookVec = new Vector3(h, 0, v) * 5f;
+            transform.LookAt(target.position + lookVec);
+
+            temp_Hp = enemyhealthScript.getHp();
+        }*/
     }
 
     /*void Random_patton_Attack1()
@@ -277,4 +303,6 @@ public class BossAi : MonoBehaviour
         }
         
     }
+
+   
 }
