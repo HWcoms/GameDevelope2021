@@ -136,7 +136,7 @@ public class TpsFollowCam : MonoBehaviour
         RaycastHit hit = new RaycastHit();
         if (Physics.Linecast(TempTarget, this.transform.position, out hit, ignoreCollide) /*(hit.transform.tag != "Player" || hit.transform.tag != "Monster")*/)
         {
-            print(hit.transform.gameObject.layer.ToString());
+            //print(hit.transform.gameObject.layer.ToString());
             Debug.DrawRay(hit.point, Vector3.left, Color.red);
 
             float distance = hit.distance;

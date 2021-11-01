@@ -65,9 +65,9 @@ public class BossAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(enemyhealthScript.getHp());
-        print("\n\n");
-        print(temp_Hp);
+        //print(enemyhealthScript.getHp());
+        //print("\n\n");
+        //print(temp_Hp);
         if(enemyhealthScript.getDead())
         {
             anim.SetBool("Death", true);
@@ -95,21 +95,21 @@ public class BossAi : MonoBehaviour
         {
             anim.SetBool("Is_Run", false);
             //InvokeRepeating("Random_patton_Attack1", 1, 5.0f);            
-            print("Short Attack");
+            //print("Short Attack");
             StartCoroutine(ShortAttack());
         }
         else if( LongAttack_check )
         {
             anim.SetBool("Is_Run", false);
             //InvokeRepeating("Random_patton_Attack1", 1, 5.0f);            
-            print("Long Attack");
+            //print("Long Attack");
             StartCoroutine(LongAttack());
         }
         else if(StoneMagic_check)
         {
             if (!isDone)
             {
-                Debug.Log("one");
+                //Debug.Log("one");
                 Instantiate(Prefab, target.transform.position, Quaternion.identity);
             }
             isDone = true;
@@ -123,7 +123,7 @@ public class BossAi : MonoBehaviour
         }
         if (enemyhealthScript.getHp() < temp_Hp)
         {
-            print("Attacking");
+            //print("Attacking");
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
             lookVec = new Vector3(h, 0, v) * 5f;
