@@ -39,9 +39,11 @@ public class BossAi : MonoBehaviour
     bool isDone = false;
     public GameObject Prefab;
     public GameObject RollPrefab;
+    Coroutine tempCoroutine;
 
     bool isRockSpawn = true;
 
+    public GameObject particlePrefab;
 
     void Awake()
     {
@@ -72,6 +74,18 @@ public class BossAi : MonoBehaviour
         {
             anim.SetBool("Death", true);
             cape.GetComponent<Animator>().SetBool("Death", true);
+            StopCoroutine(tempCoroutine);
+
+            //destroy all rockSpawners
+            GameObject[] rockSpawners;
+
+            rockSpawners = GameObject.FindGameObjectsWithTag("BossPattern");
+
+            foreach (GameObject rockSpawner in rockSpawners)
+            {
+                Destroy(rockSpawner);
+            }
+
             return;
         }
 
@@ -118,9 +132,10 @@ public class BossAi : MonoBehaviour
         {
             print("roll ");
 
-            StartCoroutine(SpawnRock(8.0f));
-           
+            tempCoroutine = StartCoroutine(SpawnRock(10.0f));
         }
+
+        //getHit
         if (enemyhealthScript.getHp() < temp_Hp)
         {
             //print("Attacking");
@@ -130,6 +145,8 @@ public class BossAi : MonoBehaviour
             transform.LookAt(target.position + lookVec);
 
             temp_Hp = enemyhealthScript.getHp();
+
+            Instantiate(particlePrefab, transform.position, Quaternion.identity);
         }
     }
 

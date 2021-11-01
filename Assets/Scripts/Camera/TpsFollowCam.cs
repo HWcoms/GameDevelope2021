@@ -119,7 +119,7 @@ public class TpsFollowCam : MonoBehaviour
             userSetDistance = CameraDistance;
         }
 
-        Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);
+        Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x + -90.0f, 0);
         _pivot.rotation = Quaternion.Lerp(_pivot.rotation, QT, /*Time.deltaTime **/ smoothSpeed);
 
         if (transform.localPosition.z != CameraDistance * -1f)

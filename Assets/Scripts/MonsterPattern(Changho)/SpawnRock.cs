@@ -9,26 +9,48 @@ public class SpawnRock : MonoBehaviour
     
     public Transform[] spawnPoint;
 
+    public GameObject patternRangeVisionPrefab;
+
+    public Vector3 SpawnRockOffset;
+
     int spawnIndex = 0;
 
-    int spawnTimes = 3;
+    public int spawnTimes = 3;
+
+    public float speed = 20.0f;
+    public float waitTime = 2.0f;
+
+    [SerializeField] Transform player;
+
+    Vector3 tempPos;
+
+    int i = 0;
+
+    bool isReady = true;
 
     void Start()
     {
-        StartCoroutine (SpawnPosition());
+        player = GameObject.FindWithTag("Player").transform;
+
+        
+        i = 0;
     }
 
-    IEnumerator SpawnPosition() {
-        int i = 0;
+    void Update()
+    {
 
-		while(i<3)
+        if (i < 3 && isReady)
         {
-            yield return new WaitForSeconds(3.0f);
-
+            isReady = false;
             int rand = Random.Range(0, spawnPoint.Length);
-            print(rand);
+            //print(rand);
+            Vector3 rangeDir = spawnPoint[rand].transform.position - player.position;
 
-            Instantiate (rockPrefab, spawnPoint[rand].transform.position, Quaternion.identity);
+            GameObject patternVision = Instantiate(patternRangeVisionPrefab, player.position + new Vector3(0f, 0.1f, 0f), Quaternion.LookRotation(rangeDir));
+            Destroy(patternVision, 0.9f);
+            tempPos = player.position;
+
+            StartCoroutine(SpawnPosition(rand));
             /*
             if(spawnIndex >= spawnPoint.Length)
                 spawnIndex = 0;       
@@ -37,18 +59,22 @@ public class SpawnRock : MonoBehaviour
                 */
             i++;
         }
-        
-	}
-
-
-    void Update()
-    {
-        
-        
-
-
-
-
-
     }
+
+    IEnumerator SpawnPosition(int rand) {
+
+        yield return new WaitForSeconds(0.7f);
+
+        GameObject rockG = new GameObject();
+
+        rockG = Instantiate(rockPrefab, spawnPoint[rand].transform.position + SpawnRockOffset, Quaternion.identity);
+        rockG.GetComponent<RollTest>().setTargetPos(tempPos);
+        rockG.GetComponent<RollTest>().setSpeed(speed);
+        rockG.GetComponent<RollTest>().initDirection();
+
+        yield return new WaitForSeconds(waitTime);
+
+        isReady = true;
+    }
+
 }

@@ -6,7 +6,9 @@ public class SoulParticle : MonoBehaviour
 {
     public GameObject monster;
     public GameObject player;
-    
+
+    public float spiritAmount = 5.0f;
+
     public Vector3 SpawnOffset;
     public Vector3 EndOffset;
     public float delay = 2.0f;
@@ -70,8 +72,6 @@ public class SoulParticle : MonoBehaviour
 
     void FollowPlayer()
     {
-        float timeElapsed = 0;
-
         print("particle moving to player");
 /*
         particle.transform.position = new Vector3(
@@ -99,8 +99,11 @@ public class SoulParticle : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && isAnimDone)
         {
+            //player get soul
+            player.GetComponent<PlayerSpirit>().changePlayerSpirit(spiritAmount);
+
             print("destroy this particle");
             Destroy(this.gameObject);
         }

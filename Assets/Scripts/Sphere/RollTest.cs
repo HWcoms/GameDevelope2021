@@ -11,7 +11,7 @@ public class RollTest : MonoBehaviour
     Rigidbody rb;
 
     private float jumpPower;
-    [SerializeField] private float moveSpeed = 10.0f;
+    [SerializeField] private float moveSpeed;
     [SerializeField] private float rotSpeed = 20.0f;
     float scaleValue = 0.1f;
 
@@ -23,9 +23,9 @@ public class RollTest : MonoBehaviour
 
     public float trackTime = 3.0f;
 
-    public float waitTime = 0.8f;
+    public float waitTime;
 
-    [SerializeField] private Transform playerPos;
+    [SerializeField] private Vector3 playerPos;
 
     void Awake()
     {
@@ -35,15 +35,12 @@ public class RollTest : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         rb = GetComponent<Rigidbody>();
-        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         //StartCoroutine(GainPower());
         // rigid.useGravity = false;
         isShoot = true;
-        isTracking = true;
         
-        Vector3 PlayerP = new Vector3 (playerPos.transform.position.x, this.transform.position.y, playerPos.transform.position.z);
-        TargetDir = PlayerP - this.transform.position;
     }   
 
     void Update() {
@@ -53,7 +50,7 @@ public class RollTest : MonoBehaviour
         if(isTracking)
         {
 
-            Debug.DrawLine(transform.position,playerPos.transform.position , Color.red);
+            Debug.DrawLine(transform.position,playerPos , Color.red);
             TargetDir.Normalize();
             //print("rotating");
              transform.Rotate(new Vector3(0, 0, rotSpeed) * 100 * Time.deltaTime);
@@ -81,12 +78,12 @@ public class RollTest : MonoBehaviour
         isTracking = true;
        // rigid.isKinematic = true;
 
-        Vector3 target = playerPos.transform.position;
+        Vector3 target = playerPos;
         
         //target - origin = direction
-        Vector3 TargetDir = playerPos.transform.position - this.transform.position;
+        Vector3 TargetDir = playerPos - this.transform.position;
 
-        Debug.DrawLine(transform.position,playerPos.transform.position , Color.red);
+        Debug.DrawLine(transform.position,playerPos , Color.red);
         TargetDir.Normalize();
 
         //Vector3 rockForard = Vector3.Cross(TargetDir, Vector3.up).normalized*-1;
@@ -129,5 +126,26 @@ public class RollTest : MonoBehaviour
     //         }
     //         Destroy(gameObject);
     //     }
+
+    public void setSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
+    public void setWaitTime(float delay)
+    {
+        waitTime = delay;
+    }
+
+    public void setTargetPos(Vector3 pos)
+    {
+        playerPos = pos;
+    }
+    public void initDirection()
+    {
+        Vector3 PlayerP = new Vector3(playerPos.x, this.transform.position.y, playerPos.z);
+        TargetDir = PlayerP - this.transform.position;
+
+        isTracking = true;
+    }
 
 }
