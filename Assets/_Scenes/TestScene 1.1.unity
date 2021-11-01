@@ -362,6 +362,16 @@ PrefabInstance:
       propertyPath: m_AABB.m_Center.y
       value: -0.8436637
       objectReference: {fileID: 0}
+    - target: {fileID: 5673196264033423689, guid: ce748cc54f7d62b4289e246c8c8c9c04,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 778ae8e4de3710d4681221fa88018b0e, type: 2}
+    - target: {fileID: 5673196264033423689, guid: ce748cc54f7d62b4289e246c8c8c9c04,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8422663042645274757, guid: ce748cc54f7d62b4289e246c8c8c9c04,
         type: 3}
       propertyPath: m_LocalPosition.x
