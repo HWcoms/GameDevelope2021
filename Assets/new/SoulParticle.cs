@@ -8,6 +8,7 @@ public class SoulParticle : MonoBehaviour
     public GameObject player;
     
     public Vector3 SpawnOffset;
+    public Vector3 EndOffset;
     public float delay = 2.0f;
 
     private GameObject particle;
@@ -29,7 +30,7 @@ public class SoulParticle : MonoBehaviour
     void Start()
     {
         //get monster component from EnemyHealth.cs Later
-        monster = GameObject.FindWithTag("Monster");   //remove later(for test)
+        monster = GameObject.FindWithTag("Boss");   //remove later(for test)
 
         player = GameObject.FindWithTag("Player");
 
@@ -79,7 +80,7 @@ public class SoulParticle : MonoBehaviour
             Mathf.Lerp(particle.transform.position.z, player.transform.position.z,Time.deltaTime * speed )
         );
 */
-        particle.transform.position = Vector3.Lerp(particle.transform.position, player.transform.position, Time.deltaTime * speed);
+        particle.transform.position = Vector3.Lerp(particle.transform.position, player.transform.position + EndOffset, Time.deltaTime * speed);
     }
 
     public void setAnimDone(int flag)
