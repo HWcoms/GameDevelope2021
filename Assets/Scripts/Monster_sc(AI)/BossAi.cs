@@ -45,6 +45,10 @@ public class BossAi : MonoBehaviour
 
     public GameObject particlePrefab;
 
+    bool isLookAtPlayer = false;
+
+    public float lookAtSpeed = 5.0f;
+
     void Awake()
     {
         //isLook = true;
@@ -124,7 +128,7 @@ public class BossAi : MonoBehaviour
             if (!isDone)
             {
                 //Debug.Log("one");
-                Instantiate(Prefab, target.transform.position, Quaternion.identity);
+                //Instantiate(Prefab, target.transform.position, Quaternion.identity);
             }
             isDone = true;
         }
@@ -139,15 +143,31 @@ public class BossAi : MonoBehaviour
         if (enemyhealthScript.getHp() < temp_Hp)
         {
             //print("Attacking");
+            /*
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
             lookVec = new Vector3(h, 0, v) * 5f;
-            transform.LookAt(target.position + lookVec);
+            /transform.LookAt(target.position + lookVec);
+            */
+
+            isLookAtPlayer = true;
 
             temp_Hp = enemyhealthScript.getHp();
 
             Instantiate(particlePrefab, transform.position, Quaternion.identity);
         }
+
+        if (isLookAtPlayer)
+            LookAtPlayer();
+    }
+
+    void LookAtPlayer()
+    {
+        Vector3 dir = target.position - this.transform.position;
+        this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(dir), lookAtSpeed * Time.deltaTime);
+
+        if (Quaternion.Angle(Quaternion.LookRotation(dir), transform.rotation) < 30.0f)
+            isLookAtPlayer = false;
     }
 
     IEnumerator SpawnRock(float delay)

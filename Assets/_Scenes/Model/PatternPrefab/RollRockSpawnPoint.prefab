@@ -166,7 +166,7 @@ MonoBehaviour:
     type: 3}
   SpawnRockOffset: {x: 0, y: 1.2, z: 0}
   spawnTimes: 3
-  speed: 50
+  speed: 40
   waitTime: 1
   player: {fileID: 0}
 --- !u!1 &6198800580494882734

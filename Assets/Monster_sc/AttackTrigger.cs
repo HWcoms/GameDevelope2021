@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class AttackTrigger : MonoBehaviour
 {
@@ -9,10 +10,17 @@ public class AttackTrigger : MonoBehaviour
     //private float attackDamgage = 10.0f;
     private BossAi bs;
     // Start is called before the first frame update
+
+    [SerializeField] private GameObject hitParticle;
+    private TextMeshPro hitParticleText;
+
     void Awake()
     {
         attck_Hp = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
         bs = GameObject.FindWithTag("Boss").GetComponent<BossAi>();
+
+        hitParticleText = hitParticle.GetComponentInChildren<TextMeshPro>();
+        hitParticleText.text = "0";
     }
 
     // Update is called once per frame
@@ -31,7 +39,9 @@ public class AttackTrigger : MonoBehaviour
             if (attck_Hp.changeHp(-bs.AttackDamage))
             {
                 bs.setAttack(0);
-                //GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
+
+                hitParticleText.text = ((int)bs.AttackDamage).ToString();
+                GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
             }
         }
     }
