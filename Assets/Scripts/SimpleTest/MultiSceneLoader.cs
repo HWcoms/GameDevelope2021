@@ -5,32 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class MultiSceneLoader : MonoBehaviour
 {
-    private Transform playerSpawnPoint;
+    public Transform playerSpawnPoint;
     public float playerSpawnDelay = 1.0f;
     private GameObject player;
 
     public string characterSceneName;
-    public string mapSceneName;
+    //public string mapSceneName;
     public PhysicsScene physicsScene;
 
     public bool isLoaded = false;
 
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
+    //map names
+    public enum SceneNameEnum {TestMapLoad, mapTest};
+    [SerializeField] private SceneNameEnum sceneNames;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerSpawnPoint = GameObject.Find("Spawn_Point").transform;
+        //playerSpawnPoint = GameObject.Find("Spawn_Point").transform;
         player = GameObject.FindWithTag("Player").gameObject;
 
-        if (!string.IsNullOrEmpty(mapSceneName))
+        if (!string.IsNullOrEmpty(sceneNames.ToString()))
         {
             if (SceneManager.sceneCount > 0)
             {
                 for (int i = 0; i < SceneManager.sceneCount; ++i)
                 {
                     Scene _scene = SceneManager.GetSceneAt(i);
-                    if (_scene.name.Equals(mapSceneName))
+                    if (_scene.name.Equals(sceneNames.ToString()))
                     {
                         isLoaded = true;
                     }
@@ -39,7 +43,7 @@ public class MultiSceneLoader : MonoBehaviour
 
             if (!isLoaded)
             {
-                LoadScene(mapSceneName, 1);
+                LoadScene(sceneNames.ToString(), 1);
 
                 isLoaded = true;
             }
