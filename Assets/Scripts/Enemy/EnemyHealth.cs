@@ -223,4 +223,9 @@ public class EnemyHealth : MonoBehaviour
     {
         return hp;
     }
+
+    public float getMaxHp()
+    {
+        return maxHp;
+    }
 }

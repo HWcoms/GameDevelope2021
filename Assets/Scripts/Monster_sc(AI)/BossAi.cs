@@ -65,7 +65,7 @@ public class BossAi : MonoBehaviour
         enemyhealthScript = GetComponent<EnemyHealth>();
         cape = GameObject.Find("King's cape");
 
-        temp_Hp = enemyhealthScript.getHp();
+        temp_Hp = enemyhealthScript.getMaxHp();
     }
 
     // Update is called once per frame
