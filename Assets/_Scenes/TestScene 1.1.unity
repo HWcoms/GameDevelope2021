@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36236456, g: 0.44876656, b: 0.5936064, a: 1}
+  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10179,6 +10179,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f18d76290feedc7409e7bacf05b335b1, type: 3}
   - {fileID: 8300000, guid: f18d76290feedc7409e7bacf05b335b1, type: 3}
   - {fileID: 8300000, guid: f18d76290feedc7409e7bacf05b335b1, type: 3}
+  audioMixerGroup: {fileID: 0}
+  hitAudioPrefab: {fileID: 0}
   rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1015791657
 BoxCollider:
@@ -14792,8 +14794,9 @@ AudioSource:
   m_GameObject: {fileID: 1400898037}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f0a132820f2a99c46b31b65fadd36439, type: 3}
+  OutputAudioMixerGroup: {fileID: 3826133036651941249, guid: 071992e925ae17e40982faaf047463f5,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 15229578e00540d4cb0c7eae4c5097b4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -16062,7 +16065,7 @@ MonoBehaviour:
   playerSpawnDelay: 0
   characterSceneName: TestScene 1.1
   isLoaded: 0
-  sceneNames: 1
+  sceneNames: 0
 --- !u!135 &1463043604 stripped
 SphereCollider:
   m_CorrespondingSourceObject: {fileID: 343658306503452754, guid: 6137317d0bdd9524d92f54c5412eef82,
@@ -16445,7 +16448,7 @@ PrefabInstance:
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
       propertyPath: m_Intensity
-      value: 8.355635
+      value: 55.704227
       objectReference: {fileID: 0}
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
@@ -19872,7 +19875,7 @@ PrefabInstance:
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
       propertyPath: m_Intensity
-      value: 8.355635
+      value: 55.704227
       objectReference: {fileID: 0}
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
@@ -20316,6 +20319,18 @@ PrefabInstance:
       propertyPath: hitAudios.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 6bf67b22ae11d1d4995f7d61cdbae433, type: 3}
+    - target: {fileID: 6866230877578209175, guid: 66224e56a01e8e74faa58a21fbe59af3,
+        type: 3}
+      propertyPath: hitAudioPrefab
+      value: 
+      objectReference: {fileID: 8782932921747779825, guid: aaa7bdc9f54a3e9438a145cd3b27983c,
+        type: 3}
+    - target: {fileID: 6866230877578209175, guid: 66224e56a01e8e74faa58a21fbe59af3,
+        type: 3}
+      propertyPath: audioMixerGroup
+      value: 
+      objectReference: {fileID: 2305032645551538406, guid: aac64ad5147ab4643af7b8cc713b9c15,
+        type: 2}
     - target: {fileID: 6866230878786624924, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
       propertyPath: m_Layer

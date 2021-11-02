@@ -11,11 +11,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 72624f9785f0aa048a0b936bd1b2fedd, type: 3}
+      objectReference: {fileID: 8300000, guid: 6bf67b22ae11d1d4995f7d61cdbae433, type: 3}
     - target: {fileID: 3238343129412994070, guid: 7b07477cbbac92048afca4a08b81b4dc,
         type: 3}
       propertyPath: m_Name
-      value: AudioFX_swordSlash
+      value: AudioFX_swordhit
       objectReference: {fileID: 0}
     - target: {fileID: 3238343129412994071, guid: 7b07477cbbac92048afca4a08b81b4dc,
         type: 3}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Audio;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerWeapon : MonoBehaviour
     private TextMeshPro hitParticleText;
 
     public AudioClip[] hitAudios;
+    public AudioMixerGroup audioMixerGroup;
+    public GameObject hitAudioPrefab;
 
     [SerializeField] private Quaternion rot;
 
@@ -56,6 +59,9 @@ public class PlayerWeapon : MonoBehaviour
         swordPos = GameObject.FindGameObjectWithTag("PlayerWeapon").transform;
         localGameobj = GameObject.Find("SwordDamageMsgOffset").gameObject;
         */
+
+        //audio settings
+        hitAudioPrefab.GetComponent<AudioSource>().outputAudioMixerGroup = audioMixerGroup;
     }
 
     /*
@@ -169,24 +175,31 @@ public class PlayerWeapon : MonoBehaviour
 
         rot = Quaternion.LookRotation(-(pos.transform.position - this.transform.position).normalized);
 
+        int index = -1;
+
         switch (bodyType)
         {
             case EnemyHealth.BodyTypeEnum.FLESH:
-                GameObject.Instantiate(hitParticles[0], pos.transform.position, rot);
-                AudioSource.PlayClipAtPoint(hitAudios[0], pos.transform.position);
+                index = 0;
                 break;
             case EnemyHealth.BodyTypeEnum.WOOD:
-                GameObject.Instantiate(hitParticles[1], pos.transform.position, rot);
-                AudioSource.PlayClipAtPoint(hitAudios[1], pos.transform.position);
+                index = 1;
                 break;
             case EnemyHealth.BodyTypeEnum.STONE:
-                GameObject.Instantiate(hitParticles[2], pos.transform.position, rot);
-                AudioSource.PlayClipAtPoint(hitAudios[2], pos.transform.position);
+                index = 2;
                 break;
             case EnemyHealth.BodyTypeEnum.METAL:
-                GameObject.Instantiate(hitParticles[3], pos.transform.position, rot);
-                AudioSource.PlayClipAtPoint(hitAudios[3], pos.transform.position);
+                index = 3;
                 break;
+        }
+
+        if(index != -1)
+        {
+            GameObject.Instantiate(hitParticles[index], pos.transform.position, rot);
+            //AudioSource.PlayClipAtPoint(hitAudios[index], pos.transform.position);
+
+            hitAudioPrefab.GetComponent<AudioSource>().clip = hitAudios[index];
+            GameObject.Instantiate(hitAudioPrefab, pos.transform.position, rot);
         }
     }
 
@@ -197,24 +210,31 @@ public class PlayerWeapon : MonoBehaviour
 
         rot = Quaternion.LookRotation(-(pos.transform.position - this.transform.position).normalized);
 
+        int index = -1;
+
         switch (bodyType)
         {
             case NormalObjectCollider.BodyTypeEnum.FLESH:
-                GameObject.Instantiate(hitParticles[0], pos.transform.position, rot);
-                AudioSource.PlayClipAtPoint(hitAudios[0], pos.transform.position);
+                index = 0;
                 break;
             case NormalObjectCollider.BodyTypeEnum.WOOD:
-                GameObject.Instantiate(hitParticles[1], pos.transform.position, rot);
-                AudioSource.PlayClipAtPoint(hitAudios[1], pos.transform.position);
+                index = 1;
                 break;
             case NormalObjectCollider.BodyTypeEnum.STONE:
-                GameObject.Instantiate(hitParticles[2], pos.transform.position, rot);
-                AudioSource.PlayClipAtPoint(hitAudios[2], pos.transform.position);
+                index = 2;
                 break;
             case NormalObjectCollider.BodyTypeEnum.METAL:
-                GameObject.Instantiate(hitParticles[3], pos.transform.position, rot);
-                AudioSource.PlayClipAtPoint(hitAudios[3], pos.transform.position);
+                index = 3;
                 break;
+        }
+
+        if(index != -1)
+        {
+            GameObject.Instantiate(hitParticles[0], pos.transform.position, rot);
+            //AudioSource.PlayClipAtPoint(hitAudios[0], pos.transform.position);
+
+            hitAudioPrefab.GetComponent<AudioSource>().clip = hitAudios[index];
+            GameObject.Instantiate(hitAudioPrefab, pos.transform.position, rot);
         }
     }
 
