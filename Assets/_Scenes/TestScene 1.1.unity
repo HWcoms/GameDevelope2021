@@ -19875,7 +19875,7 @@ PrefabInstance:
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
       propertyPath: m_Intensity
-      value: 55.704227
+      value: 8.355635
       objectReference: {fileID: 0}
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
@@ -20262,12 +20262,12 @@ PrefabInstance:
     - target: {fileID: 4797270099519846234, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
       propertyPath: staminaRezenDelay
-      value: 0.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4797270099519846234, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
       propertyPath: staminaRezenSpeed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6040256016512820052, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
