@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
+  m_IndirectSpecularColor: {r: 0.3622971, g: 0.44875225, b: 0.5936822, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2674,13 +2674,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 342373121}
-  m_LocalRotation: {x: -0.0147755705, y: 0.13360521, z: -0.39773795, w: 0.9075989}
+  m_LocalRotation: {x: -0.034030497, y: 0.1420146, z: -0.39481348, w: 0.9070811}
   m_LocalPosition: {x: -0.091, y: 0.212, z: -0.617}
   m_LocalScale: {x: 0.5354109, y: 0.5136878, z: 0.36737978}
   m_Children: []
   m_Father: {fileID: 1731763548}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 4.557, y: 14.778001, z: -46.738003}
+  m_LocalEulerAnglesHint: {x: 2.8890002, y: 16.551, z: -46.623}
 --- !u!65 &342373123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2692,7 +2692,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5752631, y: 0.7411398, z: 6.3645086}
+  m_Size: {x: 1.05, y: 1.56, z: 6.3645086}
   m_Center: {x: 0.10791832, y: -0.18053062, z: -2.3157234}
 --- !u!114 &342373124
 MonoBehaviour:
@@ -16065,7 +16065,7 @@ MonoBehaviour:
   playerSpawnDelay: 0
   characterSceneName: TestScene 1.1
   isLoaded: 0
-  sceneNames: 0
+  sceneNames: 1
 --- !u!135 &1463043604 stripped
 SphereCollider:
   m_CorrespondingSourceObject: {fileID: 343658306503452754, guid: 6137317d0bdd9524d92f54c5412eef82,
