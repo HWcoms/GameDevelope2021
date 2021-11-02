@@ -85,6 +85,11 @@ public class EnemyHealth : MonoBehaviour
 
         checkHP();
 
+        if(getDead())
+        {
+            transform.Find("Canvas").gameObject.SetActive(false);
+        }
+
         //print(getDamaged());
     }
 
