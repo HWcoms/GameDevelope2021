@@ -25,6 +25,7 @@ public class BossAi : MonoBehaviour
     bool LongAttack_check = false;
     bool ShortAttack_check = false;
     bool Chase_check = false;
+    bool walk_check = false;
     bool StoneMagic_check = false;
     [SerializeField] private float temp_Hp;
 
@@ -107,11 +108,13 @@ public class BossAi : MonoBehaviour
 
         if ( Chase_check ) //float dist = Vector3.Distance(other.position, transform.position);
         {
+            anim.SetBool("Is_Walk", false);
             ChaseStart();
         }
         else if(ShortAttack_check )
         {
             anim.SetBool("Is_Run", false);
+            anim.SetBool("Is_Walk", false);
             //InvokeRepeating("Random_patton_Attack1", 1, 5.0f);            
             //print("Short Attack");
             StartCoroutine(ShortAttack());
@@ -119,6 +122,7 @@ public class BossAi : MonoBehaviour
         else if( LongAttack_check )
         {
             anim.SetBool("Is_Run", false);
+            anim.SetBool("Is_Walk", false);
             //InvokeRepeating("Random_patton_Attack1", 1, 5.0f);            
             //print("Long Attack");
             StartCoroutine(LongAttack());
@@ -132,6 +136,12 @@ public class BossAi : MonoBehaviour
             }
             isDone = true;
         }
+        else if(walk_check)
+        {
+            anim.SetBool("Is_Run", false);
+            WalkStart();
+        }
+
         if( (enemyhealthScript.getHp() / enemyhealthScript.getMaxHp()) * 100.0f < 30.0f && isRockSpawn)
         {
             print("roll ");
@@ -195,10 +205,15 @@ public class BossAi : MonoBehaviour
             //anim.SetBool("Is_Run", false);
             Chase_check = false;
 
+            //anim.SetBool("Is_Walk", false);
+            walk_check = false;
+
+
+
         //float random_patton = Random.Range(0.01f, 0.5f);
         //yield return new WaitForSeconds(0.1f);
         //int ranAction = Random.Range(0,3);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
             //int ranAction = Random.Range(0,3); //패턴 갯수 정함.
             //print("Chase_Exit");
             //int ranAction = Random.Range(0, 3); 
@@ -286,37 +301,57 @@ public class BossAi : MonoBehaviour
 
            StartCoroutine(Think());
 
+    }
 
+    void WalkStart()
+    {
+
+        print("Walk");
+        nav.isStopped = false;
+        nav.SetDestination(target.position);
+        anim.SetBool("Is_Walk", true);
+
+        StartCoroutine(Think());
     }
 
     void boss_patton()
     {
-        if (dist > 13 ) //float dist = Vector3.Distance(other.position, transform.position);
+        int i = Random.Range(0, 1);
+        if ((dist > 8 && dist < 13) && fov.visibleTargets.Count == 0 ) //float dist = Vector3.Distance(other.position, transform.position);
+        {
+            walk_check = true;
+            
+        }
+        else if((dist > 13 && fov.visibleTargets.Count == 0))
         {
             Chase_check = true;
         }
-        else if(fov.visibleTargets.Count == 0 && dist<3) //사각지대에서 플레이어가 보스 가격시 마법 발동
+
+
+        /*if (fov.visibleTargets.Count == 0 && dist < 3) //사각지대에서 플레이어가 보스 가격시 마법 발동
         {
             StoneMagic_check = true;
-        }
-        else if (dist < 5 && fov.visibleTargets.Count == 1)
-        {
-            ShortAttack_check = true;
-        }
-        else if (dist >= 5 && fov.visibleTargets.Count == 1)
-        {
-            LongAttack_check = true;
-        }
-       /*if(enemyhealthScript.getHp() < temp_Hp)
-        {
-            print("Attacking");
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
-            lookVec = new Vector3(h, 0, v) * 5f;
-            transform.LookAt(target.position + lookVec);
-
-            temp_Hp = enemyhealthScript.getHp();
         }*/
+        if(dist < 2 && fov.visibleTargets.Count == 1)
+        {
+            if (i == 0)
+                ShortAttack_check = true;
+            else
+                LongAttack_check = true;
+        }
+
+
+
+        /*if(enemyhealthScript.getHp() < temp_Hp)
+         {
+             print("Attacking");
+             float h = Input.GetAxisRaw("Horizontal");
+             float v = Input.GetAxisRaw("Vertical");
+             lookVec = new Vector3(h, 0, v) * 5f;
+             transform.LookAt(target.position + lookVec);
+
+             temp_Hp = enemyhealthScript.getHp();
+         }*/
     }
 
     /*void Random_patton_Attack1()
