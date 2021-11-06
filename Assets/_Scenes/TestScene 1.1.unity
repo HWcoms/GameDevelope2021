@@ -6980,6 +6980,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 0.8
   m_GroundCheckDistance: 0.3
+  kingT_GroundCheckDistance: 0.1
 --- !u!114 &544350964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7014,6 +7015,7 @@ MonoBehaviour:
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.1
+  kingT_GroundCheckDistance: 0.1
 --- !u!136 &544350966
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20376,7 +20378,7 @@ PrefabInstance:
     - target: {fileID: 5349207411785990187, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
       propertyPath: m_MovingTurnSpeed
-      value: 360
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 5349207411785990187, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
@@ -20386,12 +20388,17 @@ PrefabInstance:
     - target: {fileID: 5349207411785990187, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
       propertyPath: m_AnimSpeedMultiplier
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5349207411785990187, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
       propertyPath: m_GroundCheckDistance
-      value: 0.1
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5349207411785990187, guid: 66224e56a01e8e74faa58a21fbe59af3,
+        type: 3}
+      propertyPath: kingT_GroundCheckDistance
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6040256016512820052, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}

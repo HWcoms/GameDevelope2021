@@ -15,6 +15,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		[SerializeField] float m_MoveSpeedMultiplier = 1f;
 		[SerializeField] float m_AnimSpeedMultiplier = 1f;
 		[SerializeField] float m_GroundCheckDistance = 0.1f;
+		[SerializeField] float kingT_GroundCheckDistance = 0.3f;
 
 		Rigidbody m_Rigidbody;
 		Animator m_Animator;
@@ -204,7 +205,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
 				m_IsGrounded = false;
 				m_Animator.applyRootMotion = false;
-				m_GroundCheckDistance = 0.1f;
+				m_GroundCheckDistance = kingT_GroundCheckDistance;
 			}
 		}
 
