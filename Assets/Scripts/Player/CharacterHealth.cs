@@ -86,7 +86,7 @@ public class CharacterHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         hpText.text = ((int)hp).ToString() + " / " + maxHp.ToString();
         staminaText.text = ((int)stamina).ToString() + " / " + maxStamina.ToString();
