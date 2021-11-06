@@ -5,8 +5,8 @@ public class TpsFollowCam : MonoBehaviour
     [SerializeField] private bool useRotation = true;
     [SerializeField] private bool isCursorLock = true;
 
-    [SerializeField] private float MouseXSensitivity = 6f;
-    [SerializeField] private float MouseYSensitivity = 6f;
+    [SerializeField] private float MouseXSensitivity = 3f;
+    [SerializeField] private float MouseYSensitivity = 3f;
     [SerializeField] private bool isInvertedY = false;
 
     [SerializeField] private float CameraDistance = 10f;
@@ -141,11 +141,14 @@ public class TpsFollowCam : MonoBehaviour
 
             float distance = hit.distance;
 
-            CameraDistance = Mathf.Lerp(CameraDistance, distance, ScrollDampening * 10f);
+            CameraDistance = Mathf.Lerp(CameraDistance, distance, ScrollDampening * 100f);
         }
         else
         {
-            CameraDistance = Mathf.Lerp(CameraDistance, userSetDistance, Time.deltaTime * ScrollDampening);
+            if (CameraDistance >= maxDistance - 0.1f)
+                CameraDistance = maxDistance;
+            else
+                CameraDistance = Mathf.Lerp(CameraDistance, userSetDistance, Time.deltaTime * ScrollDampening);
         }
     }
 
