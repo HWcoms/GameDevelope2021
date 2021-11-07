@@ -46,7 +46,7 @@ public class SpawnRock : MonoBehaviour
             //print(rand);
             Vector3 rangeDir = spawnPoint[rand].transform.position - player.position;
 
-            GameObject patternVision = Instantiate(patternRangeVisionPrefab, player.position + new Vector3(0f, 0.1f, 0f), Quaternion.LookRotation(rangeDir));
+            GameObject patternVision = Instantiate(patternRangeVisionPrefab, player.position + new Vector3(0f, 0.07f, 0f), Quaternion.LookRotation(rangeDir));
             Destroy(patternVision, 0.9f);
             tempPos = player.position;
 

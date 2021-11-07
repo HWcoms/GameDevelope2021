@@ -164,7 +164,7 @@ MonoBehaviour:
   - {fileID: 544440701497559030}
   patternRangeVisionPrefab: {fileID: 5348413407527661782, guid: b419430e7c832af458825d59c78659c3,
     type: 3}
-  SpawnRockOffset: {x: 0, y: 0.07, z: 0}
+  SpawnRockOffset: {x: 0, y: 1.2, z: 0}
   spawnTimes: 3
   speed: 40
   waitTime: 1
