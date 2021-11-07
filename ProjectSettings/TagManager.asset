@@ -34,7 +34,7 @@ TagManager:
   - ParticleCollider
   - IgnoreCamCol
   - IgnoreParticleCollider
-  - 
+  - CustomPass
   - 
   - 
   - 

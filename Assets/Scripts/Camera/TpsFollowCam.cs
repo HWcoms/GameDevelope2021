@@ -2,6 +2,9 @@
 
 public class TpsFollowCam : MonoBehaviour
 {
+    AutoTargetCam autoTargetCamScript;
+    bool isTargetting;
+
     [SerializeField] private bool useRotation = true;
     [SerializeField] private bool isCursorLock = true;
 
@@ -31,6 +34,9 @@ public class TpsFollowCam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        autoTargetCamScript = GetComponent<AutoTargetCam>();
+        isTargetting = autoTargetCamScript.getIsTargeting();
+
         startedPos = transform.localPosition;
         userSetDistance = CameraDistance;
         this._pivot = this.transform.parent;
@@ -79,29 +85,38 @@ public class TpsFollowCam : MonoBehaviour
     
     void LateUpdate()
     {
-        //mouse rotation
-        int invMouseY;
+        isTargetting = autoTargetCamScript.getIsTargeting();
 
-        if (isInvertedY) invMouseY = -1;
-        else invMouseY = 1;
-
-        if (useRotation)
+        if (!isTargetting || !autoTargetCamScript.getIsCamFollowTarget())
         {
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y") * invMouseY;
+            //mouse rotation
+            int invMouseY;
 
-            _LocalRotation.x += mouseX * MouseXSensitivity;
-            _LocalRotation.y -= mouseY * MouseYSensitivity;
+            if (isInvertedY) invMouseY = -1;
+            else invMouseY = 1;
 
-            //Clamp the Y rotation
-            _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, -95f, 62f);
+            if (useRotation)
+            {
+                float mouseX = Input.GetAxis("Mouse X");
+                float mouseY = Input.GetAxis("Mouse Y") * invMouseY;
+
+                _LocalRotation.x += mouseX * MouseXSensitivity;
+                _LocalRotation.y -= mouseY * MouseYSensitivity;
+
+                //Clamp the Y rotation
+                _LocalRotation.y = Mathf.Clamp(_LocalRotation.y, -95f, 62f);
+            }
+
+            if (Input.GetKey(KeyCode.X))
+                useRotation = false;
+            else
+                useRotation = true;
+
+
+            Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x + -90.0f, 0);
+            _pivot.rotation = Quaternion.Lerp(_pivot.rotation, QT, /*Time.deltaTime **/ smoothSpeed);
+
         }
-
-        if (Input.GetKey(KeyCode.X))
-            useRotation = false;
-        else
-            useRotation = true;
-
 
         //zoom
         float ScrollAmount = Input.GetAxis("Mouse ScrollWheel") * ScrollSensitivity;
@@ -118,9 +133,6 @@ public class TpsFollowCam : MonoBehaviour
 
             userSetDistance = CameraDistance;
         }
-
-        Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x + -90.0f, 0);
-        _pivot.rotation = Quaternion.Lerp(_pivot.rotation, QT, /*Time.deltaTime **/ smoothSpeed);
 
         if (transform.localPosition.z != CameraDistance * -1f)
         {
