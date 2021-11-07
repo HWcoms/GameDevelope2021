@@ -9,7 +9,7 @@ public class AutoTargetCam : MonoBehaviour
     [SerializeField] private bool isCamFollowTarget = false;
     [SerializeField] private float smoothLookSpeed = 5.0f;
 
-    private GameObject monster;
+    public GameObject monster;
     private GameObject player;
 
     //public GameObject targetingPrefab;

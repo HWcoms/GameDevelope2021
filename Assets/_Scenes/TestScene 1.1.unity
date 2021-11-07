@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
+  m_IndirectSpecularColor: {r: 1.4492313, g: 1.7954191, b: 2.3756597, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2921,7 +2921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &389083090
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8505,6 +8505,27 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &849338328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6384024496815864302, guid: 66224e56a01e8e74faa58a21fbe59af3,
+    type: 3}
+  m_PrefabInstance: {fileID: 3958717304093016499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &849338329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849338328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e73bb3393872a498ef503009a6d274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTargetAllowed: 1
+  isTarGettingOn: 0
+  lookAtSpeed: 5
 --- !u!1 &850279373
 GameObject:
   m_ObjectHideFlags: 0
@@ -9951,6 +9972,7 @@ MonoBehaviour:
   isTargeting: 0
   isCamFollowTarget: 0
   smoothLookSpeed: 5
+  monster: {fileID: 0}
   isEffectOn: 1
   targetEffectPosOffset: {x: 0, y: 1.4, z: 0}
   targetEffect: {fileID: 393388406}
