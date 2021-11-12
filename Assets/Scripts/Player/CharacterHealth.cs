@@ -173,6 +173,8 @@ public class CharacterHealth : MonoBehaviour
 
         if (value < 0 && stamina > 0)
         {
+            rezenTimerReset();
+
             isStaminaRezen = true;
             staminaTimer = staminaRezenDelay;
         }
@@ -307,6 +309,10 @@ public class CharacterHealth : MonoBehaviour
 
             if (maxStamina <= stamina) isStaminaRezen = false;
         }
+    }
+    void rezenTimerReset()
+    {
+        staminaTimer = maxStamina;
     }
 
     public void Dead()
