@@ -171,7 +171,7 @@ public class CharacterHealth : MonoBehaviour
         currentStaminaPct = (float)stamina / (float)maxStamina;
         handleStaminaChange(currentStaminaPct);
 
-        if (value < 0)
+        if (value < 0 && stamina > 0)
         {
             isStaminaRezen = true;
             staminaTimer = staminaRezenDelay;
@@ -189,7 +189,7 @@ public class CharacterHealth : MonoBehaviour
         currentStaminaPct = (float)stamina / (float)maxStamina;
         staminaImg.fillAmount = currentStaminaPct;
 
-        if (value < 0)
+        if (value < 0 && stamina > 0)
         {
             isStaminaRezen = true;
             staminaTimer = staminaRezenDelay;
