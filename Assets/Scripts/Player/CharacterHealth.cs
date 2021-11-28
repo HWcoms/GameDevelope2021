@@ -63,6 +63,8 @@ public class CharacterHealth : MonoBehaviour
     bool hpCoroutineRunning = false;
     bool hpbgCoroutineRunning = false;
 
+    private GameMessage gmMsgScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +85,8 @@ public class CharacterHealth : MonoBehaviour
 
         hpText = GameObject.Find("HPnum").GetComponent<Text>();
         staminaText = GameObject.Find("Staminanum").GetComponent<Text>();
+
+        gmMsgScript = GameObject.Find("GameManager").GetComponent<GameMessage>();
     }
 
     // Update is called once per frame
@@ -163,10 +167,15 @@ public class CharacterHealth : MonoBehaviour
 
     public void changeStamina(float value)
     {
+        if (value < 0 && stamina <= 0)
+        {
+            gmMsgScript.msgNoStamina();
+        }
+
         stamina += value;
 
-        if (stamina < 0.0f) stamina = 0.0f;
-        else if (stamina > maxStamina) stamina = maxStamina;
+        if (stamina <= 0.0f) stamina = 0.0f;
+        else if (stamina >= maxStamina) stamina = maxStamina;
 
         currentStaminaPct = (float)stamina / (float)maxStamina;
         handleStaminaChange(currentStaminaPct);
@@ -178,15 +187,19 @@ public class CharacterHealth : MonoBehaviour
             isStaminaRezen = true;
             staminaTimer = staminaRezenDelay;
         }
-            
     }
 
     public void changeStamina(float value, int mode)
     {
+        if (value < 0 && stamina <= 0)
+        {
+            gmMsgScript.msgNoStamina();
+        }
+
         stamina += value;
 
-        if (stamina < 0.0f) stamina = 0.0f;
-        else if (stamina > maxStamina) stamina = maxStamina;
+        if (stamina <= 0.0f) stamina = 0.0f;
+        else if (stamina >= maxStamina) stamina = maxStamina;
 
         currentStaminaPct = (float)stamina / (float)maxStamina;
         staminaImg.fillAmount = currentStaminaPct;
@@ -196,7 +209,6 @@ public class CharacterHealth : MonoBehaviour
             isStaminaRezen = true;
             staminaTimer = staminaRezenDelay;
         }
-
     }
 
     public float getHp()

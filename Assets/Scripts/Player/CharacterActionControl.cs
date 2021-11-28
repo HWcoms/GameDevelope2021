@@ -98,9 +98,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (!m_Animator.GetBool("OnGround")) return;
 
-            if(CHscript.getStamina() <= 0)
+            if (CHscript.getStamina() <= 0)
             {
                 TPUCscript.setStaminaAble(false);
+
+                if (Input.GetMouseButtonDown(1) && rollAble)
+                {
+                    CHscript.changeStamina(-rollStaminaCost); //do msg only
+                }
             }
             else
             {
@@ -126,9 +131,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 }
 
                 //attack2
-                if(m_Animator.GetBool("attack"))        //while attack
+                if (m_Animator.GetBool("attack"))        //while attack
                 {
-                    if(Input.GetMouseButtonDown(0) && attackContinueAble)
+                    if (Input.GetMouseButtonDown(0) && attackContinueAble)
                     {
                         /*
                         StopCoroutine(AttackCoroutine);
@@ -176,7 +181,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
 
-            if (Input.GetKey(KeyCode.LeftShift) && m_Animator.GetFloat("Forward") >= 0.9f)
+            if (Input.GetKey(KeyCode.LeftShift) && moveAble /*m_Animator.GetFloat("Forward") >= 0.9f*/)
             {
                 CHscript.changeStamina(-runStaminaCost, 1);
             }
