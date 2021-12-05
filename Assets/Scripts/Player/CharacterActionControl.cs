@@ -119,7 +119,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     TPUCscript.setMoveAble(false);
 
                     attackAble = false;
-                    rollAble = false;
+                    //rollAble = false;
                     setAttackInt(1);    //animtor attack -> true
 
                     /*
@@ -163,10 +163,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
                     invTimer = delayBeforeInvincible + invincibleTime;
 
-                    CHscript.changeStamina(-rollStaminaCost);
 
                     TPUCscript.setMoveAble(false);
 
+                    setAttackInt(0);
                     attackAble = false;
                     rollAble = false;
                     m_Animator.SetBool("roll", true);
@@ -222,6 +222,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         IEnumerator rollWait(float delay)
         {
+            AnimatorClipInfo[] m_CurrentClipInfo = this.m_Animator.GetCurrentAnimatorClipInfo(0);
+            string m_ClipName = m_CurrentClipInfo[0].clip.name;
+
+            while (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack1") || m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack2") || m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack3"))
+            { 
+                print(m_ClipName);
+                yield return new WaitForSeconds(0.05f);
+            }
+
+            CHscript.changeStamina(-rollStaminaCost);
+
             yield return new WaitForSeconds(delay);
 
             m_Animator.SetBool("roll", false);
@@ -345,7 +356,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if(fl == false)
             {
                 attackAble = true;
-                rollAble = true;
+                //rollAble = true;
                 attackContinueAble = false;
 
                 TPUCscript.setMoveAble(true);
