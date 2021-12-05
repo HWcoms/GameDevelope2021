@@ -129,12 +129,8 @@ public class BossAi : MonoBehaviour
         }
         else if(StoneMagic_check)
         {
-            if (!isDone)
-            {
-                //Debug.Log("one");
-                //Instantiate(Prefab, target.transform.position, Quaternion.identity);
-            }
-            isDone = true;
+            
+            
         }
         else if(walk_check)
         {
@@ -181,6 +177,17 @@ public class BossAi : MonoBehaviour
     }
 
     IEnumerator SpawnRock(float delay)
+    {
+        isRockSpawn = false;
+
+        Instantiate(RollPrefab, target.transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(delay);
+
+        isRockSpawn = true;
+    }
+
+    IEnumerator StoneMagic(float delay)
     {
         isRockSpawn = false;
 
@@ -316,29 +323,43 @@ public class BossAi : MonoBehaviour
 
     void boss_patton()
     {
-        int i = Random.Range(0, 1);
-        if ((dist > 8 && dist < 13) && fov.visibleTargets.Count == 0 ) //float dist = Vector3.Distance(other.position, transform.position);
+        if(fov.visibleTargets.Count == 0)
         {
-            walk_check = true;
-            
+            LookAtPlayer();
+            if ((dist > 8 && dist < 13)) //float dist = Vector3.Distance(other.position, transform.position);
+            {
+                walk_check = true;
+
+            }
+            else if ((dist > 13))
+            {
+                Chase_check = true;
+            }
         }
-        else if((dist > 13 && fov.visibleTargets.Count == 0))
+        else
         {
-            Chase_check = true;
-        }
+            if (dist < 5 )
+            {
+                LookAtPlayer();
+                ShortAttack_check = true;
+            }
+            /*else if(dist>=5 && dist<10)
+            {
+                LookAtPlayer();s
+                LongAttack_check = true;
+
+                //충격파 설정해주기
+
+            }*/
+        }      
 
 
         /*if (fov.visibleTargets.Count == 0 && dist < 3) //사각지대에서 플레이어가 보스 가격시 마법 발동
         {
             StoneMagic_check = true;
         }*/
-        if(dist < 2 && fov.visibleTargets.Count == 1)
-        {
-            if (i == 0)
-                ShortAttack_check = true;
-            else
-                LongAttack_check = true;
-        }
+       
+     
 
 
 
