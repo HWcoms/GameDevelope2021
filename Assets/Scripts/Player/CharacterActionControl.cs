@@ -166,6 +166,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
                     TPUCscript.setMoveAble(false);
 
+                    disablehit();
                     setAttackInt(0);
                     attackAble = false;
                     rollAble = false;
@@ -363,9 +364,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
         }
 
+        public bool getAttack()
+        {
+            bool result = m_Animator.GetBool("attack");
+
+            return result;
+        }
+
         //hit trigger
         public void hit()
         {
+            if (!getAttack()) return;
             //print ("hit");
             //playerWeaponScript.switchCollider(true);
             playerWeaponScript.switchHitDetector(true);
