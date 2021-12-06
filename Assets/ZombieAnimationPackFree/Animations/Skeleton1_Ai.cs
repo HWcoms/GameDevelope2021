@@ -9,7 +9,8 @@ public class Skeleton1_Ai : MonoBehaviour
     int ranAction;
     float dist;
     Vector3 lookVec;
-    
+    private skeleton1_length ani_in;
+
     bool isLook;
     public Animator anim;
     public Rigidbody rigid;
@@ -33,6 +34,7 @@ public class Skeleton1_Ai : MonoBehaviour
     void Awake()
     {         
         fov1 = GetComponent<FOV_Track>();
+        ani_in = GetComponent<skeleton1_length>();
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
@@ -64,12 +66,12 @@ public class Skeleton1_Ai : MonoBehaviour
         {            
             WalkStart();
         }
-        else if (Attack_check)
+        if (Attack_check)
         {            
             anim.SetBool("Is_Walk", false);
+            anim.SetBool("Is_Attack", true);
             StartCoroutine(Attack());
-        }            
-      
+        }      
         //getHit
         if (enemyhealthScript.getHp() < temp_Hp)
         {
@@ -81,10 +83,15 @@ public class Skeleton1_Ai : MonoBehaviour
             /transform.LookAt(target.position + lookVec);
             */
 
+            anim.SetBool("Is_Damage", true);
             isLookAtPlayer = true;
 
             temp_Hp = enemyhealthScript.getHp();
            
+        }
+        else
+        {
+            anim.SetBool("Is_Damage", false);
         }
 
         if (isLookAtPlayer)
@@ -103,11 +110,12 @@ public class Skeleton1_Ai : MonoBehaviour
 
 
     IEnumerator Think() //보스 로직 구현 - 보스가 생각해서.. ai처럼
-    {        
+    {
         anim.SetBool("Is_Attack", false);
-        Attack_check = false;      
+        Attack_check = false;
+        
         Walk_check = false;   
-        yield return new WaitForSeconds(3);       
+        yield return new WaitForSeconds(0.1f);       
         
     }
 
@@ -115,8 +123,8 @@ public class Skeleton1_Ai : MonoBehaviour
     {
         print("Attack");
         nav.isStopped = true;
-        anim.SetBool("Is_Attack", true);      
-        yield return new WaitForSeconds(3);
+        anim.SetBool("Is_Attack", true);
+        yield return new WaitForSeconds(ani_in.Attack);
 
         StartCoroutine(Think());
     }
@@ -125,7 +133,7 @@ public class Skeleton1_Ai : MonoBehaviour
     {
         nav.isStopped = true;
         anim.SetBool("Is_Damage", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(ani_in.Damage);
 
         StartCoroutine(Think());
     }
@@ -154,51 +162,33 @@ public class Skeleton1_Ai : MonoBehaviour
         nav.isStopped = false;
         nav.SetDestination(target.position);
         anim.SetBool("Is_Walk", true);
-         StartCoroutine(Think());
+        
+        StartCoroutine(Think());
     }
 
     void boss_patton()
     {
         if (fov1.visibleTargets.Count == 0)
-        {
-           
+        {           
             LookAtPlayer();
-            if ((dist > 8 && dist < 13)) //float dist = Vector3.Distance(other.position, transform.position);
+            if ((dist > 3)) //float dist = Vector3.Distance(other.position, transform.position);
             {
                 print("Walk");
-                Walk_check = true;
+                Walk_check = true;                
 
             }           
         }
-        else
+        else if (fov1.visibleTargets.Count == 1)
         {
-            if (dist < 9)
+            LookAtPlayer();
+            if (dist < 1)
             {
                 print("Attack_test");
-                LookAtPlayer();
                 Attack_check = true;
             }         
-        }
-
-     
+        }     
     }
-   
 
-    void Set_Animation(int x)
-    {
-        if (x == 1)
-        {
-            anim.SetBool("Is_Block", false);
-            anim.SetBool("Is_LongAttack", false);
-            anim.SetBool("Is_ShortAttack", false);
-        }
-        else
-        {
-            anim.SetBool("Is_Block", true);
-            anim.SetBool("Is_LongAttack", true);
-            anim.SetBool("Is_ShortAttack", true);
-        }
-
-    }
+  
 
 }
