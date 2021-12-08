@@ -9,7 +9,7 @@ public class Skeleton1_Ai : MonoBehaviour
     int ranAction;
     float dist;
     Vector3 lookVec;
-    private skeleton1_length ani_in;
+    //private skeleton1_length ani_in;
 
     bool isLook;
     public Animator anim;
@@ -17,7 +17,7 @@ public class Skeleton1_Ai : MonoBehaviour
     public BoxCollider boxCollider;
     public NavMeshAgent nav;
     public Transform target;
-    bool Attack_check = false;
+    [SerializeField] bool Attack_check = false;
     bool Walk_check = false;
     bool HitDamage_check = false;
     [SerializeField] private float temp_Hp;
@@ -31,10 +31,12 @@ public class Skeleton1_Ai : MonoBehaviour
 
     public float lookAtSpeed = 5.0f;
 
+    public GameObject particlePrefab;
+
     void Awake()
     {         
         fov1 = GetComponent<FOV_Track>();
-        ani_in = GetComponent<skeleton1_length>();
+        //ani_in = GetComponent<skeleton1_length>();
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
@@ -87,7 +89,9 @@ public class Skeleton1_Ai : MonoBehaviour
             isLookAtPlayer = true;
 
             temp_Hp = enemyhealthScript.getHp();
-           
+
+            GameObject soulPrefab = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+            soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
         }
         else
         {
@@ -124,7 +128,8 @@ public class Skeleton1_Ai : MonoBehaviour
         print("Attack");
         nav.isStopped = true;
         anim.SetBool("Is_Attack", true);
-        yield return new WaitForSeconds(ani_in.Attack);
+        //yield return new WaitForSeconds(ani_in.Attack);
+        yield return new WaitForSeconds(1.0f);
 
         StartCoroutine(Think());
     }
@@ -133,7 +138,8 @@ public class Skeleton1_Ai : MonoBehaviour
     {
         nav.isStopped = true;
         anim.SetBool("Is_Damage", true);
-        yield return new WaitForSeconds(ani_in.Damage);
+        //yield return new WaitForSeconds(ani_in.Damage);
+        yield return new WaitForSeconds(1.0f);
 
         StartCoroutine(Think());
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36218646, g: 0.4490212, b: 0.59463495, a: 1}
+  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3620,7 +3620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &421293771
 Transform:
   m_ObjectHideFlags: 0
@@ -3721,7 +3721,7 @@ MonoBehaviour:
   isInvincible: 0
   isDamaged: 0
   isShowedParticle: 0
-  spirit: 50
+  spirit: 10
   updateSpeedSeconds: 0.3
   hpbgDelay: 0.5
   hpImg: {fileID: 0}
@@ -3789,6 +3789,8 @@ MonoBehaviour:
   enemyhealthScript: {fileID: 0}
   AttackDamage: 5
   lookAtSpeed: 5
+  particlePrefab: {fileID: 4050718841060675903, guid: c6d8cacf08febb04cba67b8f13103c8a,
+    type: 3}
 --- !u!114 &430983844
 MonoBehaviour:
   m_ObjectHideFlags: 0

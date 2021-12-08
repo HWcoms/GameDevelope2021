@@ -32,7 +32,7 @@ public class SoulParticle : MonoBehaviour
     void Start()
     {
         //get monster component from EnemyHealth.cs Later
-        monster = GameObject.FindWithTag("Boss");   //remove later(for test)
+        //monster = GameObject.FindWithTag("Boss");   //remove later(for test)
 
         player = GameObject.FindWithTag("Player");
 

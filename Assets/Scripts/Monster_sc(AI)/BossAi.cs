@@ -160,7 +160,8 @@ public class BossAi : MonoBehaviour
 
             temp_Hp = enemyhealthScript.getHp();
 
-            Instantiate(particlePrefab, transform.position, Quaternion.identity);
+            GameObject soulPrefab = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+            soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
         }
 
         if (isLookAtPlayer)
