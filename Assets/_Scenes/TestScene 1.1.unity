@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
+  m_IndirectSpecularColor: {r: 0.36227348, g: 0.4489573, b: 0.59425205, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9951,6 +9951,13 @@ MonoBehaviour:
   isTargetAllowed: 1
   isTarGettingOn: 0
   lookAtSpeed: 5
+  detectedTargets: []
+  detectMaxDistance: 10
+  detectRadius: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  targetIndex: 0
 --- !u!1 &850279373
 GameObject:
   m_ObjectHideFlags: 0
@@ -10479,6 +10486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useRotation: 1
   isCursorLock: 1
+  useScroll: 1
   MouseXSensitivity: 6
   MouseYSensitivity: 6
   isInvertedY: 0
@@ -11628,6 +11636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useRotation: 1
   isCursorLock: 1
+  useScroll: 0
   MouseXSensitivity: 3
   MouseYSensitivity: 3
   isInvertedY: 0
@@ -19329,6 +19338,20 @@ MonoBehaviour:
   hpbgImg: {fileID: 0}
   PlayerWeaponColliderScript: {fileID: 0}
   bodyTypes: 0
+--- !u!136 &1543367018
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543367009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.22640538
+  m_Height: 2.0044072
+  m_Direction: 1
+  m_Center: {x: -3.5012276e-16, y: 1.0013853, z: 0.0031446612}
 --- !u!1 &1544816320
 GameObject:
   m_ObjectHideFlags: 0

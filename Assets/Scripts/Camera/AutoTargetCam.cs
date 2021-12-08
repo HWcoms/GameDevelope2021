@@ -27,18 +27,15 @@ public class AutoTargetCam : MonoBehaviour
 
     void Start()
     {
-        monster = GameObject.FindGameObjectWithTag("Boss");
+        //monster = GameObject.FindGameObjectWithTag("Boss");
+        monster = null;
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetMouseButtonDown(2))
-        {
-            setIsTargeting(!isTargeting);
-        }
-
         if(isTargeting && isCamFollowTarget)
         {
             //currentDir = transform.position - player.transform.position;    //player to cam
@@ -62,22 +59,32 @@ public class AutoTargetCam : MonoBehaviour
 
     private void Update()
     {
-        //Targeting Visual Effect
-        Vector3 targetEffectPos = monster.transform.position + targetEffectPosOffset;
-
-        if (isTargeting && isEffectOn)
+        //if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetMouseButtonDown(2))
         {
-            //currentTargetPrefab = Instantiate(targetingPrefab, targetEffectPos, Quaternion.identity);
-            targetEffect.SetActive(true);
-            targetEffect.transform.position = targetEffectPos;
+            setIsTargeting(!isTargeting);
         }
-        else {
+
+        //Targeting Visual Effect
+        Vector3 targetEffectPos = transform.position;
+        if (monster)
+            targetEffectPos= monster.transform.position + targetEffectPosOffset;
+
+        if (!isTargeting)
+        {
             /*
             if (targetEffect != null)
                 Destroy(targetEffect);
             */
             targetEffect.SetActive(false);
         }
+        else if (isTargeting && isEffectOn)
+        {
+            //currentTargetPrefab = Instantiate(targetingPrefab, targetEffectPos, Quaternion.identity);
+            targetEffect.SetActive(true);
+            targetEffect.transform.position = targetEffectPos;
+        }
+        
     }
 
     public bool getIsTargeting()

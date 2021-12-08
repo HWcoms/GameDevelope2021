@@ -7,6 +7,7 @@ public class TpsFollowCam : MonoBehaviour
 
     [SerializeField] private bool useRotation = true;
     [SerializeField] private bool isCursorLock = true;
+    [SerializeField] private bool useScroll = true;
 
     [SerializeField] private float MouseXSensitivity = 3f;
     [SerializeField] private float MouseYSensitivity = 3f;
@@ -121,7 +122,7 @@ public class TpsFollowCam : MonoBehaviour
         //zoom
         float ScrollAmount = Input.GetAxis("Mouse ScrollWheel") * ScrollSensitivity;
         
-        if(ScrollAmount != 0f)
+        if(ScrollAmount != 0f  && useScroll)
         {   
             //make camera zoom faster the further away it is from the target
             ScrollAmount *= (CameraDistance * 0.3f);
