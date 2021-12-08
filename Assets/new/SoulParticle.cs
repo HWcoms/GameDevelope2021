@@ -72,7 +72,7 @@ public class SoulParticle : MonoBehaviour
 
     void FollowPlayer()
     {
-        print("particle moving to player");
+        //print("particle moving to player");
 /*
         particle.transform.position = new Vector3(
             Mathf.Lerp(particle.transform.position.x, player.transform.position.x,Time.deltaTime * speed ),
@@ -104,7 +104,7 @@ public class SoulParticle : MonoBehaviour
             //player get soul
             player.GetComponent<PlayerSpirit>().changePlayerSpirit(spiritAmount);
 
-            print("destroy this particle");
+            //print("destroy this particle");
             Destroy(this.gameObject);
         }
     }

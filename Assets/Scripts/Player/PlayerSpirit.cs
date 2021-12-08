@@ -19,7 +19,7 @@ public class PlayerSpirit : MonoBehaviour
     public void changePlayerSpirit(float amount)
     {
         playerSpirit += amount;
-        print("current spirit : " + playerSpirit);
+        //print("current spirit : " + playerSpirit);
 
         refreshSpiritCount();
     }
