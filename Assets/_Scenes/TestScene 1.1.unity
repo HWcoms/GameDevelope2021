@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36230782, g: 0.44885477, b: 0.5939149, a: 1}
+  m_IndirectSpecularColor: {r: 0.36224487, g: 0.44880852, b: 0.59394974, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8039,6 +8039,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackContinueAble: 0
   isClicked: 0
+  temp_Hp: 0
+  getDamagebyHitDelay: 0
   isInvincible: 0
   delayBeforeInvincible: 0.1
   invincibleTime: 0.5
