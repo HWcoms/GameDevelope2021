@@ -64,7 +64,7 @@ public class PlayerAutoTarget : MonoBehaviour
             if (isLookAtTarget)
                 TargetAttack();
         }
-        print(Input.GetAxis("Mouse ScrollWheel"));
+        //print(Input.GetAxis("Mouse ScrollWheel"));
 
         //scroll target
         if (Input.GetAxis("Mouse ScrollWheel") > 0.05f)
@@ -136,7 +136,7 @@ public class PlayerAutoTarget : MonoBehaviour
 
         if (objs.Length == detectedTargets.Count)
         {
-            print("same");
+            //print("same");
             setTarget(detectedTargets[targetIndex].gameObject);
             return;
         }

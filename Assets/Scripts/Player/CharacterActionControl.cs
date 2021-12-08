@@ -228,7 +228,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             while (m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack1") || m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack2") || m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack3"))
             { 
-                print(m_ClipName);
+                //print(m_ClipName);
                 yield return new WaitForSeconds(0.05f);
             }
 

@@ -67,7 +67,7 @@ public class SoulParticle : MonoBehaviour
     void SpawnMotion()
     {
         anim.SetBool("IsMove", true);
-        print("particle spawning motion");
+        //print("particle spawning motion");
     }
 
     void FollowPlayer()
