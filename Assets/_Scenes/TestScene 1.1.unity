@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36224487, g: 0.44880852, b: 0.59394974, a: 1}
+  m_IndirectSpecularColor: {r: 0.36236456, g: 0.44876656, b: 0.5936064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3808,19 +3808,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69910c512daa434b931b9065a2ba3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 4050718841060675903, guid: c6d8cacf08febb04cba67b8f13103c8a,
+    type: 3}
   anim: {fileID: 0}
   rigid: {fileID: 0}
   boxCollider: {fileID: 0}
   nav: {fileID: 0}
   target: {fileID: 7238235201681631832}
-  Attack_check: 0
   temp_Hp: 0
-  Is_Attack: 0
+  is_Attacking: 0
   enemyhealthScript: {fileID: 0}
   AttackDamage: 5
   lookAtSpeed: 5
-  particlePrefab: {fileID: 4050718841060675903, guid: c6d8cacf08febb04cba67b8f13103c8a,
-    type: 3}
 --- !u!114 &430983844
 MonoBehaviour:
   m_ObjectHideFlags: 0

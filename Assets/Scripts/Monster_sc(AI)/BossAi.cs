@@ -78,7 +78,10 @@ public class BossAi : MonoBehaviour
         if (enemyhealthScript.getDead())
         {
             anim.SetBool("Death", true);
-            cape.GetComponent<Animator>().SetBool("Death", true);
+
+            if (cape)
+                cape.GetComponent<Animator>().SetBool("Death", true);
+
             StopCoroutine(tempCoroutine);
 
             //destroy all rockSpawners
