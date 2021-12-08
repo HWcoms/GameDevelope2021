@@ -114,14 +114,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (!m_Animator.GetBool("OnGround")) return;
 
-            if (CHscript.getHp() < temp_Hp)
+            if (CHscript.getHp() != temp_Hp)
             {
-                temp_Hp = CHscript.getHp();
-
-                print("hit");
                 //get hit
-                StartCoroutine(getDamagedAnim(getDamagebyHitDelay));
-                //StartCoroutine(getDamagedAnim(3.0f));
+                if (CHscript.getHp() < temp_Hp)
+                    StartCoroutine(getDamagedAnim(getDamagebyHitDelay));
+
+                temp_Hp = CHscript.getHp();
             }
 
             if (CHscript.getStamina() <= 0)
