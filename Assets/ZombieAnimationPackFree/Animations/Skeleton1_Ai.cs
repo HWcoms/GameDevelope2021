@@ -23,7 +23,7 @@ public class Skeleton1_Ai : MonoBehaviour
     [SerializeField] private float temp_Hp;
 
 
-    [SerializeField] bool Is_Attack = false;
+    [SerializeField] bool is_Attacking = false;
     public EnemyHealth enemyhealthScript;
     public float AttackDamage; 
 
@@ -69,34 +69,25 @@ public class Skeleton1_Ai : MonoBehaviour
             WalkStart();
         }
         if (Attack_check)
-        {            
-            anim.SetBool("Is_Walk", false);
-            anim.SetBool("Is_Attack", true);
-            StartCoroutine(Attack());
+        {
+            StartCoroutine(Attack());        
         }      
+        
         //getHit
         if (enemyhealthScript.getHp() < temp_Hp)
         {
-            //print("Attacking");
-            /*
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
-            lookVec = new Vector3(h, 0, v) * 5f;
-            /transform.LookAt(target.position + lookVec);
-            */
-
-            anim.SetBool("Is_Damage", true);
+            
             isLookAtPlayer = true;
-
-            temp_Hp = enemyhealthScript.getHp();
-
+            anim.SetBool("Is_Damage", true);
+            
             GameObject soulPrefab = Instantiate(particlePrefab, transform.position, Quaternion.identity);
             soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
         }
         else
         {
-            anim.SetBool("Is_Damage", false);
+            anim.SetBool("Is_Damage", false);          
         }
+     
 
         if (isLookAtPlayer)
             LookAtPlayer();
@@ -113,23 +104,23 @@ public class Skeleton1_Ai : MonoBehaviour
 
 
 
-    IEnumerator Think() //보스 로직 구현 - 보스가 생각해서.. ai처럼
+    void Think() //보스 로직 구현 - 보스가 생각해서.. ai처럼
     {
         anim.SetBool("Is_Attack", false);
         Attack_check = false;
+
+        anim.SetBool("Is_Walk", false);
+        Walk_check = false;               
         
-        Walk_check = false;   
-        yield return new WaitForSeconds(0.1f);       
-        
-    }
+    } 
+   
 
     IEnumerator Attack()
     {
         print("Attack");
         nav.isStopped = true;
         anim.SetBool("Is_Attack", true);
-        //yield return new WaitForSeconds(ani_in.Attack);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(ani_in.Attack);
 
         StartCoroutine(Think());
     }
@@ -138,8 +129,7 @@ public class Skeleton1_Ai : MonoBehaviour
     {
         nav.isStopped = true;
         anim.SetBool("Is_Damage", true);
-        //yield return new WaitForSeconds(ani_in.Damage);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(ani_in.Damage);
 
         StartCoroutine(Think());
     }
@@ -147,14 +137,14 @@ public class Skeleton1_Ai : MonoBehaviour
     public void setAttack(int flag)
     {
         if (flag == 1)
-            Is_Attack = true;
+            is_Attacking = true;
         else
-            Is_Attack = false;
+            is_Attacking = false;
     }
 
     public bool getAttack()
     {
-        return Is_Attack;
+        return is_Attacking;
     }
 
     public void setDamage(float Damage)
@@ -162,14 +152,22 @@ public class Skeleton1_Ai : MonoBehaviour
         AttackDamage = Damage;
     }
 
-    void WalkStart()
+    IEnumerator Attack()
     {
-        //print("Walk");
+        nav.isStopped = true;
+        anim.SetBool("Is_Walk", false);
+        anim.SetBool("Is_Attack", true);
+        yield return new WaitForSeconds(ani_in.Attack);
+        Think();
+    }
+
+    void WalkStart()
+    {        
+     
         nav.isStopped = false;
         nav.SetDestination(target.position);
-        anim.SetBool("Is_Walk", true);
-        
-        StartCoroutine(Think());
+        anim.SetBool("Is_Walk", true);        
+
     }
 
     void boss_patton()
@@ -177,19 +175,21 @@ public class Skeleton1_Ai : MonoBehaviour
         if (fov1.visibleTargets.Count == 0)
         {           
             LookAtPlayer();
-            if ((dist > 3)) //float dist = Vector3.Distance(other.position, transform.position);
+            if ((dist > 1)) //float dist = Vector3.Distance(other.position, transform.position);
             {
                 print("Walk");
                 Walk_check = true;                
 
             }           
         }
-        else if (fov1.visibleTargets.Count == 1)
+        else 
         {
             LookAtPlayer();
             if (dist < 1)
             {
+                anim.SetBool("Is_Walk", false);
                 print("Attack_test");
+                anim.SetBool("Is_Attack", true);
                 Attack_check = true;
             }         
         }     
