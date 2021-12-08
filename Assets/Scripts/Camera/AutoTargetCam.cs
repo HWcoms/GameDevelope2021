@@ -68,7 +68,10 @@ public class AutoTargetCam : MonoBehaviour
         //Targeting Visual Effect
         Vector3 targetEffectPos = transform.position;
         if (monster)
-            targetEffectPos= monster.transform.position + targetEffectPosOffset;
+        {
+            targetEffectPos = monster.GetComponent<EnemyTargetEffect>().GetEffectPos().position;
+            //targetEffectPos= monster.transform.position + targetEffectPosOffset;
+        }
 
         if (!isTargeting)
         {

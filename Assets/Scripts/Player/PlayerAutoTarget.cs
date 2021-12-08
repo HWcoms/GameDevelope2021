@@ -18,8 +18,6 @@ public class PlayerAutoTarget : MonoBehaviour
 
     [SerializeField] List<Transform> detectedTargets = new List<Transform>();
 
-    CharacterController charCtrl;
-    public float detectMaxDistance = 10.0f;
     public float detectRadius = 7.0f;
     Vector3 playerCenter;
 
@@ -33,7 +31,6 @@ public class PlayerAutoTarget : MonoBehaviour
         autoTargetCamScript = Camera.main.GetComponent<AutoTargetCam>();
 
         CACscript = GetComponent<UnityStandardAssets.Characters.ThirdPerson.CharacterActionControl>();
-        charCtrl = GetComponent<CharacterController>();
 
         targetIndex = 0;
     }
@@ -150,6 +147,9 @@ public class PlayerAutoTarget : MonoBehaviour
 
         if (detectedTargets.Count > 0)
         {
+            if (targetIndex > detectedTargets.Count - 1)
+                targetIndex = detectedTargets.Count - 1;
+
             setTarget(detectedTargets[targetIndex].gameObject);
         }
     }
