@@ -19,6 +19,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private bool dodged;
 
         [Space(10)]
+        [Header("----------------------------- Get Damaged Check -----------------------------")]
+        [SerializeField] private float temp_Hp;
+        [SerializeField] private float getDamagebyHitDelay;
+
+        [Space(10)]
         [Header("----------------------------- Roll Invincible -----------------------------")]
 
         [SerializeField] private bool isInvincible;
@@ -76,6 +81,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             //audio
             swordAudioFXPos = transform.Find("swordAudioFXPos").transform;
+
+            //find get hit animation
+            RuntimeAnimatorController ac = m_Animator.runtimeAnimatorController;    //Get Animator controller
+            for (int i = 0; i < ac.animationClips.Length; i++)                 //For all animations
+            {
+                if (ac.animationClips[i].name == "getDamagebyHit")        //If it has the same name as your clip
+                {
+                    getDamagebyHitDelay = ac.animationClips[i].length;
+                }
+            }
+            temp_Hp = CHscript.getHp();
         }
 
         // Update is called once per frame
@@ -97,6 +113,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
             if (!m_Animator.GetBool("OnGround")) return;
+
+            if (CHscript.getHp() < temp_Hp)
+            {
+                temp_Hp = CHscript.getHp();
+
+                print("hit");
+                //get hit
+                StartCoroutine(getDamagedAnim(getDamagebyHitDelay));
+                //StartCoroutine(getDamagedAnim(3.0f));
+            }
 
             if (CHscript.getStamina() <= 0)
             {
@@ -400,6 +426,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             yield return new WaitForSeconds(delay);
 
             disablehit();
+        }
+
+        IEnumerator getDamagedAnim(float delay)
+        {
+            m_Animator.SetBool("GetHit", true);
+            yield return new WaitForSeconds(delay);
+            m_Animator.SetBool("GetHit", false);
         }
     }
 }
