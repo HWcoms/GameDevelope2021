@@ -8,10 +8,27 @@ public class BossAi : MonoBehaviour
     // Start is called before the first frame update
     //public GameObject missile;
     //public Transform magic;
+
+    public float shortPatternRange = 5;
+    public float midPatternRange = 8;
+    public float longPatternRange = 13;
+
+    public float walkSpeed = 1.3f;
+    public float runSpeed = 3.0f;
+
+    public float animationOffset = -0.3f;
+
     private animation_length ani_in;
     FOV_Track fov;
     int ranAction;
-    float dist;
+    [SerializeField] float dist;
+
+    [SerializeField] bool patternAble = true;
+    [SerializeField] bool randomOnce = false;
+    [SerializeField] int rand = -1;
+
+    [SerializeField] bool random2Once = false;
+    [SerializeField] int rand2 = -1;
 
     Vector3 lookVec;
     //Vector3 tauntVec; //범위 공격
@@ -22,13 +39,21 @@ public class BossAi : MonoBehaviour
     public NavMeshAgent nav;
     public Transform target;
     //bool isChase = false;   
-    bool LongAttack_check = false;
-    bool ShortAttack_check = false;
-    bool Chase_check = false;
-    bool walk_check = false;
-    bool StoneMagic_check = false;
-    [SerializeField] private float temp_Hp;
 
+    
+
+    [SerializeField] bool shortRangePattern = false;
+
+    [SerializeField] bool midRangePattern = false;
+
+    [SerializeField] bool longRangePattern = false;
+
+
+    bool shortAttackOnce = false;
+    bool longAttackOnce = false;
+
+
+    [SerializeField] private float temp_Hp;
 
     [SerializeField] bool is_Attack = false;
 
@@ -50,6 +75,8 @@ public class BossAi : MonoBehaviour
 
     public float lookAtSpeed = 5.0f;
 
+    CharacterHealth playerHPscript;
+
     void Awake()
     {
         //isLook = true;
@@ -67,14 +94,13 @@ public class BossAi : MonoBehaviour
         cape = GameObject.Find("King's cape");
 
         temp_Hp = enemyhealthScript.getMaxHp();
+
+        playerHPscript = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //print(enemyhealthScript.getHp());
-        //print("\n\n");
-        //print(temp_Hp);
         if (enemyhealthScript.getDead())
         {
             anim.SetBool("Death", true);
@@ -97,6 +123,13 @@ public class BossAi : MonoBehaviour
             return;
         }
 
+        if (playerHPscript.getDead())
+        {
+            IdleAnimIfAlive();
+
+            return;
+        }
+
         dist = Vector3.Distance(target.position, transform.position);
         /*if (isLook)
         {
@@ -107,39 +140,82 @@ public class BossAi : MonoBehaviour
         }*/
         //StartCoroutine(Think());
 
-        boss_patton();
+        boss_pattern();
 
-        if (Chase_check) //float dist = Vector3.Distance(other.position, transform.position);
+        if (longRangePattern)
         {
-            anim.SetBool("Is_Walk", false);
+            if (!randomOnce)
+            {
+                randomOnce = true;
+
+                rand = 1; // 0~1
+
+                //print(rand);
+            }
+
+            if (rand == 1)
+            {
+                ChaseStart();
+                RunStart();
+            }
+        }
+        else if(midRangePattern)
+        {
+            if (!randomOnce)
+            {
+                randomOnce = true;
+
+                rand = Random.Range(0, 2); // 0~1
+
+                print("mid pattern: " + rand);
+            }
             ChaseStart();
-        }
-        else if (ShortAttack_check)
-        {
-            anim.SetBool("Is_Run", false);
-            anim.SetBool("Is_Walk", false);
-            //InvokeRepeating("Random_patton_Attack1", 1, 5.0f);            
-            //print("Short Attack");
-            StartCoroutine(ShortAttack());
-        }
-        else if (LongAttack_check)
-        {
-            anim.SetBool("Is_Run", false);
-            anim.SetBool("Is_Walk", false);
-            //InvokeRepeating("Random_patton_Attack1", 1, 5.0f);            
-            //print("Long Attack");
-            StartCoroutine(LongAttack());
-        }
-        else if (StoneMagic_check)
-        {
 
+            if (rand == 1)
+                RunStart();
+            else
+                WalkStart();
+        }
+        else if (shortRangePattern)
+        {
+            nav.isStopped = true;
+
+            if (!randomOnce)
+            {
+                randomOnce = true;
+
+                rand = Random.Range(0, 2); // 0~1
+
+                print("short pattern: " + rand);
+            }
+                                            //print(rand);
+            if (rand == 1)      //attack
+            {
+                anim.SetBool("Is_ShortRangeAttack", true);
+
+                if (!random2Once)
+                {
+                    rand2 = Random.Range(0, 2); // 0~1
+                }
+                random2Once = true;
+
+                if (rand2 == 1)   //short attack
+                {
+                    ShortAttack();
+                }
+                else 
+                {
+                    LongAttack();
+                }
+            }
+            else   //other pattern
+            {
+                print("short range others");
+                EndCoroutinePattern();
+            }
 
         }
-        else if (walk_check)
-        {
-            anim.SetBool("Is_Run", false);
-            WalkStart();
-        }
+
 
         if ((enemyhealthScript.getHp() / enemyhealthScript.getMaxHp()) * 100.0f < 30.0f && isRockSpawn)
         {
@@ -158,11 +234,9 @@ public class BossAi : MonoBehaviour
             GameObject soulPrefab = Instantiate(particlePrefab, transform.position, Quaternion.identity);
             soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
 
-            anim.SetBool("Is_Block", true);
-        }
-        else
-        {
-            anim.SetBool("Is_Block", false);
+            //anim.SetBool("Is_Block", true);
+
+            //StartCoroutine(Block());
         }
 
         if (isLookAtPlayer)
@@ -200,52 +274,45 @@ public class BossAi : MonoBehaviour
         isRockSpawn = true;
     }
 
-    IEnumerator Think() //보스 로직 구현 - 보스가 생각해서.. ai처럼
+    
+    IEnumerator sRange_ShortAttack()
     {
-        //yield return new WaitForSeconds(0.1f); //늘릴수록 보스 패턴 어려워짐            
-
+        anim.SetBool("Is_ShortAttack", true);
         anim.SetBool("Is_LongAttack", false);
-        LongAttack_check = false;
+
+        yield return new WaitForSeconds(ani_in.ShortAttack + animationOffset);
 
         anim.SetBool("Is_ShortAttack", false);
-        ShortAttack_check = false;
+        anim.SetBool("Is_ShortRangeAttack", false);
 
-        //anim.SetBool("Is_Run", false);
-        Chase_check = false;
-
-        //anim.SetBool("Is_Walk", false);
-        walk_check = false;
-
-        //float random_patton = Random.Range(0.01f, 0.5f);      
-        yield return new WaitForSeconds(1);
-
-
+        shortAttackOnce = false;
+        EndCoroutinePattern();
     }
-
-    IEnumerator ShortAttack()
+    
+    IEnumerator sRange_LongAttack()
     {
-
-        nav.isStopped = true;
-        anim.SetBool("Is_ShortAttack", true);
-        yield return new WaitForSeconds(ani_in.ShortAttack);
-        StartCoroutine(Think());
-    }
-
-    IEnumerator LongAttack()
-    {
-        nav.isStopped = true;
         anim.SetBool("Is_LongAttack", true);
-        yield return new WaitForSeconds(ani_in.LongAttack);
+        anim.SetBool("Is_ShortAttack", false);
 
-        StartCoroutine(Think());
+        yield return new WaitForSeconds(ani_in.LongAttack + animationOffset);
+
+        anim.SetBool("Is_LongAttack", false);
+        anim.SetBool("Is_ShortRangeAttack", false);
+
+        longAttackOnce = false;
+        EndCoroutinePattern();
     }
-
+    //막고나서 근거리 딜레이 시간에 포함됨(수정필요)
     IEnumerator Block()
     {
         nav.isStopped = true;
+
         anim.SetBool("Is_Block", true);
+        EndCoroutinePattern();
+
         yield return new WaitForSeconds(ani_in.Block);
-        StartCoroutine(Think());
+        //StartCoroutine(Think());
+        anim.SetBool("Is_Block", false);
     }
 
     public void setAttack(int flag)
@@ -266,59 +333,105 @@ public class BossAi : MonoBehaviour
         AttackDamage = Damage;
     }
 
+    void ShortAttack() 
+    {
+        if(!shortAttackOnce)
+        {
+            shortAttackOnce = true;
+
+            StartCoroutine(sRange_ShortAttack());
+
+            LookAtPlayer();
+        }
+    }
+    void LongAttack()
+    {
+        if (!longAttackOnce)
+        {
+            longAttackOnce = true;
+
+            StartCoroutine(sRange_LongAttack());
+
+            LookAtPlayer();
+        }
+    }
+
+
     void ChaseStart()
     {
-
-        print("Chase");
+        //print("ChaseStart");
         nav.isStopped = false;
         nav.SetDestination(target.position);
+        anim.SetBool("Is_Chase", true);
+    }
+
+    void RunStart()
+    {
+        //print("Run");
+        nav.speed = runSpeed;
+        anim.SetBool("Is_Walk", false);
         anim.SetBool("Is_Run", true);
 
-        StartCoroutine(Think());
-
+        EndChasePattern();
+       // StartCoroutine(Think());
     }
 
     void WalkStart()
     {
-
-        print("Walk");
-        nav.isStopped = false;
-        nav.SetDestination(target.position);
+        //print("Walk");
+        nav.speed = walkSpeed;
+        anim.SetBool("Is_Run", false);
         anim.SetBool("Is_Walk", true);
 
-        StartCoroutine(Think());
+        EndChasePattern();
+       // StartCoroutine(Think());
     }
 
-    void boss_patton()
+    void boss_pattern()
     {
+        if (!patternAble && nav.isStopped)  //doing something and not chasing
+            return;
+
         if (fov.visibleTargets.Count == 0)
         {
-            LookAtPlayer();
-            if ((dist > 8 && dist < 13)) //float dist = Vector3.Distance(other.position, transform.position);
-            {
-                walk_check = true;
+            nav.isStopped = true;
+            Reset_ChaseAnim();
+            EndCoroutinePattern();
 
-            }
-            else if ((dist > 13))
-            {
-                Chase_check = true;
-            }
+            shortRangePattern = false;
+            midRangePattern = false;
+            longRangePattern = false;
         }
         else
         {
-            if (dist < 5)
+            if (!patternAble) return;
+
+            patternAble = false;
+
+            if ((dist > midPatternRange))   //장거리
             {
-                LookAtPlayer();
-                ShortAttack_check = true;
+                //force run
+                longRangePattern = true;
+                midRangePattern = false;
+                shortRangePattern = false;
             }
-            /*else if(dist>=5 && dist<10)
+
+            else if ((dist > shortPatternRange && dist <= midPatternRange)) //중거리
             {
-                LookAtPlayer();s
-                LongAttack_check = true;
+                //random run
+                midRangePattern = true;
+                shortRangePattern = false;
+                longRangePattern = false;
+            }
+            else if (dist < shortPatternRange)  //근거리
+            {
+                Reset_ChaseAnim();
 
-                //충격파 설정해주기
+                shortRangePattern = true;
+                midRangePattern = false;
+                longRangePattern = false;
+            }
 
-            }*/
         }
 
 
@@ -342,27 +455,70 @@ public class BossAi : MonoBehaviour
              temp_Hp = enemyhealthScript.getHp();
          }*/
     }
-
-    /*void Random_patton_Attack1()
+    
+    void EndCoroutinePattern()
     {
-        ranAction = Random.Range(0, 2);
-    }*/
+        randomOnce = false;
+        random2Once = false;
 
-    void Set_Animation(int x)
+        patternAble = true;
+    }
+
+    void EndChasePattern()
     {
-        if (x == 1)
+        if(checkRangeChanged())
         {
-            anim.SetBool("Is_Block", false);
-            anim.SetBool("Is_LongAttack", false);
-            anim.SetBool("Is_ShortAttack", false);
+            randomOnce = false;
+            random2Once = false;
+
+            patternAble = true;
         }
-        else
+    }
+
+    bool checkRangeChanged()
+    {
+        int r = 0;
+
+        if ((dist > midPatternRange))   //장거리
         {
-            anim.SetBool("Is_Block", true);
-            anim.SetBool("Is_LongAttack", true);
-            anim.SetBool("Is_ShortAttack", true);
+            //force run
+            r = 3;
+        }
+        else if ((dist > shortPatternRange && dist <= midPatternRange)) //중거리
+        {
+            //random run
+            r = 2;
+        }
+        else if (dist < shortPatternRange)  //근거리
+        {
+            r = 1;
         }
 
+        if (r == currentRange()) return false;
+        else return true;
+    }
+
+    int currentRange()
+    {
+        int r = 0;
+        if (longRangePattern) r = 3;
+        else if (midRangePattern) r = 2;
+        else if (shortRangePattern) r = 1;
+
+        return r;
+    }
+
+    void Reset_ChaseAnim()
+    {
+        anim.SetBool("Is_Chase", false);
+        anim.SetBool("Is_Walk", false);
+        anim.SetBool("Is_Run", false);
+    }
+
+    void IdleAnimIfAlive()
+    {
+        anim.SetBool("Is_Chase", false);
+        anim.SetBool("Is_shortRangePattern", false);
     }
 
 }
