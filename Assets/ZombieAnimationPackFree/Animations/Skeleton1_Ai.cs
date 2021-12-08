@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class Skeleton1_Ai : MonoBehaviour
-{    
+{
     FOV_Track fov1;
     int ranAction;
     float dist;
     Vector3 lookVec;
-    //private skeleton1_length ani_in;
+    private skeleton1_length ani_in;
+    public GameObject particlePrefab;
 
     bool isLook;
     public Animator anim;
@@ -17,7 +18,7 @@ public class Skeleton1_Ai : MonoBehaviour
     public BoxCollider boxCollider;
     public NavMeshAgent nav;
     public Transform target;
-    [SerializeField] bool Attack_check = false;
+    bool Attack_check = false;
     bool Walk_check = false;
     bool HitDamage_check = false;
     [SerializeField] private float temp_Hp;
@@ -25,24 +26,22 @@ public class Skeleton1_Ai : MonoBehaviour
 
     [SerializeField] bool is_Attacking = false;
     public EnemyHealth enemyhealthScript;
-    public float AttackDamage; 
+    public float AttackDamage;
 
     bool isLookAtPlayer = false;
 
     public float lookAtSpeed = 5.0f;
 
-    public GameObject particlePrefab;
-
     void Awake()
-    {         
+    {
         fov1 = GetComponent<FOV_Track>();
-        //ani_in = GetComponent<skeleton1_length>();
+        ani_in = GetComponent<skeleton1_length>();
         rigid = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
         nav = GetComponent<NavMeshAgent>();
-        anim = GetComponentInChildren<Animator>(); 
+        anim = GetComponentInChildren<Animator>();
         enemyhealthScript = GetComponent<EnemyHealth>();
-        
+
 
         temp_Hp = enemyhealthScript.getMaxHp();
     }
@@ -55,39 +54,42 @@ public class Skeleton1_Ai : MonoBehaviour
         //print(temp_Hp);
         if (enemyhealthScript.getDead())
         {
-            anim.SetBool("Is_Death", true);     
-                 
+            anim.SetBool("Is_Death", true);
+
             return;
         }
 
         dist = Vector3.Distance(target.position, transform.position);
-      
+
         boss_patton();
 
         if (Walk_check) //float dist = Vector3.Distance(other.position, transform.position);
-        {            
+        {
             WalkStart();
         }
         if (Attack_check)
         {
-            StartCoroutine(Attack());        
-        }      
-        
+            StartCoroutine(Attack());
+        }
+
         //getHit
         if (enemyhealthScript.getHp() < temp_Hp)
         {
-            
+
             isLookAtPlayer = true;
             anim.SetBool("Is_Damage", true);
-            
+
+            temp_Hp = enemyhealthScript.getHp();
+
+
             GameObject soulPrefab = Instantiate(particlePrefab, transform.position, Quaternion.identity);
             soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
         }
         else
         {
-            anim.SetBool("Is_Damage", false);          
+            anim.SetBool("Is_Damage", false);
         }
-     
+
 
         if (isLookAtPlayer)
             LookAtPlayer();
@@ -110,29 +112,10 @@ public class Skeleton1_Ai : MonoBehaviour
         Attack_check = false;
 
         anim.SetBool("Is_Walk", false);
-        Walk_check = false;               
-        
-    } 
-   
+        Walk_check = false;
 
-    IEnumerator Attack()
-    {
-        print("Attack");
-        nav.isStopped = true;
-        anim.SetBool("Is_Attack", true);
-        yield return new WaitForSeconds(ani_in.Attack);
-
-        StartCoroutine(Think());
     }
 
-    IEnumerator Damage()
-    {
-        nav.isStopped = true;
-        anim.SetBool("Is_Damage", true);
-        yield return new WaitForSeconds(ani_in.Damage);
-
-        StartCoroutine(Think());
-    }
 
     public void setAttack(int flag)
     {
@@ -154,35 +137,38 @@ public class Skeleton1_Ai : MonoBehaviour
 
     IEnumerator Attack()
     {
+        print("Attack");
         nav.isStopped = true;
         anim.SetBool("Is_Walk", false);
         anim.SetBool("Is_Attack", true);
         yield return new WaitForSeconds(ani_in.Attack);
+
         Think();
     }
 
     void WalkStart()
-    {        
-     
+    {
+
         nav.isStopped = false;
         nav.SetDestination(target.position);
-        anim.SetBool("Is_Walk", true);        
+        anim.SetBool("Is_Walk", true);
 
     }
 
     void boss_patton()
     {
+
         if (fov1.visibleTargets.Count == 0)
-        {           
+        {
             LookAtPlayer();
             if ((dist > 1)) //float dist = Vector3.Distance(other.position, transform.position);
             {
                 print("Walk");
-                Walk_check = true;                
+                Walk_check = true;
 
-            }           
+            }
         }
-        else 
+        else
         {
             LookAtPlayer();
             if (dist < 1)
@@ -191,10 +177,24 @@ public class Skeleton1_Ai : MonoBehaviour
                 print("Attack_test");
                 anim.SetBool("Is_Attack", true);
                 Attack_check = true;
-            }         
-        }     
+            }
+        }
     }
 
-  
+    void Set_Animation(int x)
+    {
+        if (x == 1)
+        {
+            anim.SetBool("Is_Attack", false);
+        }
+        else
+        {
+            anim.SetBool("Is_Attack", true);
+        }
+
+    }
+
+
+
 
 }

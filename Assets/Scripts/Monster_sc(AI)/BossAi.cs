@@ -75,11 +75,10 @@ public class BossAi : MonoBehaviour
         //print(enemyhealthScript.getHp());
         //print("\n\n");
         //print(temp_Hp);
-        if(enemyhealthScript.getDead())
+        if (enemyhealthScript.getDead())
         {
             anim.SetBool("Death", true);
-            if(cape)
-                cape.GetComponent<Animator>().SetBool("Death", true);
+            cape.GetComponent<Animator>().SetBool("Death", true);
             StopCoroutine(tempCoroutine);
 
             //destroy all rockSpawners
@@ -107,12 +106,12 @@ public class BossAi : MonoBehaviour
 
         boss_patton();
 
-        if ( Chase_check ) //float dist = Vector3.Distance(other.position, transform.position);
+        if (Chase_check) //float dist = Vector3.Distance(other.position, transform.position);
         {
             anim.SetBool("Is_Walk", false);
             ChaseStart();
         }
-        else if(ShortAttack_check )
+        else if (ShortAttack_check)
         {
             anim.SetBool("Is_Run", false);
             anim.SetBool("Is_Walk", false);
@@ -120,7 +119,7 @@ public class BossAi : MonoBehaviour
             //print("Short Attack");
             StartCoroutine(ShortAttack());
         }
-        else if( LongAttack_check )
+        else if (LongAttack_check)
         {
             anim.SetBool("Is_Run", false);
             anim.SetBool("Is_Walk", false);
@@ -128,18 +127,18 @@ public class BossAi : MonoBehaviour
             //print("Long Attack");
             StartCoroutine(LongAttack());
         }
-        else if(StoneMagic_check)
+        else if (StoneMagic_check)
         {
-            
-            
+
+
         }
-        else if(walk_check)
+        else if (walk_check)
         {
             anim.SetBool("Is_Run", false);
             WalkStart();
         }
 
-        if( (enemyhealthScript.getHp() / enemyhealthScript.getMaxHp()) * 100.0f < 30.0f && isRockSpawn)
+        if ((enemyhealthScript.getHp() / enemyhealthScript.getMaxHp()) * 100.0f < 30.0f && isRockSpawn)
         {
             print("roll ");
 
@@ -148,7 +147,7 @@ public class BossAi : MonoBehaviour
 
         //getHit
         if (enemyhealthScript.getHp() < temp_Hp)
-        {       
+        {
             isLookAtPlayer = true;
 
             temp_Hp = enemyhealthScript.getHp();
@@ -202,50 +201,50 @@ public class BossAi : MonoBehaviour
     {
         //yield return new WaitForSeconds(0.1f); //늘릴수록 보스 패턴 어려워짐            
 
-            anim.SetBool("Is_LongAttack", false);
-            LongAttack_check = false;
+        anim.SetBool("Is_LongAttack", false);
+        LongAttack_check = false;
 
-            anim.SetBool("Is_ShortAttack", false);
-            ShortAttack_check = false;
+        anim.SetBool("Is_ShortAttack", false);
+        ShortAttack_check = false;
 
-            //anim.SetBool("Is_Run", false);
-            Chase_check = false;
+        //anim.SetBool("Is_Run", false);
+        Chase_check = false;
 
-            //anim.SetBool("Is_Walk", false);
-            walk_check = false;
+        //anim.SetBool("Is_Walk", false);
+        walk_check = false;
 
         //float random_patton = Random.Range(0.01f, 0.5f);      
-        yield return new WaitForSeconds(1);        
-                  
-        
+        yield return new WaitForSeconds(1);
+
+
     }
 
     IEnumerator ShortAttack()
     {
-        
+
         nav.isStopped = true;
-        anim.SetBool("Is_ShortAttack", true);       
+        anim.SetBool("Is_ShortAttack", true);
         yield return new WaitForSeconds(ani_in.ShortAttack);
         StartCoroutine(Think());
     }
 
     IEnumerator LongAttack()
-    {       
+    {
         nav.isStopped = true;
-        anim.SetBool("Is_LongAttack", true);       
+        anim.SetBool("Is_LongAttack", true);
         yield return new WaitForSeconds(ani_in.LongAttack);
 
         StartCoroutine(Think());
     }
 
     IEnumerator Block()
-    {        
+    {
         nav.isStopped = true;
         anim.SetBool("Is_Block", true);
         yield return new WaitForSeconds(ani_in.Block);
         StartCoroutine(Think());
     }
-  
+
     public void setAttack(int flag)
     {
         if (flag == 1)
@@ -265,14 +264,14 @@ public class BossAi : MonoBehaviour
     }
 
     void ChaseStart()
-    {    
-       
-            print("Chase");
-            nav.isStopped = false;
-            nav.SetDestination(target.position);
-            anim.SetBool("Is_Run", true);
+    {
 
-           StartCoroutine(Think());
+        print("Chase");
+        nav.isStopped = false;
+        nav.SetDestination(target.position);
+        anim.SetBool("Is_Run", true);
+
+        StartCoroutine(Think());
 
     }
 
@@ -289,7 +288,7 @@ public class BossAi : MonoBehaviour
 
     void boss_patton()
     {
-        if(fov.visibleTargets.Count == 0)
+        if (fov.visibleTargets.Count == 0)
         {
             LookAtPlayer();
             if ((dist > 8 && dist < 13)) //float dist = Vector3.Distance(other.position, transform.position);
@@ -304,7 +303,7 @@ public class BossAi : MonoBehaviour
         }
         else
         {
-            if (dist < 5 )
+            if (dist < 5)
             {
                 LookAtPlayer();
                 ShortAttack_check = true;
@@ -317,15 +316,15 @@ public class BossAi : MonoBehaviour
                 //충격파 설정해주기
 
             }*/
-        }      
+        }
 
 
         /*if (fov.visibleTargets.Count == 0 && dist < 3) //사각지대에서 플레이어가 보스 가격시 마법 발동
         {
             StoneMagic_check = true;
         }*/
-       
-     
+
+
 
 
 
@@ -348,11 +347,11 @@ public class BossAi : MonoBehaviour
 
     void Set_Animation(int x)
     {
-        if (x==1)
+        if (x == 1)
         {
-           anim.SetBool("Is_Block", false);
-           anim.SetBool("Is_LongAttack", false);
-           anim.SetBool("Is_ShortAttack", false);
+            anim.SetBool("Is_Block", false);
+            anim.SetBool("Is_LongAttack", false);
+            anim.SetBool("Is_ShortAttack", false);
         }
         else
         {
@@ -360,8 +359,7 @@ public class BossAi : MonoBehaviour
             anim.SetBool("Is_LongAttack", true);
             anim.SetBool("Is_ShortAttack", true);
         }
-        
+
     }
 
-   
 }
