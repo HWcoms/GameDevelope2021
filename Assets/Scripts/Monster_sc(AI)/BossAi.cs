@@ -147,20 +147,18 @@ public class BossAi : MonoBehaviour
 
         //getHit
         if (enemyhealthScript.getHp() < temp_Hp)
-        {
-            //print("Attacking");
-            /*
-            float h = Input.GetAxisRaw("Horizontal");
-            float v = Input.GetAxisRaw("Vertical");
-            lookVec = new Vector3(h, 0, v) * 5f;
-            /transform.LookAt(target.position + lookVec);
-            */
-
+        {       
             isLookAtPlayer = true;
 
             temp_Hp = enemyhealthScript.getHp();
 
             Instantiate(particlePrefab, transform.position, Quaternion.identity);
+
+            anim.SetBool("Is_Block", true);
+        }
+        else
+        {
+            anim.SetBool("Is_Block", false);
         }
 
         if (isLookAtPlayer)
@@ -200,8 +198,7 @@ public class BossAi : MonoBehaviour
 
     IEnumerator Think() //보스 로직 구현 - 보스가 생각해서.. ai처럼
     {
-        //yield return new WaitForSeconds(0.1f); //늘릴수록 보스 패턴 어려워짐
-            anim.SetBool("Is_Block", false);
+        //yield return new WaitForSeconds(0.1f); //늘릴수록 보스 패턴 어려워짐            
 
             anim.SetBool("Is_LongAttack", false);
             LongAttack_check = false;
@@ -215,68 +212,35 @@ public class BossAi : MonoBehaviour
             //anim.SetBool("Is_Walk", false);
             walk_check = false;
 
-
-
-        //float random_patton = Random.Range(0.01f, 0.5f);
-        //yield return new WaitForSeconds(0.1f);
-        //int ranAction = Random.Range(0,3);
-        yield return new WaitForSeconds(1);
-            //int ranAction = Random.Range(0,3); //패턴 갯수 정함.
-            //print("Chase_Exit");
-            //int ranAction = Random.Range(0, 3); 
-                   
-             /* switch (ranAction)
-               {
-                   case 0: //짧은 근거리 공격
-                        StartCoroutine(ShortAttack());
-                        //Attack_check = false;
-                        break;
-                    case 1: //긴 연속 공격
-                        StartCoroutine(LongAttack());
-                        //Attack_check = false;
-                    break;
-                    case 2: //가드
-                        StartCoroutine(Block());
-                       //Attack_check = false;
-                    break;
-               }*/
+        //float random_patton = Random.Range(0.01f, 0.5f);      
+        yield return new WaitForSeconds(1);        
                   
         
     }
 
     IEnumerator ShortAttack()
     {
-        //anim.SetTrigger("DoMagic");
-        //Attack_check = true;
+        
         nav.isStopped = true;
-        anim.SetBool("Is_ShortAttack", true);        
-        //AttackDamage = 10.0f;
+        anim.SetBool("Is_ShortAttack", true);       
         yield return new WaitForSeconds(ani_in.ShortAttack);
-
         StartCoroutine(Think());
     }
 
     IEnumerator LongAttack()
-    {
-        //anim.SetTrigger("DoTaunt");
-        //Attack_check = true;
-        
+    {       
         nav.isStopped = true;
-        anim.SetBool("Is_LongAttack", true);
-        //AttackDamage = 40.0f;
+        anim.SetBool("Is_LongAttack", true);       
         yield return new WaitForSeconds(ani_in.LongAttack);
 
         StartCoroutine(Think());
     }
 
     IEnumerator Block()
-    {
-        //anim.SetTrigger("DoTaunt");
-        //Attack_check = true; //추후 가드는 다른 옵션 집어 넣을 예정임
+    {        
         nav.isStopped = true;
         anim.SetBool("Is_Block", true);
         yield return new WaitForSeconds(ani_in.Block);
-
         StartCoroutine(Think());
     }
   
