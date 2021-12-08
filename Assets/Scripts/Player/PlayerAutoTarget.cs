@@ -121,9 +121,16 @@ public class PlayerAutoTarget : MonoBehaviour
 
     void detectTargets()
     {
-        Collider[] objs = Physics.OverlapSphere(playerCenter + Vector3.up, detectRadius, layerMask);
+        Collider[] cols = Physics.OverlapSphere(playerCenter + Vector3.up, detectRadius, layerMask);
+        List<Transform> objs = new List<Transform>();
 
-        if (objs.Length == 0)
+        foreach (Collider col in cols)
+        {
+            if (!col.GetComponent<EnemyHealth>().getDead())
+                objs.Add(col.transform);
+        }
+
+        if (objs.Count == 0)
         {
             clearTargets();
             autoTargetCamScript.setIsTargeting(false);
@@ -131,7 +138,7 @@ public class PlayerAutoTarget : MonoBehaviour
             return;
         }
 
-        if (objs.Length == detectedTargets.Count)
+        if (objs.Count == detectedTargets.Count)
         {
             //print("same");
             setTarget(detectedTargets[targetIndex].gameObject);
@@ -140,9 +147,9 @@ public class PlayerAutoTarget : MonoBehaviour
 
         clearTargets();
 
-        foreach (Collider col in objs)
+        foreach (Transform obj in objs)
         {
-            detectedTargets.Add(col.transform);
+            detectedTargets.Add(obj);
         }
 
         if (detectedTargets.Count > 0)
