@@ -221,6 +221,16 @@ public class CharacterHealth : MonoBehaviour
         return stamina;
     }
 
+    public float getMaxHp()
+    {
+        return maxHp;
+    }
+
+    public void setMaxHp(float value)
+    {
+        maxHp = value;
+    }
+
     private void handleHealthChange(float percent)
     {
         hpCoroutine = ChangeHpToPct(percent);

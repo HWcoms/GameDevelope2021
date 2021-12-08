@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerItemUsage : MonoBehaviour
 {
     private CharacterHealth CHscript;
-    [SerializeField] private TextMeshProUGUI HealCountText;
+    //[SerializeField] private TextMeshProUGUI HealCountText;
 
     [SerializeField] private int healItemCount = 5;
     [SerializeField] private float healAmount = 15.0f;
@@ -14,20 +14,28 @@ public class PlayerItemUsage : MonoBehaviour
     [SerializeField] private float itemUsableTime = 1.0f;   //item cooldown
     [SerializeField] private bool itemUsableNow = true;
 
+    private PlayerSpirit playerSpiritScript;
+    public float spiritCostToHeal = 50.0f;
+    GameMessage gmMsgScript;
+
     // Start is called before the first frame update
     void Start()
     {
         CHscript = GetComponent<CharacterHealth>();
 
-        HealCountText = GameObject.Find("Heal Count").gameObject.GetComponent<TextMeshProUGUI>();
+        //HealCountText = GameObject.Find("Heal Count").gameObject.GetComponent<TextMeshProUGUI>();
 
         itemUsableNow = true;
+
+        playerSpiritScript = GetComponent<PlayerSpirit>();
+
+        gmMsgScript = GameObject.Find("GameManager").GetComponent<GameMessage>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        HealCountText.text = getHealItemCount().ToString();
+        //HealCountText.text = getHealItemCount().ToString();
 
         if(CHscript.getDead()) return;
 
@@ -36,7 +44,8 @@ public class PlayerItemUsage : MonoBehaviour
         {
             if(itemUsableNow)
             {
-                useHealItem(1);
+                //useHealItem(1);
+                useSoulToHeal(spiritCostToHeal);
                 setItemUsable(false);
 
                 //item cooldown timer starts
@@ -70,6 +79,27 @@ public class PlayerItemUsage : MonoBehaviour
         CHscript.changeHp(healAmount);
 
         return count;
+    }
+
+    public void useSoulToHeal(float cost)
+    {
+        float currentSoul = playerSpiritScript.getPlayerSpirit();
+
+        //if(Soul)
+        if (currentSoul - cost < 0)
+        {
+            gmMsgScript.msgNoSoulsToHeal();
+            return;
+        }
+        else if (CHscript.getHp() == CHscript.getMaxHp())
+        {
+            gmMsgScript.msgSomething("HP가 이미 최대입니다!");
+            return;
+        }
+
+        CHscript.changeHp(healAmount);
+
+        playerSpiritScript.changePlayerSpirit(-cost);
     }
 
     void setItemUsable(bool flag)

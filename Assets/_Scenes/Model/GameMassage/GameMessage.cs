@@ -35,6 +35,18 @@ public class GameMessage : MonoBehaviour
         stamina = chScript.getStamina();
     }
 
+    public void msgSomething(string str)
+    {
+        gameMsgText.text = str;
+
+        if (isMsgOn && msgCoroutine != null)
+        {
+            StopCoroutine(msgCoroutine);
+        }
+
+        msgCoroutine = StartCoroutine(msgFadeDelay(fadeDelayTime));
+    }
+
     public void msgNoStamina()
     {
         print("no stamina!");
@@ -42,6 +54,20 @@ public class GameMessage : MonoBehaviour
         gameMsgText.text = "스태미나가 부족합니다!";
 
         if(isMsgOn && msgCoroutine != null)
+        {
+            StopCoroutine(msgCoroutine);
+        }
+
+        msgCoroutine = StartCoroutine(msgFadeDelay(fadeDelayTime));
+    }
+
+    public void msgNoSoulsToHeal()
+    {
+        print("no Souls To heal!");
+
+        gameMsgText.text = "회복에 필요한 영혼이 부족합니다!";
+
+        if (isMsgOn && msgCoroutine != null)
         {
             StopCoroutine(msgCoroutine);
         }
