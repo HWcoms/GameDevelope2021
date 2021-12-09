@@ -1,0 +1,1532 @@
+fileFormatVersion: 2
+guid: fcda986ad61656943a5b75b28a95ada0
+timeCreated: 1517994210
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bip01
+    100002: Bip01 Footsteps
+    100004: Bip01 Head
+    100006: Bip01 HeadNub
+    100008: Bip01 L Calf
+    100010: Bip01 L Clavicle
+    100012: Bip01 L Finger0
+    100014: Bip01 L Finger01
+    100016: Bip01 L Finger02
+    100018: Bip01 L Finger0Nub
+    100020: Bip01 L Finger1
+    100022: Bip01 L Finger11
+    100024: Bip01 L Finger12
+    100026: Bip01 L Finger1Nub
+    100028: Bip01 L Finger2
+    100030: Bip01 L Finger21
+    100032: Bip01 L Finger22
+    100034: Bip01 L Finger2Nub
+    100036: Bip01 L Finger3
+    100038: Bip01 L Finger31
+    100040: Bip01 L Finger32
+    100042: Bip01 L Finger3Nub
+    100044: Bip01 L Foot
+    100046: Bip01 L Forearm
+    100048: Bip01 L Hand
+    100050: Bip01 L Thigh
+    100052: Bip01 L Toe0
+    100054: Bip01 L Toe01
+    100056: Bip01 L Toe02
+    100058: Bip01 L Toe0Nub
+    100060: Bip01 L Toe1
+    100062: Bip01 L Toe11
+    100064: Bip01 L Toe12
+    100066: Bip01 L Toe1Nub
+    100068: Bip01 L Toe2
+    100070: Bip01 L Toe21
+    100072: Bip01 L Toe22
+    100074: Bip01 L Toe2Nub
+    100076: Bip01 L Toe3
+    100078: Bip01 L Toe31
+    100080: Bip01 L Toe32
+    100082: Bip01 L Toe3Nub
+    100084: Bip01 L UpperArm
+    100086: Bip01 Neck
+    100088: Bip01 Neck1
+    100090: Bip01 Neck2
+    100092: Bip01 Neck3
+    100094: Bip01 Pelvis
+    100096: Bip01 Ponytail1
+    100098: Bip01 Ponytail1Nub
+    100100: Bip01 R Calf
+    100102: Bip01 R Clavicle
+    100104: Bip01 R Finger0
+    100106: Bip01 R Finger01
+    100108: Bip01 R Finger02
+    100110: Bip01 R Finger0Nub
+    100112: Bip01 R Finger1
+    100114: Bip01 R Finger11
+    100116: Bip01 R Finger12
+    100118: Bip01 R Finger1Nub
+    100120: Bip01 R Finger2
+    100122: Bip01 R Finger21
+    100124: Bip01 R Finger22
+    100126: Bip01 R Finger2Nub
+    100128: Bip01 R Finger3
+    100130: Bip01 R Finger31
+    100132: Bip01 R Finger32
+    100134: Bip01 R Finger3Nub
+    100136: Bip01 R Foot
+    100138: Bip01 R Forearm
+    100140: Bip01 R Hand
+    100142: Bip01 R Thigh
+    100144: Bip01 R Toe0
+    100146: Bip01 R Toe01
+    100148: Bip01 R Toe02
+    100150: Bip01 R Toe0Nub
+    100152: Bip01 R Toe1
+    100154: Bip01 R Toe11
+    100156: Bip01 R Toe12
+    100158: Bip01 R Toe1Nub
+    100160: Bip01 R Toe2
+    100162: Bip01 R Toe21
+    100164: Bip01 R Toe22
+    100166: Bip01 R Toe2Nub
+    100168: Bip01 R Toe3
+    100170: Bip01 R Toe31
+    100172: Bip01 R Toe32
+    100174: Bip01 R Toe3Nub
+    100176: Bip01 R UpperArm
+    100178: Bip01 RWing
+    100180: Bip01 RWing02
+    100182: Bip01 RWing03
+    100184: Bip01 RWing04
+    100186: Bip01 RWing05
+    100188: Bip01 RWing06
+    100190: Bip01 RWing07
+    100192: Bip01 RWingFinger2
+    100194: Bip01 RWingFinger202
+    100196: Bip01 RWingFinger203
+    100198: Bip01 RWingFinger2Nub
+    100200: Bip01 RWingFinger2Opp
+    100202: Bip01 RWingFinger2Opp02
+    100204: Bip01 RWingFinger2Opp03
+    100206: Bip01 RWingFinger2OppNub
+    100208: Bip01 RWingFinger3
+    100210: Bip01 RWingFinger302
+    100212: Bip01 RWingFinger303
+    100214: Bip01 RWingFinger3Nub
+    100216: Bip01 RWingFinger3Opp
+    100218: Bip01 RWingFinger3Opp02
+    100220: Bip01 RWingFinger3Opp03
+    100222: Bip01 RWingFinger3OppNub
+    100224: Bip01 RWingFinger4
+    100226: Bip01 RWingFinger402
+    100228: Bip01 RWingFinger403
+    100230: Bip01 RWingFinger4Nub
+    100232: Bip01 RWingFinger4Opp
+    100234: Bip01 RWingFinger4Opp02
+    100236: Bip01 RWingFinger4Opp03
+    100238: Bip01 RWingFinger4OppNub
+    100240: Bip01 RWingHand
+    100242: Bip01 RWingHand02
+    100244: Bip01 RWingHandNub
+    100246: Bip01 RWingHandOpp
+    100248: Bip01 RWingHandOpp02
+    100250: Bip01 RWingHandOppNub
+    100252: Bip01 RWingNub
+    100254: Bip01 RWingOpp
+    100256: Bip01 RWingOpp02
+    100258: Bip01 RWingOpp03
+    100260: Bip01 RWingOpp04
+    100262: Bip01 RWingOpp05
+    100264: Bip01 RWingOpp06
+    100266: Bip01 RWingOpp07
+    100268: Bip01 RWingOppNub
+    100270: Bip01 Spine
+    100272: Bip01 Spine1
+    100274: Bip01 Tail
+    100276: Bip01 Tail1
+    100278: Bip01 Tail10
+    100280: Bip01 Tail11
+    100282: Bip01 Tail12
+    100284: Bip01 Tail13
+    100286: Bip01 Tail14
+    100288: Bip01 Tail15
+    100290: Bip01 Tail16
+    100292: Bip01 Tail17
+    100294: Bip01 Tail18
+    100296: Bip01 Tail19
+    100298: Bip01 Tail2
+    100300: Bip01 Tail20
+    100302: Bip01 Tail21
+    100304: Bip01 Tail22
+    100306: Bip01 Tail23
+    100308: Bip01 Tail24
+    100310: Bip01 Tail3
+    100312: Bip01 Tail4
+    100314: Bip01 Tail5
+    100316: Bip01 Tail6
+    100318: Bip01 Tail7
+    100320: Bip01 Tail8
+    100322: Bip01 Tail9
+    100324: Bip01 TailNub
+    100326: //RootNode
+    100328: UndeadDragon
+    400000: Bip01
+    400002: Bip01 Footsteps
+    400004: Bip01 Head
+    400006: Bip01 HeadNub
+    400008: Bip01 L Calf
+    400010: Bip01 L Clavicle
+    400012: Bip01 L Finger0
+    400014: Bip01 L Finger01
+    400016: Bip01 L Finger02
+    400018: Bip01 L Finger0Nub
+    400020: Bip01 L Finger1
+    400022: Bip01 L Finger11
+    400024: Bip01 L Finger12
+    400026: Bip01 L Finger1Nub
+    400028: Bip01 L Finger2
+    400030: Bip01 L Finger21
+    400032: Bip01 L Finger22
+    400034: Bip01 L Finger2Nub
+    400036: Bip01 L Finger3
+    400038: Bip01 L Finger31
+    400040: Bip01 L Finger32
+    400042: Bip01 L Finger3Nub
+    400044: Bip01 L Foot
+    400046: Bip01 L Forearm
+    400048: Bip01 L Hand
+    400050: Bip01 L Thigh
+    400052: Bip01 L Toe0
+    400054: Bip01 L Toe01
+    400056: Bip01 L Toe02
+    400058: Bip01 L Toe0Nub
+    400060: Bip01 L Toe1
+    400062: Bip01 L Toe11
+    400064: Bip01 L Toe12
+    400066: Bip01 L Toe1Nub
+    400068: Bip01 L Toe2
+    400070: Bip01 L Toe21
+    400072: Bip01 L Toe22
+    400074: Bip01 L Toe2Nub
+    400076: Bip01 L Toe3
+    400078: Bip01 L Toe31
+    400080: Bip01 L Toe32
+    400082: Bip01 L Toe3Nub
+    400084: Bip01 L UpperArm
+    400086: Bip01 Neck
+    400088: Bip01 Neck1
+    400090: Bip01 Neck2
+    400092: Bip01 Neck3
+    400094: Bip01 Pelvis
+    400096: Bip01 Ponytail1
+    400098: Bip01 Ponytail1Nub
+    400100: Bip01 R Calf
+    400102: Bip01 R Clavicle
+    400104: Bip01 R Finger0
+    400106: Bip01 R Finger01
+    400108: Bip01 R Finger02
+    400110: Bip01 R Finger0Nub
+    400112: Bip01 R Finger1
+    400114: Bip01 R Finger11
+    400116: Bip01 R Finger12
+    400118: Bip01 R Finger1Nub
+    400120: Bip01 R Finger2
+    400122: Bip01 R Finger21
+    400124: Bip01 R Finger22
+    400126: Bip01 R Finger2Nub
+    400128: Bip01 R Finger3
+    400130: Bip01 R Finger31
+    400132: Bip01 R Finger32
+    400134: Bip01 R Finger3Nub
+    400136: Bip01 R Foot
+    400138: Bip01 R Forearm
+    400140: Bip01 R Hand
+    400142: Bip01 R Thigh
+    400144: Bip01 R Toe0
+    400146: Bip01 R Toe01
+    400148: Bip01 R Toe02
+    400150: Bip01 R Toe0Nub
+    400152: Bip01 R Toe1
+    400154: Bip01 R Toe11
+    400156: Bip01 R Toe12
+    400158: Bip01 R Toe1Nub
+    400160: Bip01 R Toe2
+    400162: Bip01 R Toe21
+    400164: Bip01 R Toe22
+    400166: Bip01 R Toe2Nub
+    400168: Bip01 R Toe3
+    400170: Bip01 R Toe31
+    400172: Bip01 R Toe32
+    400174: Bip01 R Toe3Nub
+    400176: Bip01 R UpperArm
+    400178: Bip01 RWing
+    400180: Bip01 RWing02
+    400182: Bip01 RWing03
+    400184: Bip01 RWing04
+    400186: Bip01 RWing05
+    400188: Bip01 RWing06
+    400190: Bip01 RWing07
+    400192: Bip01 RWingFinger2
+    400194: Bip01 RWingFinger202
+    400196: Bip01 RWingFinger203
+    400198: Bip01 RWingFinger2Nub
+    400200: Bip01 RWingFinger2Opp
+    400202: Bip01 RWingFinger2Opp02
+    400204: Bip01 RWingFinger2Opp03
+    400206: Bip01 RWingFinger2OppNub
+    400208: Bip01 RWingFinger3
+    400210: Bip01 RWingFinger302
+    400212: Bip01 RWingFinger303
+    400214: Bip01 RWingFinger3Nub
+    400216: Bip01 RWingFinger3Opp
+    400218: Bip01 RWingFinger3Opp02
+    400220: Bip01 RWingFinger3Opp03
+    400222: Bip01 RWingFinger3OppNub
+    400224: Bip01 RWingFinger4
+    400226: Bip01 RWingFinger402
+    400228: Bip01 RWingFinger403
+    400230: Bip01 RWingFinger4Nub
+    400232: Bip01 RWingFinger4Opp
+    400234: Bip01 RWingFinger4Opp02
+    400236: Bip01 RWingFinger4Opp03
+    400238: Bip01 RWingFinger4OppNub
+    400240: Bip01 RWingHand
+    400242: Bip01 RWingHand02
+    400244: Bip01 RWingHandNub
+    400246: Bip01 RWingHandOpp
+    400248: Bip01 RWingHandOpp02
+    400250: Bip01 RWingHandOppNub
+    400252: Bip01 RWingNub
+    400254: Bip01 RWingOpp
+    400256: Bip01 RWingOpp02
+    400258: Bip01 RWingOpp03
+    400260: Bip01 RWingOpp04
+    400262: Bip01 RWingOpp05
+    400264: Bip01 RWingOpp06
+    400266: Bip01 RWingOpp07
+    400268: Bip01 RWingOppNub
+    400270: Bip01 Spine
+    400272: Bip01 Spine1
+    400274: Bip01 Tail
+    400276: Bip01 Tail1
+    400278: Bip01 Tail10
+    400280: Bip01 Tail11
+    400282: Bip01 Tail12
+    400284: Bip01 Tail13
+    400286: Bip01 Tail14
+    400288: Bip01 Tail15
+    400290: Bip01 Tail16
+    400292: Bip01 Tail17
+    400294: Bip01 Tail18
+    400296: Bip01 Tail19
+    400298: Bip01 Tail2
+    400300: Bip01 Tail20
+    400302: Bip01 Tail21
+    400304: Bip01 Tail22
+    400306: Bip01 Tail23
+    400308: Bip01 Tail24
+    400310: Bip01 Tail3
+    400312: Bip01 Tail4
+    400314: Bip01 Tail5
+    400316: Bip01 Tail6
+    400318: Bip01 Tail7
+    400320: Bip01 Tail8
+    400322: Bip01 Tail9
+    400324: Bip01 TailNub
+    400326: //RootNode
+    400328: UndeadDragon
+    4300000: UndeadDragon
+    7400000: CB_Undead_Dragon_Attack_1
+    7400002: CB_Undead_Dragon_Attack_2
+    7400004: CB_Undead_Dragon_Attack_3
+    7400006: CB_Undead_Dragon_Breath_Fire
+    7400008: CB_Undead_Dragon_Death
+    7400010: CB_Undead_Dragon_Fly
+    7400012: CB_Undead_Dragon_Fly_forward
+    7400014: CB_Undead_Dragon_Fly_forward_2
+    7400016: CB_Undead_Dragon_Fly_forward_2_root_motion
+    7400018: CB_Undead_Dragon_Fly_forward_root_motion
+    7400020: CB_Undead_Dragon_Fly_forward_strong
+    7400022: CB_Undead_Dragon_Fly_breath_fire
+    7400024: CB_Undead_Dragon_Fly_death
+    7400026: CB_Undead_Dragon_Fly_hit_1
+    7400028: CB_Undead_Dragon_Fly_hit_2
+    7400030: CB_Undead_Dragon_Fly_left
+    7400032: CB_Undead_Dragon_Fly_left_root_motion
+    7400034: CB_Undead_Dragon_Fly_right
+    7400036: CB_Undead_Dragon_Fly_right_root_motion
+    7400038: CB_Undead_Dragon_Fly_soar
+    7400040: CB_Undead_Dragon_Fly_soar_root_motion
+    7400042: CB_Undead_Dragon_Fly_to_stand
+    7400044: CB_Undead_Dragon_Fly_attack_1
+    7400046: CB_Undead_Dragon_Fly_attack_2
+    7400048: CB_Undead_Dragon_Fly_back
+    7400050: CB_Undead_Dragon_Fly_back_root_motion
+    7400052: CB_Undead_Dragon_Hit_1
+    7400054: CB_Undead_Dragon_Hit_2
+    7400056: CB_Undead_Dragon_Idle
+    7400058: CB_Undead_Dragon_Roar
+    7400060: CB_Undead_Dragon_Run
+    7400062: CB_Undead_Dragon_Run_root_motion
+    7400064: CB_Undead_Dragon_Stand
+    7400066: CB_Undead_Dragon_Stand_to_fly
+    7400068: CB_Undead_Dragon_Strafe_left
+    7400070: CB_Undead_Dragon_Strafe_left_root_motion
+    7400072: CB_Undead_Dragon_Strafe_right
+    7400074: CB_Undead_Dragon_Strafe_right_root_motion
+    7400076: CB_Undead_Dragon_Walk
+    7400078: CB_Undead_Dragon_Walk_root_motion
+    7400080: CB_Undead_Dragon_Whip_tail
+    7400082: CB_Undead_Dragon_Bite
+    9500000: //RootNode
+    13700000: UndeadDragon
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Attack_1
+      takeName: 
+      firstFrame: 2
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Attack_2
+      takeName: 
+      firstFrame: 56
+      lastFrame: 116
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Attack_3
+      takeName: 
+      firstFrame: 125
+      lastFrame: 185
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Breath_Fire
+      takeName: 
+      firstFrame: 194
+      lastFrame: 294
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Death
+      takeName: 
+      firstFrame: 303
+      lastFrame: 389
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly
+      takeName: 
+      firstFrame: 398
+      lastFrame: 443
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_forward
+      takeName: 
+      firstFrame: 452
+      lastFrame: 497
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_forward_2
+      takeName: 
+      firstFrame: 506
+      lastFrame: 551
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_forward_2_root_motion
+      takeName: 
+      firstFrame: 560
+      lastFrame: 605
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_forward_root_motion
+      takeName: 
+      firstFrame: 614
+      lastFrame: 659
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_forward_strong
+      takeName: 
+      firstFrame: 668
+      lastFrame: 713
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_breath_fire
+      takeName: 
+      firstFrame: 722
+      lastFrame: 812
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_death
+      takeName: 
+      firstFrame: 821
+      lastFrame: 887
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_hit_1
+      takeName: 
+      firstFrame: 896
+      lastFrame: 916
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_hit_2
+      takeName: 
+      firstFrame: 925
+      lastFrame: 945
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_left
+      takeName: 
+      firstFrame: 954
+      lastFrame: 999
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_left_root_motion
+      takeName: 
+      firstFrame: 1008
+      lastFrame: 1053
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_right
+      takeName: 
+      firstFrame: 1062
+      lastFrame: 1107
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_right_root_motion
+      takeName: 
+      firstFrame: 1116
+      lastFrame: 1161
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_soar
+      takeName: 
+      firstFrame: 1170
+      lastFrame: 1215
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_soar_root_motion
+      takeName: 
+      firstFrame: 1224
+      lastFrame: 1269
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_to_stand
+      takeName: 
+      firstFrame: 1278
+      lastFrame: 1331
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_attack_1
+      takeName: 
+      firstFrame: 1342
+      lastFrame: 1402
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_attack_2
+      takeName: 
+      firstFrame: 1411
+      lastFrame: 1456
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_back
+      takeName: 
+      firstFrame: 1465
+      lastFrame: 1510
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Fly_back_root_motion
+      takeName: 
+      firstFrame: 1519
+      lastFrame: 1564
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Hit_1
+      takeName: 
+      firstFrame: 1615
+      lastFrame: 1635
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Hit_2
+      takeName: 
+      firstFrame: 1644
+      lastFrame: 1664
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Idle
+      takeName: 
+      firstFrame: 1673
+      lastFrame: 1833
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Roar
+      takeName: 
+      firstFrame: 1842
+      lastFrame: 1941.99988
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Run
+      takeName: 
+      firstFrame: 1951
+      lastFrame: 1976
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Run_root_motion
+      takeName: 
+      firstFrame: 1984.99988
+      lastFrame: 2010
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Stand
+      takeName: 
+      firstFrame: 2019.00012
+      lastFrame: 2064
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Stand_to_fly
+      takeName: 
+      firstFrame: 2073
+      lastFrame: 2128
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Strafe_left
+      takeName: 
+      firstFrame: 2137
+      lastFrame: 2177
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Strafe_left_root_motion
+      takeName: 
+      firstFrame: 2186
+      lastFrame: 2226
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Strafe_right
+      takeName: 
+      firstFrame: 2235
+      lastFrame: 2275
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Strafe_right_root_motion
+      takeName: 
+      firstFrame: 2284
+      lastFrame: 2324
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Walk
+      takeName: 
+      firstFrame: 2333
+      lastFrame: 2393
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Walk_root_motion
+      takeName: 
+      firstFrame: 2402
+      lastFrame: 2462
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Whip_tail
+      takeName: 
+      firstFrame: 2471
+      lastFrame: 2531
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: CB_Undead_Dragon_Bite
+      takeName: 
+      firstFrame: 2536
+      lastFrame: 2578
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
