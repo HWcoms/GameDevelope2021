@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
+  m_IndirectSpecularColor: {r: 0.36236456, g: 0.44876656, b: 0.5936064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8620,6 +8620,8 @@ MonoBehaviour:
   Block: 0
   Run: 0
   BackStep: 0
+  JumpAttack: 0
+  MidMagic1: 0
   clips: []
 --- !u!114 &580800489
 MonoBehaviour:
@@ -8653,8 +8655,13 @@ MonoBehaviour:
   shortRangePattern: 0
   midRangePattern: 0
   longRangePattern: 0
+  mMagicReady: 1
+  mMagicCoolDown: 10
   backstepPosOffset: 2
   backstepSpeed: 0.05
+  jumpAttackPosOffset: 3
+  jumpAttackSpeed: 0.5
+  jumpAttackDelay: 0.7
   temp_Hp: 0
   is_Attack: 0
   enemyhealthScript: {fileID: 0}
@@ -15674,6 +15681,8 @@ MonoBehaviour:
   Block: 0
   Run: 0
   BackStep: 0
+  JumpAttack: 0
+  MidMagic1: 0
   clips: []
 --- !u!114 &1160662811
 MonoBehaviour:
@@ -15707,8 +15716,13 @@ MonoBehaviour:
   shortRangePattern: 0
   midRangePattern: 0
   longRangePattern: 0
+  mMagicReady: 1
+  mMagicCoolDown: 10
   backstepPosOffset: 2
   backstepSpeed: 0.05
+  jumpAttackPosOffset: 3
+  jumpAttackSpeed: 0.5
+  jumpAttackDelay: 0.7
   temp_Hp: 0
   is_Attack: 0
   enemyhealthScript: {fileID: 0}
@@ -19602,8 +19616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shortPatternRange: 1.7
-  midPatternRange: 13
-  longPatternRange: 17
+  midPatternRange: 11
+  longPatternRange: 18
   walkSpeed: 1.7
   runSpeed: 3
   animationOffset: -1.5
@@ -19621,8 +19635,13 @@ MonoBehaviour:
   shortRangePattern: 0
   midRangePattern: 0
   longRangePattern: 0
+  mMagicReady: 1
+  mMagicCoolDown: 10
   backstepPosOffset: 3
   backstepSpeed: 0.5
+  jumpAttackPosOffset: -2
+  jumpAttackSpeed: 0.2
+  jumpAttackDelay: 0.7
   temp_Hp: 0
   is_Attack: 0
   enemyhealthScript: {fileID: 0}
@@ -19651,6 +19670,8 @@ MonoBehaviour:
   Block: 0
   Run: 0
   BackStep: 0
+  JumpAttack: 0
+  MidMagic1: 0
   clips: []
 --- !u!114 &1543367012
 MonoBehaviour:
@@ -24610,7 +24631,7 @@ PrefabInstance:
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
       propertyPath: m_Intensity
-      value: 8.355635
+      value: 55.704227
       objectReference: {fileID: 0}
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
@@ -24858,7 +24879,7 @@ PrefabInstance:
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
       propertyPath: m_Intensity
-      value: 8.355635
+      value: 55.704227
       objectReference: {fileID: 0}
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
@@ -25022,7 +25043,7 @@ PrefabInstance:
     - target: {fileID: 4797270099519846234, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}
       propertyPath: maxHp
-      value: 10000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5349207411785990187, guid: 66224e56a01e8e74faa58a21fbe59af3,
         type: 3}

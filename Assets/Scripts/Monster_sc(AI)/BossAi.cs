@@ -9,6 +9,8 @@ public class BossAi : MonoBehaviour
     //public GameObject missile;
     //public Transform magic;
 
+    //public GameObject testPrefab;
+
     public float shortPatternRange = 5;
     public float midPatternRange = 8;
     public float longPatternRange = 13;
@@ -40,7 +42,7 @@ public class BossAi : MonoBehaviour
     public Transform target;
     //bool isChase = false;   
 
-    
+
 
     [SerializeField] bool shortRangePattern = false;
 
@@ -53,9 +55,22 @@ public class BossAi : MonoBehaviour
     bool shortAttackOnce = false;
     bool longAttackOnce = false;
 
+    bool mjumpAttackOnce = false;
+    bool jumpAttackMoveReady = false;
+
+    bool mMagicOneOnce = false;
+    [SerializeField] bool mMagicReady = true;
+    public float mMagicCoolDown = 10.0f;
+
     private Vector3 backstepPos;
-    public float backstepPosOffset = 2.0f;
-    public float backstepSpeed = 0.05f;
+    public float backstepPosOffset = 3.0f;
+    public float backstepSpeed = 0.5f;
+
+    private Vector3 jumpAttackPos;
+    public float jumpAttackPosOffset = 3.0f;
+    public float jumpAttackSpeed = 0.5f;
+    public float jumpAttackDelay = 0.7f;    //wait
+
 
     AnimatorClipInfo[] animatorinfo;
     string current_animation;
@@ -170,23 +185,69 @@ public class BossAi : MonoBehaviour
                 RunStart();
             }
         }
-        else if(midRangePattern)
+        else if (midRangePattern)
         {
             if (!randomOnce)
             {
                 randomOnce = true;
 
-                rand = Random.Range(0, 2); // 0~1
+                rand = Random.Range(0, 10); // 0~10
 
                 //print("mid pattern: " + rand);
             }
-            ChaseStart();
 
-            if (rand == 1)
-                RunStart();
-            else
-                WalkStart();
+            if (rand < 7)      //attack
+            {
+                nav.isStopped = true;
+
+                if (!random2Once)
+                {
+                    rand2 = Random.Range(0, 10); // 0~1
+                }
+                random2Once = true;
+
+                if (rand2 < 1)   //jump attack
+                {
+                    anim.SetBool("Is_MidRangeAttack", true);
+                    print("jumpAttack");
+                    JumpAttack();
+                }
+                else            //Magic 1
+                {
+                    if (mMagicReady)
+                    {
+                        anim.SetBool("Is_MidRangeAttack", true);
+                        print("magic1");
+                        MidRangeMagic1();
+                    }
+                    else
+                    {
+                        print("magicCoolDown");
+                        EndCoroutinePattern();
+                    }
+                }
+            }
+            else   //chase 
+            {
+                ChaseStart();
+
+                if (!random2Once)
+                {
+                    rand2 = Random.Range(0, 10); // 0~10
+                }
+                random2Once = true;
+
+                if (rand2 < 6)   //run
+                {
+                    RunStart();
+                }
+                else            //walk
+                {
+                    WalkStart();
+                }
+            }
         }
+
         else if (shortRangePattern)
         {
             nav.isStopped = true;
@@ -195,7 +256,7 @@ public class BossAi : MonoBehaviour
             {
                 randomOnce = true;
 
-                rand = Random.Range(0, 10); // 0~1
+                rand = Random.Range(0, 10); // 0~10
 
                 //print("short pattern: " + rand);
             }
@@ -206,7 +267,7 @@ public class BossAi : MonoBehaviour
             {
                 if (!random2Once)
                 {
-                    rand2 = Random.Range(0, 10); // 0~1
+                    rand2 = Random.Range(0, 10); // 0~10
                 }
                 random2Once = true;
 
@@ -214,7 +275,7 @@ public class BossAi : MonoBehaviour
                 {
                     ShortAttack();
                 }
-                else 
+                else
                 {
                     LongAttack();
                 }
@@ -284,7 +345,7 @@ public class BossAi : MonoBehaviour
         isRockSpawn = true;
     }
 
-    
+
     IEnumerator sRange_BackStep()
     {
         //print("short pattern : Backstep");
@@ -301,7 +362,7 @@ public class BossAi : MonoBehaviour
         backstepOnce = false;
         EndCoroutinePattern();
     }
-    
+
 
     /*
     IEnumerator sRange_BackStep()
@@ -334,7 +395,7 @@ public class BossAi : MonoBehaviour
         shortAttackOnce = false;
         EndCoroutinePattern();
     }
-    
+
     IEnumerator sRange_LongAttack()
     {
         anim.SetBool("Is_LongAttack", true);
@@ -349,6 +410,51 @@ public class BossAi : MonoBehaviour
         longAttackOnce = false;
         EndCoroutinePattern();
     }
+
+    IEnumerator mRange_JumpAttack()
+    {
+        anim.SetBool("Is_JumpAttack", true);
+        anim.SetBool("Is_Magic1", false);
+
+        yield return new WaitForSeconds(ani_in.JumpAttack - 0.9f);
+
+        anim.SetBool("Is_JumpAttack", false);
+        anim.SetBool("Is_MidRangeAttack", false);
+
+        jumpAttackMoveReady = false;
+        mjumpAttackOnce = false;
+        EndCoroutinePattern();
+    }
+
+    IEnumerator mRange_Magic1(float cooldown)
+    {
+        anim.SetBool("Is_JumpAttack", false);
+        anim.SetBool("Is_Magic1", true);
+
+        yield return new WaitForSeconds(ani_in.MidMagic1);
+
+        anim.SetBool("Is_Magic1", false);
+        anim.SetBool("Is_MidRangeAttack", false);
+
+        mMagicReady = false;
+        mMagicOneOnce = false;
+
+        EndCoroutinePattern();
+
+        yield return new WaitForSeconds(cooldown);
+        mMagicReady = true;
+    }
+
+    IEnumerator JumpAttackMoveWait (float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        isLookAtPlayer = true;
+        jumpAttackPos = target.transform.position - (transform.position - target.transform.position).normalized * jumpAttackPosOffset; 
+        //Instantiate(testPrefab, jumpAttackPos, Quaternion.identity); //test
+        jumpAttackMoveReady = true;
+    }
+
     //막고나서 근거리 딜레이 시간에 포함됨(수정필요)
     IEnumerator Block()
     {
@@ -401,7 +507,7 @@ public class BossAi : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, backstepPos, backstepSpeed);
         }
     }
-    
+
     /*
     void BackStep()
     {
@@ -420,9 +526,9 @@ public class BossAi : MonoBehaviour
             }
         }
     }*/
-    void ShortAttack() 
+    void ShortAttack()
     {
-        if(!shortAttackOnce)
+        if (!shortAttackOnce)
         {
             shortAttackOnce = true;
 
@@ -443,6 +549,43 @@ public class BossAi : MonoBehaviour
         }
     }
 
+    void JumpAttack()
+    {
+        Reset_ChaseAnim();
+
+        anim.SetBool("Is_JumpAttack", true);
+        anim.SetBool("Is_Magic1", false);
+
+        if (!mjumpAttackOnce)
+        {
+            if (!jumpAttackMoveReady)
+            {
+                StartCoroutine(JumpAttackMoveWait(jumpAttackDelay));
+            }
+
+            mjumpAttackOnce = true;
+            StartCoroutine(mRange_JumpAttack());
+        }
+
+        if (jumpAttackMoveReady)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, jumpAttackPos, jumpAttackSpeed);
+        }
+    }
+
+    void MidRangeMagic1()
+    {
+        if (!mMagicOneOnce)
+        {
+            Reset_ChaseAnim();
+
+            anim.SetBool("Is_Magic1", true);
+            anim.SetBool("Is_JumpAttack", false);
+
+            mMagicOneOnce = true;
+            StartCoroutine(mRange_Magic1(mMagicCoolDown));
+        }
+    }
 
     void ChaseStart()
     {

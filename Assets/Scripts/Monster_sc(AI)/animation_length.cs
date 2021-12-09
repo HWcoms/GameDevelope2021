@@ -12,7 +12,10 @@ public class animation_length : MonoBehaviour
     public float Block;
     public float Run;
     public float BackStep;
-    
+    public float JumpAttack;
+    public float MidMagic1;
+
+
 
     private Animator anim;
     private AnimationClip clip;
@@ -48,6 +51,12 @@ public class animation_length : MonoBehaviour
                     break;
                 case "sRange_BackStep":
                     BackStep = clip.length;
+                    break;
+                case "MidJumpAttack":
+                    JumpAttack = clip.length;
+                    break;
+                case "MidMagic1":
+                    MidMagic1 = clip.length;
                     break;
                 case "Block":
                     Block = clip.length;
