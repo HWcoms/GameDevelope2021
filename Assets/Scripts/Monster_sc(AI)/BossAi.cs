@@ -49,9 +49,16 @@ public class BossAi : MonoBehaviour
     [SerializeField] bool longRangePattern = false;
 
 
+    bool backstepOnce = false;
     bool shortAttackOnce = false;
     bool longAttackOnce = false;
 
+    private Vector3 backstepPos;
+    public float backstepPosOffset = 2.0f;
+    public float backstepSpeed = 0.05f;
+
+    AnimatorClipInfo[] animatorinfo;
+    string current_animation;
 
     [SerializeField] private float temp_Hp;
 
@@ -101,6 +108,10 @@ public class BossAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animatorinfo = anim.GetCurrentAnimatorClipInfo(0);
+        current_animation = animatorinfo[0].clip.name;
+        //print(current_animation);
+
         if (enemyhealthScript.getDead())
         {
             anim.SetBool("Death", true);
@@ -167,7 +178,7 @@ public class BossAi : MonoBehaviour
 
                 rand = Random.Range(0, 2); // 0~1
 
-                print("mid pattern: " + rand);
+                //print("mid pattern: " + rand);
             }
             ChaseStart();
 
@@ -184,22 +195,22 @@ public class BossAi : MonoBehaviour
             {
                 randomOnce = true;
 
-                rand = Random.Range(0, 2); // 0~1
+                rand = Random.Range(0, 10); // 0~1
 
-                print("short pattern: " + rand);
+                //print("short pattern: " + rand);
             }
-                                            //print(rand);
-            if (rand == 1)      //attack
-            {
-                anim.SetBool("Is_ShortRangeAttack", true);
 
+            anim.SetBool("Is_ShortRangeAttack", true);
+
+            if (rand < 4)      //attack
+            {
                 if (!random2Once)
                 {
-                    rand2 = Random.Range(0, 2); // 0~1
+                    rand2 = Random.Range(0, 10); // 0~1
                 }
                 random2Once = true;
 
-                if (rand2 == 1)   //short attack
+                if (rand2 < 7)   //short attack
                 {
                     ShortAttack();
                 }
@@ -210,8 +221,7 @@ public class BossAi : MonoBehaviour
             }
             else   //other pattern
             {
-                print("short range others");
-                EndCoroutinePattern();
+                BackStep();
             }
 
         }
@@ -219,7 +229,7 @@ public class BossAi : MonoBehaviour
 
         if ((enemyhealthScript.getHp() / enemyhealthScript.getMaxHp()) * 100.0f < 30.0f && isRockSpawn)
         {
-            print("roll ");
+            //print("roll ");
 
             tempCoroutine = StartCoroutine(SpawnRock(10.0f));
         }
@@ -275,10 +285,46 @@ public class BossAi : MonoBehaviour
     }
 
     
+    IEnumerator sRange_BackStep()
+    {
+        //print("short pattern : Backstep");
+
+        anim.SetBool("Is_BackStep", true);
+        anim.SetBool("Is_ShortAttack", false);
+        anim.SetBool("Is_LongAttack", false);
+
+        yield return new WaitForSeconds(ani_in.BackStep - 0.9f);  //ani.BackStep / .7       //나중에 옵셋 퍼센트로 처리 예정
+
+        anim.SetBool("Is_BackStep", false);
+        anim.SetBool("Is_ShortRangeAttack", false);
+
+        backstepOnce = false;
+        EndCoroutinePattern();
+    }
+    
+
+    /*
+    IEnumerator sRange_BackStep()
+    {
+        anim.SetBool("Is_BackStep", true);
+        anim.SetBool("Is_ShortAttack", false);
+        anim.SetBool("Is_LongAttack", false);
+
+        yield return new WaitForSeconds(ani_in.BackStep);  //ani_in.BackStep / .7
+
+        anim.SetBool("Is_BackStep", false);
+        anim.SetBool("Is_ShortRangeAttack", false);
+
+        backstepOnce = false;
+        EndCoroutinePattern();
+    }
+    */
+
     IEnumerator sRange_ShortAttack()
     {
         anim.SetBool("Is_ShortAttack", true);
         anim.SetBool("Is_LongAttack", false);
+        anim.SetBool("Is_BackStep", false);
 
         yield return new WaitForSeconds(ani_in.ShortAttack + animationOffset);
 
@@ -293,6 +339,7 @@ public class BossAi : MonoBehaviour
     {
         anim.SetBool("Is_LongAttack", true);
         anim.SetBool("Is_ShortAttack", false);
+        anim.SetBool("Is_BackStep", false);
 
         yield return new WaitForSeconds(ani_in.LongAttack + animationOffset);
 
@@ -333,6 +380,46 @@ public class BossAi : MonoBehaviour
         AttackDamage = Damage;
     }
 
+    void BackStep()
+    {
+        anim.SetBool("Is_BackStep", true);
+        anim.SetBool("Is_ShortAttack", false);
+        anim.SetBool("Is_LongAttack", false);
+
+        if (current_animation.Equals("sRange_BackStep"))
+        {
+            if (!backstepOnce)
+            {
+                backstepOnce = true;
+                backstepPos = transform.position - (transform.forward * backstepPosOffset);
+                StartCoroutine(sRange_BackStep());
+
+                LookAtPlayer();
+            }
+
+            //transform.position = Vector3.Lerp(transform.position, backstepPos, backstepSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, backstepPos, backstepSpeed);
+        }
+    }
+    
+    /*
+    void BackStep()
+    {
+        anim.SetBool("Is_BackStep", true);
+        anim.SetBool("Is_ShortAttack", false);
+        anim.SetBool("Is_LongAttack", false);
+
+        if (current_animation.Equals("sRange_BackStep"))
+        {
+            if (!backstepOnce)
+            {
+                backstepOnce = true;
+                StartCoroutine(sRange_BackStep());
+
+                LookAtPlayer();
+            }
+        }
+    }*/
     void ShortAttack() 
     {
         if(!shortAttackOnce)

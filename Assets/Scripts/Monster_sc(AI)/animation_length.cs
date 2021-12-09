@@ -11,6 +11,7 @@ public class animation_length : MonoBehaviour
     public float LongAttack;
     public float Block;
     public float Run;
+    public float BackStep;
     
 
     private Animator anim;
@@ -45,7 +46,10 @@ public class animation_length : MonoBehaviour
                 case "LongAttack":
                     LongAttack = clip.length;
                     break;
-                case "Blcok":
+                case "sRange_BackStep":
+                    BackStep = clip.length;
+                    break;
+                case "Block":
                     Block = clip.length;
                     break;
                 case "Run_inPlace":
