@@ -50,7 +50,7 @@ MonoBehaviour:
   PatternRangeVisionCircle: {fileID: 3002477920219314432, guid: 2ffdda37be5e9c446b8d7277441983ea,
     type: 3}
   Prefab: {fileID: 1436447386774278, guid: 73715a781a0eb854ea9a78497c1a329e, type: 3}
-  fallTimes: 4
+  fallTimes: 3
   delay: 2
   visionDelay: 1
 --- !u!65 &4071742884990779528

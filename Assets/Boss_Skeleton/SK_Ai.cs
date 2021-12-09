@@ -29,8 +29,12 @@ public class SK_Ai : MonoBehaviour
     {
         Vector3 dir = target.position - transform.position;
 
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.LookRotation(
-            dir), 5 * Time.deltaTime);
+        Quaternion LookAtRotation = Quaternion.LookRotation(dir);
+
+        Quaternion LookAtRotationOnly_Y = Quaternion.Euler(transform.rotation.eulerAngles.x, LookAtRotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, LookAtRotationOnly_Y, 5 * Time.deltaTime);
+        
     }
 
     void MoveDragon()

@@ -196,7 +196,7 @@ public class BossAi : MonoBehaviour
                 //print("mid pattern: " + rand);
             }
 
-            if (rand < 7)      //attack
+            if (rand < 4)      //attack
             {
                 nav.isStopped = true;
 
@@ -271,7 +271,7 @@ public class BossAi : MonoBehaviour
                 }
                 random2Once = true;
 
-                if (rand2 < 7)   //short attack
+                if (rand2 < 6)   //short attack
                 {
                     ShortAttack();
                 }
