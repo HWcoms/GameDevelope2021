@@ -85,7 +85,7 @@ public class BossAi : MonoBehaviour
     public GameObject cape;
 
     bool isDone = false;
-    public GameObject Prefab;
+    public GameObject StoneFallPrefab;
     public GameObject RollPrefab;
     Coroutine tempCoroutine;
 
@@ -292,7 +292,7 @@ public class BossAi : MonoBehaviour
         {
             //print("roll ");
 
-            tempCoroutine = StartCoroutine(SpawnRock(10.0f));
+            tempCoroutine = StartCoroutine(SpawnRock(15.0f));
         }
 
         //getHit
@@ -333,17 +333,18 @@ public class BossAi : MonoBehaviour
 
         isRockSpawn = true;
     }
-
-    IEnumerator StoneMagic(float delay)
+    /*
+    IEnumerator StoneFallMagic(float delay)
     {
+        
         isRockSpawn = false;
-
-        Instantiate(RollPrefab, target.transform.position, Quaternion.identity);
-
+        
+        Instantiate(StoneFallPrefab, target.transform.position, Quaternion.identity);
+        
         yield return new WaitForSeconds(delay);
 
         isRockSpawn = true;
-    }
+    }*/
 
 
     IEnumerator sRange_BackStep()
@@ -440,6 +441,8 @@ public class BossAi : MonoBehaviour
         mMagicOneOnce = false;
 
         EndCoroutinePattern();
+
+        StoneFallMagic();
 
         yield return new WaitForSeconds(cooldown);
         mMagicReady = true;
@@ -587,6 +590,11 @@ public class BossAi : MonoBehaviour
         }
     }
 
+    void StoneFallMagic()
+    {
+        Instantiate(StoneFallPrefab, target.transform.position, Quaternion.identity);
+    }
+
     void ChaseStart()
     {
         //print("ChaseStart");
@@ -669,10 +677,6 @@ public class BossAi : MonoBehaviour
         {
             StoneMagic_check = true;
         }*/
-
-
-
-
 
         /*if(enemyhealthScript.getHp() < temp_Hp)
          {

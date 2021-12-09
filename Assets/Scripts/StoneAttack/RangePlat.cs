@@ -4,46 +4,38 @@ using UnityEngine;
 
 public class RangePlat : MonoBehaviour
 {
-   public GameObject rangeObject;
+    public GameObject rangeObject;
     public BoxCollider rangeCollider;
+    public GameObject PatternRangeVisionCircle;
 
     public GameObject Prefab;
+
+    public int fallTimes = 4;
+
+    public float delay = 3.0f;
+    public float visionDelay = 2.0f;
     
     public void Awake()
     {
-        rangeCollider = rangeObject.GetComponent<BoxCollider>();
-         StartCoroutine(RandomRespawn_Coroutine());
+            rangeCollider = rangeObject.GetComponent<BoxCollider>();
+            StartCoroutine(RandomRespawn_Coroutine());
     }
-    
-// public void Start()
-//     {
-       
-//     }
 
+    IEnumerator RandomRespawn_Coroutine()
+    {   
+        for (int i = 0; i < fallTimes; i++)
+        {
+            yield return new WaitForSeconds(delay - visionDelay);
 
+            FollowPlayer();
 
-IEnumerator RandomRespawn_Coroutine()
-    {
-        // while (true)
-        // { 
+            GameObject PatternEffect = Instantiate(PatternRangeVisionCircle, Return_RandomPosition() + new Vector3(0, 0.02f, 0), Quaternion.identity);
+
+            yield return new WaitForSeconds(visionDelay);
             
-            for (int i = 0; i < 4; i++)
-            {
-
-            yield return new WaitForSeconds(4f);
-
-           GameObject instantEffect7 = Instantiate(Prefab, Return_RandomPosition(), Quaternion.identity);
-
-           }
-
-            
-
-            // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
-
-        // }
-
-
-
+            GameObject instantEffect7 = Instantiate(Prefab, PatternEffect.transform.position, Quaternion.identity);
+            Destroy(PatternEffect.gameObject, 0.5f);
+        }
     }
 
 
@@ -60,6 +52,11 @@ IEnumerator RandomRespawn_Coroutine()
 
         Vector3 respawnPosition = originPosition + RandomPostion;
         return respawnPosition;
+    }
+
+    public void FollowPlayer ()
+    {
+        transform.position = GameObject.FindWithTag("Player").transform.position;
     }
 
 

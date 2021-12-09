@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: -2697223345607225703}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.99, z: -6.25}
-  m_LocalScale: {x: 14.412, y: 1, z: 10.448233}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 50789041370153610}
   m_Father: {fileID: 0}
@@ -47,7 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangeObject: {fileID: -2697223345607225703}
   rangeCollider: {fileID: 50789041370153611}
+  PatternRangeVisionCircle: {fileID: 3002477920219314432, guid: 2ffdda37be5e9c446b8d7277441983ea,
+    type: 3}
   Prefab: {fileID: 1436447386774278, guid: 73715a781a0eb854ea9a78497c1a329e, type: 3}
+  fallTimes: 4
+  delay: 2
+  visionDelay: 1
 --- !u!65 &4071742884990779528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59,8 +64,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.54, z: 0}
+  m_Size: {x: -7, y: 1, z: -7}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &50789041370153608
 GameObject:
   m_ObjectHideFlags: 0

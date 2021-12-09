@@ -17,6 +17,7 @@ TagManager:
   - Boss
   - Monster
   - BossPattern
+  - ExcludeCollisionDetect
   layers:
   - Default
   - TransparentFX

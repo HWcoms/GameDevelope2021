@@ -15753,7 +15753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4356052458562908}
   - component: {fileID: 95535382739054454}
-  - component: {fileID: 114023299666403322}
+  - component: {fileID: 2022295563}
   m_Layer: 13
   m_Name: Force
   m_TagString: Untagged
@@ -15794,7 +15794,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114023299666403322
+--- !u!114 &2022295563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15803,7 +15803,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1326127234117112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20f409696d9de5c408318c995259242f, type: 3}
+  m_Script: {fileID: 11500000, guid: b5db6a520172d9746a12785ba0459d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ForceRadius: 12
@@ -15813,25 +15813,25 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.79999995
-      inSlope: 0.015678175
-      outSlope: 0.015678175
+      value: 0.7995283
+      inSlope: -0.0022409605
+      outSlope: -0.0022409605
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0.3704011
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0.25282142
-      outSlope: 0.25282142
+      inSlope: 0.5172712
+      outSlope: 0.5172712
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0.08774942
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   ForceMode: 0
   GraphTimeMultiplier: 2.2
   GraphIntensityMultiplier: 1
@@ -15846,44 +15846,44 @@ MonoBehaviour:
       value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
-  UseUPVector: 1
+    m_RotationOrder: 4
+  UseUPVector: 0
   DragCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      time: -0.0011150166
+      value: 0.00020980835
+      inSlope: 679.8845
+      outSlope: 679.8845
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
+      time: 0.00035551284
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 679.8845
+      outSlope: 679.8845
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -17189,7 +17189,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4632888203439750}
   - component: {fileID: 114685315673332836}
-  m_Layer: 13
+  - component: {fileID: 1220588712}
+  - component: {fileID: 1220588715}
+  - component: {fileID: 15889078}
+  m_Layer: 0
   m_Name: StoneFallEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17239,6 +17242,49 @@ MonoBehaviour:
   Speed: 10
   AirDrag: 0.1
   UseGravity: 1
+--- !u!136 &1220588712
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436447386774278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 1.3675653
+  m_Height: 3.3033562
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.36968422, z: 0}
+--- !u!114 &1220588715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436447386774278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf576d3bb126d245b381c2b85447227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
+    type: 3}
+  stoneDamage: 30
+  fallingRock: {fileID: 1633159372229742}
+--- !u!135 &15889078
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436447386774278}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 2.97
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1441491964992070
 GameObject:
   m_ObjectHideFlags: 0
@@ -23529,6 +23575,7 @@ GameObject:
   - component: {fileID: 114226595512819126}
   - component: {fileID: 114754367993015426}
   - component: {fileID: 114469342690597858}
+  - component: {fileID: 1879364938}
   m_Layer: 13
   m_Name: Rock
   m_TagString: Untagged
@@ -23612,7 +23659,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 3
+  m_CollisionDetection: 0
 --- !u!64 &64353531484553096
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23668,6 +23715,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8686cad5439e84383ba590d814d1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1879364938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633159372229742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e152bb10ffbead4aad0cd265c5d485a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionDelay: 0.25
+  explodeDelay: 1.6
 --- !u!1 &1635796736741406
 GameObject:
   m_ObjectHideFlags: 0
