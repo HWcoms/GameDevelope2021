@@ -19,6 +19,7 @@ public class Dragon_Ai : MonoBehaviour
         DragonAni = GetComponent<Animator>();
         enemyhealthScript = GetComponent<EnemyHealth>();
         enableAct = true;
+        DragonAni.Play("New State");
 
         temp_Hp = enemyhealthScript.getMaxHp();
     }
@@ -33,6 +34,7 @@ public class Dragon_Ai : MonoBehaviour
 
     void MoveDragon()
     {
+        /*
         if((target.position-transform.position).magnitude>=16)
         {
             DragonSpeed = 4;
@@ -43,6 +45,12 @@ public class Dragon_Ai : MonoBehaviour
             transform.Translate(Vector3.forward * DragonSpeed *
                 Time.deltaTime, Space.Self);
         }
+        */
+        if ((target.position - transform.position).magnitude >= 15)
+        {
+            DragonAni.SetBool("Is_Walk", false);
+        }
+
         if ((target.position - transform.position).magnitude < 15 && (target.position - transform.position).magnitude > 7)
         {
             DragonSpeed = 1;

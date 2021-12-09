@@ -22,6 +22,10 @@ public class EnemySpinner : MonoBehaviour
     [SerializeField] private float dealableTime = 0.3f;
     [SerializeField] private float dealTimer;
 
+    EnemyHealth enemyhealthScript;
+    float temp_Hp;
+    public GameObject particlePrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +36,27 @@ public class EnemySpinner : MonoBehaviour
 
         hitParticleText = hitParticle.GetComponentInChildren<TextMeshPro>();
         hitParticleText.text = "0";
+
+        enemyhealthScript = GetComponent<EnemyHealth>();
+        temp_Hp = enemyhealthScript.getMaxHp();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //getHit
+        if (enemyhealthScript.getHp() < temp_Hp)
+        {
+            temp_Hp = enemyhealthScript.getHp();
+
+            GameObject soulPrefab = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+            soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
+
+            //anim.SetBool("Is_Block", true);
+
+            //StartCoroutine(Block());
+        }
+
         if (!isMove) return;
 
         if (!isHp) return;

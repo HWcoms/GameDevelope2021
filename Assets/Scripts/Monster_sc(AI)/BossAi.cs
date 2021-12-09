@@ -206,7 +206,7 @@ public class BossAi : MonoBehaviour
                 }
                 random2Once = true;
 
-                if (rand2 < 1)   //jump attack
+                if (rand2 < 6)   //jump attack
                 {
                     anim.SetBool("Is_MidRangeAttack", true);
                     print("jumpAttack");
@@ -263,7 +263,7 @@ public class BossAi : MonoBehaviour
 
             anim.SetBool("Is_ShortRangeAttack", true);
 
-            if (rand < 4)      //attack
+            if (rand < 5)      //attack
             {
                 if (!random2Once)
                 {

@@ -139,9 +139,9 @@ public class Skeleton1_Ai : MonoBehaviour
     {
         InvokeRepeating("Random_patton", 5f, 3f);
 
-        if (fov1.visibleTargets.Count == 0)
+        if (fov1.visibleTargets.Count == 0 && dist < 11)
         {
-            //print(Random_r);
+            print(Random_r);
             nav.isStopped = false;
             nav.SetDestination(target.position);
             LookAtPlayer();
@@ -150,22 +150,21 @@ public class Skeleton1_Ai : MonoBehaviour
                 anim.SetBool("Is_Walk", false);
                 nav.isStopped = true;
             }
-            else if (dist > 1) //float dist = Vector3.Distance(other.position, transform.position);
+            else if (dist > 1 && dist < 10) //float dist = Vector3.Distance(other.position, transform.position);
             {
                 //nav.isStopped = false;
-                //nav.SetDestination(target.position);                              
+                //nav.SetDestination(target.position);
 
                 anim.SetBool("Is_Attack", false);
                 anim.SetBool("Is_Walk", true);
-                //print("Walk");
+                print("Walk");
 
             }
 
 
         }
-        else
+        else if (dist < 11 && fov1.visibleTargets.Count == 1)
         {
-
             LookAtPlayer();
             if (dist <= 1)
             {
@@ -180,11 +179,11 @@ public class Skeleton1_Ai : MonoBehaviour
                 anim.SetBool("Is_Attack", true);
 
             }
-            else
+            else if (dist < 10 && dist > 1)
             {
                 anim.SetBool("Is_Attack", false);
                 anim.SetBool("Is_Walk", true);
-                //print("Walk");
+                print("Walk");
             }
 
         }
