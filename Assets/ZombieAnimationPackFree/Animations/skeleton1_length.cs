@@ -8,6 +8,7 @@ public class skeleton1_length : MonoBehaviour
     public float Dead;
     public float Walk;
     public float Damage;
+    public float Jump;
 
 
     private Animator anim;
@@ -48,6 +49,10 @@ public class skeleton1_length : MonoBehaviour
                 case "Damage":
                     Damage = clip.length;
                     break;
+                case "JumpAttack":
+                    Jump = clip.length;
+                    break;
+
 
             }
         }

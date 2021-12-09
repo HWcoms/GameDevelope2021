@@ -11,6 +11,7 @@ public class Skeleton1_Ai : MonoBehaviour
     Vector3 lookVec;
     private skeleton1_length ani_in;
     public GameObject particlePrefab;
+    int Random_r;
 
     bool isLook;
     public Animator anim;
@@ -18,9 +19,8 @@ public class Skeleton1_Ai : MonoBehaviour
     public BoxCollider boxCollider;
     public NavMeshAgent nav;
     public Transform target;
-    bool Attack_check = false;
-    bool Walk_check = false;
-    bool HitDamage_check = false;
+
+    //bool HitDamage_check = false;
     [SerializeField] private float temp_Hp;
 
 
@@ -34,6 +34,7 @@ public class Skeleton1_Ai : MonoBehaviour
 
     void Awake()
     {
+
         fov1 = GetComponent<FOV_Track>();
         ani_in = GetComponent<skeleton1_length>();
         rigid = GetComponent<Rigidbody>();
@@ -49,9 +50,11 @@ public class Skeleton1_Ai : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //nav.isStopped = true;
         //print(enemyhealthScript.getHp());
         //print("\n\n");
         //print(temp_Hp);
+
         if (enemyhealthScript.getDead())
         {
             anim.SetBool("Is_Death", true);
@@ -62,15 +65,6 @@ public class Skeleton1_Ai : MonoBehaviour
         dist = Vector3.Distance(target.position, transform.position);
 
         boss_patton();
-
-        if (Walk_check) //float dist = Vector3.Distance(other.position, transform.position);
-        {
-            WalkStart();
-        }
-        if (Attack_check)
-        {
-            StartCoroutine(Attack());
-        }
 
         //getHit
         if (enemyhealthScript.getHp() < temp_Hp)
@@ -93,6 +87,8 @@ public class Skeleton1_Ai : MonoBehaviour
 
         if (isLookAtPlayer)
             LookAtPlayer();
+
+
     }
 
     void LookAtPlayer()
@@ -106,23 +102,21 @@ public class Skeleton1_Ai : MonoBehaviour
 
 
 
-    void Think() //보스 로직 구현 - 보스가 생각해서.. ai처럼
-    {
-        anim.SetBool("Is_Attack", false);
-        Attack_check = false;
-
-        anim.SetBool("Is_Walk", false);
-        Walk_check = false;
-
-    }
-
 
     public void setAttack(int flag)
     {
         if (flag == 1)
+        {
+            nav.isStopped = true;
             is_Attacking = true;
+        }
         else
+        {
+            nav.isStopped = false;
+            nav.SetDestination(target.position);
             is_Attacking = false;
+        }
+
     }
 
     public bool getAttack()
@@ -132,52 +126,67 @@ public class Skeleton1_Ai : MonoBehaviour
 
     public void setDamage(float Damage)
     {
+        nav.isStopped = true;
         AttackDamage = Damage;
     }
 
-    IEnumerator Attack()
+    void Random_patton()
     {
-        print("Attack");
-        nav.isStopped = true;
-        anim.SetBool("Is_Walk", false);
-        anim.SetBool("Is_Attack", true);
-        yield return new WaitForSeconds(ani_in.Attack);
-
-        Think();
-    }
-
-    void WalkStart()
-    {
-
-        nav.isStopped = false;
-        nav.SetDestination(target.position);
-        anim.SetBool("Is_Walk", true);
-
+        Random_r = Random.Range(0, 4);
     }
 
     void boss_patton()
     {
+        InvokeRepeating("Random_patton", 5f, 3f);
 
         if (fov1.visibleTargets.Count == 0)
         {
+            //print(Random_r);
+            nav.isStopped = false;
+            nav.SetDestination(target.position);
             LookAtPlayer();
-            if ((dist > 1)) //float dist = Vector3.Distance(other.position, transform.position);
+            if (dist <= 0.3)
             {
-                print("Walk");
-                Walk_check = true;
+                anim.SetBool("Is_Walk", false);
+                nav.isStopped = true;
+            }
+            else if (dist > 1) //float dist = Vector3.Distance(other.position, transform.position);
+            {
+                //nav.isStopped = false;
+                //nav.SetDestination(target.position);                              
+
+                anim.SetBool("Is_Attack", false);
+                anim.SetBool("Is_Walk", true);
+                //print("Walk");
 
             }
+
+
         }
         else
         {
+
             LookAtPlayer();
-            if (dist < 1)
+            if (dist <= 1)
             {
+                if (dist <= 0.5)
+                {
+                    anim.SetBool("Is_Walk", false);
+                    nav.isStopped = true;
+                }
+
                 anim.SetBool("Is_Walk", false);
                 print("Attack_test");
                 anim.SetBool("Is_Attack", true);
-                Attack_check = true;
+
             }
+            else
+            {
+                anim.SetBool("Is_Attack", false);
+                anim.SetBool("Is_Walk", true);
+                //print("Walk");
+            }
+
         }
     }
 
