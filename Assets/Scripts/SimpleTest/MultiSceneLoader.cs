@@ -57,9 +57,12 @@ public class MultiSceneLoader : MonoBehaviour
     {
         scenesToLoad.Add(SceneManager.LoadSceneAsync(sceneName));
     }
-    void LoadScene(string sceneName, int mode)  //mode 0: Load, 1: Additive
+    public void LoadScene(string sceneName, int mode)  //mode 0: Load, 1: Additive
     {
-        scenesToLoad.Add(SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive));
+        if (mode == 0)
+            SceneManager.LoadScene(sceneName);
+        else
+            scenesToLoad.Add(SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive));
     }
 
     private IEnumerator WaitToSpawn(float delay)
@@ -71,5 +74,21 @@ public class MultiSceneLoader : MonoBehaviour
 
         player.transform.position = playerSpawnPoint.position;
         player.GetComponent<Rigidbody>().isKinematic = false;
+    }
+
+    public List<string> GetSceneName()
+    {
+        Scene[] scene = SceneManager.GetAllScenes();
+
+        List<string> sceneNames = new List<string>();
+
+        foreach (Scene names in scene)
+        {
+            sceneNames.Add(names.name);
+
+            //print(names.name + " Scene in list");
+        }
+
+        return sceneNames;
     }
 }
