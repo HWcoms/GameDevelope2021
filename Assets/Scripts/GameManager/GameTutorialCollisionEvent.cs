@@ -58,7 +58,7 @@ public class GameTutorialCollisionEvent : MonoBehaviour
         if(oncePlayed && !isDelay)  //if not control by delay
         {
             if(Input.GetKeyDown(KeyCode.R))
-                StartCoroutine(offDisplay(0.5f));
+                StartCoroutine(offDisplay(3.0f));
         }
 
         if(wallObjs.Length == 0 || !wallObjs[0].activeSelf) return;
@@ -68,13 +68,10 @@ public class GameTutorialCollisionEvent : MonoBehaviour
             print("rendered");
             //print(wallObjs[0].name);
 
-            Color col = wallObj.GetComponent<MeshRenderer>().material.color;
-
-            print(wallObj.GetComponent<MeshRenderer>().material.color);
-            print(wallObj.GetComponent<MeshRenderer>().material.name);
-
-            col.a = 0;//(int) (wallAlpha * 100);
-            wallObj.GetComponent<MeshRenderer>().material.color = col;
+            Color col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_UnlitColor");
+            col.a = wallAlpha;
+            print(col);
+            wallObj.GetComponent<MeshRenderer>().material.SetColor("_UnlitColor", col);
         }
     }
 
@@ -105,6 +102,8 @@ public class GameTutorialCollisionEvent : MonoBehaviour
 
     IEnumerator offDisplay(float delay)
     {
+        StartCoroutine(wallFadeOut());
+
         yield return new WaitForSeconds(delay);
 
         foreach (GameObject childs in tutObjList)
@@ -113,7 +112,7 @@ public class GameTutorialCollisionEvent : MonoBehaviour
         }
     }
 
-    IEnumerator wallFadeIn(float speed = 1.0f, float delay = 0.1f)
+    IEnumerator wallFadeIn(float speed = 15.0f, float delay = 0.05f)
     {
         while(wallAlpha < 1.0f)
         {
@@ -122,9 +121,10 @@ public class GameTutorialCollisionEvent : MonoBehaviour
             yield return new WaitForSeconds(delay);
             wallAlpha += 0.01f * speed;
         }
+        wallAlpha = 1;
     }
 
-    IEnumerator wallFadeOut(float speed = 1.0f, float delay = 0.1f)
+    IEnumerator wallFadeOut(float speed = 15.0f, float delay = 0.05f)
     {
         while(wallAlpha >= 0.0f)
         {
@@ -133,5 +133,6 @@ public class GameTutorialCollisionEvent : MonoBehaviour
             yield return new WaitForSeconds(delay);
             wallAlpha -= 0.01f * speed;
         }
+        wallAlpha = 0;
     }
 }
