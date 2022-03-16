@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,6 +60,22 @@ public class GameTutorialCollisionEvent : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.R))
                 StartCoroutine(offDisplay(0.5f));
         }
+
+        if(wallObjs.Length == 0 || !wallObjs[0].activeSelf) return;
+
+        foreach(GameObject wallObj in wallObjs)
+        {
+            print("rendered");
+            //print(wallObjs[0].name);
+
+            Color col = wallObj.GetComponent<MeshRenderer>().material.color;
+
+            print(wallObj.GetComponent<MeshRenderer>().material.color);
+            print(wallObj.GetComponent<MeshRenderer>().material.name);
+
+            col.a = 0;//(int) (wallAlpha * 100);
+            wallObj.GetComponent<MeshRenderer>().material.color = col;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,9 +89,12 @@ public class GameTutorialCollisionEvent : MonoBehaviour
             foreach (GameObject childs in tutObjList)
             {
                 childs.SetActive(true);
-                //alpha
-                StartCoroutine(wallFadeIn());
             }
+
+            //alpha
+            StartCoroutine(wallFadeIn());
+
+            
 
             if(isDelay)
             {
@@ -98,10 +117,21 @@ public class GameTutorialCollisionEvent : MonoBehaviour
     {
         while(wallAlpha < 1.0f)
         {
-            print(wallAlpha);
+            //print(wallAlpha);
 
             yield return new WaitForSeconds(delay);
             wallAlpha += 0.01f * speed;
+        }
+    }
+
+    IEnumerator wallFadeOut(float speed = 1.0f, float delay = 0.1f)
+    {
+        while(wallAlpha >= 0.0f)
+        {
+            //print(wallAlpha);
+
+            yield return new WaitForSeconds(delay);
+            wallAlpha -= 0.01f * speed;
         }
     }
 }
