@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24361,6 +24361,7 @@ RectTransform:
   - {fileID: 571952174}
   - {fileID: 1761854969}
   - {fileID: 76006758}
+  - {fileID: 1123004274}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26796,6 +26797,97 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1121582332}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1123004273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123004274}
+  - component: {fileID: 1123004277}
+  - component: {fileID: 1123004276}
+  - component: {fileID: 1123004275}
+  m_Layer: 5
+  m_Name: Objective
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1123004274
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123004273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8937871, y: 0.8937871, z: 0.8937871}
+  m_Children:
+  - {fileID: 1470880718}
+  m_Father: {fileID: 1053794073}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1123004275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123004273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2dacb724ddb3e04a94b678bf2c13b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveImage: {fileID: 0}
+  TargetTemp: {fileID: 1543367013}
+  isMissionStart: 1
+--- !u!114 &1123004276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123004273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69803923}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cb9113dfabf9bd9448e8a403b8efd700, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1123004277
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123004273}
+  m_CullTransparentMesh: 0
 --- !u!1 &1123158607
 GameObject:
   m_ObjectHideFlags: 0
@@ -31534,7 +31626,6 @@ MonoBehaviour:
   oncePlayed: 0
   isDelay: 1
   delayTime: 3
-  wallShaderName: UnlitColor
   wallObjs: []
 --- !u!65 &1420477378
 BoxCollider:
@@ -32013,6 +32104,84 @@ MonoBehaviour:
   hpbgImg: {fileID: 0}
   PlayerWeaponColliderScript: {fileID: 0}
   bodyTypes: 2
+--- !u!1 &1470880717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470880718}
+  - component: {fileID: 1470880720}
+  - component: {fileID: 1470880719}
+  m_Layer: 5
+  m_Name: Objective_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1470880718
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470880717}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1565432, y: 0.1565432, z: 0.1565432}
+  m_Children: []
+  m_Father: {fileID: 1123004274}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.9, y: -63.5}
+  m_SizeDelta: {x: 647.2436, y: 227.97342}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1470880719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470880717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 167
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 173
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 100 M
+--- !u!222 &1470880720
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470880717}
+  m_CullTransparentMesh: 0
 --- !u!1 &1471765116
 GameObject:
   m_ObjectHideFlags: 0
@@ -36679,7 +36848,6 @@ MonoBehaviour:
   oncePlayed: 0
   isDelay: 1
   delayTime: 3
-  wallShaderName: UnlitColor
   wallObjs: []
 --- !u!1 &1824359402
 GameObject:
@@ -37651,7 +37819,6 @@ MonoBehaviour:
   oncePlayed: 0
   isDelay: 1
   delayTime: 3
-  wallShaderName: UnlitColor
   wallObjs: []
 --- !u!65 &1895379289
 BoxCollider:
@@ -38896,7 +39063,6 @@ MonoBehaviour:
   oncePlayed: 0
   isDelay: 0
   delayTime: 3
-  wallShaderName: UnlitColor
   wallObjs:
   - {fileID: 1942793475}
   - {fileID: 1027527437}

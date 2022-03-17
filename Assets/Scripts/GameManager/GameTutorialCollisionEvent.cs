@@ -70,7 +70,7 @@ public class GameTutorialCollisionEvent : MonoBehaviour
 
             Color col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_UnlitColor");
             col.a = wallAlpha;
-            print(col);
+            //print(col);
             wallObj.GetComponent<MeshRenderer>().material.SetColor("_UnlitColor", col);
         }
     }
