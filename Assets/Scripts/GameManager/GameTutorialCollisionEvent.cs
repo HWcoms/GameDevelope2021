@@ -22,6 +22,7 @@ public class GameTutorialCollisionEvent : MonoBehaviour
     public float delayTime = 3.0f;
 
     private float wallAlpha = 0.0f;
+    public float fadeSpeed = 15.0f;
 
     public GameObject[] wallObjs;
 
@@ -58,7 +59,7 @@ public class GameTutorialCollisionEvent : MonoBehaviour
         if(oncePlayed && !isDelay)  //if not control by delay
         {
             if(Input.GetKeyDown(KeyCode.R))
-                StartCoroutine(offDisplay(3.0f));
+                StartCoroutine(offDisplay(0.0f));
         }
 
         if(wallObjs.Length == 0 || !wallObjs[0].activeSelf) return;
@@ -89,7 +90,7 @@ public class GameTutorialCollisionEvent : MonoBehaviour
             }
 
             //alpha
-            StartCoroutine(wallFadeIn());
+            StartCoroutine(wallFadeIn(fadeSpeed));
 
             
 
@@ -102,9 +103,10 @@ public class GameTutorialCollisionEvent : MonoBehaviour
 
     IEnumerator offDisplay(float delay)
     {
-        StartCoroutine(wallFadeOut());
+        //StartCoroutine(wallFadeOut());
+        //yield return new WaitForSeconds(delay);
 
-        yield return new WaitForSeconds(delay);
+        yield return StartCoroutine(wallFadeOut(fadeSpeed));
 
         foreach (GameObject childs in tutObjList)
         {

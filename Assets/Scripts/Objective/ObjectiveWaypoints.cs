@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class ObjectiveWaypoints : MonoBehaviour
 {
-    public Image objectiveImage;
-    public Transform TargetTemp;
+    private Image objectiveImage;
+    public Transform TargetTemp;    //test
     Vector3 Targetpos;
 
     public bool isMissionStart;
 
     private Transform player;
     private Text distText;
+
+    [SerializeField] private bool isCamout;
 
     // Start is called before the first frame update
     void Start()
@@ -54,12 +56,21 @@ public class ObjectiveWaypoints : MonoBehaviour
         Vector2 pos = Camera.main.WorldToScreenPoint(Targetpos);
         //Vector2 pos = Camera.main.WorldToScreenPoint(Target.GetComponent<EnemyTargetEffect>().GetEffectPos().position);
 
+        isCamout = false;
+
         if (Vector3.Dot((Targetpos - Camera.main.transform.position), Camera.main.transform.forward) < 0)
         {
+            isCamout = true;
+
             if(pos.x < Screen.width / 2)
                 pos.x = maxX;
             else
                 pos.x = minX;
+        }
+
+        if(pos.x < minX || pos.x > maxX || pos.y < minY || pos.y > maxY)
+        {
+            isCamout = true;
         }
 
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
