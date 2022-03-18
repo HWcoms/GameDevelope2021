@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ObjectiveWaypoints : MonoBehaviour
+public class MissionWaypoint : MonoBehaviour
 {
-    private Image objectiveImage;
+    private Image markerImage;
     public Transform TargetTemp;    //test
     Vector3 Targetpos;
 
@@ -19,7 +19,7 @@ public class ObjectiveWaypoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objectiveImage = this.GetComponent<Image>();
+        markerImage = this.GetComponent<Image>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         distText = this.transform.GetChild(0).GetComponent<Text>();
@@ -31,12 +31,12 @@ public class ObjectiveWaypoints : MonoBehaviour
     void LateUpdate()
     {
         if (!isMissionStart) {
-            objectiveImage.enabled = false;
+            markerImage.enabled = false;
             this.transform.GetChild(0).gameObject.SetActive(false);
             return;
         }
         else {
-            objectiveImage.enabled = true;
+            markerImage.enabled = true;
             this.transform.GetChild(0).gameObject.SetActive(true);
         }
 
@@ -47,10 +47,10 @@ public class ObjectiveWaypoints : MonoBehaviour
 
     void TrackImage()
     {
-        float minX = objectiveImage.GetPixelAdjustedRect().width / 2;
+        float minX = markerImage.GetPixelAdjustedRect().width / 2;
         float maxX = Screen.width - minX;
 
-        float minY = objectiveImage.GetPixelAdjustedRect().height / 2;
+        float minY = markerImage.GetPixelAdjustedRect().height / 2;
         float maxY = Screen.height - minY;
 
         Vector2 pos = Camera.main.WorldToScreenPoint(Targetpos);
@@ -76,7 +76,7 @@ public class ObjectiveWaypoints : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
-        objectiveImage.transform.position = pos;
+        markerImage.transform.position = pos;
     }
 
     void GetDistance()
