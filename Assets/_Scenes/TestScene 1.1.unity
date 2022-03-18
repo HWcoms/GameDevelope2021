@@ -28372,7 +28372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetTemp: {fileID: 1543367013}
-  isMissionStart: 1
+  isMissionStart: 0
   isCamout: 0
 --- !u!114 &1123004276
 MonoBehaviour:
@@ -30194,6 +30194,7 @@ GameObject:
   - component: {fileID: 1285783050}
   - component: {fileID: 1285783049}
   - component: {fileID: 1285783048}
+  - component: {fileID: 1285783053}
   m_Layer: 5
   m_Name: MissionNWall_0
   m_TagString: Untagged
@@ -30208,7 +30209,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285783047}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffae90bd5bc4da242a961649bb0b8932, type: 3}
   m_Name: 
@@ -30319,6 +30320,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1285783053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285783047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8740827903a234286c00f477091a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionObjList: []
+  oncePlayed: 0
+  missionMarker: {fileID: 0}
+  delayTime: 3
+  fadeSpeed: 15
+  wallObjs:
+  - {fileID: 1568253695}
+  - {fileID: 1079961453}
+  - {fileID: 1341469865}
+  - {fileID: 1441981462}
+  - {fileID: 459265630}
+  - {fileID: 1659715289}
+  - {fileID: 431430177}
+  - {fileID: 185240829}
+  - {fileID: 715684456}
+  - {fileID: 440312316}
+  - {fileID: 935290118}
+  - {fileID: 394433725}
+  - {fileID: 712282936}
+  - {fileID: 2055880371}
+  - {fileID: 978514622}
+  - {fileID: 1374869848}
+  - {fileID: 1410059615}
+  - {fileID: 360436337}
+  - {fileID: 1816575348}
+  - {fileID: 741621132}
 --- !u!1 &1290644490 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6601138857926698341, guid: bd5b84541d987934f9ed62b128176435,
@@ -43606,7 +43645,7 @@ PrefabInstance:
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
       propertyPath: m_Intensity
-      value: 8.355635
+      value: 55.704227
       objectReference: {fileID: 0}
     - target: {fileID: 279712537866324887, guid: dc6c2d663437a33459da81fe0f08cdb9,
         type: 3}
