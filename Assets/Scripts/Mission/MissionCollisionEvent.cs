@@ -12,12 +12,6 @@ public class MissionCollisionEvent : MonoBehaviour
 
     [SerializeField] private GameObject missionMarker;
     private MissionWaypoint markerScript;
-    /*
-    public bool isKey = false;
-    public bool isCondition = false;
-    */
-
-    public float delayTime = 3.0f;
 
     private float wallAlpha = 0.0f;
     public float fadeSpeed = 15.0f;
@@ -31,8 +25,9 @@ public class MissionCollisionEvent : MonoBehaviour
         //get marker info
         missionMarker = GameObject.Find("MissionMarker");
         markerScript = missionMarker.GetComponent<MissionWaypoint>();
+        markerScript.TargetTemp = this.transform;
 
-        markerScript.isMissionStart = true;
+        markerScript.MarkStart();
 
         oncePlayed = false;
 
@@ -62,7 +57,9 @@ public class MissionCollisionEvent : MonoBehaviour
 
         //미션 클리어 조건
         if(Input.GetKeyDown(KeyCode.R))
-               StartCoroutine(offDisplay(0.0f));
+        {
+            StartCoroutine(offDisplay(0.0f));
+        }
      
 
         if(wallObjs.Length == 0 || !wallObjs[0].activeSelf) return;
@@ -83,6 +80,8 @@ public class MissionCollisionEvent : MonoBehaviour
     {
         if(other.tag == "Player" && !oncePlayed)
         {
+            markerScript.MarkEnd();
+
             print("mission start");
 
             oncePlayed = true;

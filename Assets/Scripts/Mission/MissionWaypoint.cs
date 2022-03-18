@@ -9,7 +9,7 @@ public class MissionWaypoint : MonoBehaviour
     public Transform TargetTemp;    //test
     Vector3 Targetpos;
 
-    public bool isMissionStart;
+    [SerializeField] private bool isMissionStart;
 
     private Transform player;
     private Text distText;
@@ -23,8 +23,6 @@ public class MissionWaypoint : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         distText = this.transform.GetChild(0).GetComponent<Text>();
-
-        Targetpos = TargetTemp.position;
     }
 
     // Update is called once per frame
@@ -36,6 +34,9 @@ public class MissionWaypoint : MonoBehaviour
             return;
         }
         else {
+            if(TargetTemp != null)
+                Targetpos = TargetTemp.position;
+
             markerImage.enabled = true;
             this.transform.GetChild(0).gameObject.SetActive(true);
         }
@@ -85,5 +86,14 @@ public class MissionWaypoint : MonoBehaviour
         //print("dist: " + dist);
 
         distText.text = ((int) dist).ToString() + " M";
+    }
+
+    public void MarkStart()
+    {
+        isMissionStart = true;
+    }
+    public void MarkEnd()
+    {
+        isMissionStart = false;
     }
 }

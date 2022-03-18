@@ -23542,7 +23542,7 @@ PrefabInstance:
     - target: {fileID: 6601138857926698362, guid: bd5b84541d987934f9ed62b128176435,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.576
+      value: 0.61500007
       objectReference: {fileID: 0}
     - target: {fileID: 6601138857926698362, guid: bd5b84541d987934f9ed62b128176435,
         type: 3}
@@ -28448,7 +28448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2dacb724ddb3e04a94b678bf2c13b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetTemp: {fileID: 1543367013}
+  TargetTemp: {fileID: 0}
   isMissionStart: 0
   isCamout: 0
 --- !u!114 &1123004276
@@ -30270,7 +30270,6 @@ GameObject:
   - component: {fileID: 1285783051}
   - component: {fileID: 1285783050}
   - component: {fileID: 1285783049}
-  - component: {fileID: 1285783048}
   - component: {fileID: 1285783053}
   m_Layer: 5
   m_Name: MissionNWall_0
@@ -30279,44 +30278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1285783048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285783047}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffae90bd5bc4da242a961649bb0b8932, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tutObjList: []
-  oncePlayed: 0
-  isDelay: 0
-  delayTime: 3
-  fadeSpeed: 15
-  wallObjs:
-  - {fileID: 1568253695}
-  - {fileID: 1079961453}
-  - {fileID: 1341469865}
-  - {fileID: 1441981462}
-  - {fileID: 459265630}
-  - {fileID: 1659715289}
-  - {fileID: 431430177}
-  - {fileID: 185240829}
-  - {fileID: 715684456}
-  - {fileID: 440312316}
-  - {fileID: 935290118}
-  - {fileID: 394433725}
-  - {fileID: 712282936}
-  - {fileID: 2055880371}
-  - {fileID: 978514622}
-  - {fileID: 1374869848}
-  - {fileID: 1410059615}
-  - {fileID: 360436337}
-  - {fileID: 1816575348}
-  - {fileID: 741621132}
 --- !u!65 &1285783049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30328,8 +30289,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.28540576, y: 1.9001604, z: 0.29169956}
+  m_Center: {x: 0, y: -0.23199815, z: 0}
 --- !u!23 &1285783050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -30412,7 +30373,6 @@ MonoBehaviour:
   missionObjList: []
   oncePlayed: 0
   missionMarker: {fileID: 0}
-  delayTime: 3
   fadeSpeed: 15
   wallObjs:
   - {fileID: 1568253695}
@@ -31991,7 +31951,7 @@ PrefabInstance:
     - target: {fileID: 6601138857926698362, guid: bd5b84541d987934f9ed62b128176435,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.105
+      value: -0.066
       objectReference: {fileID: 0}
     - target: {fileID: 6601138857926698362, guid: bd5b84541d987934f9ed62b128176435,
         type: 3}
@@ -35410,7 +35370,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515070349}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -36588,7 +36548,7 @@ PrefabInstance:
     - target: {fileID: 6601138857926698362, guid: bd5b84541d987934f9ed62b128176435,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.105
+      value: -0.06599991
       objectReference: {fileID: 0}
     - target: {fileID: 6601138857926698362, guid: bd5b84541d987934f9ed62b128176435,
         type: 3}
@@ -37097,7 +37057,7 @@ PrefabInstance:
     - target: {fileID: 6601138857926698362, guid: bd5b84541d987934f9ed62b128176435,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.777
+      value: -0.7379999
       objectReference: {fileID: 0}
     - target: {fileID: 6601138857926698362, guid: bd5b84541d987934f9ed62b128176435,
         type: 3}
