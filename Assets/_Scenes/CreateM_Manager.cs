@@ -32,6 +32,7 @@ public class CreateM_Manager : MonoBehaviour
         Timer = spawnTime;
 
         getSpot();
+        remainMonster = monsterAmount;
     }
     void Update()
     {
@@ -55,8 +56,6 @@ public class CreateM_Manager : MonoBehaviour
     }
     void CreateM()
     {
-        remainMonster = monsterAmount;
-
         int spotvalue = Random.Range(0, Spot.Length);
         for (int i = 0; i < monsterPerTimer; i++)
         {
@@ -69,7 +68,7 @@ public class CreateM_Manager : MonoBehaviour
             currentMonster.SetActive(true);
             MonsterList.Add(currentMonster);
 
-            if (remainMonster < 0)
+            if (remainMonster <= 0)
             {
                 spawnDone = true;
                 remainMonster = 0;
