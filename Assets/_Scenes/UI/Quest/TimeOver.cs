@@ -6,50 +6,50 @@ using TMPro;
 
 public class TimeOver : MonoBehaviour
 {
+    public bool questFinished;
     [SerializeField] GameObject TimeOverText;
     //[SerializeField] GameObject PlayerDieText;
     [SerializeField] GameObject QuestClearText;
     [SerializeField] float maxTime = 10f;
-    [SerializeField] private Quest que;
+    [SerializeField] private Quest quest;
 
     //public GameObject player;
     float timeLeft;
     [SerializeField] Image Timebar;
 
-    bool Quest_S_F = false;
-
-    bool QuestDone;
+    bool questDone;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        TimeOverText = GameObject.Find("TImeOver");
-        QuestClearText = GameObject.Find("Clear Game");
+        TimeOverText = transform.Find("TImeOver").gameObject;
+        QuestClearText = transform.Find("Clear Game").gameObject;
 
         TimeOverText.SetActive(false);
         QuestClearText.SetActive(false);
         Timebar = GameObject.Find("TimeBar").GetComponent<Image>();
         timeLeft = maxTime;
         Timebar.enabled = false; 
-        que = this.GetComponent<Quest>();
-        //que = GetComponentInChildren<Quest>();
+        quest = this.GetComponent<Quest>();
+        //quest = GetComponentInChildren<Quest>();
 
-        QuestDone = false;
+        questDone = false;
+        questFinished = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (QuestDone)
+        if (questDone)
         {
             return;
         }
 
-        if(que.Quest_number==1)
+        if(quest.questList == Quest.QuestList.KillAll)
         {
             Timebar.enabled = false;
-            if (que.death_monster==que.Monster_Max)
+            if (quest.death_monster==quest.Monster_Max)
             {
                 QuestClearText.SetActive(true);
                 //Destroy(QuestClearText,3.0f);
@@ -61,7 +61,7 @@ public class TimeOver : MonoBehaviour
             }
            
         }
-        else 
+        else if (quest.questList == Quest.QuestList.TimeDefense) 
         {
             Timebar.enabled = true;
             timeLeft -= Time.deltaTime; //play time check
@@ -74,25 +74,37 @@ public class TimeOver : MonoBehaviour
                 //Destroy(TimeOverText, 3.0f);
                 StartCoroutine(delayOff(3.0f));
 
-                Time.timeScale = 0f;
+                //Time.timeScale = 0f;
             }
             else
             {
                 //QuestClearText.SetActive(true);
-                Time.timeScale = 0f;
+                //Time.timeScale = 0f;
             }
 
         }
 
         IEnumerator delayOff(float delay)
         {
+            questDone = true;
+
             yield return new WaitForSeconds(delay);
 
             TimeOverText.SetActive(false);
             QuestClearText.SetActive(false);
 
-            QuestDone = true;
+            TimeOver();
         }
 
+        void TimeOver()
+        {
+            NextMission();
+        }
+
+        void NextMission()
+        {
+            print("next mission");
+            questFinished = true;
+        }
     }
 }

@@ -2,15 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
+
 
 public class Quest : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public enum QuestList
+    {
+        KillAll,
+        TimeDefense
+    }
+
+    public QuestList questList;
 
     [SerializeField] TextMeshProUGUI QuestText;
     //[SerializeField] TextMeshProUGUI TimeBar;
     [SerializeField] public int Monster_Max;
-    public GameObject[] sk = new GameObject[1];
+    public List<GameObject> monsters;
     public int death_monster = 0;
 
     public int Quest_number = 1; //특정 지역에 따라 값을 다르게 할수 있도록함. 나중에는 0으로 초기화하여 변하도록 하여 처음에 퀘스트창 안뜨게함.
@@ -18,52 +27,66 @@ public class Quest : MonoBehaviour
     //공백:4 = 1글자, 12글자 최대
     public int questTextLimit = 12;
 
+    private Image textLine;
+
     void Start()
     {
         QuestText = transform.Find("QuestText").GetComponent<TextMeshProUGUI>();
 
         QuestText.enabled = false;
         //임시
-        sk[0] = GameObject.Find("D-Knight_Prefab");
+        monsters = GameObject.Find("MonsterManager").GetComponent<CreateM_Manager>().MonsterList;
 
-        getTextSize();
+        textLine = transform.Find("QuestTextLine").GetComponent<Image>();
+        TextInfo();
+
+        Monster_Max = GameObject.Find("MonsterManager").GetComponent<CreateM_Manager>().monsterAmount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
-        // 죽은상태 대신 살아있는 해골수 구해서
-        int death_state = 0;
-        foreach (GameObject number in sk)
-        {
-            Monster_Max = sk.Length;
-            if(number.GetComponent<EnemyHealth>().getDead())
-            {
-                death_state++;
-            }
-        }
-        death_monster = death_state;
-
-        if (Quest_number == 1)
-        {
-            QuestText.enabled = true;
-            TextChange_MonsterAttack();
-        }
-        else
-        {
-            QuestText.enabled = true;
-            TextChange_Defense();
-        }
+        TextRefresh();
     }
 
-    public void TextChange_MonsterAttack()
+    void TextInfo()
     {
-        QuestText.GetComponent<TextMeshProUGUI>().text = "적을 모두 제거하기 " + death_monster.ToString() + " / " + Monster_Max.ToString();
+        TextRefresh();
+
+        TextLimit();
     }
 
-    public void TextChange_Defense()
+    void TextRefresh()
+    {
+        if (questList == QuestList.KillAll)
+        {
+            int death_state = 0;
+            foreach (GameObject number in monsters)
+            {
+                if (number.GetComponent<EnemyHealth>().getDead())
+                {
+                    death_state++;
+                }
+            }
+            death_monster = death_state;
+
+            QuestText.enabled = true;
+            TextChange_KillALL();
+        }
+        else if (questList == QuestList.TimeDefense)
+        {
+            QuestText.enabled = true;
+            TextChange_TimeDefense();
+        }
+    }
+
+    public void TextChange_KillALL()
+    {
+        
+        QuestText.GetComponent<TextMeshProUGUI>().text = "모든 적 제거하기 " + death_monster.ToString() + "/" + Monster_Max.ToString();
+    }
+
+    public void TextChange_TimeDefense()
     {
         QuestText.GetComponent<TextMeshProUGUI>().text = "시간동안 버티기";
     }
@@ -72,9 +95,22 @@ public class Quest : MonoBehaviour
     {
         TextMeshProUGUI text = QuestText.GetComponent<TextMeshProUGUI>();
 
-        int sizeOftext;
+        float sizeOftext = getTextSize();
+        //print(sizeOftext);
 
-        //if(text.text.Length > 12)
+        if(sizeOftext > questTextLimit)
+        {
+            text.enableAutoSizing = true;
+
+            sizeOftext = questTextLimit;
+        }
+        else
+        {
+            text.enableAutoSizing = false;
+        }
+
+        float percent = sizeOftext / questTextLimit;
+        textLine.fillAmount = percent;
     }
 
     float getTextSize()
@@ -85,14 +121,13 @@ public class Quest : MonoBehaviour
 
         for (int i=0; i< text.text.Length; i++)
         {
-            if(text.text[i] == ' ')
+            if(text.text[i] == ' ' || text.text[i] == '/')
             {
-                print("space");
                 size += 0.25f;
             }
             else
             {
-                size += 1;
+                size += 0.95f;
             }
         }
 

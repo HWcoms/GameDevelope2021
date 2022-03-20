@@ -4,38 +4,77 @@ using UnityEngine;
 
 public class CreateM_Manager : MonoBehaviour
 {
-    public GameObject[] Spot = new GameObject[3];
-    public GameObject[] Monster = new GameObject[3];
-    public GameObject[] Monstermanager;
-    //public GameObject Spotmanager;
-    public int spotvalue = 0;
-    public int Monstervalue = 0;
-    public int Monstercount = 4;
-    public int j = 0;
+    // public List<GameObject> Spot = new List<GameObject>();
+    public Transform[] Spot;
+    public GameObject[] Monster;
+
+
+    public int monsterAmount = 12;
+    private int remainMonster;
+    public int monsterPerTimer = 3;
+
+    public float spawnPosOffset = 0.5f;
+    public float spawnYpos = 3.0f;
+    public float spawnTime = 3;
     public float Timer;
+    public List<GameObject> MonsterList = new List<GameObject>();
+
+    private int spotvalue = 0;
+    private int Monstervalue = 0;
+
+    [SerializeField] private bool spawnDone;
 
     void Start()
     {
+        spawnDone = false;
 
+        MonsterList.Clear();
+        Timer = spawnTime;
+
+        getSpot();
     }
     void Update()
     {
+        if (spawnDone) return;
+
         Timer -= Time.deltaTime;
         if (Timer < 0.0f)
         {
             CreateM();
-            Timer = 7.0f;
+            Timer = spawnTime;
         }
     }
 
+    void getSpot()
+    {
+        Transform[] temp = transform.Find("SpawnPos").GetComponentsInChildren<Transform>();
+        Spot = new Transform[transform.Find("SpawnPos").childCount];
+
+        for (int i = 1; i < temp.Length; i++)
+            Spot[i-1] = temp[i];
+    }
     void CreateM()
     {
-        int spotvalue = Random.Range(0, 3);
-        int Monstervalue = Random.Range(0, 3);
-        for (int i = 0; i < Monstercount + 1; i++)
+        remainMonster = monsterAmount;
+
+        int spotvalue = Random.Range(0, Spot.Length);
+        for (int i = 0; i < monsterPerTimer; i++)
         {
-            Monstermanager[j] = Instantiate(Monster[Monstervalue], Spot[spotvalue].transform.position, Spot[spotvalue].transform.rotation);
-            j++;
+            remainMonster--;
+
+            Vector3 randomPos = new Vector3(Random.Range(-spawnPosOffset, spawnPosOffset), spawnYpos , Random.Range(-spawnPosOffset, spawnPosOffset));
+
+            int Monstervalue = Random.Range(0, Monster.Length);
+            var currentMonster =Instantiate(Monster[Monstervalue], Spot[spotvalue].transform.position + randomPos, Spot[spotvalue].transform.rotation);
+            currentMonster.SetActive(true);
+            MonsterList.Add(currentMonster);
+
+            if (remainMonster < 0)
+            {
+                spawnDone = true;
+                remainMonster = 0;
+                break;
+            }    
         }
     }
 

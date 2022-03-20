@@ -18,9 +18,7 @@ public class MissionCollisionEvent : MonoBehaviour
 
     public GameObject[] wallObjs;
 
-    public GameObject questPrefab;
-
-    private GameObject questObj;
+    [SerializeField]private GameObject questObj;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +43,9 @@ public class MissionCollisionEvent : MonoBehaviour
         {
             childs.SetActive(false);
         }
+
+        questObj = this.transform.Find("Quest").gameObject;
+        questObj.SetActive(false);
     }
 
     // Update is called once per frame
@@ -69,13 +70,18 @@ public class MissionCollisionEvent : MonoBehaviour
 
         foreach(GameObject wallObj in wallObjs)
         {
-            print("rendered");
+            Color col;
+            //print("rendered");
             //print(wallObjs[0].name);
 
-            Color col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_UnlitColor");
+            col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_UnlitColor");
+            
             col.a = wallAlpha;
-            //print(col);
             wallObj.GetComponent<MeshRenderer>().material.SetColor("_UnlitColor", col);
+
+            col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_TintColor");
+            col.a = wallAlpha;
+            wallObj.GetComponent<MeshRenderer>().material.SetColor("_TintColor", col);
         }
     }
 
@@ -99,7 +105,7 @@ public class MissionCollisionEvent : MonoBehaviour
 
 
             //quset obj
-            questObj = Instantiate(questPrefab);
+            questObj.SetActive(true);
             questObj.transform.parent = GameObject.Find("Canvas").gameObject.transform;
 
             RectTransform rectTr = questObj.GetComponent<RectTransform>();
