@@ -18,6 +18,9 @@ public class MissionCollisionEvent : MonoBehaviour
 
     public GameObject[] wallObjs;
 
+    public GameObject questPrefab;
+
+    private GameObject questObj;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +50,7 @@ public class MissionCollisionEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(GameObject obj in wallObjs)
+        foreach (GameObject obj in wallObjs)
         {
             /*
             Color32 col = obj.material.GetColor("_Color");
@@ -93,6 +96,15 @@ public class MissionCollisionEvent : MonoBehaviour
 
             //alpha
             StartCoroutine(wallFadeIn(fadeSpeed));
+
+
+            //quset obj
+            questObj = Instantiate(questPrefab);
+            questObj.transform.parent = GameObject.Find("Canvas").gameObject.transform;
+
+            RectTransform rectTr = questObj.GetComponent<RectTransform>();
+            rectTr.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            rectTr.anchoredPosition = new Vector3(0.0f, 0.0f, 0.0f);
         }
     }
 
