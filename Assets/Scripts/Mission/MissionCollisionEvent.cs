@@ -70,10 +70,10 @@ public class MissionCollisionEvent : MonoBehaviour
 
         foreach(GameObject wallObj in wallObjs)
         {
-            Color col;
             //print("rendered");
-            //print(wallObjs[0].name);
 
+            changeAlpha(wallObj);
+            /*
             col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_UnlitColor");
             
             col.a = wallAlpha;
@@ -82,6 +82,7 @@ public class MissionCollisionEvent : MonoBehaviour
             col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_TintColor");
             col.a = wallAlpha;
             wallObj.GetComponent<MeshRenderer>().material.SetColor("_TintColor", col);
+            */
         }
     }
 
@@ -111,6 +112,46 @@ public class MissionCollisionEvent : MonoBehaviour
             RectTransform rectTr = questObj.GetComponent<RectTransform>();
             rectTr.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             rectTr.anchoredPosition = new Vector3(0.0f, 0.0f, 0.0f);
+        }
+    }
+
+    void changeAlpha(GameObject obj)
+    {
+        Color col;
+
+        MeshRenderer meshRenderer = null;
+        Renderer particleSystemRenderer = null;
+
+        try
+        {
+            meshRenderer = obj.GetComponent<MeshRenderer>();
+            particleSystemRenderer = obj.GetComponent<ParticleSystem>().GetComponent<Renderer>();
+        }
+        catch
+        {
+        }
+
+        if (meshRenderer == null && particleSystemRenderer == null) return;
+
+        if(meshRenderer != null && meshRenderer.material.shader.name.Equals("HDRP/Unlit"))
+        {
+            col = meshRenderer.material.GetColor("_UnlitColor");
+            
+            //print(meshRenderer.material.name + ": " + meshRenderer.material.shader.name);
+            col.a = wallAlpha;
+            obj.GetComponent<MeshRenderer>().material.SetColor("_UnlitColor", col);
+        }
+        
+
+        //print(meshRenderer.material.name);
+        if (particleSystemRenderer != null && particleSystemRenderer.material.shader.name.Equals("Slash/Bird"))
+        {
+            col = particleSystemRenderer.material.GetColor("_TintColor");
+
+            //print(particleSystemRenderer.material.name + ": " + particleSystemRenderer.material.shader.name);
+            col.a = wallAlpha;
+
+            particleSystemRenderer.material.SetColor("_TintColor", col);
         }
     }
 
