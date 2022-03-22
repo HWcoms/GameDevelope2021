@@ -49,7 +49,7 @@ public class FOV_Track : MonoBehaviour
 
     void LateUpdate()
     {
-        DrawFieldOfView();
+        //DrawFieldOfView();
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
