@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -35,6 +35,7 @@ public class FOV_Track : MonoBehaviour
     public MeshFilter viewMeshFilter;
     Mesh viewMesh;
 
+    public bool isViewMesh = false;
     
 
     // Start is called before the first frame update
@@ -164,6 +165,8 @@ public class FOV_Track : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawLine(transform.position, forwardV);
+        if(isViewMesh)
+            DrawFieldOfView();
     }
 
     bool _Track()
