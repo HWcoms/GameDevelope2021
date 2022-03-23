@@ -20,6 +20,7 @@ TagManager:
   - ExcludeCollisionDetect
   - Mid_Boss
   - Shop
+  - EventSystem
   layers:
   - Default
   - TransparentFX
