@@ -19,13 +19,13 @@ public class DialogLoader : MonoBehaviour
     public class Dialog
     {
         public int Id;
-        public string IdString, DilogType, Navigation;
+        public string IdString, DialogType, Navigation;
         public bool EndDialog;
 
         public List<Lang> langInfo;
     }
 
-    public List<Dialog> dilogList;
+    public List<Dialog> dialogList;
 
     public static DialogLoader Singleton;
     #region singleton
@@ -67,16 +67,16 @@ public class DialogLoader : MonoBehaviour
         
         int langCount = GetLanguageCount(InfoArray, columnSize);
 
-        dilogList = new List<Dialog>();
+        dialogList = new List<Dialog>();
         for (int i = 0; i < columnSize; i++)
         {
-            Dialog tempDilog = new Dialog();
-            tempDilog.Id = int.Parse(InfoArray[i+1, 0]);
-            tempDilog.IdString = InfoArray[i+1, 1];
+            Dialog tempdialog = new Dialog();
+            tempdialog.Id = int.Parse(InfoArray[i+1, 0]);
+            tempdialog.IdString = InfoArray[i+1, 1];
 
             List<Lang> langList = new List<Lang>();
-            tempDilog.langInfo = langList;
-            //get Dilogs from available languages
+            tempdialog.langInfo = langList;
+            //get dialogs from available languages
             for (int j = 0; j< langCount; j++)
             {
                 Lang tempLang = new Lang();
@@ -84,13 +84,13 @@ public class DialogLoader : MonoBehaviour
                 tempLang.Text = InfoArray[i + 1, 5 + (j*2)];
                 tempLang.Button = InfoArray[i + 1, 5 + (j*2) + 1];
 
-                tempDilog.langInfo.Add(tempLang);
+                tempdialog.langInfo.Add(tempLang);
             }
 
-            tempDilog.Navigation = InfoArray[i + 1, 3];
-            tempDilog.EndDialog = bool.Parse(InfoArray[i + 1, 4]);
+            tempdialog.Navigation = InfoArray[i + 1, 3];
+            tempdialog.EndDialog = bool.Parse(InfoArray[i + 1, 4]);
 
-            dilogList.Add(tempDilog);
+            dialogList.Add(tempdialog);
         }
     }
 
