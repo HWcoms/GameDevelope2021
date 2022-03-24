@@ -39,8 +39,9 @@ public class New_SK_Ai : MonoBehaviour
 
     public GameObject rock_spawn;
     void Start()
-    {        
+    {
         //StartCoroutine(Born1_moveStop());
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         fov1 = GetComponent<FOV_Track>();       
         rigid = GetComponent<Rigidbody>();
         trigger_control = GetComponent<Collider>();
@@ -153,18 +154,21 @@ public class New_SK_Ai : MonoBehaviour
     }
 
     void Move_patton()
-    {  
-
+    {
         if ( dist <= distChange)
-        {            
-            nav.isStopped = false;
-            nav.SetDestination(target.position);
-            anim.SetBool("Is_Run", true);
-                        
+        {          
             if (dist <= 3) 
             {
                 nav.isStopped = true;
+                //enableAct = false;
                 anim.SetBool("Is_Run", false);
+            }
+            else
+            {
+                nav.isStopped = false;
+                nav.SetDestination(target.position);
+                anim.SetBool("Is_Run", true);
+                print("moving");
             }
         }      
     }

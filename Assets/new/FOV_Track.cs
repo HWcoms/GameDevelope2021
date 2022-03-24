@@ -41,6 +41,8 @@ public class FOV_Track : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        viewMeshFilter = this.transform.Find("View Visualization").GetComponent<MeshFilter>();
+
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;

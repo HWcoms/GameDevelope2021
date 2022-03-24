@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -8,7 +8,7 @@ public class SK_Attack : MonoBehaviour
     CharacterHealth attck_Hp;
     // public GameObject hitParticle;
     //private float attackDamgage = 10.0f;
-    private SK_Ai bs;
+    private New_SK_Ai bs;
     // Start is called before the first frame update
 
     [SerializeField] private GameObject hitParticle;
@@ -17,7 +17,7 @@ public class SK_Attack : MonoBehaviour
     void Awake()
     {
         attck_Hp = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
-        bs = GameObject.FindWithTag("Mid_Boss").GetComponent<SK_Ai>();
+        bs = GameObject.FindWithTag("Monster").GetComponent<New_SK_Ai>();
 
         hitParticleText = hitParticle.GetComponentInChildren<TextMeshPro>();
         hitParticleText.text = "0";
