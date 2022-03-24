@@ -68,32 +68,32 @@ public class DialogLoader : MonoBehaviour
         int langCount = GetLanguageCount(InfoArray, columnSize);
 
         dialogList = new List<Dialog>();
-        for (int i = 0; i < columnSize; i++)
+        for (int i = 1; i < columnSize; i++)
         {
             Dialog tempdialog = new Dialog();
-            tempdialog.Id = int.Parse(InfoArray[i+1, 0]);
-            tempdialog.IdString = InfoArray[i+1, 1];
+
+            tempdialog.Id = int.Parse(InfoArray[i, 0]);
+            tempdialog.IdString = InfoArray[i, 1];
 
             List<Lang> langList = new List<Lang>();
             tempdialog.langInfo = langList;
             //get dialogs from available languages
-            for (int j = 0; j< langCount; j++)
+            for (int j = 0; j < langCount; j++)
             {
                 Lang tempLang = new Lang();
                 tempLang.lang = availableLanguages[j];
-                tempLang.Text = InfoArray[i + 1, 5 + (j*2)];
-                tempLang.Button = InfoArray[i + 1, 5 + (j*2) + 1];
+                tempLang.Text = InfoArray[i, 5 + (j * 2)];
+                tempLang.Button = InfoArray[i, 5 + (j * 2) + 1];
 
                 tempdialog.langInfo.Add(tempLang);
             }
 
-            tempdialog.Navigation = InfoArray[i + 1, 3];
-            tempdialog.EndDialog = bool.Parse(InfoArray[i + 1, 4]);
+            tempdialog.Navigation = InfoArray[i, 3];
+            tempdialog.EndDialog = bool.Parse(InfoArray[i, 4]);
 
             dialogList.Add(tempdialog);
         }
     }
-
 
     IEnumerator LoadSheet()
     {
