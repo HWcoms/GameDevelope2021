@@ -21,6 +21,7 @@ TagManager:
   - Mid_Boss
   - Shop
   - EventSystem
+  - BossDoorCol
   layers:
   - Default
   - TransparentFX
