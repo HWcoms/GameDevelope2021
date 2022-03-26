@@ -44,6 +44,8 @@ public class FOV_Track : MonoBehaviour
         if(this.transform.Find("View Visualization") != null)
             viewMeshFilter = this.transform.Find("View Visualization").GetComponent<MeshFilter>();
 
+        if (viewMeshFilter != null) return;
+
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
@@ -53,6 +55,8 @@ public class FOV_Track : MonoBehaviour
 
     void LateUpdate()
     {
+        if (viewMeshFilter != null) return;
+
         if(isViewMesh)
             viewMeshFilter.gameObject.SetActive(true);
         else

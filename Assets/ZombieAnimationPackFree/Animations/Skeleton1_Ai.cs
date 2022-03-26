@@ -9,19 +9,19 @@ public class Skeleton1_Ai : MonoBehaviour
     int ranAction;
     float dist;
     Vector3 lookVec;
-    private skeleton1_length ani_in;
     public GameObject particlePrefab;
     int Random_r;
 
+    public float distChange = 20;
+
     bool isLook;
-    public Animator anim;
-    public Rigidbody rigid;
-    public BoxCollider boxCollider;
+    public Animator anim;  
+    public Collider trigger_control;
     public NavMeshAgent nav;
     public Transform target;
-
-    //bool HitDamage_check = false;
     [SerializeField] private float temp_Hp;
+    //private Boss_SK_length ani_length;
+    public AnimationClip[] arrclip;    
 
 
     [SerializeField] bool is_Attacking = false;
@@ -31,65 +31,57 @@ public class Skeleton1_Ai : MonoBehaviour
     bool isLookAtPlayer = false;
 
     public float lookAtSpeed = 5.0f;
+    // Start is called before the first frame update
 
-    void Awake()
+    bool enableAct; //움직임 유무를 나타내기 위해
+   
+    void Start()
     {
-
-        fov1 = GetComponent<FOV_Track>();
-        ani_in = GetComponent<skeleton1_length>();
-        rigid = GetComponent<Rigidbody>();
-        boxCollider = GetComponent<BoxCollider>();
+        //StartCoroutine(Born1_moveStop());
+        enableAct = true;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        fov1 = GetComponent<FOV_Track>();       
+        trigger_control = GetComponent<Collider>();
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         enemyhealthScript = GetComponent<EnemyHealth>();
-
-
+        arrclip = GetComponent<Animator>().runtimeAnimatorController.animationClips;
         temp_Hp = enemyhealthScript.getMaxHp();
-    }
+    }    
 
     // Update is called once per frame
     void Update()
     {
-        //nav.isStopped = true;
-        //print(enemyhealthScript.getHp());
-        //print("\n\n");
-        //print(temp_Hp);
-
         if (enemyhealthScript.getDead())
         {
             anim.SetBool("Is_Death", true);
-
             return;
         }
 
         dist = Vector3.Distance(target.position, transform.position);
 
-        boss_patton();
+        if (enableAct)
+        {
+            LookAtPlayer();
+            Move_patton();
+            boss_patton();
+        }
 
         //getHit
         if (enemyhealthScript.getHp() < temp_Hp)
         {
 
             isLookAtPlayer = true;
-            anim.SetBool("Is_Damage", true);
+            trigger_control.isTrigger = true;
 
-            temp_Hp = enemyhealthScript.getHp();
+            temp_Hp = enemyhealthScript.getHp();        
 
 
             GameObject soulPrefab = Instantiate(particlePrefab, transform.position, Quaternion.identity);
             soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
         }
-        else
-        {
-            anim.SetBool("Is_Damage", false);
-        }
 
-
-        if (isLookAtPlayer)
-            LookAtPlayer();
-
-
-    }
+    } 
 
     void LookAtPlayer()
     {
@@ -100,13 +92,11 @@ public class Skeleton1_Ai : MonoBehaviour
             isLookAtPlayer = false;
     }
 
-
-
-
     public void setAttack(int flag)
     {
         if (flag == 1)
         {
+            trigger_control.isTrigger = false;
             nav.isStopped = true;
             is_Attacking = true;
         }
@@ -118,7 +108,6 @@ public class Skeleton1_Ai : MonoBehaviour
         }
 
     }
-
     public bool getAttack()
     {
         return is_Attacking;
@@ -129,80 +118,45 @@ public class Skeleton1_Ai : MonoBehaviour
         nav.isStopped = true;
         AttackDamage = Damage;
     }
-
-    void Random_patton()
+       
+    void Move_patton()
     {
-        Random_r = Random.Range(0, 4);
+        if (dist <= distChange)
+        {
+            //nav.isStopped = false;
+            if (dist <= 2)
+            {
+                anim.SetBool("Is_Chase", false);
+                nav.isStopped = true;               
+
+            }
+            else
+            {
+                nav.isStopped = false;
+                nav.SetDestination(target.position);
+                anim.SetBool("Is_Chase", true);
+               
+            }
+        }       
     }
 
     void boss_patton()
     {
-        InvokeRepeating("Random_patton", 5f, 3f);
+        InvokeRepeating("Random_patton", 5f, 3f); //주기적으로 실행
 
-        if (fov1.visibleTargets.Count == 0 && dist < 11)
+        if (dist < 2) //근거리 패턴, 임시 적용
         {
-            print(Random_r);
-            nav.isStopped = false;
-            nav.SetDestination(target.position);
-            LookAtPlayer();
-            if (dist <= 0.3)
-            {
-                anim.SetBool("Is_Walk", false);
-                nav.isStopped = true;
-            }
-            else if (dist > 1 && dist < 10) //float dist = Vector3.Distance(other.position, transform.position);
-            {
-                //nav.isStopped = false;
-                //nav.SetDestination(target.position);
-
-                anim.SetBool("Is_Attack", false);
-                anim.SetBool("Is_Walk", true);
-                print("Walk");
-
-            }
-
-
-        }
-        else if (dist < 11 && fov1.visibleTargets.Count == 1)
-        {
-            LookAtPlayer();
-            if (dist <= 1)
-            {
-                if (dist <= 0.5)
-                {
-                    anim.SetBool("Is_Walk", false);
-                    nav.isStopped = true;
-                }
-
-                anim.SetBool("Is_Walk", false);
-                print("Attack_test");
-                anim.SetBool("Is_Attack", true);
-
-            }
-            else if (dist < 10 && dist > 1)
-            {
-                anim.SetBool("Is_Attack", false);
-                anim.SetBool("Is_Walk", true);
-                print("Walk");
-            }
-
+            anim.Play("Attack");
         }
     }
-
-    void Set_Animation(int x)
+    void FreezeSkeleton()
     {
-        if (x == 1)
-        {
-            anim.SetBool("Is_Attack", false);
-        }
-        else
-        {
-            anim.SetBool("Is_Attack", true);
-        }
-
+        enableAct = false;
     }
-
-
+    void UnFreezeSkeleton()
+    {
+        enableAct = true;
+    }
 
 
 }

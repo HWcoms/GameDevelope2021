@@ -8,7 +8,7 @@ public class Skeleton_Attack : MonoBehaviour
     CharacterHealth attck_Hp;
     // public GameObject hitParticle;
     //private float attackDamgage = 10.0f;
-    private Skeleton1_Ai sa;
+    public Skeleton1_Ai sa;
     // Start is called before the first frame update
 
     [SerializeField] private GameObject hitParticle;
@@ -17,7 +17,7 @@ public class Skeleton_Attack : MonoBehaviour
     void Awake()
     {
         attck_Hp = GameObject.FindWithTag("Player").GetComponent<CharacterHealth>();
-        sa = GameObject.FindWithTag("monster_A").GetComponent<Skeleton1_Ai>();
+        //sa = transform.root.GetComponent<Skeleton1_Ai>();
 
         hitParticleText = hitParticle.GetComponentInChildren<TextMeshPro>();
         hitParticleText.text = "0";
@@ -36,6 +36,7 @@ public class Skeleton_Attack : MonoBehaviour
         //print(other.gameObject.tag);
         if (other.gameObject.tag == "Player" && sa.getAttack())
         {
+            print("hit player");
             if (attck_Hp.changeHp(-sa.AttackDamage, 1))
             {
                 sa.setAttack(0);

@@ -150,13 +150,14 @@ public class New_SK_Ai : MonoBehaviour
 
     void Random_patton()
     {
-        Random_r = Random.Range(0, 4);
+        Random_r = Random.Range(0, 3);
     }
 
     void Move_patton()
     {
         if ( dist <= distChange)
-        {          
+        {
+            //nav.isStopped = false;
             if (dist <= 3) 
             {
                 nav.isStopped = true;
@@ -170,7 +171,14 @@ public class New_SK_Ai : MonoBehaviour
                 anim.SetBool("Is_Run", true);
                 print("moving");
             }
-        }      
+        }
+        else
+        {
+            LookAtPlayer();
+            nav.isStopped = true;
+            Rockhit();
+            anim.Play("Skill2");
+        }
     }
 
     void boss_patton()
@@ -182,13 +190,8 @@ public class New_SK_Ai : MonoBehaviour
             if (Random_r == 0)
             {
                 anim.Play("Skill1");
-            }
+            }            
             else if (Random_r == 1)
-            {
-                Rockhit();
-                anim.Play("Skill2");
-            }
-            else if (Random_r == 2)
             {
                 anim.Play("Skill3");
             }
@@ -196,11 +199,7 @@ public class New_SK_Ai : MonoBehaviour
             {
                 anim.Play("Skill4");
             }
-        }
-        else //원거리 패턴
-        {
-
-        }
+        }      
     }
     void FreezeSkeleton()
     {
