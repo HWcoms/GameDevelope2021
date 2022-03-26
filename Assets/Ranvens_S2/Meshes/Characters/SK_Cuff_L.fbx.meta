@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 015e2445337e67948a2073d9d3e612ca
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Acessories
+    100002: AimChianRope_L
+    100004: CL_0
+    100006: CL_1
+    100008: CL_2
+    100010: CL_3
+    100012: CL_4
+    100014: CL_5
+    100016: CL_6
+    100018: CL_7
+    100020: CL_8
+    100022: Cuffs_L
+    100024: L_Cuff_root
+    100026: //RootNode
+    400000: Acessories
+    400002: AimChianRope_L
+    400004: CL_0
+    400006: CL_1
+    400008: CL_2
+    400010: CL_3
+    400012: CL_4
+    400014: CL_5
+    400016: CL_6
+    400018: CL_7
+    400020: CL_8
+    400022: Cuffs_L
+    400024: L_Cuff_root
+    400026: //RootNode
+    2100000: MI_Clothing
+    4300000: Cuffs_L
+    4300002: AimChianRope_L
+    9500000: //RootNode
+    13700000: AimChianRope_L
+    13700002: Cuffs_L
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Clothing
+    second: {fileID: 2100000, guid: 4c9a10ab627013148ac940d1519210b3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

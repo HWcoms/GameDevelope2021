@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MI_MABodySkin
+  m_Shader: {fileID: 4800000, guid: 253869db2350ef74b8ded21df899e14b, type: 3}
+  m_ShaderKeywords: _ADD_PRECOMPUTED_VELOCITY _INVERTMAP_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - TransparentBackface
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AO:
+        m_Texture: {fileID: 2800000, guid: 83ba82314cd89af46bdab3663afb9aa4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 5920de4d143c58743969dfac7ec8365c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Dirt:
+        m_Texture: {fileID: 2800000, guid: baaa21e922f419e4497dd7f311c685f7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissiveMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissivePannerMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6e53a163b96e3d94a98d29194f6a4d63, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: 08bef8bdfb981434bb8b739b8d34a588, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 2800000, guid: 83ba82314cd89af46bdab3663afb9aa4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMod_R:
+        m_Texture: {fileID: 2800000, guid: c0b7b18616e3d4c4d9f007d6681e9331, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SSSMask:
+        m_Texture: {fileID: 2800000, guid: 33d79758a5b303945a6a9a60e499b29d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkinColor:
+        m_Texture: {fileID: 2800000, guid: 6e53a163b96e3d94a98d29194f6a4d63, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkinNormal:
+        m_Texture: {fileID: 2800000, guid: 5920de4d143c58743969dfac7ec8365c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkinPore:
+        m_Texture: {fileID: 2800000, guid: 577d5dc29fdadce4c820dd1f693a97fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkinRoughness:
+        m_Texture: {fileID: 2800000, guid: 1df5a1941431ac04483ca62aeb4e16eb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 2800000, guid: 1df5a1941431ac04483ca62aeb4e16eb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Translucencymap:
+        m_Texture: {fileID: 2800000, guid: 33d79758a5b303945a6a9a60e499b29d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AddPrecomputedVelocity: 1
+    - _AlphaCutoff: 0.5
+    - _AlphaCutoffEnable: 0
+    - _AlphaDstBlend: 0
+    - _AlphaSrcBlend: 1
+    - _Ambientlight: 0
+    - _AoIntensity: 1
+    - _BlendMode: 0
+    - _BumpScale: 1
+    - _ColorPow: 1
+    - _Contrast: 0
+    - _CullMode: 2
+    - _CullModeForward: 2
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DiffusionProfileHash: 2.7317202
+    - _DirtBoots: 0
+    - _DirtRoughness_Power: 0
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 0
+    - _EmissiveIntensity: 1
+    - _EmissivePannerTilling: 1
+    - _EmissivePower1: 0
+    - _EmissivePower2: 248.8943
+    - _EmissivePower3: 0
+    - _EmissivePower4: 0
+    - _Emissivepowerboost: 100
+    - _EnableFogOnTransparent: 1
+    - _FreaklesColorPower: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HairCapLongColorPower: 0
+    - _HairCapRoughness: 0.6
+    - _HairCapShortColorPower: 0
+    - _Invertmap: 1
+    - _LipNailColorPower: 0
+    - _LipsNailRoughnessBoost: 0.75
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalIntensity: 1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _ReceivesSSR: 1
+    - _RenderQueueType: 1
+    - _RequireSplitLighting: 1
+    - _SSSonoff: 1.2
+    - _SkinIntensity: 1.3
+    - _SkinPore_Power: 0.25
+    - _SkinPore_Tilling: 35
+    - _SkinRounghnessBoots: 0.7
+    - _SmoothnessTextureChannel: 0
+    - _SpecularAmbient: 0
+    - _SpecularHighlights: 1
+    - _SpecularIntensity: 1
+    - _SrcBlend: 1
+    - _StencilRef: 4
+    - _StencilRefDepth: 8
+    - _StencilRefDistortionVec: 4
+    - _StencilRefGBuffer: 14
+    - _StencilRefMV: 40
+    - _StencilWriteMask: 6
+    - _StencilWriteMaskDepth: 8
+    - _StencilWriteMaskDistortionVec: 4
+    - _StencilWriteMaskGBuffer: 14
+    - _StencilWriteMaskMV: 40
+    - _SurfaceType: 0
+    - _TransAmbient: 0.2
+    - _TransDirect: 1
+    - _TransNormalDistortion: 0.1
+    - _TransScattering: 2
+    - _TransShadow: 0.9
+    - _Translucency: 1
+    - _TranslucencyIntensity: 1
+    - _TranslucencySpread: 0
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentSortPriority: 0
+    - _TransparentZWrite: 1
+    - _UVSec: 0
+    - _UseShadowThreshold: 0
+    - _Visualize: 0
+    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
+    - _ZWrite: 1
+    - __dirty: 1
+    m_Colors:
+    - _BaseColorMul: {r: 0.8584906, g: 0.6519669, b: 0.6519669, a: 0}
+    - _BlendColor01: {r: 0.5686275, g: 0.5686275, b: 0.5686275, a: 0}
+    - _BlendColor02: {r: 1, g: 1, b: 1, a: 0}
+    - _BlendColor03: {r: 1, g: 1, b: 1, a: 0}
+    - _BlendColor04: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 0.8490566, g: 0.7312575, b: 0.6367924, a: 1}
+    - _DiffusionProfileAsset: {r: -1.405437e+32, g: 2.0030989e-26, b: 0.00000006313206,
+        a: -4.4045647e-18}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissiveColor1: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColor2: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColor3: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissiveColor4: {r: 0, g: 0, b: 0, a: 0}
+    - _FreaklesColor: {r: 1, g: 1, b: 1, a: 0}
+    - _HairCapLongColor: {r: 1, g: 1, b: 1, a: 0}
+    - _HairCapShortColor: {r: 1, g: 1, b: 1, a: 0}
+    - _LipNailColor: {r: 1, g: 1, b: 1, a: 0}
+    - _PannerProperty: {r: 0, g: 0, b: 0, a: 0}
+    - _SSSColor: {r: 1, g: 0.8184171, b: 0.7122642, a: 1}
+    - _SkinTone: {r: 0.4716981, g: 0.27069324, b: 0.17577429, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 0.8288271, b: 0.7311321, a: 0}
+    - _TranslucencyColor: {r: 0.5471698, g: 0.360413, b: 0.28648984, a: 1}

@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: e05a32db2620265478885237be3d2ef7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: A_1
+    100002: A_2
+    100004: A_3
+    100006: A_4
+    100008: B_1
+    100010: B_2
+    100012: B_3
+    100014: B_4
+    100016: B_5
+    100018: B_6
+    100020: C_1
+    100022: C_2
+    100024: C_3
+    100026: C_4
+    100028: C_5
+    100030: Chain_Root
+    100032: Clothing
+    100034: D_1
+    100036: D_2
+    100038: D_3
+    100040: D_4
+    100042: D_5
+    100044: D_6
+    100046: D_7
+    100048: P_ChainRope_A
+    100050: P_ChainRope_B
+    100052: P_ChainRope_C
+    100054: P_ChainRope_D
+    100056: //RootNode
+    400000: A_1
+    400002: A_2
+    400004: A_3
+    400006: A_4
+    400008: B_1
+    400010: B_2
+    400012: B_3
+    400014: B_4
+    400016: B_5
+    400018: B_6
+    400020: C_1
+    400022: C_2
+    400024: C_3
+    400026: C_4
+    400028: C_5
+    400030: Chain_Root
+    400032: Clothing
+    400034: D_1
+    400036: D_2
+    400038: D_3
+    400040: D_4
+    400042: D_5
+    400044: D_6
+    400046: D_7
+    400048: P_ChainRope_A
+    400050: P_ChainRope_B
+    400052: P_ChainRope_C
+    400054: P_ChainRope_D
+    400056: //RootNode
+    2100000: MI_Clothing
+    4300000: P_ChainRope_A
+    4300002: P_ChainRope_B
+    4300004: P_ChainRope_D
+    4300006: P_ChainRope_C
+    9500000: //RootNode
+    13700000: P_ChainRope_A
+    13700002: P_ChainRope_B
+    13700004: P_ChainRope_C
+    13700006: P_ChainRope_D
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MI_Clothing
+    second: {fileID: 2100000, guid: 4c9a10ab627013148ac940d1519210b3, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
