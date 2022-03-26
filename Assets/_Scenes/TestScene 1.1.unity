@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -52635,7 +52635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421af67d7e63f944ca40a37ceab3ffec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawnPoint: {fileID: 1501203494}
+  playerSpawnPoint: {fileID: 1876154030}
   playerSpawnDelay: 0
   characterSceneName: TestScene 1.1
   isLoaded: 0
@@ -57863,6 +57863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471740519}
   - component: {fileID: 1471740518}
+  - component: {fileID: 1471740513}
   m_Layer: 0
   m_Name: MonsterManager
   m_TagString: Untagged
@@ -57870,7 +57871,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1471740518
+--- !u!114 &1471740513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57878,6 +57879,34 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471740512}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac32994bbc2bd1a4d81630b5e732b709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spot: []
+  Monster:
+  - {fileID: 97720869}
+  - {fileID: 766361466}
+  - {fileID: 766361466}
+  monsterAmount: 12
+  monster_min: 3
+  monster_max: 7
+  monsterPerTimer: 3
+  spawnPosOffset: 5
+  spawnYpos: 3
+  spawnTime: 10
+  Timer: 7
+  MonsterList: []
+  spotvalue: 
+  spawnDone: 0
+--- !u!114 &1471740518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471740512}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0c69ca6aab814b468b89a7940d90f64, type: 3}
   m_Name: 
@@ -59788,7 +59817,7 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 26, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
@@ -71966,7 +71995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 191838, guid: f3ee45e0dafa81a45a21976bb9ac7896, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400052, guid: f3ee45e0dafa81a45a21976bb9ac7896, type: 3}
       propertyPath: m_LocalPosition.x

@@ -35,12 +35,12 @@ public class Quest : MonoBehaviour
 
         QuestText.enabled = false;
         //임시
-        monsters = GameObject.Find("MonsterManager").GetComponent<CreateM_Manager>().MonsterList;
+        monsters = GameObject.Find("MonsterManager").GetComponent<CreateMM>().MonsterList;
 
         textLine = transform.Find("QuestTextLine").GetComponent<Image>();
         TextInfo();
 
-        Monster_Max = GameObject.Find("MonsterManager").GetComponent<CreateM_Manager>().monsterAmount;
+        Monster_Max = GameObject.Find("MonsterManager").GetComponent<CreateMM>().monsterAmount;
     }
 
     // Update is called once per frame
