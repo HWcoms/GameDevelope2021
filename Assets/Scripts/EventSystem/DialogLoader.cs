@@ -22,6 +22,8 @@ public class DialogLoader : MonoBehaviour
         public string IdString, DialogType, Navigation;
         public bool EndDialog;
 
+        public int camInfo = 0;   //0 = maincam, 1 = subcam, 2 = monsterCam, ... can be extend
+
         public List<Lang> langInfo;
     }
 
@@ -68,12 +70,13 @@ public class DialogLoader : MonoBehaviour
         int langCount = GetLanguageCount(InfoArray, columnSize);
 
         dialogList = new List<Dialog>();
-        for (int i = 1; i < columnSize; i++)
+        for (int i = 1; i < columnSize - 1; i++)
         {
             Dialog tempdialog = new Dialog();
 
             tempdialog.Id = int.Parse(InfoArray[i, 0]);
             tempdialog.IdString = InfoArray[i, 1];
+            tempdialog.DialogType = InfoArray[i, 2];
 
             List<Lang> langList = new List<Lang>();
             tempdialog.langInfo = langList;
@@ -82,14 +85,19 @@ public class DialogLoader : MonoBehaviour
             {
                 Lang tempLang = new Lang();
                 tempLang.lang = availableLanguages[j];
-                tempLang.Text = InfoArray[i, 5 + (j * 2)];
-                tempLang.Button = InfoArray[i, 5 + (j * 2) + 1];
+                tempLang.Text = InfoArray[i, 6 + (j * 2)];
+                tempLang.Button = InfoArray[i, 6 + (j * 2) + 1];
 
                 tempdialog.langInfo.Add(tempLang);
             }
 
             tempdialog.Navigation = InfoArray[i, 3];
             tempdialog.EndDialog = bool.Parse(InfoArray[i, 4]);
+            
+            string camInfoText = InfoArray[i, 5];
+
+            if(camInfoText.Length > 0)
+                tempdialog.camInfo = int.Parse(InfoArray[i, 5]);
 
             dialogList.Add(tempdialog);
         }

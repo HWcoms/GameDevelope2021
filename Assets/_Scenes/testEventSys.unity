@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUpdate: 1
-  URL: https://docs.google.com/spreadsheets/d/17l2xHpUDyDNRuh7rBE6A9BQmsleYnjUMd1S0OZfUM4g/export?format=tsv&range=A1:K
+  URL: https://docs.google.com/spreadsheets/d/17l2xHpUDyDNRuh7rBE6A9BQmsleYnjUMd1S0OZfUM4g/export?format=tsv&range=A1:L
   folderName: Dialog
   fileName: dialog.tsv
   data: 
