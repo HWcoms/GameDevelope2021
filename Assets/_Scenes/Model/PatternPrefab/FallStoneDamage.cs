@@ -25,6 +25,8 @@ public class FallStoneDamage : MonoBehaviour
         hitParticleText.text = "0";
 
         isAttackReady = true;
+
+        Destroy(this.gameObject, 5.0f);
     }
 
     // Update is called once per frame
