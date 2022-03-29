@@ -7,6 +7,8 @@ public class Reaper_Ai : MonoBehaviour
 {
     float dist;   
     public GameObject particlePrefab;
+    public GameObject Dragon;
+    public GameObject Dragon_spawn;
     int Random_r;
     
     public Animator anim;   
@@ -34,6 +36,7 @@ public class Reaper_Ai : MonoBehaviour
     bool enableAct; //움직임 유무를 나타내기 위해
 
     int Attack_com = 0;
+    int spawn_Dragon_num = 1;
 
     public GameObject TP_Point;
     [SerializeField] int tp_num = 0;
@@ -123,12 +126,24 @@ public class Reaper_Ai : MonoBehaviour
             soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
         }
 
+        if(temp_Hp < 50 && spawn_Dragon_num == 1)
+        {
+            anim.Play("Spwan_Dragon");
+            SpwanDragon();
+            spawn_Dragon_num++;
+        }
+
     }
 
     IEnumerator TP_zero()
     {
         yield return new WaitForSeconds(30.0f);
         tp_num = 0;      
+    }
+
+    void SpwanDragon()
+    {
+        Instantiate( Dragon, Dragon_spawn.transform.position, Quaternion.identity);
     }
 
     void Rockhit()
@@ -139,7 +154,7 @@ public class Reaper_Ai : MonoBehaviour
     void TP_Patton()
     {
         anim.Play("TP_Back");
-        transform.position = Vector3.MoveTowards(transform.position, TP_Point.transform.position, 1);
+        transform.position = Vector3.Slerp(transform.position, TP_Point.transform.position, 1);
         //anim.Play("TP_Back");
     }
 
