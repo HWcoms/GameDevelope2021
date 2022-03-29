@@ -36,6 +36,8 @@ public class RangePlat : MonoBehaviour
             GameObject instantEffect7 = Instantiate(Prefab, PatternEffect.transform.position, Quaternion.identity);
             Destroy(PatternEffect.gameObject, 0.5f);
         }
+
+        Destroy(this.gameObject);
     }
 
 
