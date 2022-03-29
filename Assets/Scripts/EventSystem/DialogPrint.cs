@@ -1,4 +1,3 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,18 +12,22 @@ public class DialogPrint : MonoBehaviour
 	public bool endDialog;
 	public int camInfo;
 	
-	private DialogLoader;
+	private DialogLoader dialogLoader;
 	
 	private List<DialogLoader.Dialog> dialogL;
 	
-	TextMeshProUGUI DialogTextBox;
+	[SerializeField] private TextMeshProUGUI DialogTextBox;
+
+	[SerializeField] private bool isPlayingDialog = false;
 
     // Start is called before the first frame update
     void Start()
     {
-		DialogLoader = GameObject.Find("DialogSystem").GetComponent<DialogLoader>();
-		dialogL = DialogLoader.dialogList;
-		
+		dialogLoader = GameObject.Find("GoogleSheetSpreadLoader").GetComponent<DialogLoader>();
+		dialogL = dialogLoader.dialogList;
+
+		DialogTextBox = TransformDeepChildExtension.FindDeepChild(this.transform, "DialogContentText").GetComponent<TextMeshProUGUI>();
+
 		StartCoroutine(LoadDialogList());
     }
 
@@ -43,12 +46,17 @@ public class DialogPrint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+		if(!isPlayingDialog)
+        {
+			isPlayingDialog = true;
+			PrintDialog();
+		}
+			
+	}
 	
 	void GetDialogFromId(int Id) 
 	{
-		setToDialogInfo(dialogL[i]);
+		setToDialogInfo(dialogL[Id]);
 	}
 	
 	void GetDialogFromIdString(string IdString) 
@@ -74,11 +82,12 @@ public class DialogPrint : MonoBehaviour
 	IEnumerator TypeSentence (string sentence)
 	{
 		ClearDialog();
-		foreach(char letter int sentence.ToCharArray)
+		foreach(char letter in sentence.ToCharArray())
 		{
 			DialogTextBox.text += letter;
 			yield return null;
 		}
+		isPlayingDialog = false;
 	}
 	
 	void ClearDialog()
@@ -104,9 +113,27 @@ public class DialogPrint : MonoBehaviour
 		this.endDialog = dialog.EndDialog;
 		this.camInfo = dialog.camInfo;
 		
-		this.dialogText = dialog.Lang[lang].Text;
-		this.buttonText = dialog.Lang[lang].Button;
+		this.dialogText = dialog.langInfo[lang].Text;
+		this.buttonText = dialog.langInfo[lang].Button;
 	}
-	
+
 }
-*/
+
+public static class TransformDeepChildExtension
+{
+	//Breadth-first search
+	public static Transform FindDeepChild(this Transform aParent, string aName)
+	{
+		Queue<Transform> queue = new Queue<Transform>();
+		queue.Enqueue(aParent);
+		while (queue.Count > 0)
+		{
+			var c = queue.Dequeue();
+			if (c.name == aName)
+				return c;
+			foreach (Transform t in c)
+				queue.Enqueue(t);
+		}
+		return null;
+	}
+}
