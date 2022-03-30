@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.0999756, y: -59}
+  m_AnchoredPosition: {x: 4.1000977, y: -59}
   m_SizeDelta: {x: -236.656, y: -117.99164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5968961
@@ -1017,8 +1017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: 2}
-  m_SizeDelta: {x: -24.053223, y: -23.990204}
+  m_AnchoredPosition: {x: -3.9000244, y: 10.399994}
+  m_SizeDelta: {x: -107.84082, y: -48.745453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &896253618
 MonoBehaviour:
@@ -1039,10 +1039,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dialog Text
+  m_text: "dialog \uB300\uC0AC\uCC3D\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 65a05b0b3abcf104e8bc355141465259, type: 2}
+  m_sharedMaterial: {fileID: -4902458774480863741, guid: 65a05b0b3abcf104e8bc355141465259,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1066,8 +1067,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 51.7
+  m_fontSizeBase: 51.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1590,12 +1591,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363919c9dd56d1c48a259f01a0a2f1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDialogLoaded: 0
   dialogType: 
   dialogText: 
   buttonText: 
   Navigation: 
   endDialog: 0
   camInfo: 0
+  dialogL: []
+  DialogTextBox: {fileID: 0}
+  isPlayingDialog: 0
 --- !u!114 &1902077985
 MonoBehaviour:
   m_ObjectHideFlags: 0

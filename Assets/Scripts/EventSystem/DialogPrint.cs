@@ -5,6 +5,8 @@ using TMPro;
 
 public class DialogPrint : MonoBehaviour
 {
+	[SerializeField] private bool isDialogLoaded = false;
+
 	public string dialogType;
 	public string dialogText;
 	public string buttonText;
@@ -14,63 +16,126 @@ public class DialogPrint : MonoBehaviour
 	
 	private DialogLoader dialogLoader;
 	
-	private List<DialogLoader.Dialog> dialogL;
+	[SerializeField] private List<DialogLoader.Dialog> dialogL;
 	
 	[SerializeField] private TextMeshProUGUI DialogTextBox;
 
-	[SerializeField] private bool isPlayingDialog = false;
+	[SerializeField] private bool isDialogReady;
+
 
     // Start is called before the first frame update
     void Start()
     {
+		isDialogLoaded = false;
+
 		dialogLoader = GameObject.Find("GoogleSheetSpreadLoader").GetComponent<DialogLoader>();
-		dialogL = dialogLoader.dialogList;
+		//dialogL = dialogLoader.dialogList;
 
 		DialogTextBox = TransformDeepChildExtension.FindDeepChild(this.transform, "DialogContentText").GetComponent<TextMeshProUGUI>();
 
 		StartCoroutine(LoadDialogList());
-    }
+
+		isDialogReady = true;
+	}
 
 	IEnumerator LoadDialogList()
     {
-        while(dialogLoader.dialogList == null)
+        while(dialogLoader.dialogList.Count == 0)
         {
             yield return new WaitForSeconds(0.5f);
             //print("Loading DialogList");
         }
 
         dialogL = dialogLoader.dialogList;
-        //print(dialogL);
-    }
+		isDialogLoaded = true;
+		//print(dialogL);
+	}
 	
     // Update is called once per frame
     void Update()
     {
-		if(!isPlayingDialog)
+		if (!isDialogLoaded) return;
+
+		if(isDialogReady)
         {
-			isPlayingDialog = true;
-			PrintDialog();
+			isDialogReady = false;
+			//GetDialogFromIdString("ด๋ป็1");
+			PrintDialog(9,0);
 		}
-			
+
 	}
+
 	
-	void GetDialogFromId(int Id) 
+
+	bool GetDialogFromId(int Id) 
 	{
-		setToDialogInfo(dialogL[Id]);
+		return GetDialogFromId(Id, 0);
 	}
-	
-	void GetDialogFromIdString(string IdString) 
+
+	bool GetDialogFromId(int Id, int lang)
 	{
-	
+		if(dialogL.Count <= Id) //count 1 -> Id 0, count 2 -> Id 0,1	count 0 -> x
+			return false;
+        else
+			setToDialogInfo(dialogL[Id], lang);
+
+		return true;
 	}
-	
+
+
+	bool GetDialogFromIdString(string IdString) 
+	{
+		return GetDialogFromIdString(IdString, 0);
+	}
+
+	bool GetDialogFromIdString(string IdString, int lang)
+    {
+		foreach (DialogLoader.Dialog dialog in dialogL)
+		{
+			if (IdString.Equals("")) break;
+
+			if (dialog.IdString.Equals(IdString))
+			{
+				print("found dialog info success");
+
+				setToDialogInfo(dialog, lang);
+
+				return true;
+			}
+		}
+		print("can't find dialog info");
+
+		return false;
+	}
+
+
 	void NextDialog()
 	{
 		ClearDialog();
 		
 		if(endDialog) return;
 	}
-	
+
+	public void PrintDialog(int index, int lang)
+	{
+		if(!GetDialogFromId(index, lang))
+		{
+			dialogText = "Error, cannot find dialog text";
+		}
+
+		PrintDialog();
+	}
+
+	public void PrintDialog(string note, int lang)
+	{
+		if (!GetDialogFromIdString(note, lang))
+        {
+			dialogText = "Error, cannot find dialog text";
+		}
+
+		PrintDialog();
+	}
+
 	void PrintDialog()
 	{
 		//DialogTextBox.text = dialogText;
@@ -87,7 +152,7 @@ public class DialogPrint : MonoBehaviour
 			DialogTextBox.text += letter;
 			yield return null;
 		}
-		isPlayingDialog = false;
+		//isDialogReady = false;
 	}
 	
 	void ClearDialog()
