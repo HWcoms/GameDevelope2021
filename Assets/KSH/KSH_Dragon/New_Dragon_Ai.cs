@@ -38,6 +38,8 @@ public class New_Dragon_Ai : MonoBehaviour
     public float Fire_length;
     public float Awake_length;
 
+    //bool Angry_Boss = false;
+
     void Start()
     {
       
@@ -82,15 +84,11 @@ public class New_Dragon_Ai : MonoBehaviour
         LookAtPlayer();
 
         if(enableAct)
-        {
-            //anim.SetBool("Is_Fly", false);
-           boss_patton();
-           
+        {           
+           boss_patton();           
         }
       
-        //boss_patton();
-        // 패턴 1) 하급 병사 소환, 2)브레스
-
+     
         if (enemyhealthScript.getDead())
         {
             anim.SetBool("Is_Dead", true);
@@ -150,32 +148,14 @@ public class New_Dragon_Ai : MonoBehaviour
         AttackDamage = Damage;
     }
     void boss_patton()
-    {     
-
-        if (dist > 15)
-        {
-            Fire_patton();
-        }
-        else if(dist < 5)
-        {
-            Hit_patton();
-        }       
+    {
+        Fire_patton();
     }
+     
     void Fire_patton()
     {        
         anim.Play("Fire");
-    }
-
-   void Hit_patton()
-    {        
-        anim.Play("Hit");
-    }
-    void Awake_patton()
-    {      
-        anim.Play("Awake");
-    }
-   
-
+    } 
 
     void Enalbe()
     {
