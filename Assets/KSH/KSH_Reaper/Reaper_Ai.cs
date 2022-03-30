@@ -20,9 +20,11 @@ public class Reaper_Ai : MonoBehaviour
     public AnimationClip[] arrclip;
     public float born_length;
     public float Attack01_length;
-    public float Attack02_length;  
-        
-    public bool isLookAtPlayer;
+    public float Attack02_length;
+
+    bool Angry_Boss = false;
+
+    public bool isLookAtPlayer;    
 
 
     [SerializeField] bool is_Attacking = false;
@@ -52,7 +54,8 @@ public class Reaper_Ai : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         enemyhealthScript = GetComponent<EnemyHealth>();
         //enemyhealthScript=GetComponentInChildren<EnemyHealth>();
-        arrclip = GetComponent<Animator>().runtimeAnimatorController.animationClips;        
+        arrclip = GetComponent<Animator>().runtimeAnimatorController.animationClips;
+        //nav.speed = 10;
 
         foreach (AnimationClip clip in arrclip)
         {
@@ -109,7 +112,7 @@ public class Reaper_Ai : MonoBehaviour
             StartCoroutine(TP_zero());
 
             temp_Hp = enemyhealthScript.getHp();
-            if (tp_num >= 0 && tp_num <= 2) 
+            if (tp_num >= 0 && tp_num <= 2 && enableAct) 
             {
                 //0 1 2 텔레포트 횟수 3회 제한, 그후 다시 초기화
                 /*anim.Play("TP_Back");
@@ -126,11 +129,19 @@ public class Reaper_Ai : MonoBehaviour
             soulPrefab.GetComponent<SoulParticle>().monster = this.gameObject;
         }
 
-        if(temp_Hp < 50 && spawn_Dragon_num == 1)
+        if(temp_Hp < 50 && spawn_Dragon_num == 1 && enableAct)
         {
+            //드래곤 소환 이펙트 넣어주고 이펙트 끝나면 소환되게 코루틴 넣어주기
             anim.Play("Spwan_Dragon");
             SpwanDragon();
             spawn_Dragon_num++;
+        }
+
+        if(temp_Hp < 20)
+        {
+            // 광폭화 이펙트 넣어주기
+            nav.speed = 15;
+            Angry_Boss = true;
         }
 
     }
@@ -237,6 +248,15 @@ public class Reaper_Ai : MonoBehaviour
             if (Attack_com == 1)
             {
                 //InvokeRepeating("TP_zero", 1.0f, 15.0f);
+                if(Angry_Boss == false)
+                {
+                    setDamage(15.0f);
+                }
+                else
+                {
+                    setDamage(30.0f);
+                }
+                //setDamage(15.0f);
                 anim.Play("Attack_com1");
                 //StartCoroutine(Attack01_Delay());
                 //transform.position = Vector3.MoveTowards(transform.position, Attack01_Point.transform.position, 1);
@@ -246,6 +266,14 @@ public class Reaper_Ai : MonoBehaviour
             else if (Attack_com == 2)
             {
                 nav.isStopped = true;
+                if (Angry_Boss == false)
+                {
+                    setDamage(25.0f);
+                }
+                else
+                {
+                    setDamage(50.0f);
+                };
                 anim.Play("Attack_com2");
                 //StartCoroutine(Attack02_Delay());
                 //anim.Play("Attack_com2");               
