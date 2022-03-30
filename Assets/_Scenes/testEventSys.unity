@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.36228207, g: 0.4489015, b: 0.59414333, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1592,15 +1592,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDialogLoaded: 0
+  dialogSpeed: 0.015
   dialogType: 
   dialogText: 
   buttonText: 
   Navigation: 
   endDialog: 0
   camInfo: 0
-  dialogL: []
-  DialogTextBox: {fileID: 0}
-  isPlayingDialog: 0
+  isDialogReady: 0
 --- !u!114 &1902077985
 MonoBehaviour:
   m_ObjectHideFlags: 0

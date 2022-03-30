@@ -6,6 +6,7 @@ using TMPro;
 public class DialogPrint : MonoBehaviour
 {
 	[SerializeField] private bool isDialogLoaded = false;
+	public float dialogSpeed = 0.05f;
 
 	public string dialogType;
 	public string dialogText;
@@ -16,9 +17,9 @@ public class DialogPrint : MonoBehaviour
 	
 	private DialogLoader dialogLoader;
 	
-	[SerializeField] private List<DialogLoader.Dialog> dialogL;
+	private List<DialogLoader.Dialog> dialogL;
 	
-	[SerializeField] private TextMeshProUGUI DialogTextBox;
+	private TextMeshProUGUI DialogTextBox;
 
 	[SerializeField] private bool isDialogReady;
 
@@ -60,12 +61,13 @@ public class DialogPrint : MonoBehaviour
         {
 			isDialogReady = false;
 			//GetDialogFromIdString("ด๋ป็1");
-			PrintDialog(9,0);
+			PrintDialog(0,0);
 		}
 
-	}
+		if (Input.GetKeyDown("r"))
+			NextDialog();
 
-	
+	}
 
 	bool GetDialogFromId(int Id) 
 	{
@@ -111,9 +113,16 @@ public class DialogPrint : MonoBehaviour
 
 	void NextDialog()
 	{
+
 		ClearDialog();
 		
-		if(endDialog) return;
+		if(endDialog)
+        {
+			this.gameObject.SetActive(false);
+			return;
+        }
+
+		isDialogReady = true;
 	}
 
 	public void PrintDialog(int index, int lang)
@@ -147,10 +156,12 @@ public class DialogPrint : MonoBehaviour
 	IEnumerator TypeSentence (string sentence)
 	{
 		ClearDialog();
-		foreach(char letter in sentence.ToCharArray())
+		yield return new WaitForSeconds(0f);
+
+		foreach (char letter in sentence.ToCharArray())
 		{
 			DialogTextBox.text += letter;
-			yield return null;
+			yield return new WaitForSeconds(dialogSpeed);
 		}
 		//isDialogReady = false;
 	}
