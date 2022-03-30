@@ -5,27 +5,17 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public GameObject Target;
-    public bool KeyV = false;   
-    
-    void Update()
-    {
-        if(Input.GetButton("Portal"))
-        {
-            KeyV= true;
-        }
-        else
-        {
-            KeyV= false;
-        }
-    }
 
 
-     void OnTriggerEnter(Collider other)
+     void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Player") && KeyV)
+        if(other.gameObject.tag == ("Player"))
         {
-             //&& Input.GetKeyDown(KeyCode.V)
-          other.transform.position = Target.transform.position;
+            if (Input.GetButtonDown("Portal"))
+            {
+            //&& Input.GetKeyDown(KeyCode.V)
+                other.transform.position = Target.transform.position;
+            }
         }
     }
 
