@@ -29,7 +29,12 @@ public class Quest : MonoBehaviour
 
     private Image textLine;
 
-    void Start()
+    private void OnEnable()
+    {
+        init();
+    }
+
+    private void init()
     {
         QuestText = transform.Find("QuestText").GetComponent<TextMeshProUGUI>();
 
@@ -41,6 +46,10 @@ public class Quest : MonoBehaviour
         TextInfo();
 
         Monster_Max = GameObject.Find("MonsterManager").GetComponent<CreateMM>().monsterAmount;
+    }
+    void Start()
+    {
+        init();
     }
 
     // Update is called once per frame

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DialogPrint : MonoBehaviour
 {
 	[SerializeField] private bool isDialogLoaded = false;
 	public float dialogSpeed = 0.05f;
+	public int current_language = 0;
 
 	public string dialogType;
 	public string dialogText;
@@ -27,13 +29,15 @@ public class DialogPrint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		HideUI();
+
 		isDialogLoaded = false;
 
 		dialogLoader = GameObject.Find("GoogleSheetSpreadLoader").GetComponent<DialogLoader>();
 		//dialogL = dialogLoader.dialogList;
 
 		DialogTextBox = TransformDeepChildExtension.FindDeepChild(this.transform, "DialogContentText").GetComponent<TextMeshProUGUI>();
-
+		
 		StartCoroutine(LoadDialogList());
 
 		isDialogReady = true;
@@ -50,28 +54,47 @@ public class DialogPrint : MonoBehaviour
         dialogL = dialogLoader.dialogList;
 		isDialogLoaded = true;
 		//print(dialogL);
+
+		GetDialogFromId(0);
 	}
 	
     // Update is called once per frame
     void Update()
     {
+		/*
 		if (!isDialogLoaded) return;
-
-		if(isDialogReady)
-        {
-			isDialogReady = false;
-			//GetDialogFromIdString("대사1");
-			PrintDialog(0,0);
-		}
 
 		if (Input.GetKeyDown("r"))
 			NextDialog();
 
+		if (isDialogReady)
+        {
+			isDialogReady = false;
+			//GetDialogFromIdString("대사1");
+			PrintDialog();
+		}
+		*/
+	}
+
+	public void ViewUI()
+    {
+		foreach (Transform child in transform)
+		{
+			child.gameObject.SetActive(true);
+		}
+	}
+
+	public void HideUI()
+	{
+		foreach (Transform child in transform)
+		{
+			child.gameObject.SetActive(false);
+		}
 	}
 
 	bool GetDialogFromId(int Id) 
 	{
-		return GetDialogFromId(Id, 0);
+		return GetDialogFromId(Id, current_language);
 	}
 
 	bool GetDialogFromId(int Id, int lang)
@@ -87,7 +110,7 @@ public class DialogPrint : MonoBehaviour
 
 	bool GetDialogFromIdString(string IdString) 
 	{
-		return GetDialogFromIdString(IdString, 0);
+		return GetDialogFromIdString(IdString, current_language);
 	}
 
 	bool GetDialogFromIdString(string IdString, int lang)
@@ -111,23 +134,41 @@ public class DialogPrint : MonoBehaviour
 	}
 
 
-	void NextDialog()
+	public bool NextDialog()	//false : endDialog, true: continue
 	{
 
 		ClearDialog();
 		
 		if(endDialog)
         {
-			this.gameObject.SetActive(false);
-			return;
+			HideUI();
+
+			return false;
         }
 
+
+		int navigation_n;
+		if(int.TryParse(Navigation, out navigation_n)) //navigaiton is number
+        {
+			print("number " + navigation_n);
+			GetDialogFromId(navigation_n);
+		}
+		else    //navigation is Note string
+		{
+			GetDialogFromIdString(Navigation);
+		}
+		print(Navigation);
+
 		isDialogReady = true;
+
+		PrintDialog();
+
+		return true;
 	}
 
-	public void PrintDialog(int index, int lang)
+	public void PrintDialog(int index)
 	{
-		if(!GetDialogFromId(index, lang))
+		if(!GetDialogFromId(index, current_language))
 		{
 			dialogText = "Error, cannot find dialog text";
 		}
@@ -135,9 +176,9 @@ public class DialogPrint : MonoBehaviour
 		PrintDialog();
 	}
 
-	public void PrintDialog(string note, int lang)
+	public void PrintDialog(string note)
 	{
-		if (!GetDialogFromIdString(note, lang))
+		if (!GetDialogFromIdString(note, current_language))
         {
 			dialogText = "Error, cannot find dialog text";
 		}
@@ -155,6 +196,8 @@ public class DialogPrint : MonoBehaviour
 	
 	IEnumerator TypeSentence (string sentence)
 	{
+		sentence = sentence.Replace("\\n", "\n");
+
 		ClearDialog();
 		yield return new WaitForSeconds(0f);
 
@@ -165,6 +208,7 @@ public class DialogPrint : MonoBehaviour
 		}
 		//isDialogReady = false;
 	}
+	
 	
 	void ClearDialog()
 	{
@@ -192,6 +236,11 @@ public class DialogPrint : MonoBehaviour
 		this.dialogText = dialog.langInfo[lang].Text;
 		this.buttonText = dialog.langInfo[lang].Button;
 	}
+
+	public bool getDialogLoaded()
+    {
+		return isDialogLoaded;
+    }
 
 }
 

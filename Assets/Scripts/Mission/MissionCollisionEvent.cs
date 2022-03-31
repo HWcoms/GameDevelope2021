@@ -16,12 +16,30 @@ public class MissionCollisionEvent : MonoBehaviour
     private float wallAlpha = 0.0f;
     public float fadeSpeed = 15.0f;
 
-    public GameObject[] wallObjs;
+    //public GameObject[] wallObjs;
+    public List<GameObject> wallObjs;
 
     [SerializeField]private GameObject questObj;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
+    {
+        if (wallObjs.Count == 0)
+        {
+            print("load walls obj");
+            getWallObjs();
+        }
+        InitMark();
+        InitObjs();
+    }
+
+    private void OnDisable()
+    {
+        markerScript.MarkEnd();
+        if(questObj != null)
+            questObj.SetActive(false);
+    }
+
+    void InitMark()
     {
         //get marker info
         missionMarker = GameObject.Find("MissionMarker");
@@ -29,8 +47,13 @@ public class MissionCollisionEvent : MonoBehaviour
         markerScript.TargetTemp = this.transform;
 
         markerScript.MarkStart();
+    }
 
+    void InitObjs()
+    {
         oncePlayed = false;
+
+        missionObjList.Clear();
 
         childCount = this.transform.childCount;
 
@@ -44,8 +67,25 @@ public class MissionCollisionEvent : MonoBehaviour
             childs.SetActive(false);
         }
 
-        questObj = this.transform.Find("Quest").gameObject;
+        if(questObj == null)
+            questObj = this.transform.Find("Quest").gameObject;
         questObj.SetActive(false);
+    }
+
+    void getWallObjs()
+    {
+        wallObjs.Clear();
+
+        Transform parentWall = transform.Find("Walls");
+        wallObjs = AllChilds(parentWall.gameObject);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        getWallObjs();
+        InitMark();
+        InitObjs();
     }
 
     // Update is called once per frame
@@ -66,23 +106,13 @@ public class MissionCollisionEvent : MonoBehaviour
         }
      
 
-        if(wallObjs.Length == 0 || !wallObjs[0].activeSelf) return;
+        if(wallObjs.Count == 0 || !wallObjs[0].activeSelf) return;
 
         foreach(GameObject wallObj in wallObjs)
         {
             //print("rendered");
 
             changeAlpha(wallObj);
-            /*
-            col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_UnlitColor");
-            
-            col.a = wallAlpha;
-            wallObj.GetComponent<MeshRenderer>().material.SetColor("_UnlitColor", col);
-
-            col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_TintColor");
-            col.a = wallAlpha;
-            wallObj.GetComponent<MeshRenderer>().material.SetColor("_TintColor", col);
-            */
         }
     }
 
@@ -190,5 +220,29 @@ public class MissionCollisionEvent : MonoBehaviour
             wallAlpha -= 0.01f * speed;
         }
         wallAlpha = 0;
+    }
+
+    private List<GameObject> AllChilds(GameObject root)
+    {
+        List<GameObject> result = new List<GameObject>();
+        if (root.transform.childCount > 0)
+        {
+            foreach (Transform VARIABLE in root.transform)
+            {
+                Searcher(result, VARIABLE.gameObject);
+            }
+        }
+        return result;
+    }
+    private void Searcher(List<GameObject> list, GameObject root)
+    {
+        list.Add(root);
+        if (root.transform.childCount > 0)
+        {
+            foreach (Transform VARIABLE in root.transform)
+            {
+                Searcher(list, VARIABLE.gameObject);
+            }
+        }
     }
 }
