@@ -21,6 +21,8 @@ public class MissionCollisionEvent : MonoBehaviour
 
     [SerializeField]private GameObject questObj;
 
+    TimeOver timeOverScript;    //is mission done;
+
     private void OnEnable()
     {
         if (wallObjs.Count == 0)
@@ -70,6 +72,8 @@ public class MissionCollisionEvent : MonoBehaviour
         if(questObj == null)
             questObj = this.transform.Find("Quest").gameObject;
         questObj.SetActive(false);
+
+        timeOverScript = questObj.GetComponent<TimeOver>();
     }
 
     void getWallObjs()
@@ -91,20 +95,11 @@ public class MissionCollisionEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (GameObject obj in wallObjs)
-        {
-            /*
-            Color32 col = obj.material.GetColor("_Color");
-            col.a = wallAlpha;
-            obj.material.SetColor("_Color", col);*/
-        }
-
         //미션 클리어 조건
-        if(Input.GetKeyDown(KeyCode.R))
+        if(timeOverScript.questFinished)
         {
             StartCoroutine(offDisplay(0.0f));
         }
-     
 
         if(wallObjs.Count == 0 || !wallObjs[0].activeSelf) return;
 

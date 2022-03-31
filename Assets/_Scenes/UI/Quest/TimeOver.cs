@@ -71,6 +71,7 @@ public class TimeOver : MonoBehaviour
             {
                 timeLeft = 0;
                 TimeOverText.SetActive(true);
+
                 //Destroy(TimeOverText, 3.0f);
                 StartCoroutine(delayOff(3.0f));
 

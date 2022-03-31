@@ -24,12 +24,14 @@ public class GameTutorialCollisionEvent : MonoBehaviour
     private float wallAlpha = 0.0f;
     public float fadeSpeed = 15.0f;
 
-    public GameObject[] wallObjs;
+    public List<GameObject> wallObjs;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        getWallObjs();
+
         oncePlayed = false;
 
         childCount = this.transform.childCount;
@@ -45,34 +47,30 @@ public class GameTutorialCollisionEvent : MonoBehaviour
         }
     }
 
+    void getWallObjs()
+    {
+        wallObjs.Clear();
+
+        Transform parentWall = transform.Find("Walls");
+        wallObjs = AllChilds(parentWall.gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        foreach(GameObject obj in wallObjs)
-        {
-            /*
-            Color32 col = obj.material.GetColor("_Color");
-            col.a = wallAlpha;
-            obj.material.SetColor("_Color", col);*/
-        }
-
         if(oncePlayed && !isDelay)  //if not control by delay
         {
             if(Input.GetKeyDown(KeyCode.R))
                 StartCoroutine(offDisplay(0.0f));
         }
 
-        if(wallObjs.Length == 0 || !wallObjs[0].activeSelf) return;
+        if(wallObjs.Count == 0 || !wallObjs[0].activeSelf) return;
 
         foreach(GameObject wallObj in wallObjs)
         {
-            print("rendered");
-            //print(wallObjs[0].name);
+            //print("rendered");
 
-            Color col = wallObj.GetComponent<MeshRenderer>().material.GetColor("_UnlitColor");
-            col.a = wallAlpha;
-            //print(col);
-            wallObj.GetComponent<MeshRenderer>().material.SetColor("_UnlitColor", col);
+            changeAlpha(wallObj);
         }
     }
 
@@ -98,6 +96,46 @@ public class GameTutorialCollisionEvent : MonoBehaviour
             {
                 StartCoroutine(offDisplay(delayTime));
             }
+        }
+    }
+
+    void changeAlpha(GameObject obj)
+    {
+        Color col;
+
+        MeshRenderer meshRenderer = null;
+        Renderer particleSystemRenderer = null;
+
+        try
+        {
+            meshRenderer = obj.GetComponent<MeshRenderer>();
+            particleSystemRenderer = obj.GetComponent<ParticleSystem>().GetComponent<Renderer>();
+        }
+        catch
+        {
+        }
+
+        if (meshRenderer == null && particleSystemRenderer == null) return;
+
+        if (meshRenderer != null && meshRenderer.material.shader.name.Equals("HDRP/Unlit"))
+        {
+            col = meshRenderer.material.GetColor("_UnlitColor");
+
+            //print(meshRenderer.material.name + ": " + meshRenderer.material.shader.name);
+            col.a = wallAlpha;
+            obj.GetComponent<MeshRenderer>().material.SetColor("_UnlitColor", col);
+        }
+
+
+        //print(meshRenderer.material.name);
+        if (particleSystemRenderer != null && particleSystemRenderer.material.shader.name.Equals("Slash/Bird"))
+        {
+            col = particleSystemRenderer.material.GetColor("_TintColor");
+
+            //print(particleSystemRenderer.material.name + ": " + particleSystemRenderer.material.shader.name);
+            col.a = wallAlpha;
+
+            particleSystemRenderer.material.SetColor("_TintColor", col);
         }
     }
 
@@ -136,5 +174,29 @@ public class GameTutorialCollisionEvent : MonoBehaviour
             wallAlpha -= 0.01f * speed;
         }
         wallAlpha = 0;
+    }
+
+    private List<GameObject> AllChilds(GameObject root)
+    {
+        List<GameObject> result = new List<GameObject>();
+        if (root.transform.childCount > 0)
+        {
+            foreach (Transform VARIABLE in root.transform)
+            {
+                Searcher(result, VARIABLE.gameObject);
+            }
+        }
+        return result;
+    }
+    private void Searcher(List<GameObject> list, GameObject root)
+    {
+        list.Add(root);
+        if (root.transform.childCount > 0)
+        {
+            foreach (Transform VARIABLE in root.transform)
+            {
+                Searcher(list, VARIABLE.gameObject);
+            }
+        }
     }
 }

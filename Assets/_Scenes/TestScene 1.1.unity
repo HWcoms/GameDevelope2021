@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1.4491283, g: 1.795606, b: 2.3765733, a: 1}
+  m_IndirectSpecularColor: {r: 0.36224297, g: 0.4489554, b: 0.59435886, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6285,7 +6285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4857377747935a4099bdfe19f1797e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sa: {fileID: 0}
+  sa: {fileID: 1075199298}
   hitParticle: {fileID: 7574874962956237787, guid: 9e00dc00887477c40aad7d68d038b1e2,
     type: 3}
 --- !u!65 &493651444
@@ -31259,7 +31259,7 @@ PrefabInstance:
     - target: {fileID: 4409888647042732004, guid: 1926267e796e1e94c9c14a4d7dfe5663,
         type: 3}
       propertyPath: m_Name
-      value: SK_Skeleton_SandMoss Variant (1)
+      value: SK_Skeleton_SandMoss Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4409888647042732004, guid: 1926267e796e1e94c9c14a4d7dfe5663,
         type: 3}
@@ -45118,11 +45118,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1549047344442796864, guid: bf33c78e9839cf24284a234d076835db,
+        type: 3}
+      propertyPath: questList
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3083867183802246072, guid: bf33c78e9839cf24284a234d076835db,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 3083867183802246077, guid: bf33c78e9839cf24284a234d076835db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3083867184097605009, guid: bf33c78e9839cf24284a234d076835db,
         type: 3}
       propertyPath: m_Name
@@ -45188,6 +45198,11 @@ PrefabInstance:
       propertyPath: Monster.Array.data[0]
       value: 
       objectReference: {fileID: 1075199293}
+    - target: {fileID: 3083867184213307895, guid: bf33c78e9839cf24284a234d076835db,
+        type: 3}
+      propertyPath: monsterAmount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf33c78e9839cf24284a234d076835db, type: 3}
 --- !u!4 &7238235201681631832 stripped
