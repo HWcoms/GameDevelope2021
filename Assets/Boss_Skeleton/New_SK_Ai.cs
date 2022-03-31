@@ -26,7 +26,10 @@ public class New_SK_Ai : MonoBehaviour
     public float born_length;
 
 
-    [SerializeField] bool is_Attacking = false;
+    [SerializeField] bool is_Attacking1 = false;
+    [SerializeField] bool is_Attacking3 = false;
+    [SerializeField] bool is_Attacking4 = false;
+    [SerializeField] bool is_Attacking5 = false;
     public EnemyHealth enemyhealthScript;
     public float AttackDamage;
 
@@ -86,9 +89,9 @@ public class New_SK_Ai : MonoBehaviour
 
         if(enableAct)
         {
-            LookAtPlayer();
+            boss_patton();         
             Move_patton();
-            boss_patton();
+           
         }       
 
         //getHit
@@ -121,26 +124,93 @@ public class New_SK_Ai : MonoBehaviour
             isLookAtPlayer = false;
     }
 
-    public void setAttack(int flag)
+    public void setAttack_Skill1(int flag)
     {
         if (flag == 1)
         {
-            trigger_control.isTrigger = false;
-            nav.isStopped = true;
-            is_Attacking = true;
+            isLookAtPlayer = false;
+            trigger_control.isTrigger = false;          
+            is_Attacking1 = true;
         }
         else
-        {
-            nav.isStopped = false;
+        {          
             nav.SetDestination(target.position);
-            is_Attacking = false;
+            is_Attacking1 = false;
         }
 
     }
-    public bool getAttack()
+    public bool getAttack_Skill1()
     {
-        return is_Attacking;
+        return is_Attacking1;
     }
+
+    
+    public void setAttack_Skill3(int flag)
+    {
+        if (flag == 1)
+        {
+            isLookAtPlayer = false;
+            trigger_control.isTrigger = false;           
+            is_Attacking3 = true;
+        }
+        else
+        {    
+            nav.SetDestination(target.position);
+            is_Attacking3 = false;
+        }
+
+    }
+
+    public bool getAttack_Skill3()
+    {
+        return is_Attacking3;
+    }
+
+
+
+    public void setAttack_Skill4(int flag)
+    {
+        if (flag == 1)
+        {
+            isLookAtPlayer = false;
+            trigger_control.isTrigger = false;         
+            is_Attacking4 = true;
+        }
+        else
+        {         
+            nav.SetDestination(target.position);
+            is_Attacking4 = false;
+        }
+
+    }
+
+    public bool getAttack_Skill4()
+    {
+        return is_Attacking4;
+    }
+
+
+    public void setAttack_Skill5(int flag)
+    {
+        if (flag == 1)
+        {
+            isLookAtPlayer = false;
+            trigger_control.isTrigger = false;           
+            is_Attacking5 = true;
+        }
+        else
+        {         
+            nav.SetDestination(target.position);
+            is_Attacking4 = false;
+        }
+
+    }
+
+    public bool getAttack_Skill5()
+    {
+        return is_Attacking5;
+    }
+
 
     public void setDamage(float Damage)
     {
@@ -156,26 +226,22 @@ public class New_SK_Ai : MonoBehaviour
     void Move_patton()
     {
         if ( dist <= distChange)
-        {
-            //nav.isStopped = false;
+        {          
             if (dist <= 3) 
             {
-                nav.isStopped = true;
-                //enableAct = false;
+                LookAtPlayer();                 
                 anim.SetBool("Is_Run", false);
             }
             else
             {
+                LookAtPlayer();
                 nav.isStopped = false;
                 nav.SetDestination(target.position);
-                anim.SetBool("Is_Run", true);
-                print("moving");
+                anim.SetBool("Is_Run", true);              
             }
         }
         else
-        {
-            LookAtPlayer();
-            nav.isStopped = true;
+        {            
             Rockhit();
             anim.Play("Skill2");
         }
@@ -187,28 +253,33 @@ public class New_SK_Ai : MonoBehaviour
 
         if(dist < 3) //근거리 패턴, 임시 적용
         {
+            //nav.isStopped = true;
             if (Random_r == 0)
-            {
+            {             
                 anim.Play("Skill1");
             }            
             else if (Random_r == 1)
-            {
+            {               
+                            
                 anim.Play("Skill3");
             }
             else
-            {
+            {                             
                 anim.Play("Skill4");
             }
         }      
     }
     void FreezeSkeleton()
     {
+        nav.isStopped = true;
         enableAct = false;
     }
     void UnFreezeSkeleton()
     {
+        nav.isStopped = false;
         enableAct = true;
     }
 
+    
 
 }

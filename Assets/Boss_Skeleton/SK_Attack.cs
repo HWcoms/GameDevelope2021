@@ -34,15 +34,46 @@ public class SK_Attack : MonoBehaviour
         if (attck_Hp.getDead()) return;
 
         //print(other.gameObject.tag);
-        if (other.gameObject.tag == "Player" && bs.getAttack())
+        if (other.gameObject.tag == "Player" && bs.getAttack_Skill1())
         {
             if (attck_Hp.changeHp(-bs.AttackDamage, 1))
             {
-                bs.setAttack(0);
+                bs.setAttack_Skill1(0);
 
                 hitParticleText.text = ((int)bs.AttackDamage).ToString();
                 GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
             }
         }
+        else if (other.gameObject.tag == "Player" && bs.getAttack_Skill3())
+        {
+            if (attck_Hp.changeHp(-bs.AttackDamage, 1))
+            {
+                bs.setAttack_Skill3(0);
+
+                hitParticleText.text = ((int)bs.AttackDamage).ToString();
+                GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
+            }
+        }
+        else if (other.gameObject.tag == "Player" && bs.getAttack_Skill4())
+        {
+            if (attck_Hp.changeHp(-bs.AttackDamage, 1))
+            {
+                bs.setAttack_Skill4(0);
+
+                hitParticleText.text = ((int)bs.AttackDamage).ToString();
+                GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
+            }
+        }
+        else if (other.gameObject.tag == "Player" && bs.getAttack_Skill5())
+        {
+            if (attck_Hp.changeHp(-bs.AttackDamage, 1))
+            {
+                bs.setAttack_Skill5(0);
+
+                hitParticleText.text = ((int)bs.AttackDamage).ToString();
+                GameObject.Instantiate(hitParticle, this.GetComponentInChildren<Collider>().ClosestPointOnBounds(other.transform.position), transform.rotation);
+            }
+        }
+
     }
 }
