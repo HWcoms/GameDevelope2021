@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4380942925181468063
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5196970099042623108, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 3.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623108, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 3.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.44377124
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.1852455
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.40002078
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.58308095
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.58308095
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.40002078
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623130, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196970099042623131, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32,
+        type: 3}
+      propertyPath: m_Name
+      value: SK_TheReaper_TPBack Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a50172a0ab87ad4dbcb7cb8c4cf1f32, type: 3}
