@@ -89,6 +89,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             // pass all parameters to the character control script
             if (moveAble) 
                 m_Character.Move(m_Move, crouch, m_Jump);
+            else
+                m_Character.Move(Vector3.zero, crouch, m_Jump);
             /*
             else if(!moveAble && Input.GetMouseButtonDown(1))
                 m_Character.Move(m_Move, crouch, m_Jump, true);

@@ -40,7 +40,7 @@ public class PlayerItemUsage : MonoBehaviour
         if(CHscript.getDead()) return;
 
         //use heal item
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButton("UseHeal"))
         {
             if(itemUsableNow)
             {

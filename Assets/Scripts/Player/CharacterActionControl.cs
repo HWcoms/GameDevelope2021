@@ -362,6 +362,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             return attackContinueAble;
         }
+
+        public void setAttackAble(bool flag)
+        {
+            attackAble = flag;
+        }
+
+        public bool getAttackAble()
+        {
+            return attackAble;
+        }
+
         /*
         public bool checkAnimContinue()
         {
