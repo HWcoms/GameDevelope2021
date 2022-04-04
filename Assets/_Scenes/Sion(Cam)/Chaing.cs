@@ -15,22 +15,22 @@ public class Chaing : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.UpArrow)==true)
         {
-            gameObject.transform.Translate(new Vector3(0,0,0.01f));
+            gameObject.transform.Translate(new Vector3(0,0,0.07f));
         }
 
         if (Input.GetKey(KeyCode.DownArrow) == true)
         {
-            gameObject.transform.Translate(new Vector3(0, 0, -0.01f));
+            gameObject.transform.Translate(new Vector3(0, 0, -0.07f));
         }
 
         if (Input.GetKey(KeyCode.LeftArrow) == true)
         {
-            gameObject.transform.Translate(new Vector3(-0.01f, 0, 0));
+            gameObject.transform.Translate(new Vector3(-0.07f, 0, 0));
         }
 
         if (Input.GetKey(KeyCode.RightArrow) == true)
         {
-            gameObject.transform.Translate(new Vector3(0.01f, 0, 0));
+            gameObject.transform.Translate(new Vector3(0.07f, 0, 0));
         }
     }
 }

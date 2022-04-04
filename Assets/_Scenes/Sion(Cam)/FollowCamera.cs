@@ -18,6 +18,7 @@ public class FollowCamera : MonoBehaviour
     void Start()
     {
         isButtonReady = true;
+        sub_cam.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,6 +31,10 @@ public class FollowCamera : MonoBehaviour
             isSubCam = !isSubCam;
         }
 
+        if(isSubCam && isButtonReady)
+        {
+            sub_cam.transform.position = subCameraPos.transform.position;
+        }
     }
 
     IEnumerator CameraChange()
