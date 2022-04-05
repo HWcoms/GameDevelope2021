@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,7 +30,7 @@ public class CharacterSkill : MonoBehaviour
         public float SkillCoolDown = 0;
         public bool isSkillCoolDown; //skill CoolDown
 
-        public float PrefabStartDelay = 3;
+        public float PrefabStartDelay = 0;
         public float PrefabEndDelay = 5;
 
         [Header("--------------- 디버그 ---------------")]
@@ -38,7 +38,17 @@ public class CharacterSkill : MonoBehaviour
         public List<GameObject> CurrentInstance;
 
         public AnimationClip CharacterAnimationClip;
-        //public GameObject customObject;
+        public CustomEffect customEffect;
+    }
+
+    [System.Serializable]
+    public class CustomEffect
+    {
+        public GameObject Prefab;
+        public Transform PrefabPos;
+        public Transform BoneTransform;
+        public float PrefabStartDelay = 0;
+        public float PrefabEndDelay = 6;
     }
 
     // Start is called before the first frame update
@@ -62,7 +72,12 @@ public class CharacterSkill : MonoBehaviour
             if (!isAttackReady) return;
 
             if(SubSkill.isSkillCoolDown)
+            {
                 UseSubSkill();
+                RunAnimation(SubSkill);
+            }
+
+                
         }
     }
 
@@ -83,6 +98,8 @@ public class CharacterSkill : MonoBehaviour
         StartCoroutine(attackAbleTimer(skillSet));
 
         StartCoroutine(SkillCoolDown(skillSet));
+
+        StartCoroutine(DoCustomEffect(skillSet));
 
         GameObject skillPrefab = skillSet.Prefab;
         yield return new WaitForSeconds(skillSet.PrefabStartDelay);
@@ -117,5 +134,39 @@ public class CharacterSkill : MonoBehaviour
 
         CACscript.setAttackAble(true);
         TPUCscript.setMoveAble(true);
+    }
+
+    void RunAnimation(SkillSet skillSet)
+    {
+        StartCoroutine(AnimControl(skillSet.attackAbleDelay));
+    }
+
+    IEnumerator AnimControl(float delay)
+    {
+        Animator anim = GetComponent<Animator>();
+        anim.SetBool("SubSkill",true);
+        
+        yield return new WaitForSeconds(delay);
+        anim.SetBool("SubSkill",false);
+    }
+
+    IEnumerator DoCustomEffect(SkillSet skillSet)
+    {
+        if(skillSet.customEffect.Prefab == null) 
+        {
+            print("no custom effect!");
+            yield break;
+        }
+
+        CustomEffect customPrefab = skillSet.customEffect;
+        yield return new WaitForSeconds(customPrefab.PrefabStartDelay);
+        GameObject customPrefabObj = Instantiate(customPrefab.Prefab, customPrefab.PrefabPos.position, customPrefab.PrefabPos.rotation);
+
+        if(customPrefab.BoneTransform != null)
+        customPrefabObj.transform.SetParent(customPrefab.BoneTransform);
+
+        yield return new WaitForSeconds(customPrefab.PrefabEndDelay);
+
+        Destroy(customPrefabObj);
     }
 }
